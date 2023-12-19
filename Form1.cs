@@ -6,7 +6,7 @@ namespace OnlyFriends {
 		public Form1() {
 			InitializeComponent();
 		}
-
+		//pushing
 		private void button1_Click(object sender, EventArgs e) {
 
 			User user = User.Create(
@@ -25,7 +25,7 @@ namespace OnlyFriends {
 			DatabaseConnection connection = DatabaseConnection.Instance;
 			connection.InitializeConnection();
 
-			user.addPost("newRepo", "hhh");
+			user.addPost("hassan test", "oooo");
 
 			/*
 						try {
