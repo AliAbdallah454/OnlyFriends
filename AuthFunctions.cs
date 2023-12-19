@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using System;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
@@ -19,16 +20,19 @@ namespace OnlyFriends {
 									 $"WHERE email = \"{email}\"";
 				MySqlDataReader passwordReader = connection.query(passwordSql);
 				passwordReader.Read();
-				MessageBox.Show($"{passwordReader["password"]}");
 				string dbPassword = $"{passwordReader["password"]}";
 				if (dbPassword == password) {
 					MessageBox.Show("Password is correct");
 				}
 				else {
-					MessageBox.Show("Fuck off");
+					passwordReader.Close();
+					throw new Exception("password is incorrect");
 				}
 				passwordReader.Close();
-
+			}
+			else {
+				emailReader.Close();
+				throw new Exception("Email doesn't Exist");
 			}
 
 		}

@@ -9,6 +9,19 @@ namespace OnlyFriends {
 		//pushing
 		private void button1_Click(object sender, EventArgs e) {
 
+			DatabaseConnection connection = DatabaseConnection.Instance;
+			connection.InitializeConnection();
+
+			string email = emailBox.Text;
+			string password = passwordBox.Text;
+
+			try {
+				AuthFunctions.login(email, password);
+			}
+			catch (Exception ex) {
+				MessageBox.Show(ex.Message);
+			}
+
 			User user = User.Create(
 				1,
 				"Ali",
@@ -21,11 +34,7 @@ namespace OnlyFriends {
 				10
 			);
 
-
-			DatabaseConnection connection = DatabaseConnection.Instance;
-			connection.InitializeConnection();
-
-			user.addPost("hassan test", "oooo");
+			//user.addPost("hassan test", "oooo");
 
 			/*
 						try {
@@ -43,6 +52,14 @@ namespace OnlyFriends {
 			//	MessageBox.Show($"{reader["firstName"]}");
 			//}
 			//reader.Close();
+
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e) {
+
+		}
+
+		private void textBox2_TextChanged(object sender, EventArgs e) {
 
 		}
 	}
