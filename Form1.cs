@@ -8,7 +8,42 @@ namespace OnlyFriends {
 		}
 
 		private void button1_Click(object sender, EventArgs e) {
-			MessageBox.Show("Clicked");
+
+			User user = User.Create(
+				1,
+				"Ali",
+				"Abdallah",
+				20,
+				"Male",
+				"email",
+				"p",
+				"71672664",
+				10
+			);
+
+
+			DatabaseConnection connection = DatabaseConnection.Instance;
+			connection.InitializeConnection();
+
+			user.addPost("newRepo", "hhh");
+
+			/*
+						try {
+							user.deletePost(2);
+						}
+						catch (Exception ex1) {
+							MessageBox.Show(ex1.Message);
+						}
+			*/
+			//string sql = "SELECT * FROM users";
+
+			//MySqlDataReader reader = connection.query(sql);
+
+			//while (reader.Read()) {
+			//	MessageBox.Show($"{reader["firstName"]}");
+			//}
+			//reader.Close();
+
 		}
 	}
 }
