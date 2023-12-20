@@ -14,16 +14,14 @@ namespace OnlyFriends {
 		public string email;
 		public string password;
 		public string phoneNumber;
-		public int numberOfPosts;
 
-		public static User instance = null;
+		private static User instance = null;
 
 		private DatabaseConnection connection = DatabaseConnection.Instance;
 
-		private User() {
-		}
+		private User() { }
 
-		public static User Create(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber, int numberOfPosts) {
+		public static void CreateInstance(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber) {
 
 			if (instance == null) {
 
@@ -37,10 +35,9 @@ namespace OnlyFriends {
 				instance.email = email;
 				instance.password = password;
 				instance.phoneNumber = phoneNumber;
-				instance.numberOfPosts = numberOfPosts;
 
 			}
-			return instance;
+
 		}
 		public static User Instance {
 			get {
@@ -50,19 +47,25 @@ namespace OnlyFriends {
 				return instance;
 			}
 		}
-		public string sayHi() {
-			return $"Hello, my name is {firstName}";
-		}
-
 		public void addPost(string title, string content) {
+
+			if (title.Length == 0) {
+				throw new Exception("Title can't be empty");
+			}
+			else if (content.Length == 0) {
+				throw new Exception("Content can't be empty");
+			}
+			else if (title.Length > 255) {
+				throw new Exception("Title is too long my man (or woman or 2 spirit penguin)");
+			}
+			else if (content.Length > 1024) {
+				throw new Exception("Post can't be that long, the maximum is 1024 character");
+			}
 
 			string sql = $"INSERT INTO posts(userId, title, content, timestamp, likes)\n" +
 						 $"VALUES({userId}, \"{title}\", \"{content}\", CURRENT_TIMESTAMP, 0);";
 
 			MySqlDataReader reader = connection.query(sql);
-			if (reader == null) {
-				MessageBox.Show("Reader is null");
-			}
 			reader.Close();
 			MessageBox.Show("Post Created");
 		}
@@ -72,10 +75,10 @@ namespace OnlyFriends {
 			string validationSql = $"SELECT * FROM posts\n" +
 			$"WHERE userId = {userId} AND postId = {postId};";
 
-			MySqlDataReader r1 = connection.query(validationSql);
+			MySqlDataReader checkPost = connection.query(validationSql);
 
-			if (r1.HasRows) {
-				r1.Close();
+			if (checkPost.HasRows) {
+				checkPost.Close();
 				string sql = $"DELETE FROM posts\n" +
 				$"WHERE postId = {postId};";
 
@@ -83,12 +86,11 @@ namespace OnlyFriends {
 				reader.Close();
 				MessageBox.Show($"Post with id {postId} has been deleted");
 
-				return;
-
 			}
-
-			r1.Close();
-			throw new Exception("Post Can't be deleted from this user");
+			else {
+				checkPost.Close();
+				throw new Exception("Post Can't be deleted from this user or the post doesn't exist");
+			}
 
 		}
 
