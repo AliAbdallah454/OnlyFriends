@@ -22,7 +22,42 @@ namespace OnlyFriends {
 				passwordReader.Read();
 				string dbPassword = $"{passwordReader["password"]}";
 				if (dbPassword == password) {
+
+					passwordReader.Close();
+
 					MessageBox.Show("Password is correct");
+
+					string getInfoSql = $"SELECT * FROM users\n" +
+										$"WHERE email = \"{email}\"";
+
+					MySqlDataReader infoReader = connection.query(getInfoSql);
+
+					infoReader.Read();
+
+					int userId = int.Parse($"{infoReader["userId"]}");
+					string firstName = (string)infoReader["firstName"];
+					string lastName = (string)infoReader["lastName"];
+					// email
+					// password
+					string phoneNumber = (string)infoReader["phoneNumber"];
+					string gender = (string)infoReader["gender"];
+					int age = int.Parse($"{infoReader["age"]}");
+
+					User.CreateInstance(
+						userId,
+						firstName,
+						lastName,
+						age,
+						gender,
+						email,
+						password,
+						phoneNumber
+					);
+
+					infoReader.Close();
+
+					MessageBox.Show($"Login done as {firstName} {lastName}");
+
 				}
 				else {
 					passwordReader.Close();
