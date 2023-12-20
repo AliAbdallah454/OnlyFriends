@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace OnlyFriends {
 
-	internal class User {
+	internal class User : UserActions {
 
 		public int userId;
 		public string firstName;
