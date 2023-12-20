@@ -34,14 +34,14 @@ namespace OnlyFriends {
 
 					infoReader.Read();
 
-					int userId = int.Parse($"{infoReader["userId"]}");
-					string firstName = (string)infoReader["firstName"];
-					string lastName = (string)infoReader["lastName"];
+					int userId = infoReader.GetInt32("userId");
+					string firstName = infoReader.GetString("firstName");
+					string lastName = infoReader.GetString("lastName");
 					// email
 					// password
-					string phoneNumber = (string)infoReader["phoneNumber"];
-					string gender = (string)infoReader["gender"];
-					int age = int.Parse($"{infoReader["age"]}");
+					string phoneNumber = infoReader.GetString("phoneNumber");
+					string gender = infoReader.GetString("gender");
+					int age = infoReader.GetInt32("age");
 
 					User.CreateInstance(
 						userId,
@@ -71,5 +71,10 @@ namespace OnlyFriends {
 			}
 
 		}
+
+		public static void signup(string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber) {
+			// We need to insert A user into the users table
+		}
+
 	}
 }

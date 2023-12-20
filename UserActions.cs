@@ -5,6 +5,9 @@
 		void deletePost(int postId);
 		void addFriend(int friendId);
 		void acceptFriendRequest(int friendId);
+		void removeFriend(int friendId);
+		void likePost(int postId);
+		void commentOnPost(int poistId);
 
 	}
 }

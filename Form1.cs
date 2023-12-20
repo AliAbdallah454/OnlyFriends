@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
@@ -6,7 +7,6 @@ namespace OnlyFriends {
 		public Form1() {
 			InitializeComponent();
 		}
-		//pushing
 		private void button1_Click(object sender, EventArgs e) {
 
 			DatabaseConnection connection = DatabaseConnection.Instance;
@@ -15,19 +15,25 @@ namespace OnlyFriends {
 			string email = emailBox.Text;
 			string password = passwordBox.Text;
 
+			email = "john.doe@example.com";
+			password = "password123";
+
 			AuthFunctions.login(email, password);
 
 		}
 
 		private void button1_Click_1(object sender, EventArgs e) {
 
-
 			string title = titleBox.Text;
-			string content = contentBox.Text;
+			//string content = contentBox.Text;
 
 			try {
 				User user = User.Instance;
-				user.addPost(title, content);
+				//user.addFriend(int.Parse(title));
+				List<int> friends = user.getPendingFriends();
+				foreach (int friend in friends) {
+					MessageBox.Show(friend.ToString());
+				}
 			}
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);
