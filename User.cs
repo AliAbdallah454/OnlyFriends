@@ -1,5 +1,6 @@
 ﻿using MySqlConnector;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
@@ -96,24 +97,81 @@ namespace OnlyFriends {
 
 		public void addFriend(int friendId) {
 
-			// Handle repeated Request
+			string checkSql = $"SELECT * FROM pendingRequests\n" +
+							  $"WHERE friendId = {friendId}";
 
-			string sql1 = $"INSERT INTO pendingrequests(userId, friendId)\n" +
+			MySqlDataReader checkReader = connection.query(checkSql);
+
+			if (!checkReader.HasRows) {
+
+				checkReader.Close();
+
+				string sql1 = $"INSERT INTO pendingrequests(userId, friendId)\n" +
 						  $"VALUES ({userId}, {friendId})";
 
-			string sql2 = $"INSERT INTO friendrequests(userId, friendId)\n" +
-			$"VALUES ({friendId}, {userId})";
+				string sql2 = $"INSERT INTO friendrequests(userId, friendId)\n" +
+				$"VALUES ({friendId}, {userId})";
 
-			MySqlDataReader reader1 = connection.query(sql1);
-			reader1.Close();
-			MySqlDataReader reader2 = connection.query(sql2);
-			reader2.Close();
+				MySqlDataReader reader1 = connection.query(sql1);
+				reader1.Close();
+				MySqlDataReader reader2 = connection.query(sql2);
+				reader2.Close();
 
-			MessageBox.Show("Friend Request Sent");
+				MessageBox.Show("Friend Request Sent");
+			}
+			else {
+
+				checkReader.Close();
+				throw new Exception("A request has been sent already");
+			}
+
+
 		}
 
 		public void acceptFriendRequest(int friendId) {
+			string checkSql = $"SELECT * FROM friendRequests\n" +
+							  $"WHERE userId = {userId} AND friendId = {friendId}";
+			MySqlDataReader checkReader = connection.query(checkSql);
+			if (checkReader.HasRows) {
 
+			}
+			else {
+				checkReader.Close();
+				throw new Exception("No such request is found");
+			}
+		}
+		public void removeFriend(int friendId) { }
+		public void likePost(int postId) { }
+		public void commentOnPost(int poistId) { }
+		public List<int> getFriends() {
+			string friendsSql = $"SELECT * FROM friends\n" +
+								$"WHERE userId = {userId}";
+
+			MySqlDataReader reader = connection.query(friendsSql);
+			List<int> friends = new List<int>();
+			while (reader.Read()) {
+				friends.Add(reader.GetInt32("friendId"));
+			}
+
+			if (friends.Count == 0) {
+				MessageBox.Show("You have no friends");
+			}
+
+			reader.Close();
+			return friends;
+		}
+
+		public List<int> getPendingFriends() {
+			string pendingFriendsSql = $"SELECT * FROM pendingRequests\n" +
+									   $"WHERE userId = {userId}";
+
+			MySqlDataReader reader = connection.query(pendingFriendsSql);
+			List<int> pendingFriends = new List<int>();
+			while (reader.Read()) {
+				pendingFriends.Add(reader.GetInt32("friendId"));
+			}
+			reader.Close();
+			return pendingFriends;
 		}
 
 	}
