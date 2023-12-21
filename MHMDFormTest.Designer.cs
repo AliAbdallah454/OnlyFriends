@@ -26,6 +26,8 @@
             this.likeButton = new System.Windows.Forms.Button();
             this.CommentBox = new System.Windows.Forms.TextBox();
             this.CommentBtn = new System.Windows.Forms.Button();
+            this.RemoveCommentBtn = new System.Windows.Forms.Button();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // likeButton
@@ -56,11 +58,34 @@
             this.CommentBtn.UseVisualStyleBackColor = true;
             this.CommentBtn.Click += new System.EventHandler(this.CommentBtn_Click);
             // 
+            // RemoveCommentBtn
+            // 
+            this.RemoveCommentBtn.Location = new System.Drawing.Point(116, 35);
+            this.RemoveCommentBtn.Name = "RemoveCommentBtn";
+            this.RemoveCommentBtn.Size = new System.Drawing.Size(143, 104);
+            this.RemoveCommentBtn.TabIndex = 3;
+            this.RemoveCommentBtn.Text = "Remove Comment";
+            this.RemoveCommentBtn.UseVisualStyleBackColor = true;
+            this.RemoveCommentBtn.Click += new System.EventHandler(this.RemoveCommentBtn_Click);
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.exitBtn.Location = new System.Drawing.Point(0, 427);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(800, 23);
+            this.exitBtn.TabIndex = 4;
+            this.exitBtn.Text = "EXIT";
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
             // MHMDFormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.exitBtn);
+            this.Controls.Add(this.RemoveCommentBtn);
             this.Controls.Add(this.CommentBtn);
             this.Controls.Add(this.CommentBox);
             this.Controls.Add(this.likeButton);
@@ -76,5 +101,7 @@
         private System.Windows.Forms.Button likeButton;
         private System.Windows.Forms.TextBox CommentBox;
         private System.Windows.Forms.Button CommentBtn;
+        private System.Windows.Forms.Button RemoveCommentBtn;
+        private System.Windows.Forms.Button exitBtn;
     }
 }
