@@ -5,37 +5,26 @@ using System.Windows.Forms;
 
 namespace OnlyFriends {
 
-	internal class User : UserActions {
+	internal class User : Person, UserActions, UserGetFunctions {
 
-		public int userId;
-		public string firstName;
-		public string lastName;
-		public int age;
-		public string gender;
-		public string email;
-		public string password;
-		public string phoneNumber;
+		private string password;
+
+		public string Password { get; set; }
 
 		private static User instance = null;
 
 		private DatabaseConnection connection = DatabaseConnection.Instance;
 
-		private User() { }
+		private User(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber)
+			: base(userId, firstName, lastName, age, gender, email, phoneNumber) {
+			this.Password = password;
+		}
 
 		public static void CreateInstance(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber) {
 
 			if (instance == null) {
 
-				instance = new User();
-
-				instance.userId = userId;
-				instance.firstName = firstName;
-				instance.lastName = lastName;
-				instance.age = age;
-				instance.gender = gender;
-				instance.email = email;
-				instance.password = password;
-				instance.phoneNumber = phoneNumber;
+				instance = new User(userId, firstName, lastName, age, gender, email, password, phoneNumber);
 
 			}
 
@@ -64,7 +53,7 @@ namespace OnlyFriends {
 			}
 
 			string sql = $"INSERT INTO posts(userId, title, content, timestamp, likes)\n" +
-						 $"VALUES({userId}, \"{title}\", \"{content}\", CURRENT_TIMESTAMP, 0);";
+						 $"VALUES({this.UserId}, \"{title}\", \"{content}\", CURRENT_TIMESTAMP, 0);";
 
 			MySqlDataReader reader = connection.query(sql);
 			reader.Close();
@@ -74,7 +63,7 @@ namespace OnlyFriends {
 		public void deletePost(int postId) {
 
 			string validationSql = $"SELECT * FROM posts\n" +
-			$"WHERE userId = {userId} AND postId = {postId};";
+			$"WHERE userId = {this.UserId} AND postId = {postId};";
 
 			MySqlDataReader checkPost = connection.query(validationSql);
 
@@ -107,10 +96,10 @@ namespace OnlyFriends {
 				checkReader.Close();
 
 				string sql1 = $"INSERT INTO pendingrequests(userId, friendId)\n" +
-						  $"VALUES ({userId}, {friendId})";
+						  $"VALUES ({this.UserId}, {friendId})";
 
 				string sql2 = $"INSERT INTO friendrequests(userId, friendId)\n" +
-				$"VALUES ({friendId}, {userId})";
+				$"VALUES ({friendId}, {this.UserId})";
 
 				MySqlDataReader reader1 = connection.query(sql1);
 				reader1.Close();
@@ -129,30 +118,30 @@ namespace OnlyFriends {
 
 		public void acceptFriendRequest(int friendId) {
 			string checkSql = $"SELECT * FROM friendRequests\n" +
-							  $"WHERE userId = {userId} AND friendId = {friendId}";
+							  $"WHERE userId = {this.UserId} AND friendId = {friendId}";
 			MySqlDataReader checkReader = connection.query(checkSql);
 			if (checkReader.HasRows) {
 				// Adding to friends table
 				checkReader.Close();
 				string addFriendToFriendsSql = $"INSERT INTO friends(userId, friendId)\n" +
-											   $"VALUES ({userId}, {friendId})";
+											   $"VALUES ({this.UserId}, {friendId})";
 				MySqlDataReader addFriendToFriendsTableReader = connection.query(addFriendToFriendsSql);
 				addFriendToFriendsTableReader.Close();
 
 				string otherAddSql = $"INSERT INTO friends(userId, friendId)\n" +
-								  $"VALUES ({friendId}, {userId})";
+								  $"VALUES ({friendId}, {this.UserId})";
 				MySqlDataReader otherAddReader = connection.query(otherAddSql);
 				otherAddReader.Close();
 
 				// Removing from pending friends table
 				string removeFriendFromPendingRequestsSql = $"DELETE FROM pendingRequests\n" +
-															$"WHERE userId = {friendId} AND friendId = {userId}";
+															$"WHERE userId = {friendId} AND friendId = {this.UserId}";
 				MySqlDataReader removeFriendFromPendingRequestsReader = connection.query(removeFriendFromPendingRequestsSql);
 				removeFriendFromPendingRequestsReader.Close();
 
 				// Removing from friend requests table
 				string removeFriendFromFriendRequestsSql = $"DELETE FROM friendRequests\n" +
-														   $"WHERE userID = {userId} AND friendId = {friendId}";
+														   $"WHERE userID = {this.UserId} AND friendId = {friendId}";
 				MySqlDataReader removeFriendFromFriendRequestsReader = connection.query(removeFriendFromFriendRequestsSql);
 				removeFriendFromFriendRequestsReader.Close();
 			}
@@ -165,13 +154,13 @@ namespace OnlyFriends {
 		public void removeFriend(int friendId) {
 
 			string checkSql = $"SELECT * FROM friends\n" +
-							  $"WHERE userId = {userId} AND friendId = {friendId}";
+							  $"WHERE userId = {this.UserId} AND friendId = {friendId}";
 
 			MySqlDataReader checkReader = connection.query(checkSql);
 			if (checkReader.HasRows) {
 				checkReader.Close();
 				string removeFrinedSql = $"DELETE FROM friends\n" +
-										 $"WHERE (userId = {userId} AND friendId = {friendId}) OR (userId = {friendId} AND friendId = {userId})";
+										 $"WHERE (userId = {this.UserId} AND friendId = {friendId}) OR (userId = {friendId} AND friendId = {this.UserId})";
 				MySqlDataReader removeFriendReader = connection.query(removeFrinedSql);
 				removeFriendReader.Close();
 				MessageBox.Show($"Removed Frindshit");
@@ -193,14 +182,14 @@ namespace OnlyFriends {
 
 				//check if already liked
 				string checkSql2 = $"SELECT * FROM likedPosts\n" +
-								   $"WHERE userId = {userId} AND postId = {postId};";
+								   $"WHERE userId = {this.UserId} AND postId = {postId};";
 				MySqlDataReader checkReader2 = connection.query(checkSql2);
 				if (!checkReader2.HasRows) {
 					checkReader2.Close();
 
 					//add post to liked posts
 					string addLikedPost = $"INSERT INTO likedPosts\n" +
-										  $"VALUES ({userId}, {postId});";
+										  $"VALUES ({this.UserId}, {postId});";
 					MySqlDataReader addPostToLikedPosts = connection.query(addLikedPost);
 					addPostToLikedPosts.Close();
 
@@ -219,7 +208,7 @@ namespace OnlyFriends {
 					if (result == DialogResult.Yes) {
 						// remove post from liked posts
 						string removeLikedPost = $"DELETE FROM likedPosts\n" +
-												 $"WHERE userId = {userId} AND postId = {postId};";
+												 $"WHERE userId = {this.UserId} AND postId = {postId};";
 						MySqlDataReader removePostFromLikedPosts = connection.query(removeLikedPost);
 						removePostFromLikedPosts.Close();
 
@@ -254,7 +243,7 @@ namespace OnlyFriends {
 				}
 				else {
 					string addComment = $"INSERT INTO comments (userId, postId, content, timestamp)\n" +
-										$"VALUES ({userId}, {postId}, \"{comment}\", CURRENT_TIMESTAMP);";
+										$"VALUES ({this.UserId}, {postId}, \"{comment}\", CURRENT_TIMESTAMP);";
 					MySqlDataReader addCommentToComments = connection.query(addComment);
 					addCommentToComments.Close();
 				}
@@ -277,18 +266,18 @@ namespace OnlyFriends {
 				string removeComment = $"DELETE FROM comments\n" +
 									   $"WHERE commentId = {commentId};";
 				MySqlDataReader removeCommentFromComments = connection.query(removeComment);
-				removeCommentFromComments.Close();	
+				removeCommentFromComments.Close();
 			}
 			else {
 				checkReader.Close();
 				throw new Exception("Comment Not Found");
 			}
-		}	
-    
+		}
+
 		public List<Friend> getFriends() {
 
 			string friendsSql = $"SELECT * FROM friends\n" +
-								$"WHERE userId = {userId}";
+								$"WHERE userId = {this.UserId}";
 
 			MySqlDataReader reader = connection.query(friendsSql);
 			List<int> friendsIds = new List<int>();
@@ -330,7 +319,7 @@ namespace OnlyFriends {
 
 		public List<Friend> getFriendRequests() {
 			string requestingFrinedsSql = $"SELECT * FROM friendRequests\n" +
-									   $"WHERE userId = {userId}";
+									   $"WHERE userId = {this.UserId}";
 
 			MySqlDataReader reader = connection.query(requestingFrinedsSql);
 			List<int> requestingFrinedsIds = new List<int>();
@@ -365,6 +354,10 @@ namespace OnlyFriends {
 
 			requestingFrinedsInfoReader.Close();
 			return requestingFriends;
+		}
+
+		public List<Friend> getSuggestedFriends() {
+			return new List<Friend>();
 		}
 
 	}
