@@ -133,6 +133,7 @@ namespace OnlyFriends {
 			MySqlDataReader checkReader = connection.query(checkSql);
 			if (checkReader.HasRows) {
 				// Adding to friends table
+				checkReader.Close();
 				string addFriendToFriendsSql = $"INSERT INTO friends(userId, friendId)\n" +
 											   $"VALUES ({userId}, {friendId})";
 				MySqlDataReader addFriendToFriendsTableReader = connection.query(addFriendToFriendsSql);
@@ -145,13 +146,13 @@ namespace OnlyFriends {
 
 				// Removing from pending friends table
 				string removeFriendFromPendingRequestsSql = $"DELETE FROM pendingRequests\n" +
-															$"WHERE userId = {userId} AND friendId = {friendId}";
+															$"WHERE userId = {friendId} AND friendId = {userId}";
 				MySqlDataReader removeFriendFromPendingRequestsReader = connection.query(removeFriendFromPendingRequestsSql);
 				removeFriendFromPendingRequestsReader.Close();
 
 				// Removing from friend requests table
 				string removeFriendFromFriendRequestsSql = $"DELETE FROM friendRequests\n" +
-														   $"WHERE userID = {friendId} AND friendId = {userId}";
+														   $"WHERE userID = {userId} AND friendId = {friendId}";
 				MySqlDataReader removeFriendFromFriendRequestsReader = connection.query(removeFriendFromFriendRequestsSql);
 				removeFriendFromFriendRequestsReader.Close();
 			}
@@ -160,9 +161,31 @@ namespace OnlyFriends {
 				throw new Exception("No such request is found");
 			}
 		}
-		public void removeFriend(int friendId) { }
+		public void removeFriend(int friendId) {
+
+			string checkSql = $"SELECT * FROM friends\n" +
+							  $"WHERE userId = {userId} AND friendId = {friendId}";
+
+			MySqlDataReader checkReader = connection.query(checkSql);
+			if (checkReader.HasRows) {
+				checkReader.Close();
+				string removeFrinedSql = $"DELETE FROM friends\n" +
+										 $"WHERE (userId = {userId} AND friendId = {friendId}) OR (userId = {friendId} AND friendId = {userId})";
+				MySqlDataReader removeFriendReader = connection.query(removeFrinedSql);
+				removeFriendReader.Close();
+				MessageBox.Show($"Removed Frindshit");
+			}
+			else {
+				checkReader.Close();
+				throw new Exception("This friendship doesn't Exist");
+			}
+
+		}
 		public void likePost(int postId) { }
 		public void commentOnPost(int poistId) { }
+
+		// Not user Actions
+
 		public List<int> getFriends() {
 			string friendsSql = $"SELECT * FROM friends\n" +
 								$"WHERE userId = {userId}";
