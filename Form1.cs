@@ -52,6 +52,7 @@ namespace OnlyFriends {
 		*/
         private void Form1_Load(object sender, EventArgs e) {
 
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
@@ -83,6 +84,7 @@ namespace OnlyFriends {
 			Form2 form2=new Form2();
 			this.Hide();
 			form2.Show();
+
 
         }
     }

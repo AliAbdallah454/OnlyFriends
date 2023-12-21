@@ -23,6 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -161,9 +162,9 @@
             this.TransparencyKey = System.Drawing.Color.RosyBrown;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+ 
             this.ResumeLayout(false);
             this.PerformLayout();
-
 		}
 
         #endregion
@@ -176,6 +177,7 @@
         private System.Windows.Forms.Label invalidEmaillbl;
         private System.Windows.Forms.Label InvalidPasswordlbl;
         private System.Windows.Forms.Button form2btn;
+
     }
 }
 
