@@ -16,7 +16,10 @@ namespace OnlyFriends {
 		}
 		private bool flag = true;
 		private void textBox2_Enter(object sender, EventArgs e) {
-			if (flag) { textBox2.Text = string.Empty; flag = false; }
+			if (flag) { 
+				textBox2.Text = string.Empty; 
+				flag = false; 
+			}
 			textBox2.UseSystemPasswordChar = true;
 		}
 

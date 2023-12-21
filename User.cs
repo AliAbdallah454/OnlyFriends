@@ -319,7 +319,7 @@ namespace OnlyFriends {
 
 		public List<Friend> getFriendRequests() {
 			string requestingFrinedsSql = $"SELECT * FROM friendRequests\n" +
-									   $"WHERE userId = {this.UserId}";
+									      $"WHERE userId = {this.UserId}";
 
 			MySqlDataReader reader = connection.query(requestingFrinedsSql);
 			List<int> requestingFrinedsIds = new List<int>();
@@ -330,6 +330,7 @@ namespace OnlyFriends {
 			reader.Close();
 
 			string idsString = $"({string.Join(", ", requestingFrinedsIds)})";
+
 			// THE BELOW CODE CONTAINS A SECURITY FLAW MAYBE A HACKER CAN ACCESS THE PASSWORD DUE TO SELECT *
 			string requestingFriendsInfoSql = $"SELECT * FROM users\n" +
 											  $"WHERE userId IN {idsString}";
