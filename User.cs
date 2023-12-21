@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace OnlyFriends {
 
-	internal class User : Person, UserActions, UserGetFunctions {
+	internal class User : Person, IUserActions, IUserGetFunctions {
 
 		private string password;
 
@@ -18,6 +18,10 @@ namespace OnlyFriends {
 		private User(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber)
 			: base(userId, firstName, lastName, age, gender, email, phoneNumber) {
 			this.Password = password;
+		}
+
+		private User(int userId, string firstName, string lastName, int age, string gender, string email, string phoneNumber)
+			: base(userId, firstName, lastName, age, gender, email, phoneNumber) {
 		}
 
 		public static void CreateInstance(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber) {
@@ -274,70 +278,17 @@ namespace OnlyFriends {
 			}
 		}
 
-		public List<Friend> getFriends() {
+		// FRIENDS RELATED FUNCTIONS
 
-			string friendsSql = $"SELECT * FROM friends\n" +
-								$"WHERE userId = {this.UserId}";
+		private HashSet<User> translateFriendIdsToFriendDetails(HashSet<int> friendsIds) {
 
-			MySqlDataReader reader = connection.query(friendsSql);
-			List<int> friendsIds = new List<int>();
-			while (reader.Read()) {
-				friendsIds.Add(reader.GetInt32("friendId"));
-			}
-
-			if (friendsIds.Count == 0) {
-				MessageBox.Show("You have no friends");
-			}
-
-			reader.Close();
+			HashSet<User> FriendDetails = new HashSet<User>();
 
 			string idsString = $"({string.Join(", ", friendsIds)})";
-			string friendsInfoSql = $"SELECT * FROM users\n" +
-									$"WHERE userId in {idsString}";
-
-			MySqlDataReader friendsInfoReader = connection.query(friendsInfoSql);
-
-			List<Friend> friends = new List<Friend>();
-
-			while (friendsInfoReader.Read()) {
-
-				int id = friendsInfoReader.GetInt32("userId");
-				string firstName = friendsInfoReader.GetString("firstName");
-				string lastName = friendsInfoReader.GetString("lastName");
-				int age = friendsInfoReader.GetInt32("age");
-				string gender = friendsInfoReader.GetString("gender");
-				string email = friendsInfoReader.GetString("email");
-				string phoneNumber = friendsInfoReader.GetString("phoneNumber");
-
-				friends.Add(new Friend(id, firstName, lastName, age, gender, email, phoneNumber));
-
-			}
-
-			friendsInfoReader.Close();
-			return friends;
-		}
-
-		public List<Friend> getFriendRequests() {
-			string requestingFrinedsSql = $"SELECT * FROM friendRequests\n" +
-									      $"WHERE userId = {this.UserId}";
-
-			MySqlDataReader reader = connection.query(requestingFrinedsSql);
-			List<int> requestingFrinedsIds = new List<int>();
-			while (reader.Read()) {
-				requestingFrinedsIds.Add(reader.GetInt32("friendId"));
-			}
-
-			reader.Close();
-
-			string idsString = $"({string.Join(", ", requestingFrinedsIds)})";
-
-			// THE BELOW CODE CONTAINS A SECURITY FLAW MAYBE A HACKER CAN ACCESS THE PASSWORD DUE TO SELECT *
 			string requestingFriendsInfoSql = $"SELECT * FROM users\n" +
 											  $"WHERE userId IN {idsString}";
 
 			MySqlDataReader requestingFrinedsInfoReader = connection.query(requestingFriendsInfoSql);
-
-			List<Friend> requestingFriends = new List<Friend>();
 
 			while (requestingFrinedsInfoReader.Read()) {
 
@@ -349,16 +300,64 @@ namespace OnlyFriends {
 				string email = requestingFrinedsInfoReader.GetString("email");
 				string phoneNumber = requestingFrinedsInfoReader.GetString("phoneNumber");
 
-				requestingFriends.Add(new Friend(id, firstName, lastName, age, gender, email, phoneNumber));
+				FriendDetails.Add(new User(id, firstName, lastName, age, gender, email, phoneNumber));
 
 			}
 
 			requestingFrinedsInfoReader.Close();
-			return requestingFriends;
+
+			return FriendDetails;
+
 		}
 
-		public List<Friend> getSuggestedFriends() {
-			return new List<Friend>();
+		private HashSet<int> getIds(string table) {
+			string friendsSql = $"SELECT * FROM {table}\n" +
+								$"WHERE userId = {this.UserId}";
+
+			MySqlDataReader reader = connection.query(friendsSql);
+			HashSet<int> friendsIds = new HashSet<int>();
+			while (reader.Read()) {
+				friendsIds.Add(reader.GetInt32("friendId"));
+			}
+
+			reader.Close();
+
+			return friendsIds;
+		}
+
+
+		public HashSet<User> getFriends() {
+
+			HashSet<int> friendIds = getIds("friends");
+			return this.translateFriendIdsToFriendDetails(friendIds);
+
+		}
+
+		public HashSet<User> getFriendRequests() {
+
+			HashSet<int> requestingFriendIds = this.getIds("friendRequests");
+			return translateFriendIdsToFriendDetails(requestingFriendIds);
+		}
+
+		public HashSet<User> getSuggestedFriends() {
+
+			HashSet<int> suggestedFriendIds = new HashSet<int>();
+
+			HashSet<User> friends = this.getFriends();
+			HashSet<int> friendIds = this.getIds("friends");
+
+			foreach (User friend in friends) {
+				HashSet<int> friendFriendIds = friend.getIds("friends");
+				if (friendFriendIds.Count != 0) {
+					foreach (int friendFriendId in friendFriendIds) {
+						if (!friendIds.Contains(friendFriendId)) {
+							suggestedFriendIds.Add(friendFriendId);
+						}
+					}
+				}
+			}
+
+			return this.translateFriendIdsToFriendDetails(suggestedFriendIds);
 		}
 
 	}
