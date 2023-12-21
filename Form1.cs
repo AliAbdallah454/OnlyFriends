@@ -87,5 +87,11 @@ namespace OnlyFriends {
 
 
         }
+
+        private void MhmdForm_Click(object sender, EventArgs e) {
+			MHMDFormTest mhmdForm = new MHMDFormTest();
+			this.Hide();
+			mhmdForm.Show();
+        }
     }
 }

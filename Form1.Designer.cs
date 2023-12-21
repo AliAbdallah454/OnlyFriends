@@ -23,7 +23,6 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -33,6 +32,7 @@
             this.invalidEmaillbl = new System.Windows.Forms.Label();
             this.InvalidPasswordlbl = new System.Windows.Forms.Label();
             this.form2btn = new System.Windows.Forms.Button();
+            this.MhmdForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,6 +135,16 @@
             this.form2btn.UseVisualStyleBackColor = true;
             this.form2btn.Click += new System.EventHandler(this.form2btn_Click);
             // 
+            // MhmdForm
+            // 
+            this.MhmdForm.Location = new System.Drawing.Point(23, 365);
+            this.MhmdForm.Name = "MhmdForm";
+            this.MhmdForm.Size = new System.Drawing.Size(100, 36);
+            this.MhmdForm.TabIndex = 9;
+            this.MhmdForm.Text = "MhmdForm";
+            this.MhmdForm.UseVisualStyleBackColor = true;
+            this.MhmdForm.Click += new System.EventHandler(this.MhmdForm_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,6 +153,7 @@
             this.BackgroundImage = global::OnlyFriends.Properties.Resources.ripples_in_blank_black_6m97l43pauyhiw4e1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(719, 429);
+            this.Controls.Add(this.MhmdForm);
             this.Controls.Add(this.form2btn);
             this.Controls.Add(this.InvalidPasswordlbl);
             this.Controls.Add(this.invalidEmaillbl);
@@ -162,9 +173,9 @@
             this.TransparencyKey = System.Drawing.Color.RosyBrown;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
- 
             this.ResumeLayout(false);
             this.PerformLayout();
+
 		}
 
         #endregion
@@ -177,7 +188,7 @@
         private System.Windows.Forms.Label invalidEmaillbl;
         private System.Windows.Forms.Label InvalidPasswordlbl;
         private System.Windows.Forms.Button form2btn;
-
+        private System.Windows.Forms.Button MhmdForm;
     }
 }
 
