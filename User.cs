@@ -81,7 +81,7 @@ namespace OnlyFriends {
 			if (checkPost.HasRows) {
 				checkPost.Close();
 				string sql = $"DELETE FROM posts\n" +
-				$"WHERE postId = {postId};";
+							 $"WHERE postId = {postId};";
 
 				MySqlDataReader reader = connection.query(sql);
 				reader.Close();
@@ -125,7 +125,6 @@ namespace OnlyFriends {
 				throw new Exception("A request has been sent already");
 			}
 
-
 		}
 
 		public void acceptFriendRequest(int friendId) {
@@ -133,7 +132,28 @@ namespace OnlyFriends {
 							  $"WHERE userId = {userId} AND friendId = {friendId}";
 			MySqlDataReader checkReader = connection.query(checkSql);
 			if (checkReader.HasRows) {
+				// Adding to friends table
+				string addFriendToFriendsSql = $"INSERT INTO friends(userId, friendId)\n" +
+											   $"VALUES ({userId}, {friendId})";
+				MySqlDataReader addFriendToFriendsTableReader = connection.query(addFriendToFriendsSql);
+				addFriendToFriendsTableReader.Close();
 
+				string otherAddSql = $"INSERT INTO friends(userId, friendId)\n" +
+								  $"VALUES ({friendId}, {userId})";
+				MySqlDataReader otherAddReader = connection.query(otherAddSql);
+				otherAddReader.Close();
+
+				// Removing from pending friends table
+				string removeFriendFromPendingRequestsSql = $"DELETE FROM pendingRequests\n" +
+															$"WHERE userId = {userId} AND friendId = {friendId}";
+				MySqlDataReader removeFriendFromPendingRequestsReader = connection.query(removeFriendFromPendingRequestsSql);
+				removeFriendFromPendingRequestsReader.Close();
+
+				// Removing from friend requests table
+				string removeFriendFromFriendRequestsSql = $"DELETE FROM friendRequests\n" +
+														   $"WHERE userID = {friendId} AND friendId = {userId}";
+				MySqlDataReader removeFriendFromFriendRequestsReader = connection.query(removeFriendFromFriendRequestsSql);
+				removeFriendFromFriendRequestsReader.Close();
 			}
 			else {
 				checkReader.Close();
