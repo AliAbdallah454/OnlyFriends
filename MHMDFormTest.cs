@@ -63,9 +63,9 @@ namespace OnlyFriends {
         }
 
         private void signUpBtn_Click(object sender, EventArgs e) {
-            string firstName = "George";
-            string lastName = "Kirdahi";
-            string email = "GeorgeMillion@gmail.com";
+            string firstName = "Ht";
+            string lastName = "Ir";
+            string email = "email1@gmail.com";
             string password = "noPassword";
             string confirmPassword = "noPassword";
             string phoneNumber = "81-998899";

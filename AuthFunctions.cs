@@ -89,17 +89,19 @@ namespace OnlyFriends {
             }
             checkEmailReader.Close();
 
-			// Check if Phone Number is Unique
-            string checkPhone = $"SELECT * FROM users\n" +
-                                $"WHERE phoneNumber = \"{phoneNumber}\"";
-            MySqlDataReader checkPhoneReader = connection.query(checkPhone);
-            if (checkPhoneReader.HasRows) {
+			// Check if Phone Number is Unique // FIX ADD condition if multiple are NULL
+			if(phoneNumber.Length != 0) {
+                string checkPhone = $"SELECT * FROM users\n" +
+                                    $"WHERE phoneNumber = \"{phoneNumber}\"";
+                MySqlDataReader checkPhoneReader = connection.query(checkPhone);
+                if (checkPhoneReader.HasRows) {
+                    checkPhoneReader.Close();
+                    throw new Exception("Phone Number Already Exists");
+                }
                 checkPhoneReader.Close();
-                throw new Exception("Phone Number Already Exists");
             }
-            checkPhoneReader.Close();
 
-			// Check if the Rest are Valid
+            // Check if the Rest are Valid
             if (email.Length == 0 || !email.Contains("@gmail.com") || email.StartsWith("@")) {
 				throw new Exception("Invalid Email Entry");
 			}
@@ -134,11 +136,6 @@ namespace OnlyFriends {
 				login(email, password);
 			}
         }
-
-        static int trueLength(string input) {
-            return input.Count(c => !char.IsWhiteSpace(c) && c != '/' && c != '-');
-        }
-
 
     }
 }
