@@ -1,5 +1,5 @@
 ﻿namespace OnlyFriends {
-	internal interface UserActions {
+	internal interface IUserActions {
 		void addPost(string title, string content);
 		void deletePost(int postId);
 		void addFriend(int friendId);

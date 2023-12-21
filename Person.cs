@@ -29,7 +29,7 @@
 			this.PhoneNumber = phoneNumber;
 		}
 		public string getFullName() {
-			return $"{firstName} {lastName}";
+			return $"{this.FirstName} {this.LastName}";
 		}
 
 	}
