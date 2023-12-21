@@ -1,7 +1,6 @@
 ﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
@@ -183,7 +182,7 @@ namespace OnlyFriends {
 			}
 
 		}
-		
+
 		public void likePost(int postId) {
 			//check if post exist
 			string checkSql1 = $"SELECT * FROM posts\n" +
@@ -193,53 +192,53 @@ namespace OnlyFriends {
 				checkReader1.Close();
 
 				//check if already liked
-                string checkSql2 = $"SELECT * FROM likedPosts\n" +
-                                   $"WHERE userId = {userId} AND postId = {postId};";
-                MySqlDataReader checkReader2 = connection.query(checkSql2);
-                if (!checkReader2.HasRows) {
-                    checkReader2.Close();
+				string checkSql2 = $"SELECT * FROM likedPosts\n" +
+								   $"WHERE userId = {userId} AND postId = {postId};";
+				MySqlDataReader checkReader2 = connection.query(checkSql2);
+				if (!checkReader2.HasRows) {
+					checkReader2.Close();
 
-                    //add post to liked posts
-                    string addLikedPost = $"INSERT INTO likedPosts\n" +
-                                          $"VALUES ({userId}, {postId});";
-                    MySqlDataReader addPostToLikedPosts = connection.query(addLikedPost);
-                    addPostToLikedPosts.Close();
+					//add post to liked posts
+					string addLikedPost = $"INSERT INTO likedPosts\n" +
+										  $"VALUES ({userId}, {postId});";
+					MySqlDataReader addPostToLikedPosts = connection.query(addLikedPost);
+					addPostToLikedPosts.Close();
 
-                    //increment likes in posts
-                    string incrementLikes = $"UPDATE posts\n" +
-                                            $"SET likes = likes + 1\n" +
-                                            $"WHERE postId = {postId};";
-                    MySqlDataReader incrementLikesInPosts = connection.query(incrementLikes);
-                    incrementLikesInPosts.Close();
+					//increment likes in posts
+					string incrementLikes = $"UPDATE posts\n" +
+											$"SET likes = likes + 1\n" +
+											$"WHERE postId = {postId};";
+					MySqlDataReader incrementLikesInPosts = connection.query(incrementLikes);
+					incrementLikesInPosts.Close();
 
-                }
-                else {
-                    checkReader2.Close();
+				}
+				else {
+					checkReader2.Close();
 					DialogResult result = MessageBox.Show("Do You Want to Remove the Like?", "Remove Like", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-					if(result == DialogResult.Yes) {
-                        // remove post from liked posts
-                        string removeLikedPost = $"DELETE FROM likedPosts\n" +
-                                                 $"WHERE userId = {userId} AND postId = {postId};";
-                        MySqlDataReader removePostFromLikedPosts = connection.query(removeLikedPost);
-                        removePostFromLikedPosts.Close();
+					if (result == DialogResult.Yes) {
+						// remove post from liked posts
+						string removeLikedPost = $"DELETE FROM likedPosts\n" +
+												 $"WHERE userId = {userId} AND postId = {postId};";
+						MySqlDataReader removePostFromLikedPosts = connection.query(removeLikedPost);
+						removePostFromLikedPosts.Close();
 
-                        //decrement likes in posts
-                        string decrementLikes = $"UPDATE posts\n" +
-                                                $"SET likes = likes - 1\n" +
-                                                $"WHERE postId = {postId};";
-                        MySqlDataReader decrementLikesInPosts = connection.query(decrementLikes);
-                        decrementLikesInPosts.Close();
-                    }
-                }
-            }
+						//decrement likes in posts
+						string decrementLikes = $"UPDATE posts\n" +
+												$"SET likes = likes - 1\n" +
+												$"WHERE postId = {postId};";
+						MySqlDataReader decrementLikesInPosts = connection.query(decrementLikes);
+						decrementLikesInPosts.Close();
+					}
+				}
+			}
 			else {
 				checkReader1.Close();
 				throw new Exception("Post Not Found");
 			}
 
-        }
-    
+		}
+
 		public void commentOnPost(int postId, string comment) {
 			string checkSql = $"SELECT * FROM posts\n" +
 							  $"WHERE postId = {postId};";
@@ -247,18 +246,18 @@ namespace OnlyFriends {
 			if (checkReader.HasRows) {
 				checkReader.Close();
 
-				if(comment.Length == 0) {
+				if (comment.Length == 0) {
 					throw new Exception("Comment Can't Be Null");
 				}
-				else if(comment.Length > 500) {
+				else if (comment.Length > 500) {
 					throw new Exception("Comment Must Be Less Than 500 Character");
 				}
 				else {
-                    string addComment = $"INSERT INTO comments (userId, postId, content, timestamp)\n" +
-                                        $"VALUES ({userId}, {postId}, \"{comment}\", CURRENT_TIMESTAMP);";
-                    MySqlDataReader addCommentToComments = connection.query(addComment);
-                    addCommentToComments.Close();
-                }
+					string addComment = $"INSERT INTO comments (userId, postId, content, timestamp)\n" +
+										$"VALUES ({userId}, {postId}, \"{comment}\", CURRENT_TIMESTAMP);";
+					MySqlDataReader addCommentToComments = connection.query(addComment);
+					addCommentToComments.Close();
+				}
 
 			}
 			else {
@@ -285,36 +284,87 @@ namespace OnlyFriends {
 				throw new Exception("Comment Not Found");
 			}
 		}	
+    
+		public List<Friend> getFriends() {
 
-		public List<int> getFriends() {
 			string friendsSql = $"SELECT * FROM friends\n" +
 								$"WHERE userId = {userId}";
 
 			MySqlDataReader reader = connection.query(friendsSql);
-			List<int> friends = new List<int>();
+			List<int> friendsIds = new List<int>();
 			while (reader.Read()) {
-				friends.Add(reader.GetInt32("friendId"));
+				friendsIds.Add(reader.GetInt32("friendId"));
 			}
 
-			if (friends.Count == 0) {
+			if (friendsIds.Count == 0) {
 				MessageBox.Show("You have no friends");
 			}
 
 			reader.Close();
+
+			string idsString = $"({string.Join(", ", friendsIds)})";
+			string friendsInfoSql = $"SELECT * FROM users\n" +
+									$"WHERE userId in {idsString}";
+
+			MySqlDataReader friendsInfoReader = connection.query(friendsInfoSql);
+
+			List<Friend> friends = new List<Friend>();
+
+			while (friendsInfoReader.Read()) {
+
+				int id = friendsInfoReader.GetInt32("userId");
+				string firstName = friendsInfoReader.GetString("firstName");
+				string lastName = friendsInfoReader.GetString("lastName");
+				int age = friendsInfoReader.GetInt32("age");
+				string gender = friendsInfoReader.GetString("gender");
+				string email = friendsInfoReader.GetString("email");
+				string phoneNumber = friendsInfoReader.GetString("phoneNumber");
+
+				friends.Add(new Friend(id, firstName, lastName, age, gender, email, phoneNumber));
+
+			}
+
+			friendsInfoReader.Close();
 			return friends;
 		}
 
-		public List<int> getPendingFriends() {
-			string pendingFriendsSql = $"SELECT * FROM pendingRequests\n" +
+		public List<Friend> getFriendRequests() {
+			string requestingFrinedsSql = $"SELECT * FROM friendRequests\n" +
 									   $"WHERE userId = {userId}";
 
-			MySqlDataReader reader = connection.query(pendingFriendsSql);
-			List<int> pendingFriends = new List<int>();
+			MySqlDataReader reader = connection.query(requestingFrinedsSql);
+			List<int> requestingFrinedsIds = new List<int>();
 			while (reader.Read()) {
-				pendingFriends.Add(reader.GetInt32("friendId"));
+				requestingFrinedsIds.Add(reader.GetInt32("friendId"));
 			}
+
 			reader.Close();
-			return pendingFriends;
+
+			string idsString = $"({string.Join(", ", requestingFrinedsIds)})";
+			// THE BELOW CODE CONTAINS A SECURITY FLAW MAYBE A HACKER CAN ACCESS THE PASSWORD DUE TO SELECT *
+			string requestingFriendsInfoSql = $"SELECT * FROM users\n" +
+											  $"WHERE userId IN {idsString}";
+
+			MySqlDataReader requestingFrinedsInfoReader = connection.query(requestingFriendsInfoSql);
+
+			List<Friend> requestingFriends = new List<Friend>();
+
+			while (requestingFrinedsInfoReader.Read()) {
+
+				int id = requestingFrinedsInfoReader.GetInt32("userId");
+				string firstName = requestingFrinedsInfoReader.GetString("firstName");
+				string lastName = requestingFrinedsInfoReader.GetString("lastName");
+				int age = requestingFrinedsInfoReader.GetInt32("age");
+				string gender = requestingFrinedsInfoReader.GetString("gender");
+				string email = requestingFrinedsInfoReader.GetString("email");
+				string phoneNumber = requestingFrinedsInfoReader.GetString("phoneNumber");
+
+				requestingFriends.Add(new Friend(id, firstName, lastName, age, gender, email, phoneNumber));
+
+			}
+
+			requestingFrinedsInfoReader.Close();
+			return requestingFriends;
 		}
 
 	}
