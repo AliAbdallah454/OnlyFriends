@@ -1,6 +1,7 @@
 ﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
@@ -161,7 +162,8 @@ namespace OnlyFriends {
 				throw new Exception("No such request is found");
 			}
 		}
-		public void removeFriend(int friendId) {
+
+  public void removeFriend(int friendId) {
 
 			string checkSql = $"SELECT * FROM friends\n" +
 							  $"WHERE userId = {userId} AND friendId = {friendId}";
@@ -181,10 +183,91 @@ namespace OnlyFriends {
 			}
 
 		}
-		public void likePost(int postId) { }
-		public void commentOnPost(int poistId) { }
+		
+		public void likePost(int postId) {
+			//check if post exist
+			string checkSql1 = $"SELECT * FROM posts\n" +
+							   $"WHERE postId = {postId};";
+			MySqlDataReader checkReader1 = connection.query(checkSql1);
+			if (checkReader1.HasRows) {
+				checkReader1.Close();
 
-		// Not user Actions
+				//check if already liked
+                string checkSql2 = $"SELECT * FROM likedPosts\n" +
+                                   $"WHERE userId = {userId} AND postId = {postId};";
+                MySqlDataReader checkReader2 = connection.query(checkSql2);
+                if (!checkReader2.HasRows) {
+                    checkReader2.Close();
+
+                    //add post to liked posts
+                    string addLikedPost = $"INSERT INTO likedPosts\n" +
+                                          $"VALUES ({userId}, {postId});";
+                    MySqlDataReader addPostToLikedPosts = connection.query(addLikedPost);
+                    addPostToLikedPosts.Close();
+
+                    //increment likes in posts
+                    string incrementLikes = $"UPDATE posts\n" +
+                                            $"SET likes = likes + 1\n" +
+                                            $"WHERE postId = {postId};";
+                    MySqlDataReader incrementLikesInPosts = connection.query(incrementLikes);
+                    incrementLikesInPosts.Close();
+
+                }
+                else {
+                    checkReader2.Close();
+					DialogResult result = MessageBox.Show("Do You Want to Remove the Like?", "Remove Like", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+					if(result == DialogResult.Yes) {
+                        // remove post from liked posts
+                        string removeLikedPost = $"DELETE FROM likedPosts\n" +
+                                                 $"WHERE userId = {userId} AND postId = {postId};";
+                        MySqlDataReader removePostFromLikedPosts = connection.query(removeLikedPost);
+                        removePostFromLikedPosts.Close();
+
+                        //decrement likes in posts
+                        string decrementLikes = $"UPDATE posts\n" +
+                                                $"SET likes = likes - 1\n" +
+                                                $"WHERE postId = {postId};";
+                        MySqlDataReader decrementLikesInPosts = connection.query(decrementLikes);
+                        decrementLikesInPosts.Close();
+                    }
+                }
+            }
+			else {
+				checkReader1.Close();
+				throw new Exception("Post Not Found");
+			}
+
+        }
+    
+		public void commentOnPost(int postId, string comment) {
+			string checkSql = $"SELECT * FROM posts\n" +
+							  $"WHERE postId = {postId};";
+			MySqlDataReader checkReader = connection.query(checkSql);
+			if (checkReader.HasRows) {
+				checkReader.Close();
+
+				if(comment.Length == 0) {
+					throw new Exception("Comment Can't Be Null");
+				}
+				else if(comment.Length > 500) {
+					throw new Exception("Comment Must Be Less Than 500 Character");
+				}
+				else {
+                    string addComment = $"INSERT INTO comments (userId, postId, content, timestamp)\n" +
+                                        $"VALUES ({userId}, {postId}, \"{comment}\", CURRENT_TIMESTAMP);";
+                    MySqlDataReader addCommentToComments = connection.query(addComment);
+                    addCommentToComments.Close();
+                }
+
+			}
+			else {
+				checkReader.Close();
+				throw new Exception("Post Not Found");
+			}
+		}
+
+		
 
 		public List<int> getFriends() {
 			string friendsSql = $"SELECT * FROM friends\n" +
