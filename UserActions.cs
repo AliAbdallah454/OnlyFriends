@@ -7,6 +7,6 @@
 		void removeFriend(int friendId);
 		void likePost(int postId);
 		void commentOnPost(int postId, string comment);
-
+		void removeComment(int commentId);
 	}
 }
