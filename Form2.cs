@@ -13,5 +13,10 @@ namespace OnlyFriends {
         public Form2() {
             InitializeComponent();
         }
+
+        private void exit_Click(object sender, EventArgs e) {
+            Application.Exit();
+
+        }
     }
 }
