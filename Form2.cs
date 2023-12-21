@@ -18,15 +18,16 @@ namespace OnlyFriends {
 			connection.InitializeConnection();
 
 
-			string email = "grace.jones@example.com";
-			string password = "open123";
+			string email = "linda.white@example.com";
+			string password = "password789";
 
 			AuthFunctions.login(email, password);
 
 			try {
 				User user = User.Instance;
-				//user.acceptFriendRequest(1);
-				user.removeFriend(1);
+				foreach (Friend friend in user.getFriends()) {
+					MessageBox.Show(friend.getFullName(), $"{friend.userId}");
+				}
 			}
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);
