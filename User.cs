@@ -325,6 +325,7 @@ namespace OnlyFriends {
 			return friendsIds;
 		}
 
+
 		public HashSet<User> getFriends() {
 
 			HashSet<int> friendIds = getIds("friends");

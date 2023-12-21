@@ -1,13 +1,13 @@
 ﻿namespace OnlyFriends {
 	internal class Person {
 
-		private int userId;
-		private string firstName;
-		private string lastName;
-		private int age;
-		private string gender;
-		private string email;
-		private string phoneNumber;
+		//private int userId;
+		//private string firstName;
+		//private string lastName;
+		//private int age;
+		//private string gender;
+		//private string email;
+		//private string phoneNumber;
 
 		public int UserId { get; set; }
 		public string FirstName { get; set; }
@@ -29,7 +29,7 @@
 			this.PhoneNumber = phoneNumber;
 		}
 		public string getFullName() {
-			return $"{this.FirstName} {this.LastName}";
+			return $"{FirstName} {LastName}";
 		}
 
 	}

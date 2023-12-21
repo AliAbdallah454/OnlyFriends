@@ -28,11 +28,13 @@
             this.CommentBtn = new System.Windows.Forms.Button();
             this.RemoveCommentBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.signUpBtn = new System.Windows.Forms.Button();
+            this.logInBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // likeButton
             // 
-            this.likeButton.Location = new System.Drawing.Point(116, 201);
+            this.likeButton.Location = new System.Drawing.Point(645, 146);
             this.likeButton.Name = "likeButton";
             this.likeButton.Size = new System.Drawing.Size(143, 100);
             this.likeButton.TabIndex = 0;
@@ -42,7 +44,7 @@
             // 
             // CommentBox
             // 
-            this.CommentBox.Location = new System.Drawing.Point(516, 119);
+            this.CommentBox.Location = new System.Drawing.Point(591, 281);
             this.CommentBox.Multiline = true;
             this.CommentBox.Name = "CommentBox";
             this.CommentBox.Size = new System.Drawing.Size(209, 20);
@@ -50,7 +52,7 @@
             // 
             // CommentBtn
             // 
-            this.CommentBtn.Location = new System.Drawing.Point(542, 194);
+            this.CommentBtn.Location = new System.Drawing.Point(621, 307);
             this.CommentBtn.Name = "CommentBtn";
             this.CommentBtn.Size = new System.Drawing.Size(167, 114);
             this.CommentBtn.TabIndex = 2;
@@ -60,7 +62,7 @@
             // 
             // RemoveCommentBtn
             // 
-            this.RemoveCommentBtn.Location = new System.Drawing.Point(116, 35);
+            this.RemoveCommentBtn.Location = new System.Drawing.Point(645, 12);
             this.RemoveCommentBtn.Name = "RemoveCommentBtn";
             this.RemoveCommentBtn.Size = new System.Drawing.Size(143, 104);
             this.RemoveCommentBtn.TabIndex = 3;
@@ -79,11 +81,33 @@
             this.exitBtn.UseVisualStyleBackColor = true;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
+            // signUpBtn
+            // 
+            this.signUpBtn.Location = new System.Drawing.Point(45, 77);
+            this.signUpBtn.Name = "signUpBtn";
+            this.signUpBtn.Size = new System.Drawing.Size(203, 137);
+            this.signUpBtn.TabIndex = 5;
+            this.signUpBtn.Text = "SignUp";
+            this.signUpBtn.UseVisualStyleBackColor = true;
+            this.signUpBtn.Click += new System.EventHandler(this.signUpBtn_Click);
+            // 
+            // logInBtn
+            // 
+            this.logInBtn.Location = new System.Drawing.Point(45, 236);
+            this.logInBtn.Name = "logInBtn";
+            this.logInBtn.Size = new System.Drawing.Size(203, 151);
+            this.logInBtn.TabIndex = 6;
+            this.logInBtn.Text = "LogIn";
+            this.logInBtn.UseVisualStyleBackColor = true;
+            this.logInBtn.Click += new System.EventHandler(this.logInBtn_Click);
+            // 
             // MHMDFormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.logInBtn);
+            this.Controls.Add(this.signUpBtn);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.RemoveCommentBtn);
             this.Controls.Add(this.CommentBtn);
@@ -103,5 +127,7 @@
         private System.Windows.Forms.Button CommentBtn;
         private System.Windows.Forms.Button RemoveCommentBtn;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Button signUpBtn;
+        private System.Windows.Forms.Button logInBtn;
     }
 }

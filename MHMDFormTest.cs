@@ -18,10 +18,8 @@ namespace OnlyFriends {
             DatabaseConnection connection = DatabaseConnection.Instance;
             connection.InitializeConnection();
 
-            string email = "john.doe@example.com";
-            string password = "password123";
-
-            AuthFunctions.login(email, password);
+            //string email = "john.doe@example.com";
+            //string password = "password123";
         }
 
         private void likeButton_Click(object sender, EventArgs e) {
@@ -62,6 +60,37 @@ namespace OnlyFriends {
 
         private void exitBtn_Click(object sender, EventArgs e) {
             Application.Exit();
+        }
+
+        private void signUpBtn_Click(object sender, EventArgs e) {
+            string firstName = "Ht";
+            string lastName = "Ir";
+            string email = "email1@gmail.com";
+            string password = "noPassword";
+            string confirmPassword = "noPassword";
+            string phoneNumber = "81-998899";
+            string gender = "Email";
+            int age = 88;
+
+            try {
+                AuthFunctions.signup(firstName, lastName, email, password, confirmPassword, phoneNumber, gender, age);
+
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void logInBtn_Click(object sender, EventArgs e) {
+            string email = "Hasan@gmail.com";
+            string password = "HI12345";
+
+            try {
+                AuthFunctions.login(email, password);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
