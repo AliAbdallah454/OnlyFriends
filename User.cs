@@ -163,7 +163,7 @@ namespace OnlyFriends {
 			}
 		}
 
-  public void removeFriend(int friendId) {
+		public void removeFriend(int friendId) {
 
 			string checkSql = $"SELECT * FROM friends\n" +
 							  $"WHERE userId = {userId} AND friendId = {friendId}";
@@ -267,7 +267,24 @@ namespace OnlyFriends {
 			}
 		}
 
-		
+		public void removeComment(int commentId) {
+			string checkSql = $"SELECT * FROM comments\n" +
+							  $"WHERE commentId = {commentId};";
+			MySqlDataReader checkReader = connection.query(checkSql);
+
+			if (checkReader.HasRows) {
+				checkReader.Close();
+
+				string removeComment = $"DELETE FROM comments\n" +
+									   $"WHERE commentId = {commentId};";
+				MySqlDataReader removeCommentFromComments = connection.query(removeComment);
+				removeCommentFromComments.Close();	
+			}
+			else {
+				checkReader.Close();
+				throw new Exception("Comment Not Found");
+			}
+		}	
 
 		public List<int> getFriends() {
 			string friendsSql = $"SELECT * FROM friends\n" +

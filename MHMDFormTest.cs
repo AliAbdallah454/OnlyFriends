@@ -48,5 +48,20 @@ namespace OnlyFriends {
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void RemoveCommentBtn_Click(object sender, EventArgs e) {
+            try {
+                User user = User.Instance;
+                user.removeComment(11);
+
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e) {
+            Application.Exit();
+        }
     }
 }
