@@ -1,9 +1,14 @@
 ﻿using MySqlConnector;
 using System;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
-	internal class AuthFunctions {
+
+ 
+    internal class AuthFunctions {
 		public static DatabaseConnection connection = DatabaseConnection.Instance;
 
 		public static void login(string email, string password) {
@@ -72,9 +77,68 @@ namespace OnlyFriends {
 
 		}
 
-		public static void signup(string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber) {
-			// We need to insert A user into the users table
-		}
+		public static void signup(string firstName, string lastName, string email, string password, string confirmPassword, string phoneNumber, string gender, int age) {
+            // Check if Email is Unique
+            string checkEmail = $"SELECT * FROM users\n" +
+								$"WHERE email = \"{email}\";";
+            MySqlDataReader checkEmailReader = connection.query(checkEmail);
 
-	}
+            if (checkEmailReader.HasRows) {
+                checkEmailReader.Close();
+                throw new Exception("Email Already Exists");
+            }
+            checkEmailReader.Close();
+
+			// Check if Phone Number is Unique
+            string checkPhone = $"SELECT * FROM users\n" +
+                                $"WHERE phoneNumber = \"{phoneNumber}\"";
+            MySqlDataReader checkPhoneReader = connection.query(checkPhone);
+            if (checkPhoneReader.HasRows) {
+                checkPhoneReader.Close();
+                throw new Exception("Phone Number Already Exists");
+            }
+            checkPhoneReader.Close();
+
+			// Check if the Rest are Valid
+            if (email.Length == 0 || !email.Contains("@gmail.com") || email.StartsWith("@")) {
+				throw new Exception("Invalid Email Entry");
+			}
+            else if (password.Length == 0) {
+				throw new Exception("Please Enter a Password");
+			}
+			else if (confirmPassword != password) {
+				throw new Exception("Passwords Do Not Match");
+			}
+			else if (firstName.Length == 0 || firstName.Length > 30) {
+				throw new Exception("First Name Must Be Between 1 and 30 characters");
+			}
+			else if (lastName.Length == 0 || lastName.Length > 30) {
+				throw new Exception("Last Name Must Be Between 1 and 30 characters");
+			}
+			else if (age < 18) {
+				throw new Exception("You Must Be 18+");
+			}
+			else if (gender.Length == 0 || gender.Length > 50) {
+				throw new Exception("Gender Must Be Between 1 and 50 characters");
+			}
+			else if (phoneNumber.Length != 9 || phoneNumber[2] != '-') {
+				throw new Exception("Invalid Phone Number");
+			}
+			else { //ALL IS GOOD
+				string addUser = $"INSERT INTO users (firstName, lastName, email, password, phonenumber, gender, age)" +
+								 $"VALUES (\"{firstName}\", \"{lastName}\", \"{email}\", \"{password}\", \"{phoneNumber}\", \"{gender}\", {age})";
+
+				MySqlDataReader addUserToUsers = connection.query(addUser);
+				addUserToUsers.Close();
+
+				login(email, password);
+			}
+        }
+
+        static int trueLength(string input) {
+            return input.Count(c => !char.IsWhiteSpace(c) && c != '/' && c != '-');
+        }
+
+
+    }
 }
