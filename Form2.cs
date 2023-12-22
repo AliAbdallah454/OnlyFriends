@@ -18,20 +18,28 @@ namespace OnlyFriends {
 			connection.InitializeConnection();
 
 
-			string email = "linda.white@example.com";
-			string password = "password789";
+			string email = "eva.brown@example.com";
+			string password = "mysecret";
 
 			AuthFunctions.login(email, password);
 
 			try {
 				User user = User.Instance;
-				foreach (User friend in user.getSuggestedFriends()) {
-					MessageBox.Show(friend.getFullName(), $"{friend.UserId}");
-				}
+				user.acceptFriendRequest(9);
 			}
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);
 			}
+
+			//try {
+			//	User user = User.Instance;
+			//	foreach (User friend in user.getSuggestedFriends()) {
+			//		MessageBox.Show(friend.getFullName(), $"{friend.UserId}");
+			//	}
+			//}
+			//catch (Exception ex) {
+			//	MessageBox.Show(ex.Message);
+			//}
 
 		}
 	}
