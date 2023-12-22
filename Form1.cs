@@ -14,12 +14,23 @@ namespace OnlyFriends {
 
 		}
 
-		
-		private bool flag = true;
-		private void textBox2_Enter(object sender, EventArgs e) {
-			if (flag) { 
+
+        private void textBox1_Enter(object sender, EventArgs e) {
+			if(textBox2.Text == string.Empty) {
+				textBox2.Text = "Password";
+				textBox2.UseSystemPasswordChar = false;
+			}
+			if(textBox1.Text == "Email") {
+				textBox1.Text = string.Empty;
+			}
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e) {
+			if(textBox1.Text == string.Empty) {
+				textBox1.Text = "Email";
+			}
+			if (textBox2.Text == "Password") { 
 				textBox2.Text = string.Empty; 
-				flag = false; 
 			}
 			textBox2.UseSystemPasswordChar = true;
 		}
@@ -34,11 +45,15 @@ namespace OnlyFriends {
 		//to press any buttons there mustn't be any errors and thus the labels must be noot visble
 
 
-		private void button2_Click(object sender, EventArgs e) {
 
-		}
+        private void createAccountLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            SignUpForm signUpForm = new SignUpForm();
 
-		private void form2btn_Click(object sender, EventArgs e) {
+            this.Hide();
+            signUpForm.Show();
+        }
+
+        private void form2btn_Click(object sender, EventArgs e) {
 			Form2 form2 = new Form2();
 			this.Hide();
 			form2.Show();
@@ -51,7 +66,7 @@ namespace OnlyFriends {
         }
 
 
-		//NOT DONE YET
+		//NOT DONE YET ADD THIS.HIDE MAIN-UI.SHOW TO LOGINBUTTON
         private void loginButton_Click(object sender, EventArgs e) {
 			string email = textBox1.Text;
 			string password = textBox2.Text;
@@ -75,6 +90,8 @@ namespace OnlyFriends {
         private void UpdateButtonState() {
             loginBTN.Enabled = !string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text);
         }
+
+        
     }
 
 }
