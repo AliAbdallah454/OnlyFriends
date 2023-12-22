@@ -1,4 +1,5 @@
 ﻿using System;
+using MySqlConnector;
 
 namespace OnlyFriends {
 
@@ -72,6 +73,8 @@ namespace OnlyFriends {
 		public string getFullName() {
 			return $"{FirstName} {LastName}";
 		}
+
+		
 
 	}
 

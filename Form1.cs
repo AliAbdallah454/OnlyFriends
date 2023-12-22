@@ -55,37 +55,31 @@ namespace OnlyFriends {
             signUpForm.Show();
         }
 
-        private void form2btn_Click(object sender, EventArgs e) {
-			Form2 form2 = new Form2();
-			this.Hide();
-			form2.Show();
-        }
+        private void forgotPasswordLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            ForgotPasswordForm forgotPasswordForm = new ForgotPasswordForm();
 
-        private void MhmdForm_Click(object sender, EventArgs e) {
-			MHMDFormTest mhmdForm = new MHMDFormTest();
-			this.Hide();
-			mhmdForm.Show();
+            forgotPasswordForm.Show();
         }
 
 
-		//NOT DONE YET ADD THIS.HIDE MAIN-UI.SHOW TO LOGINBUTTON
+        //NOT DONE YET ADD THIS.HIDE MAIN-UI.SHOW TO LOGINBUTTON
         private void loginButton_Click(object sender, EventArgs e) {
-			string email = textBox1.Text;
-			string password = textBox2.Text;
+            string email = textBox1.Text;
+            string password = textBox2.Text;
 
-			try {
-				AuthFunctions.login(email, password);
-			}
-			catch (Exception ex) {
-				if(ex.Message == "Email doesn't Exist") {
-					invalidEmaillbl.Visible = true;
-					textBox1.Text = string.Empty;
+            try {
+                AuthFunctions.login(email, password);
+            }
+            catch (Exception ex) {
+                if (ex.Message == "Email doesn't Exist") {
+                    invalidEmaillbl.Visible = true;
+                    textBox1.Text = string.Empty;
                 }
-				if(ex.Message == "password is incorrect") {
-					InvalidPasswordlbl.Visible = true;
-					textBox2.Text = string.Empty;
-				}
-			}
+                if (ex.Message == "password is incorrect") {
+                    InvalidPasswordlbl.Visible = true;
+                    textBox2.Text = string.Empty;
+                }
+            }
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e) {
@@ -99,6 +93,20 @@ namespace OnlyFriends {
         private void UpdateButtonState() {
             loginBTN.Enabled = !string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text);
         }
+
+        private void form2btn_Click(object sender, EventArgs e) {
+			Form2 form2 = new Form2();
+			this.Hide();
+			form2.Show();
+        }
+
+        private void MhmdForm_Click(object sender, EventArgs e) {
+			MHMDFormTest mhmdForm = new MHMDFormTest();
+			this.Hide();
+			mhmdForm.Show();
+        }
+
+
 
         
     }
