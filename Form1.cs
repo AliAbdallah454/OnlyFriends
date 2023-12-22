@@ -16,7 +16,8 @@ namespace OnlyFriends {
 
 
         private void textBox1_Enter(object sender, EventArgs e) {
-			if(textBox2.Text == string.Empty) {
+            invalidEmaillbl.Visible = false;
+            if (textBox2.Text == string.Empty) {
 				textBox2.Text = "Password";
 				textBox2.UseSystemPasswordChar = false;
 			}
@@ -26,6 +27,7 @@ namespace OnlyFriends {
         }
 
         private void textBox2_Enter(object sender, EventArgs e) {
+			InvalidPasswordlbl.Visible = false;
 			if(textBox1.Text == string.Empty) {
 				textBox1.Text = "Email";
 			}
@@ -75,7 +77,14 @@ namespace OnlyFriends {
 				AuthFunctions.login(email, password);
 			}
 			catch (Exception ex) {
-				MessageBox.Show(ex.Message);
+				if(ex.Message == "Email doesn't Exist") {
+					invalidEmaillbl.Visible = true;
+					textBox1.Text = string.Empty;
+                }
+				if(ex.Message == "password is incorrect") {
+					InvalidPasswordlbl.Visible = true;
+					textBox2.Text = string.Empty;
+				}
 			}
         }
 
