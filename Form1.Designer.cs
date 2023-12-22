@@ -38,58 +38,57 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::OnlyFriends.Properties.Resources.onlyfans_logo_152221;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(268, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(208, 181);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Location = new System.Drawing.Point(218, 260);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(302, 20);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Username/Email";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox2.Location = new System.Drawing.Point(218, 305);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(302, 20);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "Password";
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
             // 
             // loginBTN
             // 
-            this.loginBTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginBTN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loginBTN.Enabled = false;
             this.loginBTN.Location = new System.Drawing.Point(268, 352);
             this.loginBTN.Name = "loginBTN";
-            this.loginBTN.Size = new System.Drawing.Size(91, 36);
+            this.loginBTN.Size = new System.Drawing.Size(91, 51);
             this.loginBTN.TabIndex = 3;
             this.loginBTN.Text = "Login";
             this.loginBTN.UseVisualStyleBackColor = true;
-            this.loginBTN.Click += new System.EventHandler(this.button1_Click);
+            this.loginBTN.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.Location = new System.Drawing.Point(385, 352);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 36);
+            this.button2.Size = new System.Drawing.Size(91, 51);
             this.button2.TabIndex = 4;
             this.button2.Text = "Sign-up";
             this.button2.UseVisualStyleBackColor = true;
@@ -127,6 +126,7 @@
             // 
             // form2btn
             // 
+            this.form2btn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.form2btn.Location = new System.Drawing.Point(557, 351);
             this.form2btn.Name = "form2btn";
             this.form2btn.Size = new System.Drawing.Size(86, 36);
@@ -137,6 +137,7 @@
             // 
             // MhmdForm
             // 
+            this.MhmdForm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MhmdForm.Location = new System.Drawing.Point(23, 365);
             this.MhmdForm.Name = "MhmdForm";
             this.MhmdForm.Size = new System.Drawing.Size(100, 36);
@@ -152,7 +153,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::OnlyFriends.Properties.Resources.ripples_in_blank_black_6m97l43pauyhiw4e1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(719, 429);
+            this.ClientSize = new System.Drawing.Size(719, 444);
             this.Controls.Add(this.MhmdForm);
             this.Controls.Add(this.form2btn);
             this.Controls.Add(this.InvalidPasswordlbl);

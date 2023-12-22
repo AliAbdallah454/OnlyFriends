@@ -5,15 +5,16 @@ namespace OnlyFriends {
 	public partial class Login : Form {
 		public Login() {
 			InitializeComponent();
-		}
+
+            DatabaseConnection connection = DatabaseConnection.Instance;
+            connection.InitializeConnection();
+        }
 		private void Form1_Load(object sender, EventArgs e) {
 
 
 		}
 
-		private void textBox1_TextChanged(object sender, EventArgs e) {
-
-		}
+		
 		private bool flag = true;
 		private void textBox2_Enter(object sender, EventArgs e) {
 			if (flag) { 
@@ -31,9 +32,7 @@ namespace OnlyFriends {
 
 		}
 		//to press any buttons there mustn't be any errors and thus the labels must be noot visble
-		private void button1_Click(object sender, EventArgs e) {
 
-		}
 
 		private void button2_Click(object sender, EventArgs e) {
 
@@ -43,15 +42,38 @@ namespace OnlyFriends {
 			Form2 form2 = new Form2();
 			this.Hide();
 			form2.Show();
-
-
-
         }
 
         private void MhmdForm_Click(object sender, EventArgs e) {
 			MHMDFormTest mhmdForm = new MHMDFormTest();
 			this.Hide();
 			mhmdForm.Show();
+        }
+
+
+		//NOT DONE YET
+        private void loginButton_Click(object sender, EventArgs e) {
+			string email = textBox1.Text;
+			string password = textBox2.Text;
+
+			try {
+				AuthFunctions.login(email, password);
+			}
+			catch (Exception ex) {
+				MessageBox.Show(ex.Message);
+			}
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e) {
+            UpdateButtonState();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e) {
+            UpdateButtonState();
+        }
+
+        private void UpdateButtonState() {
+            loginBTN.Enabled = !string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text);
         }
     }
 
