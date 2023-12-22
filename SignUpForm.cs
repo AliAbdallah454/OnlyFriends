@@ -54,13 +54,15 @@ namespace OnlyFriends {
         }
 
         private void passwordBox_Enter(object sender, EventArgs e) {
-            if(passwordBox.Text == "Password") {
+            passwordBox.UseSystemPasswordChar = true;
+            if (passwordBox.Text == "Password") {
                 passwordBox.Text = string.Empty;
                 passwordLabel.Visible = true;
             }
         }
 
         private void confirmPasswordBox_Enter(object sender, EventArgs e) {
+            confirmPasswordBox.UseSystemPasswordChar = true;
             if(confirmPasswordBox.Text == "Confirm Password") {
                 confirmPasswordBox.Text = string.Empty;
                 confirmPasswordLabel.Visible = true;
@@ -98,8 +100,12 @@ namespace OnlyFriends {
             string gender = genderBox.Text;
             int age = int.Parse(ageBox.Text);
 
+            mainUI mainUI = new mainUI();
+
             try {
                 AuthFunctions.signup(firstName, lastName, email, password, confirmPassword, phoneNumber, gender, age);
+                this.Hide();
+                mainUI.Show();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
