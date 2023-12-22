@@ -79,7 +79,7 @@
             // 
             this.loginBTN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginBTN.Enabled = false;
-            this.loginBTN.Location = new System.Drawing.Point(268, 352);
+            this.loginBTN.Location = new System.Drawing.Point(321, 351);
             this.loginBTN.Name = "loginBTN";
             this.loginBTN.Size = new System.Drawing.Size(91, 51);
             this.loginBTN.TabIndex = 3;
