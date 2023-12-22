@@ -23,23 +23,9 @@ namespace OnlyFriends {
 
 			AuthFunctions.login(email, password);
 
-			try {
-				User user = User.Instance;
-				user.acceptFriendRequest(9);
-			}
-			catch (Exception ex) {
-				MessageBox.Show(ex.Message);
-			}
+			Post p = new Post(1, 1, "gay", "f", new DateTime(), 20);
 
-			//try {
-			//	User user = User.Instance;
-			//	foreach (User friend in user.getSuggestedFriends()) {
-			//		MessageBox.Show(friend.getFullName(), $"{friend.UserId}");
-			//	}
-			//}
-			//catch (Exception ex) {
-			//	MessageBox.Show(ex.Message);
-			//}
+			MessageBox.Show(HelperFunctions.translateCommentIdToCommentInfo(11).Content);
 
 		}
 	}

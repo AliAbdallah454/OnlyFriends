@@ -2,23 +2,44 @@
 
 namespace OnlyFriends {
 
-	internal partial class User : Person {
+	internal partial class User {
 
-		private string password;
-
+		public int UserId { get; set; }
+		public string FirstName { get; set; }
+		public string LastName { get; set; }
+		public int Age { get; set; }
+		public string Gender { get; set; }
+		public string Email { get; set; }
 		public string Password { get; set; }
+		public string PhoneNumber { get; set; }
 
 		private static User instance = null;
 
 		private DatabaseConnection connection = DatabaseConnection.Instance;
 
-		private User(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber)
-			: base(userId, firstName, lastName, age, gender, email, phoneNumber) {
-			this.Password = password;
+		private User(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber) {
+
+			UserId = userId;
+			FirstName = firstName;
+			LastName = lastName;
+			Age = age;
+			Gender = gender;
+			Email = email;
+			Password = password;
+			PhoneNumber = phoneNumber;
+
 		}
 
-		private User(int userId, string firstName, string lastName, int age, string gender, string email, string phoneNumber)
-			: base(userId, firstName, lastName, age, gender, email, phoneNumber) {
+		public User(int userId, string firstName, string lastName, int age, string gender, string email, string phoneNumber) {
+
+			UserId = userId;
+			FirstName = firstName;
+			LastName = lastName;
+			Age = age;
+			Gender = gender;
+			Email = email;
+			PhoneNumber = phoneNumber;
+
 		}
 
 		public static void CreateInstance(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber) {
@@ -47,6 +68,9 @@ namespace OnlyFriends {
 
 				return instance;
 			}
+		}
+		public string getFullName() {
+			return $"{FirstName} {LastName}";
 		}
 
 	}

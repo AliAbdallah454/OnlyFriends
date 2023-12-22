@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthFunctions.cs" />
+    <Compile Include="Comment.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -92,13 +93,13 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelperFunctions.cs" />
     <Compile Include="MHMDFormTest.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MHMDFormTest.Designer.cs">
       <DependentUpon>MHMDFormTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,7 +107,8 @@
     <Compile Include="User.cs" />
     <Compile Include="UserFriendActions.cs" />
     <Compile Include="UserPostActions.cs" />
-    <Compile Include="UserGetFunctions.cs" />
+    <Compile Include="UserFriendGetFunctions.cs" />
+    <Compile Include="UserPostGetFunctions.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
