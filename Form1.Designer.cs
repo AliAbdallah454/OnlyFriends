@@ -28,11 +28,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.loginBTN = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.invalidEmaillbl = new System.Windows.Forms.Label();
             this.InvalidPasswordlbl = new System.Windows.Forms.Label();
             this.form2btn = new System.Windows.Forms.Button();
             this.MhmdForm = new System.Windows.Forms.Button();
+            this.createAccountLink = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,8 +56,10 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(302, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Username/Email";
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "Email";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
@@ -67,6 +69,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(302, 20);
             this.textBox2.TabIndex = 2;
+            this.textBox2.TabStop = false;
             this.textBox2.Text = "Password";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
@@ -82,17 +85,6 @@
             this.loginBTN.Text = "Login";
             this.loginBTN.UseVisualStyleBackColor = true;
             this.loginBTN.Click += new System.EventHandler(this.loginButton_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(385, 352);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 51);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Sign-up";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // invalidEmaillbl
             // 
@@ -146,6 +138,19 @@
             this.MhmdForm.UseVisualStyleBackColor = true;
             this.MhmdForm.Click += new System.EventHandler(this.MhmdForm_Click);
             // 
+            // createAccountLink
+            // 
+            this.createAccountLink.AutoSize = true;
+            this.createAccountLink.BackColor = System.Drawing.Color.Transparent;
+            this.createAccountLink.LinkColor = System.Drawing.Color.White;
+            this.createAccountLink.Location = new System.Drawing.Point(423, 328);
+            this.createAccountLink.Name = "createAccountLink";
+            this.createAccountLink.Size = new System.Drawing.Size(96, 13);
+            this.createAccountLink.TabIndex = 10;
+            this.createAccountLink.TabStop = true;
+            this.createAccountLink.Text = "Create an Account";
+            this.createAccountLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createAccountLink_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,11 +159,11 @@
             this.BackgroundImage = global::OnlyFriends.Properties.Resources.ripples_in_blank_black_6m97l43pauyhiw4e1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(719, 444);
+            this.Controls.Add(this.createAccountLink);
             this.Controls.Add(this.MhmdForm);
             this.Controls.Add(this.form2btn);
             this.Controls.Add(this.InvalidPasswordlbl);
             this.Controls.Add(this.invalidEmaillbl);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.loginBTN);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -185,11 +190,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button loginBTN;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label invalidEmaillbl;
         private System.Windows.Forms.Label InvalidPasswordlbl;
         private System.Windows.Forms.Button form2btn;
         private System.Windows.Forms.Button MhmdForm;
+        private System.Windows.Forms.LinkLabel createAccountLink;
     }
 }
 

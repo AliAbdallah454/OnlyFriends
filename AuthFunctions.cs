@@ -120,6 +120,9 @@ namespace OnlyFriends {
 			else if (age < 18) {
 				throw new Exception("You Must Be 18+");
 			}
+			else if (age > 100) {
+				throw new Exception("Bro You Dead!!");
+			}
 			else if (gender.Length == 0 || gender.Length > 50) {
 				throw new Exception("Gender Must Be Between 1 and 50 characters");
 			}
