@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace OnlyFriends {
-	internal partial class User : Person {
+	internal partial class User {
 
 		private HashSet<User> translateFriendIdsToFriendDetails(HashSet<int> friendsIds) {
 

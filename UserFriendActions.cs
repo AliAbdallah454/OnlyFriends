@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
-	internal partial class User : Person {
+	internal partial class User {
 
 		public void addFriend(int friendId) {
 
