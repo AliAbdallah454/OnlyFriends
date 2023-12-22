@@ -100,6 +100,12 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="HelperFunctions.cs" />
+    <Compile Include="mainUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainUI.Designer.cs">
+      <DependentUpon>mainUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="MHMDFormTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainUI.resx">
+      <DependentUpon>mainUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MHMDFormTest.resx">
       <DependentUpon>MHMDFormTest.cs</DependentUpon>
@@ -180,6 +189,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ripples-in-blank-black-6m97l43pauyhiw4e.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ios-photos-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appwle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cogwheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pfp333.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tips.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
