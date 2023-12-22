@@ -82,11 +82,20 @@ namespace OnlyFriends {
         }
 
         private void logInBtn_Click(object sender, EventArgs e) {
-            string email = "Hasan@gmail.com";
-            string password = "HI12345";
+            string email = "linda.white@example.com";
+            string password = "password789";
 
             try {
                 AuthFunctions.login(email, password);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void logOutBtn_Click(object sender, EventArgs e) {
+            try {
+                AuthFunctions.logout();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);

@@ -31,15 +31,26 @@ namespace OnlyFriends {
 				instance = new User(userId, firstName, lastName, age, gender, email, password, phoneNumber);
 
 			}
-
 		}
+
+		public static void DestroyInstance() {
+			if (instance != null) {
+				instance = null;
+			}
+			else {
+				throw new Exception("User Not Logged In");
+			}
+		}
+
+
 		public static User Instance {
 			get {
 				if (instance == null) {
 					throw new Exception("No user found");
 				}
+                    
 				return instance;
-			}
+            }
 		}
 		public void addPost(string title, string content) {
 
