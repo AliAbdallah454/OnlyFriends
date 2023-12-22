@@ -148,5 +148,31 @@ namespace OnlyFriends {
 			
 		}
 
+        public static void changePassword(string email, string password, string confirmedPassword) {
+            string checkEmail = $"SELECT * FROM users\n" +
+                                $"WHERE email = \"{email}\";";
+            MySqlDataReader checkEmailReader = connection.query(checkEmail);
+            if (checkEmailReader.HasRows) {
+                checkEmailReader.Close();
+
+                if (password.Length == 0) {
+                    throw new Exception("Password Can't Be Null");
+                }
+                if (password != confirmedPassword) {
+                    throw new Exception("Passwords Do Not Match");
+                }
+
+                string updatePassword = $"UPDATE users\n" +
+                                        $"SET password = \"{password}\"\n" +
+                                        $"WHERE email = \"{email}\";";
+                MySqlDataReader updatePasswordInUsers = connection.query(updatePassword);
+                updatePasswordInUsers.Close();
+            }
+            else {
+                checkEmailReader.Close();
+                throw new Exception("Email Not Found");
+            }
+        }
+
     }
 }

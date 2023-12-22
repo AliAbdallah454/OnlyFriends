@@ -33,6 +33,7 @@
             this.form2btn = new System.Windows.Forms.Button();
             this.MhmdForm = new System.Windows.Forms.Button();
             this.createAccountLink = new System.Windows.Forms.LinkLabel();
+            this.forgotPasswordLink = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,14 +140,29 @@
             this.createAccountLink.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.createAccountLink.AutoSize = true;
             this.createAccountLink.BackColor = System.Drawing.Color.Transparent;
+            this.createAccountLink.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createAccountLink.LinkColor = System.Drawing.Color.White;
-            this.createAccountLink.Location = new System.Drawing.Point(423, 328);
+            this.createAccountLink.Location = new System.Drawing.Point(410, 325);
             this.createAccountLink.Name = "createAccountLink";
-            this.createAccountLink.Size = new System.Drawing.Size(96, 13);
+            this.createAccountLink.Size = new System.Drawing.Size(110, 14);
             this.createAccountLink.TabIndex = 10;
             this.createAccountLink.TabStop = true;
-            this.createAccountLink.Text = "Create an Account";
+            this.createAccountLink.Text = "Create an Account?";
             this.createAccountLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createAccountLink_LinkClicked);
+            // 
+            // forgotPasswordLink
+            // 
+            this.forgotPasswordLink.AutoSize = true;
+            this.forgotPasswordLink.BackColor = System.Drawing.Color.Transparent;
+            this.forgotPasswordLink.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotPasswordLink.LinkColor = System.Drawing.Color.White;
+            this.forgotPasswordLink.Location = new System.Drawing.Point(215, 325);
+            this.forgotPasswordLink.Name = "forgotPasswordLink";
+            this.forgotPasswordLink.Size = new System.Drawing.Size(102, 14);
+            this.forgotPasswordLink.TabIndex = 11;
+            this.forgotPasswordLink.TabStop = true;
+            this.forgotPasswordLink.Text = "Forgot Password?";
+            this.forgotPasswordLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotPasswordLink_LinkClicked);
             // 
             // Login
             // 
@@ -156,6 +172,7 @@
             this.BackgroundImage = global::OnlyFriends.Properties.Resources.ripples_in_blank_black_6m97l43pauyhiw4e1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(719, 444);
+            this.Controls.Add(this.forgotPasswordLink);
             this.Controls.Add(this.createAccountLink);
             this.Controls.Add(this.MhmdForm);
             this.Controls.Add(this.form2btn);
@@ -192,6 +209,7 @@
         private System.Windows.Forms.Button form2btn;
         private System.Windows.Forms.Button MhmdForm;
         private System.Windows.Forms.LinkLabel createAccountLink;
+        private System.Windows.Forms.LinkLabel forgotPasswordLink;
     }
 }
 
