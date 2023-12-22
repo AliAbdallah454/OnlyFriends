@@ -88,32 +88,28 @@
             // 
             // invalidEmaillbl
             // 
-            this.invalidEmaillbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.invalidEmaillbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.invalidEmaillbl.AutoSize = true;
             this.invalidEmaillbl.BackColor = System.Drawing.Color.Transparent;
-            this.invalidEmaillbl.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.invalidEmaillbl.ForeColor = System.Drawing.Color.Red;
             this.invalidEmaillbl.Location = new System.Drawing.Point(215, 244);
             this.invalidEmaillbl.Name = "invalidEmaillbl";
-            this.invalidEmaillbl.Size = new System.Drawing.Size(68, 13);
+            this.invalidEmaillbl.Size = new System.Drawing.Size(70, 13);
             this.invalidEmaillbl.TabIndex = 6;
-            this.invalidEmaillbl.Text = "*invalid email";
+            this.invalidEmaillbl.Text = "*Invalid Email";
             this.invalidEmaillbl.Visible = false;
             // 
             // InvalidPasswordlbl
             // 
-            this.InvalidPasswordlbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.InvalidPasswordlbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InvalidPasswordlbl.AutoSize = true;
             this.InvalidPasswordlbl.BackColor = System.Drawing.Color.Transparent;
-            this.InvalidPasswordlbl.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.InvalidPasswordlbl.ForeColor = System.Drawing.Color.Red;
             this.InvalidPasswordlbl.Location = new System.Drawing.Point(215, 289);
             this.InvalidPasswordlbl.Name = "InvalidPasswordlbl";
-            this.InvalidPasswordlbl.Size = new System.Drawing.Size(89, 13);
+            this.InvalidPasswordlbl.Size = new System.Drawing.Size(91, 13);
             this.InvalidPasswordlbl.TabIndex = 7;
-            this.InvalidPasswordlbl.Text = "*invalid password";
+            this.InvalidPasswordlbl.Text = "*Invalid Password";
             this.InvalidPasswordlbl.Visible = false;
             // 
             // form2btn
@@ -140,6 +136,7 @@
             // 
             // createAccountLink
             // 
+            this.createAccountLink.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.createAccountLink.AutoSize = true;
             this.createAccountLink.BackColor = System.Drawing.Color.Transparent;
             this.createAccountLink.LinkColor = System.Drawing.Color.White;
