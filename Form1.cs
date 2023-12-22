@@ -64,11 +64,14 @@ namespace OnlyFriends {
 
         //NOT DONE YET ADD THIS.HIDE MAIN-UI.SHOW TO LOGINBUTTON
         private void loginButton_Click(object sender, EventArgs e) {
+            mainUI mainUI = new mainUI();
             string email = textBox1.Text;
             string password = textBox2.Text;
 
             try {
                 AuthFunctions.login(email, password);
+                this.Hide();
+                mainUI.Show();
             }
             catch (Exception ex) {
                 if (ex.Message == "Email doesn't Exist") {
