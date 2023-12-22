@@ -89,7 +89,7 @@ namespace OnlyFriends {
             }
             checkEmailReader.Close();
 
-			// Check if Phone Number is Unique // FIX ADD condition if multiple are NULL
+			// Check if Phone Number is Unique 
 			if(phoneNumber.Length != 0) {
                 string checkPhone = $"SELECT * FROM users\n" +
                                     $"WHERE phoneNumber = \"{phoneNumber}\"";
@@ -136,6 +136,14 @@ namespace OnlyFriends {
 				login(email, password);
 			}
         }
+
+		public static void logout() {
+			MessageBox.Show("Logging out from " + User.Instance.getFullName());
+			User.DestroyInstance();
+
+            MessageBox.Show("Logout Successful");
+			
+		}
 
     }
 }

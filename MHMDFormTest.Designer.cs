@@ -30,6 +30,7 @@
             this.exitBtn = new System.Windows.Forms.Button();
             this.signUpBtn = new System.Windows.Forms.Button();
             this.logInBtn = new System.Windows.Forms.Button();
+            this.logOutBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // likeButton
@@ -101,11 +102,22 @@
             this.logInBtn.UseVisualStyleBackColor = true;
             this.logInBtn.Click += new System.EventHandler(this.logInBtn_Click);
             // 
+            // logOutBtn
+            // 
+            this.logOutBtn.Location = new System.Drawing.Point(290, 77);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(171, 137);
+            this.logOutBtn.TabIndex = 7;
+            this.logOutBtn.Text = "LogOut";
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
             // MHMDFormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.logInBtn);
             this.Controls.Add(this.signUpBtn);
             this.Controls.Add(this.exitBtn);
@@ -129,5 +141,6 @@
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button signUpBtn;
         private System.Windows.Forms.Button logInBtn;
+        private System.Windows.Forms.Button logOutBtn;
     }
 }
