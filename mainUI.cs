@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlyFriends.User_Controls;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Windows.Forms;
 namespace OnlyFriends {
 
 	public partial class mainUI : Form {
-		private List<System.Windows.Forms.Panel> panels = new List<System.Windows.Forms.Panel>() { };
-		private List<Post> feed = new List<Post>();
-		private int currentPanel = 0, currentPost = 0;
+		private List<UserControl> panels = new List<UserControl>() {new HomeUC(),new MyPostsUC(),new LikedPostsUC() };
+
+		private int currentPanel = 0,ocurrentPanel;
 		private void createUser() {
 
 			DatabaseConnection connection = DatabaseConnection.Instance;
@@ -23,65 +24,32 @@ namespace OnlyFriends {
 
 
 		}
-		private void generatePanels() {
-
-			for (int i = 0; i < 8; i++) {
-				if (i == 0 || i == 2 || i == 5) {
-					panels.Add(panel1);
-					continue;
-				}
-				panels.Add(new Panel());
-				Label l = new Label();
-				l.Text = i.ToString();
-				panels[i].Controls.Add(l);
+		private void changePanel(int i) {
+			if(i>=0&&i<panels.Count()) {
+				panels[ocurrentPanel].Parent = null;
+				panels[i].Parent = mainPanel;
+				
 			}
 		}
-		private void generatePosts() {
-			feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
+		private void scalePanels() {
+            foreach (UserControl x in panels) {
+                x.ClientSize = mainPanel.ClientSize;
+                x.Scale(0.82f);
+                x.Dock = DockStyle.Fill;
+            }
+        }
+		
 
-		}
+	
 		User user;
 		public mainUI() {
-			InitializeComponent();
-			createUser();
-			user = User.Instance;
-			generatePanels();
-			generatePosts();
-			splitContainer1.Panel2.MouseWheel += feedScroller;
+            createUser();
+            user = User.Instance;
+            InitializeComponent();
+			scalePanels();
 
 		}
-		private void showPost(Post post) {
-			postUsername2.Text = postUsernameLabel.Text = HelperFunctions.translateUserIdToUserName(post.UserId);
-			postImage.Image = post.Pic;
-			postText.Text = post.Content;
-			postDate.Text = $"Posted at {post.TimeStamp.Hour}:{post.TimeStamp.Minute} , {post.TimeStamp.Day}/{post.TimeStamp.Month}/{post.TimeStamp.Year}";
-			hashtagsContentLabel.Text = String.Empty;
-			//if (post.tags.Count() == 0) {
-			//	HashtagsLabel.Hide();
-			//}
-			//else {
-			//	HashtagsLabel.Show();
-			//	foreach (string tag in post.tags) {
-			//		hashtagsContentLabel.Text += $"#{tag} ";
-			//	}
-			//}
-			//likesLabel.Text = $"        Like ({post.Likes})";
-			//commentsLabel.Text = $"        Comment ({post.Comments})";
-			//commentsLabel.Text = $"        Share ({post.Shares})";
-			//postPfpUsername.Image=
-
-		}
-		private void feedScroller(object sender, MouseEventArgs e) {
-			if (e.Delta > 0 && currentPost > 0) { showPost(feed[--currentPost]); }
-
-			else if (e.Delta < 0 && currentPost < feed.Count() - 1) { showPost(feed[++currentPost]); }
-		}
+		
 		private void mouseEnter_Bold(object sender, EventArgs e) {
 			if (sender is Label panel) {
 				panel.Font = new Font(panel.Font, FontStyle.Bold);
@@ -96,8 +64,8 @@ namespace OnlyFriends {
 		}
 		private void changePanel(object sender, EventArgs e) {
 			if (sender is Label x) {
-				feed = user.getFeedPosts();
-				int ocurrentPanel = currentPanel;
+				
+				ocurrentPanel = currentPanel;
 				switch (x.Name) {
 
 					case "HomeLabel":
@@ -127,8 +95,8 @@ namespace OnlyFriends {
 
 
 				}
-				splitContainer1.Panel2.Controls.Remove(panels[ocurrentPanel]);
-				splitContainer1.Panel2.Controls.Add(panels[currentPanel]);
+				changePanel(currentPanel);
+				
 
 
 			}
@@ -140,68 +108,7 @@ namespace OnlyFriends {
 
 		private bool[] buttonclicked = { false, false, false };
 
-		//Button Enter Function
-		private void likeButton_MouseEnter(object sender, EventArgs e) {
-			if (!buttonclicked[0]) {
-				likeBtn.Image = Properties.Resources.heart__1_;
-			}
-		}
-		private void commentButton_MouseEnter(object sender, EventArgs e) {
-			if (!buttonclicked[1]) {
-				commentBtn.Image = Properties.Resources.chat;
-			}
-		}
-		private void shareButton_MouseEnter(object sender, EventArgs e) {
-			if (!buttonclicked[2]) {
-				shareBtn.Image = Properties.Resources.share;
-			}
-		}
-
-		//Button Leave Functions
-		private void likeButton_MouseLeave(object sender, EventArgs e) {
-			if (!buttonclicked[0]) {
-				likeBtn.Image = Properties.Resources.heart__2_;
-			}
-		}
-		private void commentButton_MouseLeave(object sender, EventArgs e) {
-			if (!buttonclicked[1]) {
-				commentBtn.Image = Properties.Resources.chat_bubble;
-			}
-		}
-		private void shareButton_MouseLeave(object sender, EventArgs e) {
-			if (!buttonclicked[2]) {
-				shareBtn.Image = Properties.Resources.social;
-			}
-		}
-
-		//Button Click Functions
-		private void likeButton_Click(object sender, EventArgs e) {
-			if (!buttonclicked[0]) {
-				likeBtn.Image = Properties.Resources.heart__1_;
-			}
-			else {
-				likeBtn.Image = Properties.Resources.heart__2_;
-			}
-			buttonclicked[0] = !buttonclicked[0];
-		}
-		private void commentButton_Click(object sender, EventArgs e) {
-			if (!buttonclicked[1]) {
-				commentBtn.Image = Properties.Resources.chat;
-			}
-			else {
-				commentBtn.Image = Properties.Resources.chat_bubble;
-			}
-			buttonclicked[1] = !buttonclicked[1];
-		}
-		private void shareButton_Click(object sender, EventArgs e) {
-			if (!buttonclicked[2]) {
-				shareBtn.Image = Properties.Resources.share;
-			}
-			else {
-				shareBtn.Image = Properties.Resources.social;
-			}
-			buttonclicked[2] = !buttonclicked[2];
-		}
+		
 	}
 }
 
