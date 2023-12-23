@@ -31,7 +31,6 @@
             this.ageBox = new System.Windows.Forms.TextBox();
             this.phoneNumberBox = new System.Windows.Forms.TextBox();
             this.genderBox = new System.Windows.Forms.TextBox();
-            this.signUpButton = new System.Windows.Forms.Button();
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.ageLabel = new System.Windows.Forms.Label();
             this.phoneNumberLabel = new System.Windows.Forms.Label();
             this.genderLabel = new System.Windows.Forms.Label();
+            this.signUpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // firstNameBox
@@ -48,8 +48,7 @@
             this.firstNameBox.Location = new System.Drawing.Point(132, 81);
             this.firstNameBox.Name = "firstNameBox";
             this.firstNameBox.Size = new System.Drawing.Size(196, 20);
-            this.firstNameBox.TabIndex = 0;
-            this.firstNameBox.TabStop = false;
+            this.firstNameBox.TabIndex = 1;
             this.firstNameBox.Text = "First Name";
             this.firstNameBox.Enter += new System.EventHandler(this.firstNameBox_Enter);
             // 
@@ -59,8 +58,7 @@
             this.lastNameBox.Location = new System.Drawing.Point(395, 81);
             this.lastNameBox.Name = "lastNameBox";
             this.lastNameBox.Size = new System.Drawing.Size(196, 20);
-            this.lastNameBox.TabIndex = 0;
-            this.lastNameBox.TabStop = false;
+            this.lastNameBox.TabIndex = 2;
             this.lastNameBox.Text = "Last Name";
             this.lastNameBox.Enter += new System.EventHandler(this.lastNameBox_Enter);
             // 
@@ -70,8 +68,7 @@
             this.emailBox.Location = new System.Drawing.Point(272, 141);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(196, 20);
-            this.emailBox.TabIndex = 0;
-            this.emailBox.TabStop = false;
+            this.emailBox.TabIndex = 3;
             this.emailBox.Text = "Email";
             this.emailBox.Enter += new System.EventHandler(this.emailBox_Enter);
             // 
@@ -81,8 +78,7 @@
             this.passwordBox.Location = new System.Drawing.Point(132, 200);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(196, 20);
-            this.passwordBox.TabIndex = 0;
-            this.passwordBox.TabStop = false;
+            this.passwordBox.TabIndex = 4;
             this.passwordBox.Text = "Password";
             this.passwordBox.Enter += new System.EventHandler(this.passwordBox_Enter);
             // 
@@ -92,8 +88,7 @@
             this.confirmPasswordBox.Location = new System.Drawing.Point(395, 200);
             this.confirmPasswordBox.Name = "confirmPasswordBox";
             this.confirmPasswordBox.Size = new System.Drawing.Size(196, 20);
-            this.confirmPasswordBox.TabIndex = 0;
-            this.confirmPasswordBox.TabStop = false;
+            this.confirmPasswordBox.TabIndex = 5;
             this.confirmPasswordBox.Text = "Confirm Password";
             this.confirmPasswordBox.Enter += new System.EventHandler(this.confirmPasswordBox_Enter);
             // 
@@ -103,8 +98,7 @@
             this.ageBox.Location = new System.Drawing.Point(132, 262);
             this.ageBox.Name = "ageBox";
             this.ageBox.Size = new System.Drawing.Size(86, 20);
-            this.ageBox.TabIndex = 1;
-            this.ageBox.TabStop = false;
+            this.ageBox.TabIndex = 6;
             this.ageBox.Text = "Age";
             this.ageBox.Enter += new System.EventHandler(this.ageBox_Enter);
             this.ageBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ageBox_KeyPress);
@@ -115,8 +109,7 @@
             this.phoneNumberBox.Location = new System.Drawing.Point(272, 262);
             this.phoneNumberBox.Name = "phoneNumberBox";
             this.phoneNumberBox.Size = new System.Drawing.Size(163, 20);
-            this.phoneNumberBox.TabIndex = 1;
-            this.phoneNumberBox.TabStop = false;
+            this.phoneNumberBox.TabIndex = 7;
             this.phoneNumberBox.Text = "Phone Number";
             this.phoneNumberBox.Enter += new System.EventHandler(this.phoneNumberBox_Enter);
             this.phoneNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberBox_KeyPress);
@@ -127,31 +120,20 @@
             this.genderBox.Location = new System.Drawing.Point(474, 262);
             this.genderBox.Name = "genderBox";
             this.genderBox.Size = new System.Drawing.Size(117, 20);
-            this.genderBox.TabIndex = 0;
-            this.genderBox.TabStop = false;
+            this.genderBox.TabIndex = 8;
             this.genderBox.Text = "Gender";
             this.genderBox.Enter += new System.EventHandler(this.genderBox_Enter);
-            // 
-            // signUpButton
-            // 
-            this.signUpButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.signUpButton.Location = new System.Drawing.Point(292, 335);
-            this.signUpButton.Name = "signUpButton";
-            this.signUpButton.Size = new System.Drawing.Size(143, 52);
-            this.signUpButton.TabIndex = 2;
-            this.signUpButton.TabStop = false;
-            this.signUpButton.Text = "Sign Up";
-            this.signUpButton.UseVisualStyleBackColor = true;
-            this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
             // firstNameLabel
             // 
             this.firstNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.firstNameLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameLabel.ForeColor = System.Drawing.Color.White;
             this.firstNameLabel.Location = new System.Drawing.Point(128, 58);
             this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(71, 16);
+            this.firstNameLabel.Size = new System.Drawing.Size(73, 16);
             this.firstNameLabel.TabIndex = 3;
             this.firstNameLabel.Text = "First Name";
             this.firstNameLabel.Visible = false;
@@ -160,10 +142,12 @@
             // 
             this.lastNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.lastNameLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameLabel.ForeColor = System.Drawing.Color.White;
             this.lastNameLabel.Location = new System.Drawing.Point(391, 58);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(70, 16);
+            this.lastNameLabel.Size = new System.Drawing.Size(71, 16);
             this.lastNameLabel.TabIndex = 3;
             this.lastNameLabel.Text = "Last Name";
             this.lastNameLabel.Visible = false;
@@ -172,10 +156,12 @@
             // 
             this.emailLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.BackColor = System.Drawing.Color.Transparent;
+            this.emailLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.White;
             this.emailLabel.Location = new System.Drawing.Point(342, 118);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(40, 16);
+            this.emailLabel.Size = new System.Drawing.Size(43, 16);
             this.emailLabel.TabIndex = 3;
             this.emailLabel.Text = "Email";
             this.emailLabel.Visible = false;
@@ -184,10 +170,12 @@
             // 
             this.passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
+            this.passwordLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.ForeColor = System.Drawing.Color.White;
             this.passwordLabel.Location = new System.Drawing.Point(128, 177);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(63, 16);
+            this.passwordLabel.Size = new System.Drawing.Size(65, 16);
             this.passwordLabel.TabIndex = 3;
             this.passwordLabel.Text = "Password";
             this.passwordLabel.Visible = false;
@@ -196,10 +184,12 @@
             // 
             this.confirmPasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.confirmPasswordLabel.AutoSize = true;
-            this.confirmPasswordLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPasswordLabel.BackColor = System.Drawing.Color.Transparent;
+            this.confirmPasswordLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPasswordLabel.ForeColor = System.Drawing.Color.White;
             this.confirmPasswordLabel.Location = new System.Drawing.Point(391, 177);
             this.confirmPasswordLabel.Name = "confirmPasswordLabel";
-            this.confirmPasswordLabel.Size = new System.Drawing.Size(112, 16);
+            this.confirmPasswordLabel.Size = new System.Drawing.Size(119, 16);
             this.confirmPasswordLabel.TabIndex = 3;
             this.confirmPasswordLabel.Text = "Confirm Password";
             this.confirmPasswordLabel.Visible = false;
@@ -208,10 +198,12 @@
             // 
             this.ageLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ageLabel.AutoSize = true;
-            this.ageLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ageLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageLabel.ForeColor = System.Drawing.Color.White;
             this.ageLabel.Location = new System.Drawing.Point(128, 239);
             this.ageLabel.Name = "ageLabel";
-            this.ageLabel.Size = new System.Drawing.Size(30, 16);
+            this.ageLabel.Size = new System.Drawing.Size(32, 16);
             this.ageLabel.TabIndex = 3;
             this.ageLabel.Text = "Age";
             this.ageLabel.Visible = false;
@@ -220,10 +212,12 @@
             // 
             this.phoneNumberLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.phoneNumberLabel.AutoSize = true;
-            this.phoneNumberLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumberLabel.BackColor = System.Drawing.Color.Transparent;
+            this.phoneNumberLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumberLabel.ForeColor = System.Drawing.Color.White;
             this.phoneNumberLabel.Location = new System.Drawing.Point(301, 239);
             this.phoneNumberLabel.Name = "phoneNumberLabel";
-            this.phoneNumberLabel.Size = new System.Drawing.Size(94, 16);
+            this.phoneNumberLabel.Size = new System.Drawing.Size(99, 16);
             this.phoneNumberLabel.TabIndex = 3;
             this.phoneNumberLabel.Text = "Phone Number";
             this.phoneNumberLabel.Visible = false;
@@ -232,19 +226,37 @@
             // 
             this.genderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.genderLabel.AutoSize = true;
-            this.genderLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderLabel.BackColor = System.Drawing.Color.Transparent;
+            this.genderLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderLabel.ForeColor = System.Drawing.Color.White;
             this.genderLabel.Location = new System.Drawing.Point(470, 239);
             this.genderLabel.Name = "genderLabel";
-            this.genderLabel.Size = new System.Drawing.Size(49, 16);
+            this.genderLabel.Size = new System.Drawing.Size(52, 16);
             this.genderLabel.TabIndex = 3;
             this.genderLabel.Text = "Gender";
             this.genderLabel.Visible = false;
+            // 
+            // signUpButton
+            // 
+            this.signUpButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.signUpButton.BackColor = System.Drawing.Color.White;
+            this.signUpButton.FlatAppearance.BorderSize = 0;
+            this.signUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signUpButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpButton.Location = new System.Drawing.Point(292, 335);
+            this.signUpButton.Name = "signUpButton";
+            this.signUpButton.Size = new System.Drawing.Size(143, 52);
+            this.signUpButton.TabIndex = 0;
+            this.signUpButton.Text = "Sign Up";
+            this.signUpButton.UseVisualStyleBackColor = false;
+            this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 451);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
+            this.ClientSize = new System.Drawing.Size(780, 447);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.confirmPasswordLabel);
             this.Controls.Add(this.genderLabel);
