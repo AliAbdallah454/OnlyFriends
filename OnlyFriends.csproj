@@ -99,7 +99,6 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hashset.cs" />
     <Compile Include="HelperFunctions.cs" />
     <Compile Include="mainUI.cs">
       <SubType>Form</SubType>
@@ -295,6 +294,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addition.png" />
+
     <Content Include="Resources\download.jpeg" />
     <None Include="Resources\magnifier.png" />
     <Content Include="Resources\pic1.jpg" />

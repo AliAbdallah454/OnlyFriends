@@ -23,16 +23,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.firstNameBox = new System.Windows.Forms.TextBox();
-            this.lastNameBox = new System.Windows.Forms.TextBox();
             this.emailBox = new System.Windows.Forms.TextBox();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.confirmPasswordBox = new System.Windows.Forms.TextBox();
             this.ageBox = new System.Windows.Forms.TextBox();
             this.phoneNumberBox = new System.Windows.Forms.TextBox();
             this.genderBox = new System.Windows.Forms.TextBox();
-            this.firstNameLabel = new System.Windows.Forms.Label();
-            this.lastNameLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.confirmPasswordLabel = new System.Windows.Forms.Label();
@@ -40,27 +36,9 @@
             this.phoneNumberLabel = new System.Windows.Forms.Label();
             this.genderLabel = new System.Windows.Forms.Label();
             this.signUpButton = new System.Windows.Forms.Button();
+            this.userNameBox = new System.Windows.Forms.TextBox();
+            this.userNameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // firstNameBox
-            // 
-            this.firstNameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.firstNameBox.Location = new System.Drawing.Point(132, 81);
-            this.firstNameBox.Name = "firstNameBox";
-            this.firstNameBox.Size = new System.Drawing.Size(196, 20);
-            this.firstNameBox.TabIndex = 1;
-            this.firstNameBox.Text = "First Name";
-            this.firstNameBox.Enter += new System.EventHandler(this.firstNameBox_Enter);
-            // 
-            // lastNameBox
-            // 
-            this.lastNameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lastNameBox.Location = new System.Drawing.Point(395, 81);
-            this.lastNameBox.Name = "lastNameBox";
-            this.lastNameBox.Size = new System.Drawing.Size(196, 20);
-            this.lastNameBox.TabIndex = 2;
-            this.lastNameBox.Text = "Last Name";
-            this.lastNameBox.Enter += new System.EventHandler(this.lastNameBox_Enter);
             // 
             // emailBox
             // 
@@ -68,7 +46,7 @@
             this.emailBox.Location = new System.Drawing.Point(272, 141);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(196, 20);
-            this.emailBox.TabIndex = 3;
+            this.emailBox.TabIndex = 2;
             this.emailBox.Text = "Email";
             this.emailBox.Enter += new System.EventHandler(this.emailBox_Enter);
             // 
@@ -78,7 +56,7 @@
             this.passwordBox.Location = new System.Drawing.Point(132, 200);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(196, 20);
-            this.passwordBox.TabIndex = 4;
+            this.passwordBox.TabIndex = 3;
             this.passwordBox.Text = "Password";
             this.passwordBox.Enter += new System.EventHandler(this.passwordBox_Enter);
             // 
@@ -88,7 +66,7 @@
             this.confirmPasswordBox.Location = new System.Drawing.Point(395, 200);
             this.confirmPasswordBox.Name = "confirmPasswordBox";
             this.confirmPasswordBox.Size = new System.Drawing.Size(196, 20);
-            this.confirmPasswordBox.TabIndex = 5;
+            this.confirmPasswordBox.TabIndex = 4;
             this.confirmPasswordBox.Text = "Confirm Password";
             this.confirmPasswordBox.Enter += new System.EventHandler(this.confirmPasswordBox_Enter);
             // 
@@ -98,7 +76,7 @@
             this.ageBox.Location = new System.Drawing.Point(132, 262);
             this.ageBox.Name = "ageBox";
             this.ageBox.Size = new System.Drawing.Size(86, 20);
-            this.ageBox.TabIndex = 6;
+            this.ageBox.TabIndex = 5;
             this.ageBox.Text = "Age";
             this.ageBox.Enter += new System.EventHandler(this.ageBox_Enter);
             this.ageBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ageBox_KeyPress);
@@ -109,7 +87,7 @@
             this.phoneNumberBox.Location = new System.Drawing.Point(272, 262);
             this.phoneNumberBox.Name = "phoneNumberBox";
             this.phoneNumberBox.Size = new System.Drawing.Size(163, 20);
-            this.phoneNumberBox.TabIndex = 7;
+            this.phoneNumberBox.TabIndex = 6;
             this.phoneNumberBox.Text = "Phone Number";
             this.phoneNumberBox.Enter += new System.EventHandler(this.phoneNumberBox_Enter);
             this.phoneNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberBox_KeyPress);
@@ -120,37 +98,9 @@
             this.genderBox.Location = new System.Drawing.Point(474, 262);
             this.genderBox.Name = "genderBox";
             this.genderBox.Size = new System.Drawing.Size(117, 20);
-            this.genderBox.TabIndex = 8;
+            this.genderBox.TabIndex = 7;
             this.genderBox.Text = "Gender";
             this.genderBox.Enter += new System.EventHandler(this.genderBox_Enter);
-            // 
-            // firstNameLabel
-            // 
-            this.firstNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.firstNameLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameLabel.ForeColor = System.Drawing.Color.White;
-            this.firstNameLabel.Location = new System.Drawing.Point(128, 58);
-            this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(73, 16);
-            this.firstNameLabel.TabIndex = 3;
-            this.firstNameLabel.Text = "First Name";
-            this.firstNameLabel.Visible = false;
-            // 
-            // lastNameLabel
-            // 
-            this.lastNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.lastNameLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameLabel.ForeColor = System.Drawing.Color.White;
-            this.lastNameLabel.Location = new System.Drawing.Point(391, 58);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(71, 16);
-            this.lastNameLabel.TabIndex = 3;
-            this.lastNameLabel.Text = "Last Name";
-            this.lastNameLabel.Visible = false;
             // 
             // emailLabel
             // 
@@ -251,20 +201,43 @@
             this.signUpButton.UseVisualStyleBackColor = false;
             this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
+            // userNameBox
+            // 
+            this.userNameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userNameBox.Location = new System.Drawing.Point(272, 86);
+            this.userNameBox.Name = "userNameBox";
+            this.userNameBox.Size = new System.Drawing.Size(196, 20);
+            this.userNameBox.TabIndex = 1;
+            this.userNameBox.Text = "User Name";
+            this.userNameBox.Enter += new System.EventHandler(this.userNameBox_Enter);
+            // 
+            // userNameLabel
+            // 
+            this.userNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.userNameLabel.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLabel.ForeColor = System.Drawing.Color.White;
+            this.userNameLabel.Location = new System.Drawing.Point(327, 58);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(73, 16);
+            this.userNameLabel.TabIndex = 3;
+            this.userNameLabel.Text = "User Name";
+            this.userNameLabel.Visible = false;
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(780, 447);
+            this.ClientSize = new System.Drawing.Size(779, 445);
+            this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.confirmPasswordLabel);
             this.Controls.Add(this.genderLabel);
             this.Controls.Add(this.phoneNumberLabel);
             this.Controls.Add(this.ageLabel);
             this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.lastNameLabel);
-            this.Controls.Add(this.firstNameLabel);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.phoneNumberBox);
             this.Controls.Add(this.ageBox);
@@ -272,11 +245,10 @@
             this.Controls.Add(this.emailBox);
             this.Controls.Add(this.confirmPasswordBox);
             this.Controls.Add(this.passwordBox);
-            this.Controls.Add(this.lastNameBox);
-            this.Controls.Add(this.firstNameBox);
+            this.Controls.Add(this.userNameBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximumSize = new System.Drawing.Size(800, 490);
-            this.MinimumSize = new System.Drawing.Size(800, 490);
+            this.MaximumSize = new System.Drawing.Size(799, 488);
+            this.MinimumSize = new System.Drawing.Size(799, 488);
             this.Name = "SignUpForm";
             this.Text = "SignUpForm";
             this.ResumeLayout(false);
@@ -285,9 +257,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox firstNameBox;
-        private System.Windows.Forms.TextBox lastNameBox;
         private System.Windows.Forms.TextBox emailBox;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.TextBox confirmPasswordBox;
@@ -295,13 +264,13 @@
         private System.Windows.Forms.TextBox phoneNumberBox;
         private System.Windows.Forms.TextBox genderBox;
         private System.Windows.Forms.Button signUpButton;
-        private System.Windows.Forms.Label firstNameLabel;
-        private System.Windows.Forms.Label lastNameLabel;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label confirmPasswordLabel;
         private System.Windows.Forms.Label ageLabel;
         private System.Windows.Forms.Label phoneNumberLabel;
         private System.Windows.Forms.Label genderLabel;
+		private System.Windows.Forms.TextBox userNameBox;
+        private System.Windows.Forms.Label userNameLabel;
     }
 }

@@ -72,7 +72,7 @@ namespace OnlyFriends {
 
 		}
 
-		public static void signup(string firstName, string lastName, string email, string password, string confirmPassword, string phoneNumber, string gender, int age) {
+		public static void signup(string userName, string email, string password, string confirmPassword, string phoneNumber, string gender, int age) {
 			// Check if Email is Unique
 			string checkEmail = $"SELECT * FROM users\n" +
 								$"WHERE email = \"{email}\";";
@@ -84,6 +84,16 @@ namespace OnlyFriends {
 			}
 			checkEmailReader.Close();
 
+			//Checking if userName is unique
+			string checkUserName = $@"SELECT * FROM users
+								      WHERE userName = '{userName}'
+									 ";
+			MySqlDataReader checkUserNameReader = connection.query(checkUserName);
+			if (checkUserNameReader.HasRows) {
+				checkUserNameReader.Close();
+				throw new Exception("User name is taken");
+			}
+			checkUserNameReader.Close();
 			// Check if Phone Number is Unique 
 			if (phoneNumber.Length != 0) {
 				string checkPhone = $"SELECT * FROM users\n" +
@@ -106,12 +116,6 @@ namespace OnlyFriends {
 			else if (confirmPassword != password) {
 				throw new Exception("Passwords Do Not Match");
 			}
-			else if (firstName.Length == 0 || firstName.Length > 30) {
-				throw new Exception("First Name Must Be Between 1 and 30 characters");
-			}
-			else if (lastName.Length == 0 || lastName.Length > 30) {
-				throw new Exception("Last Name Must Be Between 1 and 30 characters");
-			}
 			else if (age < 18) {
 				throw new Exception("You Must Be 18+");
 			}
@@ -125,8 +129,8 @@ namespace OnlyFriends {
 				throw new Exception("Invalid Phone Number");
 			}
 			else { //ALL IS GOOD
-				string addUser = $"INSERT INTO users (firstName, lastName, email, password, phonenumber, gender, age)" +
-								 $"VALUES (\"{firstName}\", \"{lastName}\", \"{email}\", \"{password}\", \"{phoneNumber}\", \"{gender}\", {age})";
+				string addUser = $"INSERT INTO users (userName, email, password, phonenumber, gender, age)" +
+								 $"VALUES (\"{userName}\", \"{email}\", \"{password}\", \"{phoneNumber}\", \"{gender}\", {age})";
 
 				MySqlDataReader addUserToUsers = connection.query(addUser);
 				addUserToUsers.Close();
