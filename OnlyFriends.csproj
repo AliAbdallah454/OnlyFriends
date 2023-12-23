@@ -99,6 +99,7 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hashset.cs" />
     <Compile Include="HelperFunctions.cs" />
     <Compile Include="mainUI.cs">
       <SubType>Form</SubType>
