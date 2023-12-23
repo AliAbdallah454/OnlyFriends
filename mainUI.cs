@@ -10,8 +10,22 @@ using System.Windows.Forms;
 
 namespace OnlyFriends {
     public partial class mainUI : Form {
+        private List<System.Windows.Forms.Panel>panels = new List<System.Windows.Forms.Panel>() { };
+        private List<Post> feed = new List<Post>();
+        private int currentPanel = 0;
         public mainUI() {
             InitializeComponent();
+
+            for (int i = 0;i<8;i++) {
+                if(i==0||i==2||i==5) {
+                    panels.Add(panel1);
+                    continue;
+                }
+                panels.Add(new Panel());
+                Label l = new Label();
+                l.Text = i.ToString();
+                panels[i].Controls.Add(l);
+            }
         }
         private void mouseEnter_Bold(object sender, EventArgs e) {
             if (sender is Label panel) {
@@ -25,7 +39,44 @@ namespace OnlyFriends {
                 panel.ForeColor = Color.Gray;
             }
         }
+        private void changePanel(object sender,EventArgs e) {
+            if(sender is Label x) {
+                int ocurrentPanel = currentPanel;
+                switch (x.Name) {
+                    
+                    case "HomeLabel":
+                        currentPanel = 0;
+                        break;
+                    case "dmLabel":
+                        currentPanel = 1;
+                        break;
+                    case "myPostLabel":
+                        currentPanel = 2;
+                        break;
+                    case "reelsLabel":
+                        currentPanel = 3;
+                        break;
+                    case "friendrequestLabel":
+                        currentPanel = 4;
+                        break;
+                    case "likedPostsLabel":
+                        currentPanel = 5;
+                        break;
+                    case "suggestionLabel":
+                        currentPanel = 6;
+                        break;
+                    case "settingsLabel":
+                        currentPanel = 7;
+                        break;
 
+
+                }
+                splitContainer1.Panel2.Controls.Remove(panels[ocurrentPanel]);
+                splitContainer1.Panel2.Controls.Add(panels[currentPanel]);
+
+
+            }
+        }
         private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e) {
 
         }
