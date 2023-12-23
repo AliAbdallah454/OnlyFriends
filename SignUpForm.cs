@@ -27,7 +27,7 @@ namespace OnlyFriends {
 		private void userNameBox_Enter(object sender, EventArgs e) {
 			if (userNameBox.Text == "User Name") {
 				userNameBox.Text = string.Empty;
-				firstNameLabel.Visible = true;
+				userNameLabel.Visible = true;
 			}
 		}
 
@@ -82,9 +82,15 @@ namespace OnlyFriends {
 			string confirmPassword = confirmPasswordBox.Text;
 			string phoneNumber = phoneNumberBox.Text;
 			string gender = genderBox.Text;
-			int age = int.Parse(ageBox.Text);
+			int age;
+			if(ageBox.Text != "Age") {
+                age = int.Parse(ageBox.Text);
+            }
+			else {
+                age = 0;
+            }
 
-			mainUI mainUI = new mainUI();
+            mainUI mainUI = new mainUI();
 
 			try {
 				AuthFunctions.signup(userName, email, password, confirmPassword, phoneNumber, gender, age);
@@ -94,18 +100,6 @@ namespace OnlyFriends {
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);
 			}
-		}
-
-		private void firstNameBox_TextChanged(object sender, EventArgs e) {
-
-		}
-
-		private void firstNameLabel_Click(object sender, EventArgs e) {
-
-		}
-
-		private void passwordBox_TextChanged(object sender, EventArgs e) {
-
 		}
 	}
 }
