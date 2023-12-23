@@ -35,18 +35,16 @@
             // 
             // emailBox
             // 
-            this.emailBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.emailBox.Location = new System.Drawing.Point(264, 153);
+            this.emailBox.Location = new System.Drawing.Point(278, 153);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(200, 20);
             this.emailBox.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(192, 94);
+            this.label1.Location = new System.Drawing.Point(206, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(381, 22);
             this.label1.TabIndex = 1;
@@ -54,10 +52,9 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(203, 157);
+            this.label2.Location = new System.Drawing.Point(217, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 2;
@@ -65,18 +62,16 @@
             // 
             // passwordBox
             // 
-            this.passwordBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passwordBox.Location = new System.Drawing.Point(264, 207);
+            this.passwordBox.Location = new System.Drawing.Point(278, 207);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(200, 20);
             this.passwordBox.TabIndex = 1;
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(177, 211);
+            this.label3.Location = new System.Drawing.Point(191, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 2;
@@ -84,18 +79,16 @@
             // 
             // confirmPasswordBox
             // 
-            this.confirmPasswordBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.confirmPasswordBox.Location = new System.Drawing.Point(264, 265);
+            this.confirmPasswordBox.Location = new System.Drawing.Point(278, 265);
             this.confirmPasswordBox.Name = "confirmPasswordBox";
             this.confirmPasswordBox.Size = new System.Drawing.Size(200, 20);
             this.confirmPasswordBox.TabIndex = 2;
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(129, 269);
+            this.label4.Location = new System.Drawing.Point(143, 269);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 16);
             this.label4.TabIndex = 2;
@@ -103,8 +96,7 @@
             // 
             // confirmButton
             // 
-            this.confirmButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.confirmButton.Location = new System.Drawing.Point(280, 340);
+            this.confirmButton.Location = new System.Drawing.Point(294, 340);
             this.confirmButton.Name = "confirmButton";
             this.confirmButton.Size = new System.Drawing.Size(156, 63);
             this.confirmButton.TabIndex = 4;
@@ -116,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 451);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -125,6 +117,9 @@
             this.Controls.Add(this.confirmPasswordBox);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.emailBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximumSize = new System.Drawing.Size(800, 490);
+            this.MinimumSize = new System.Drawing.Size(800, 490);
             this.Name = "ForgotPasswordForm";
             this.Text = "ForgotPasswordForm";
             this.TopMost = true;
