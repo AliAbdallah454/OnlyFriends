@@ -120,8 +120,8 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(25);
-            this.splitContainer1.Size = new System.Drawing.Size(784, 451);
-            this.splitContainer1.SplitterDistance = 130;
+            this.splitContainer1.Size = new System.Drawing.Size(780, 447);
+            this.splitContainer1.SplitterDistance = 129;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -161,7 +161,7 @@
             this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.Size = new System.Drawing.Size(122, 443);
+            this.navBarTable.Size = new System.Drawing.Size(121, 439);
             this.navBarTable.TabIndex = 0;
             // 
             // settingsLabel
@@ -418,7 +418,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(25, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(603, 401);
+            this.panel1.Size = new System.Drawing.Size(600, 397);
             this.panel1.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -431,7 +431,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(603, 401);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(600, 397);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // postInfo
@@ -725,6 +725,7 @@
             this.ClientSize = new System.Drawing.Size(784, 451);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(800, 490);

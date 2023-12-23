@@ -43,7 +43,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::OnlyFriends.Properties.Resources.onlyfans_logo_152221;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(268, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(299, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(208, 181);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -53,11 +53,10 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(218, 260);
+            this.textBox1.Location = new System.Drawing.Point(249, 261);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(302, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TabStop = false;
             this.textBox1.Text = "Email";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
@@ -66,11 +65,10 @@
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(218, 305);
+            this.textBox2.Location = new System.Drawing.Point(249, 306);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(302, 20);
             this.textBox2.TabIndex = 2;
-            this.textBox2.TabStop = false;
             this.textBox2.Text = "Password";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
@@ -79,10 +77,10 @@
             // 
             this.loginBTN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginBTN.Enabled = false;
-            this.loginBTN.Location = new System.Drawing.Point(321, 351);
+            this.loginBTN.Location = new System.Drawing.Point(352, 352);
             this.loginBTN.Name = "loginBTN";
             this.loginBTN.Size = new System.Drawing.Size(91, 51);
-            this.loginBTN.TabIndex = 3;
+            this.loginBTN.TabIndex = 0;
             this.loginBTN.Text = "Login";
             this.loginBTN.UseVisualStyleBackColor = true;
             this.loginBTN.Click += new System.EventHandler(this.loginButton_Click);
@@ -93,10 +91,10 @@
             this.invalidEmaillbl.AutoSize = true;
             this.invalidEmaillbl.BackColor = System.Drawing.Color.Transparent;
             this.invalidEmaillbl.ForeColor = System.Drawing.Color.Red;
-            this.invalidEmaillbl.Location = new System.Drawing.Point(215, 244);
+            this.invalidEmaillbl.Location = new System.Drawing.Point(246, 245);
             this.invalidEmaillbl.Name = "invalidEmaillbl";
             this.invalidEmaillbl.Size = new System.Drawing.Size(70, 13);
-            this.invalidEmaillbl.TabIndex = 6;
+            this.invalidEmaillbl.TabIndex = 0;
             this.invalidEmaillbl.Text = "*Invalid Email";
             this.invalidEmaillbl.Visible = false;
             // 
@@ -106,7 +104,7 @@
             this.InvalidPasswordlbl.AutoSize = true;
             this.InvalidPasswordlbl.BackColor = System.Drawing.Color.Transparent;
             this.InvalidPasswordlbl.ForeColor = System.Drawing.Color.Red;
-            this.InvalidPasswordlbl.Location = new System.Drawing.Point(215, 289);
+            this.InvalidPasswordlbl.Location = new System.Drawing.Point(246, 290);
             this.InvalidPasswordlbl.Name = "InvalidPasswordlbl";
             this.InvalidPasswordlbl.Size = new System.Drawing.Size(91, 13);
             this.InvalidPasswordlbl.TabIndex = 7;
@@ -116,7 +114,7 @@
             // form2btn
             // 
             this.form2btn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.form2btn.Location = new System.Drawing.Point(557, 351);
+            this.form2btn.Location = new System.Drawing.Point(588, 352);
             this.form2btn.Name = "form2btn";
             this.form2btn.Size = new System.Drawing.Size(86, 36);
             this.form2btn.TabIndex = 8;
@@ -127,7 +125,7 @@
             // MhmdForm
             // 
             this.MhmdForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MhmdForm.Location = new System.Drawing.Point(23, 365);
+            this.MhmdForm.Location = new System.Drawing.Point(54, 366);
             this.MhmdForm.Name = "MhmdForm";
             this.MhmdForm.Size = new System.Drawing.Size(100, 36);
             this.MhmdForm.TabIndex = 9;
@@ -142,21 +140,22 @@
             this.createAccountLink.BackColor = System.Drawing.Color.Transparent;
             this.createAccountLink.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createAccountLink.LinkColor = System.Drawing.Color.White;
-            this.createAccountLink.Location = new System.Drawing.Point(410, 325);
+            this.createAccountLink.Location = new System.Drawing.Point(441, 329);
             this.createAccountLink.Name = "createAccountLink";
             this.createAccountLink.Size = new System.Drawing.Size(110, 14);
-            this.createAccountLink.TabIndex = 10;
+            this.createAccountLink.TabIndex = 0;
             this.createAccountLink.TabStop = true;
             this.createAccountLink.Text = "Create an Account?";
             this.createAccountLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createAccountLink_LinkClicked);
             // 
             // forgotPasswordLink
             // 
+            this.forgotPasswordLink.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.forgotPasswordLink.AutoSize = true;
             this.forgotPasswordLink.BackColor = System.Drawing.Color.Transparent;
             this.forgotPasswordLink.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgotPasswordLink.LinkColor = System.Drawing.Color.White;
-            this.forgotPasswordLink.Location = new System.Drawing.Point(215, 325);
+            this.forgotPasswordLink.Location = new System.Drawing.Point(246, 329);
             this.forgotPasswordLink.Name = "forgotPasswordLink";
             this.forgotPasswordLink.Size = new System.Drawing.Size(102, 14);
             this.forgotPasswordLink.TabIndex = 11;
@@ -171,7 +170,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::OnlyFriends.Properties.Resources.ripples_in_blank_black_6m97l43pauyhiw4e1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(719, 444);
+            this.ClientSize = new System.Drawing.Size(784, 451);
             this.Controls.Add(this.forgotPasswordLink);
             this.Controls.Add(this.createAccountLink);
             this.Controls.Add(this.MhmdForm);
@@ -182,9 +181,11 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(735, 449);
+            this.MaximumSize = new System.Drawing.Size(800, 490);
+            this.MinimumSize = new System.Drawing.Size(800, 490);
             this.Name = "Login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

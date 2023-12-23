@@ -180,6 +180,7 @@ namespace OnlyFriends {
             }
 
         }
+
         private bool[] buttonclicked = { false, false, false };
         private void interactions_Click(object sender, EventArgs e) {
             if (sender is PictureBox x) {
