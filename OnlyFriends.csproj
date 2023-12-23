@@ -122,6 +122,24 @@
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\HomeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\HomeUC.Designer.cs">
+      <DependentUpon>HomeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\MyPostsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\MyPostsUC.Designer.cs">
+      <DependentUpon>MyPostsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\LikedPostsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\LikedPostsUC.Designer.cs">
+      <DependentUpon>LikedPostsUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserFriendActions.cs" />
     <Compile Include="UserPostActions.cs" />
@@ -154,6 +172,15 @@
     </Compile>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\HomeUC.resx">
+      <DependentUpon>HomeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\MyPostsUC.resx">
+      <DependentUpon>MyPostsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\LikedPostsUC.resx">
+      <DependentUpon>LikedPostsUC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -266,7 +293,10 @@
     <None Include="Resources\chat.-bubble.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\addition.png" />
+
     <Content Include="Resources\download.jpeg" />
+    <None Include="Resources\magnifier.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>
