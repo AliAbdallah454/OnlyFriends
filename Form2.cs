@@ -18,14 +18,20 @@ namespace OnlyFriends {
 			connection.InitializeConnection();
 
 
-			string email = "eva.brown@example.com";
-			string password = "mysecret";
+			string email = "linda.white@example.com";
+			string password = "password789";
 
 			AuthFunctions.login(email, password);
 
-			Post p = new Post(1, 1, "gay", "f", new DateTime(), 20);
-
-			MessageBox.Show(HelperFunctions.translateCommentIdToCommentInfo(11).Content);
+			try {
+				User user = User.Instance;
+				foreach (User friend in user.getSuggestedFriends()) {
+					MessageBox.Show(friend.FirstName, friend.UserId.ToString());
+				}
+			}
+			catch (Exception ex) {
+				MessageBox.Show(ex.Message);
+			}
 
 		}
 	}
