@@ -2,7 +2,7 @@
 using System;
 
 namespace OnlyFriends {
-	internal class HelperFunctions {
+	internal static class HelperFunctions {
 
 		public static User translateUserIdToUserInfo(int userId) {
 

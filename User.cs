@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using MySqlConnector;
 
 namespace OnlyFriends {
@@ -13,14 +14,15 @@ namespace OnlyFriends {
 		public string Email { get; set; }
 		public string Password { get; set; }
 		public string PhoneNumber { get; set; }
-
+		public Image profilePic { get; set; }
 		private static User instance = null;
 
 		private DatabaseConnection connection = DatabaseConnection.Instance;
 
 		private User(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber) {
+			profilePic = Properties.Resources.Default_pfp_svg;
 
-			UserId = userId;
+            UserId = userId;
 			FirstName = firstName;
 			LastName = lastName;
 			Age = age;

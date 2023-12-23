@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,24 @@ namespace OnlyFriends {
     public partial class mainUI : Form {
         private List<System.Windows.Forms.Panel>panels = new List<System.Windows.Forms.Panel>() { };
         private List<Post> feed = new List<Post>();
-        private int currentPanel = 0;
-        public mainUI() {
-            InitializeComponent();
+        private int currentPanel = 0,currentPost=0;
+        private void createUser() {
 
-            for (int i = 0;i<8;i++) {
-                if(i==0||i==2||i==5) {
+            DatabaseConnection connection = DatabaseConnection.Instance;
+            connection.InitializeConnection();
+
+
+            string email = "linda.white@example.com";
+            string password = "password789";
+
+            AuthFunctions.login(email, password);
+
+            
+        }
+        private void generatePanels() {
+
+            for (int i = 0; i < 8; i++) {
+                if (i == 0 || i == 2 || i == 5) {
                     panels.Add(panel1);
                     continue;
                 }
@@ -26,6 +39,52 @@ namespace OnlyFriends {
                 l.Text = i.ToString();
                 panels[i].Controls.Add(l);
             }
+        }
+        private void generatePosts() {
+            feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
+            feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
+            feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
+            feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
+            feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
+            feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
+            feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
+
+        }
+        User user;
+        public mainUI() {
+            InitializeComponent();
+            createUser();
+            user = User.Instance;
+            generatePanels();
+            generatePosts();
+            splitContainer1.Panel2.MouseWheel += feedScroller;
+
+        }
+        private void showPost(Post post) {
+            postUsername2.Text=postUsernameLabel.Text = HelperFunctions.translateUserIdToFullName(post.UserId);
+            postImage.Image = post.Pic;
+            postText.Text = post.Content;
+            postDate.Text = $"Posted at {post.TimeStamp.Hour}:{post.TimeStamp.Minute} , {post.TimeStamp.Day}/{post.TimeStamp.Month}/{post.TimeStamp.Year}";
+            hashtagsContentLabel.Text = String.Empty;
+            if (post.tags.Count() == 0) {
+                HashtagsLabel.Hide();
+            }
+            else {
+                HashtagsLabel.Show();
+                foreach (string tag in post.tags) {
+                    hashtagsContentLabel.Text += $"#{tag} ";
+                }
+            }
+            likesLabel.Text = $"        Like ({post.Likes})";
+            commentsLabel.Text= $"        Comment ({post.Comments})";
+            commentsLabel.Text = $"        Share ({post.Shares})";
+            //postPfpUsername.Image=
+
+        }
+        private void feedScroller(object sender,MouseEventArgs e) {
+            if(e.Delta>0 && currentPost>0) { showPost(feed[--currentPost]); }
+
+            else if (e.Delta < 0&& currentPost<feed.Count()-1) { showPost(feed[++currentPost]); }
         }
         private void mouseEnter_Bold(object sender, EventArgs e) {
             if (sender is Label panel) {
@@ -41,6 +100,7 @@ namespace OnlyFriends {
         }
         private void changePanel(object sender,EventArgs e) {
             if(sender is Label x) {
+                feed = user.getFeedPosts();
                 int ocurrentPanel = currentPanel;
                 switch (x.Name) {
                     
@@ -74,7 +134,7 @@ namespace OnlyFriends {
                 splitContainer1.Panel2.Controls.Remove(panels[ocurrentPanel]);
                 splitContainer1.Panel2.Controls.Add(panels[currentPanel]);
 
-
+                
             }
         }
         private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e) {
