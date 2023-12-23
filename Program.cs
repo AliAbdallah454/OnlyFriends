@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
@@ -13,7 +10,8 @@ namespace OnlyFriends {
 		static void Main() {
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new mainUI());
+
+			Application.Run(new Login());
 		}
 	}
 }

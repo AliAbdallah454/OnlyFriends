@@ -15,8 +15,9 @@ namespace OnlyFriends {
 
 			reader.Read();
 
-			string firstName = reader.GetString("firstName");
-			string lastName = reader.GetString("lastName");
+			//string firstName = reader.GetString("firstName");
+			//string lastName = reader.GetString("lastName");
+			string userName = reader.GetString("userName");
 			int age = reader.GetInt32("age");
 			string gender = reader.GetString("gender");
 			string email = reader.GetString("email");
@@ -24,7 +25,7 @@ namespace OnlyFriends {
 
 			reader.Close();
 
-			return new User(userId, firstName, lastName, age, gender, email, phoneNumber);
+			return new User(userId, userName, age, gender, email, phoneNumber);
 
 		}
 		public static Post translatePostIdToPostInfo(int postId) {
@@ -70,9 +71,8 @@ namespace OnlyFriends {
 			return new Comment(commentId, postId, userId, content, timeStamp);
 
 		}
-
-		public static string translateUserIdToFullName(int userId) {
-			return translateUserIdToUserInfo(userId).getFullName();
+		public static string translateUserIdToUserName(int userId) {
+			return translateUserIdToUserInfo(userId).getUserName();
 		}
 
 	}
