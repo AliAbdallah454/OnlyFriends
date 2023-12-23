@@ -1,6 +1,5 @@
 ﻿using MySqlConnector;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace OnlyFriends {
 	internal partial class User {
@@ -44,24 +43,18 @@ namespace OnlyFriends {
 			return readFriendsFromDb(sql);
 		}
 
-		// Still Need to look to see if a single query can replace this fucntion :)
 		public HashSet<User> getSuggestedFriends() {
 
-			HashSet<User> suggestedFriends = new HashSet<User>();
-			HashSet<User> friends = this.getFriends();
-			HashSet<int> usersNotToConsider = friends.Select(friend => friend.UserId).ToHashSet();
-			usersNotToConsider.Add(UserId);
+			string sql = $@"
+				SELECT * FROM users
+				WHERE userId IN (SELECT DISTINCT friendId FROM (SELECT * FROM friends
+						WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId}))
+						AS ff WHERE friendId != {UserId})
+				ORDER BY userId
+			";
 
-			foreach (User friend in friends) {
-				HashSet<User> friendFriends = friend.getFriends();
-				foreach (User friendFriend in friendFriends) {
-					if (!usersNotToConsider.Contains(friendFriend.UserId)) {
-						suggestedFriends.Add(friendFriend);
-						usersNotToConsider.Add(friendFriend.UserId);
-					}
-				}
-			}
-			return suggestedFriends;
+			return readFriendsFromDb(sql);
+
 		}
 
 	}
