@@ -25,8 +25,8 @@ namespace OnlyFriends {
 
 			try {
 				User user = User.Instance;
-				foreach (User friend in user.getSuggestedFriends()) {
-					MessageBox.Show(friend.FirstName, friend.UserId.ToString());
+				foreach (Post post in user.getPosts()) {
+					MessageBox.Show(post.Content, HelperFunctions.translateUserIdToFullName(post.UserId));
 				}
 			}
 			catch (Exception ex) {
