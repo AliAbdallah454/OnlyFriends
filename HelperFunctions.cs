@@ -71,5 +71,9 @@ namespace OnlyFriends {
 
 		}
 
+		public static string translateUserIdToFullName(int userId) {
+			return translateUserIdToUserInfo(userId).getFullName();
+		}
+
 	}
 }
