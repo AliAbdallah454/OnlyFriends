@@ -101,5 +101,10 @@ namespace OnlyFriends {
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e) {
+            string id = button1.Tag.ToString();
+            MessageBox.Show(id); 
+        }
     }
 }
