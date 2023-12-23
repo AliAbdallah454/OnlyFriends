@@ -644,6 +644,9 @@
             this.shareBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.shareBtn.TabIndex = 2;
             this.shareBtn.TabStop = false;
+            this.shareBtn.Click += new System.EventHandler(this.interactions_Click);
+            this.shareBtn.MouseEnter += new System.EventHandler(this.interactions_MouseEnter);
+            this.shareBtn.MouseLeave += new System.EventHandler(this.interactions_MouseLeave);
             // 
             // commentBtn
             // 
@@ -658,6 +661,9 @@
             this.commentBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.commentBtn.TabIndex = 1;
             this.commentBtn.TabStop = false;
+            this.commentBtn.Click += new System.EventHandler(this.interactions_Click);
+            this.commentBtn.MouseEnter += new System.EventHandler(this.interactions_MouseEnter);
+            this.commentBtn.MouseLeave += new System.EventHandler(this.interactions_MouseLeave);
             // 
             // likeBtn
             // 
@@ -672,6 +678,9 @@
             this.likeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.likeBtn.TabIndex = 0;
             this.likeBtn.TabStop = false;
+            this.likeBtn.Click += new System.EventHandler(this.interactions_Click);
+            this.likeBtn.MouseEnter += new System.EventHandler(this.interactions_MouseEnter);
+            this.likeBtn.MouseLeave += new System.EventHandler(this.interactions_MouseLeave);
             // 
             // sharesLabel
             // 
