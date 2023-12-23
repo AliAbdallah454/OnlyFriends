@@ -647,9 +647,9 @@
             this.shareBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.shareBtn.TabIndex = 2;
             this.shareBtn.TabStop = false;
-            this.shareBtn.Click += new System.EventHandler(this.interactions_Click);
-            this.shareBtn.MouseEnter += new System.EventHandler(this.interactions_MouseEnter);
-            this.shareBtn.MouseLeave += new System.EventHandler(this.interactions_MouseLeave);
+            this.shareBtn.Click += new System.EventHandler(this.shareButton_Click);
+            this.shareBtn.MouseEnter += new System.EventHandler(this.shareButton_MouseEnter);
+            this.shareBtn.MouseLeave += new System.EventHandler(this.shareButton_MouseLeave);
             // 
             // commentBtn
             // 
@@ -664,9 +664,9 @@
             this.commentBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.commentBtn.TabIndex = 1;
             this.commentBtn.TabStop = false;
-            this.commentBtn.Click += new System.EventHandler(this.interactions_Click);
-            this.commentBtn.MouseEnter += new System.EventHandler(this.interactions_MouseEnter);
-            this.commentBtn.MouseLeave += new System.EventHandler(this.interactions_MouseLeave);
+            this.commentBtn.Click += new System.EventHandler(this.commentButton_Click);
+            this.commentBtn.MouseEnter += new System.EventHandler(this.commentButton_MouseEnter);
+            this.commentBtn.MouseLeave += new System.EventHandler(this.commentButton_MouseLeave);
             // 
             // likeBtn
             // 
@@ -681,9 +681,9 @@
             this.likeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.likeBtn.TabIndex = 0;
             this.likeBtn.TabStop = false;
-            this.likeBtn.Click += new System.EventHandler(this.interactions_Click);
-            this.likeBtn.MouseEnter += new System.EventHandler(this.interactions_MouseEnter);
-            this.likeBtn.MouseLeave += new System.EventHandler(this.interactions_MouseLeave);
+            this.likeBtn.Click += new System.EventHandler(this.likeButton_Click);
+            this.likeBtn.MouseEnter += new System.EventHandler(this.likeButton_MouseEnter);
+            this.likeBtn.MouseLeave += new System.EventHandler(this.likeButton_MouseLeave);
             // 
             // sharesLabel
             // 
@@ -722,7 +722,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 451);
+            this.ClientSize = new System.Drawing.Size(780, 447);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

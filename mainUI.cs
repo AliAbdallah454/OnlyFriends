@@ -141,66 +141,70 @@ namespace OnlyFriends {
 
         }
 
-        private void interactions_MouseEnter(object sender, EventArgs e) {
-            if (sender is PictureBox x) {
-                switch (x.Name) {
-                    case "likeBtn":
-                        if (buttonclicked[0]) break;
-                        likeBtn.Image = Properties.Resources.heart__1_;
-                        break;
-                    case "commentBtn":
-                        if (buttonclicked[1]) break;
-                        commentBtn.Image = Properties.Resources.chat;
-                        break;
-                    case "shareBtn":
-                        if (buttonclicked[2]) break;
-                        shareBtn.Image = Properties.Resources.share;
-                        break;
-
-                }
-            }
-        }
-        private void interactions_MouseLeave(object sender, EventArgs e) {
-            if (sender is PictureBox x) {
-                switch (x.Name) {
-                    case "likeBtn":
-                        if (buttonclicked[0]) break;
-                        likeBtn.Image = Properties.Resources.heart__2_;
-                        break;
-                    case "commentBtn":
-                        if (buttonclicked[1]) break;
-                        commentBtn.Image = Properties.Resources.chat_bubble;
-                        break;
-                    case "shareBtn":
-                        if (buttonclicked[2]) break;
-                        shareBtn.Image = Properties.Resources.social;
-                        break;
-
-                }
-            }
-
-        }
 
         private bool[] buttonclicked = { false, false, false };
-        private void interactions_Click(object sender, EventArgs e) {
-            if (sender is PictureBox x) {
-                switch (x.Name) {
-                    case "likeBtn":
-                        likeBtn.Image = (!buttonclicked[0]) ? Properties.Resources.heart__1_ : Properties.Resources.heart__2_;
-                        buttonclicked[0] = !buttonclicked[0];
-                        break;
-                    case "commentBtn":
-                        commentBtn.Image = (!buttonclicked[1]) ? Properties.Resources.chat : Properties.Resources.chat_bubble;
-                        buttonclicked[1] = !buttonclicked[1];
-                        break;
-                    case "shareBtn":
-                        shareBtn.Image = (!buttonclicked[2]) ? Properties.Resources.share : Properties.Resources.social;
-                        buttonclicked[2] = !buttonclicked[2];
-                        break;
 
-                }
+        //Button Enter Function
+        private void likeButton_MouseEnter(object sender, EventArgs e) {
+            if (!buttonclicked[0]) {
+                likeBtn.Image = Properties.Resources.heart__1_;
+            }
+        }
+        private void commentButton_MouseEnter(object sender, EventArgs e) {
+            if (!buttonclicked[1]) {
+                commentBtn.Image = Properties.Resources.chat;
+            }
+        }
+        private void shareButton_MouseEnter(object sender, EventArgs e) {
+            if (!buttonclicked[2]) {
+                shareBtn.Image = Properties.Resources.share;
             }
         }
 
+        //Button Leave Functions
+        private void likeButton_MouseLeave(object sender, EventArgs e) {
+            if (!buttonclicked[0]) {
+                likeBtn.Image = Properties.Resources.heart__2_;
+            }
+        }
+        private void commentButton_MouseLeave(object sender, EventArgs e) {
+            if (!buttonclicked[1]) {
+                commentBtn.Image = Properties.Resources.chat_bubble;
+            }
+        }
+        private void shareButton_MouseLeave(object sender, EventArgs e) {
+            if (!buttonclicked[2]) {
+                shareBtn.Image = Properties.Resources.social;
+            }
+        }
+
+        //Button Click Functions
+        private void likeButton_Click(object sender, EventArgs e) {
+            if (!buttonclicked[0]) {
+                likeBtn.Image = Properties.Resources.heart__1_;
+            }
+            else {
+                likeBtn.Image = Properties.Resources.heart__2_;
+            }
+            buttonclicked[0] = !buttonclicked[0];
+        }
+        private void commentButton_Click(object sender, EventArgs e) {
+            if (!buttonclicked[1]) {
+                commentBtn.Image = Properties.Resources.chat;
+            }
+            else {
+                commentBtn.Image = Properties.Resources.chat_bubble;
+            }
+            buttonclicked[1] = !buttonclicked[1];
+        }
+        private void shareButton_Click(object sender, EventArgs e) {
+            if (!buttonclicked[2]) {
+                shareBtn.Image = Properties.Resources.share;
+            }
+            else {
+                shareBtn.Image = Properties.Resources.social;
+            }
+            buttonclicked[2] = !buttonclicked[2];
+        }
     }
 }
