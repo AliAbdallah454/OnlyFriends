@@ -1,56 +1,53 @@
 ﻿using System;
 using System.Drawing;
-using MySqlConnector;
 
 namespace OnlyFriends {
 
 	internal partial class User {
 
 		public int UserId { get; set; }
-		public string FirstName { get; set; }
-		public string LastName { get; set; }
+		public string UserName { get; set; }
 		public int Age { get; set; }
 		public string Gender { get; set; }
 		public string Email { get; set; }
 		public string Password { get; set; }
 		public string PhoneNumber { get; set; }
 		public Image profilePic { get; set; }
+
 		private static User instance = null;
 
 		private DatabaseConnection connection = DatabaseConnection.Instance;
 
-		private User(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber) {
-			profilePic = Properties.Resources.Default_pfp_svg;
+		private User(int userId, string userName, int age, string gender, string email, string password, string phoneNumber) {
 
-            UserId = userId;
-			FirstName = firstName;
-			LastName = lastName;
+			UserId = userId;
+			UserName = userName;
 			Age = age;
 			Gender = gender;
 			Email = email;
 			Password = password;
 			PhoneNumber = phoneNumber;
 
+			profilePic = Properties.Resources.Default_pfp_svg;
+
 		}
 
-		public User(int userId, string firstName, string lastName, int age, string gender, string email, string phoneNumber) {
+		public User(int userId, string userName, int age, string gender, string email, string phoneNumber) {
 
 			UserId = userId;
-			FirstName = firstName;
-			LastName = lastName;
+			UserName = userName;
 			Age = age;
 			Gender = gender;
 			Email = email;
 			PhoneNumber = phoneNumber;
 
+			profilePic = Properties.Resources.Default_pfp_svg;
+
 		}
 
-		public static void CreateInstance(int userId, string firstName, string lastName, int age, string gender, string email, string password, string phoneNumber) {
-
+		public static void CreateInstance(int userId, string userName, int age, string gender, string email, string password, string phoneNumber) {
 			if (instance == null) {
-
-				instance = new User(userId, firstName, lastName, age, gender, email, password, phoneNumber);
-
+				instance = new User(userId, userName, age, gender, email, password, phoneNumber);
 			}
 		}
 
@@ -72,11 +69,11 @@ namespace OnlyFriends {
 				return instance;
 			}
 		}
-		public string getFullName() {
-			return $"{FirstName} {LastName}";
+		public string getUserName() {
+			return $"{UserName}";
 		}
 
-		
+
 
 	}
 

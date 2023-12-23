@@ -1,5 +1,6 @@
 ﻿using MySqlConnector;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace OnlyFriends {
 	internal partial class User {
@@ -13,14 +14,13 @@ namespace OnlyFriends {
 			while (reader.Read()) {
 
 				int id = reader.GetInt32("userId");
-				string firstName = reader.GetString("firstName");
-				string lastName = reader.GetString("lastName");
+				string userName = reader.GetString("userName");
 				int age = reader.GetInt32("age");
 				string gender = reader.GetString("gender");
 				string email = reader.GetString("email");
 				string phoneNumber = reader.GetString("phoneNumber");
 
-				friends.Add(new User(id, firstName, lastName, age, gender, email, phoneNumber));
+				friends.Add(new User(id, userName, age, gender, email, phoneNumber));
 
 			}
 
@@ -30,6 +30,8 @@ namespace OnlyFriends {
 		}
 
 		public HashSet<User> getFriends() {
+
+			MessageBox.Show("in fn");
 
 			string sql = $"SELECT * FROM users\n" +
 				$"WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId})";
