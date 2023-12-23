@@ -1,14 +1,11 @@
 ﻿using MySqlConnector;
 using System;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Transactions;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
 
- 
-    internal class AuthFunctions {
+
+	internal class AuthFunctions {
 		public static DatabaseConnection connection = DatabaseConnection.Instance;
 
 		public static void login(string email, string password) {
@@ -40,8 +37,7 @@ namespace OnlyFriends {
 					infoReader.Read();
 
 					int userId = infoReader.GetInt32("userId");
-					string firstName = infoReader.GetString("firstName");
-					string lastName = infoReader.GetString("lastName");
+					string userName = infoReader.GetString("userName");
 					// email
 					// password
 					string phoneNumber = infoReader.GetString("phoneNumber");
@@ -50,8 +46,7 @@ namespace OnlyFriends {
 
 					User.CreateInstance(
 						userId,
-						firstName,
-						lastName,
+						userName,
 						age,
 						gender,
 						email,
@@ -61,7 +56,7 @@ namespace OnlyFriends {
 
 					infoReader.Close();
 
-					MessageBox.Show($"Login done as {firstName} {lastName}");
+					MessageBox.Show($"Login done as {userName}");
 
 				}
 				else {
@@ -78,34 +73,34 @@ namespace OnlyFriends {
 		}
 
 		public static void signup(string firstName, string lastName, string email, string password, string confirmPassword, string phoneNumber, string gender, int age) {
-            // Check if Email is Unique
-            string checkEmail = $"SELECT * FROM users\n" +
+			// Check if Email is Unique
+			string checkEmail = $"SELECT * FROM users\n" +
 								$"WHERE email = \"{email}\";";
-            MySqlDataReader checkEmailReader = connection.query(checkEmail);
+			MySqlDataReader checkEmailReader = connection.query(checkEmail);
 
-            if (checkEmailReader.HasRows) {
-                checkEmailReader.Close();
-                throw new Exception("Email Already Exists");
-            }
-            checkEmailReader.Close();
+			if (checkEmailReader.HasRows) {
+				checkEmailReader.Close();
+				throw new Exception("Email Already Exists");
+			}
+			checkEmailReader.Close();
 
 			// Check if Phone Number is Unique 
-			if(phoneNumber.Length != 0) {
-                string checkPhone = $"SELECT * FROM users\n" +
-                                    $"WHERE phoneNumber = \"{phoneNumber}\"";
-                MySqlDataReader checkPhoneReader = connection.query(checkPhone);
-                if (checkPhoneReader.HasRows) {
-                    checkPhoneReader.Close();
-                    throw new Exception("Phone Number Already Exists");
-                }
-                checkPhoneReader.Close();
-            }
+			if (phoneNumber.Length != 0) {
+				string checkPhone = $"SELECT * FROM users\n" +
+									$"WHERE phoneNumber = \"{phoneNumber}\"";
+				MySqlDataReader checkPhoneReader = connection.query(checkPhone);
+				if (checkPhoneReader.HasRows) {
+					checkPhoneReader.Close();
+					throw new Exception("Phone Number Already Exists");
+				}
+				checkPhoneReader.Close();
+			}
 
-            // Check if the Rest are Valid
-            if (email.Length == 0 || !email.Contains("@gmail.com") || email.StartsWith("@")) {
+			// Check if the Rest are Valid
+			if (email.Length == 0 || !email.Contains("@gmail.com") || email.StartsWith("@")) {
 				throw new Exception("Invalid Email Entry");
 			}
-            else if (password.Length == 0) {
+			else if (password.Length == 0) {
 				throw new Exception("Please Enter a Password");
 			}
 			else if (confirmPassword != password) {
@@ -138,41 +133,41 @@ namespace OnlyFriends {
 
 				login(email, password);
 			}
-        }
-
-		public static void logout() {
-			MessageBox.Show("Logging out from " + User.Instance.getFullName());
-			User.DestroyInstance();
-
-            MessageBox.Show("Logout Successful");
-			
 		}
 
-        public static void changePassword(string email, string password, string confirmedPassword) {
-            string checkEmail = $"SELECT * FROM users\n" +
-                                $"WHERE email = \"{email}\";";
-            MySqlDataReader checkEmailReader = connection.query(checkEmail);
-            if (checkEmailReader.HasRows) {
-                checkEmailReader.Close();
+		public static void logout() {
+			MessageBox.Show("Logging out from " + User.Instance.getUserName());
+			User.DestroyInstance();
 
-                if (password.Length == 0) {
-                    throw new Exception("Password Can't Be Null");
-                }
-                if (password != confirmedPassword) {
-                    throw new Exception("Passwords Do Not Match");
-                }
+			MessageBox.Show("Logout Successful");
 
-                string updatePassword = $"UPDATE users\n" +
-                                        $"SET password = \"{password}\"\n" +
-                                        $"WHERE email = \"{email}\";";
-                MySqlDataReader updatePasswordInUsers = connection.query(updatePassword);
-                updatePasswordInUsers.Close();
-            }
-            else {
-                checkEmailReader.Close();
-                throw new Exception("Email Not Found");
-            }
-        }
+		}
 
-    }
+		public static void changePassword(string email, string password, string confirmedPassword) {
+			string checkEmail = $"SELECT * FROM users\n" +
+								$"WHERE email = \"{email}\";";
+			MySqlDataReader checkEmailReader = connection.query(checkEmail);
+			if (checkEmailReader.HasRows) {
+				checkEmailReader.Close();
+
+				if (password.Length == 0) {
+					throw new Exception("Password Can't Be Null");
+				}
+				if (password != confirmedPassword) {
+					throw new Exception("Passwords Do Not Match");
+				}
+
+				string updatePassword = $"UPDATE users\n" +
+										$"SET password = \"{password}\"\n" +
+										$"WHERE email = \"{email}\";";
+				MySqlDataReader updatePasswordInUsers = connection.query(updatePassword);
+				updatePasswordInUsers.Close();
+			}
+			else {
+				checkEmailReader.Close();
+				throw new Exception("Email Not Found");
+			}
+		}
+
+	}
 }

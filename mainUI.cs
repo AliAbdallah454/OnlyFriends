@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
+
     public partial class mainUI : Form {
         private List<System.Windows.Forms.Panel>panels = new List<System.Windows.Forms.Panel>() { };
         private List<Post> feed = new List<Post>();
@@ -209,4 +205,3 @@ namespace OnlyFriends {
     }
 }
 
-//f

@@ -267,7 +267,13 @@
     <None Include="Resources\chat.-bubble.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Screenshot_2023-12-23_174814-removebg-preview.png" />
+
+    <Content Include="Resources\download.jpeg" />
+    <Content Include="Resources\pic1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pics\" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

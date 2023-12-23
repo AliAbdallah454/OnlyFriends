@@ -11,19 +11,29 @@ namespace OnlyFriends {
 		public string Title { get; set; }
 		public string Content { get; set; }
 		public DateTime TimeStamp { get; set; }
-		public int Likes { get; set; } 
-		public int Comments{get;set;}
-		public int Shares { get; set; }
-		public List<string> tags { get; set; }
+		public int Likes { get; set; }
+
 		public Post(int postId, int userId, string title, string content, DateTime timeStamp, int likes) {
-			tags = new List<string>();
-			tags.Add("NewPost");
 			PostId = postId;
 			UserId = userId;
 			Title = title;
 			Content = content;
 			TimeStamp = timeStamp;
 			Likes = likes;
+
+			//string resourceName = $"pic"; // Replace with the actual resource name
+
+			// Get the type of the generated Resources class
+			//Type resourcesType = typeof(Properties.Resources);
+
+			//// Use reflection to get the specified resource by name
+			//PropertyInfo propertyInfo = resourcesType.GetProperty(resourceName, BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
+			//Pic = (Image)propertyInfo.GetValue(null, null);
+
+			//Pic = Properties
+
+			//string absolutePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "chat.png");
+
 		}
 
 		public HashSet<Comment> getComments() {
