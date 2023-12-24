@@ -1,5 +1,7 @@
 ﻿using MySqlConnector;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace OnlyFriends {
 	internal static class HelperFunctions {
@@ -46,8 +48,9 @@ namespace OnlyFriends {
 			int likes = reader.GetInt32("likes");
 
 			reader.Close();
+			string tags = "summer,winter";
 
-			return new Post(postId, userId, title, content, timeStamp, likes);
+			return new Post(postId, userId, title, content, timeStamp, likes, tags);
 
 		}
 		public static Comment translateCommentIdToCommentInfo(int commentId) {
@@ -73,6 +76,19 @@ namespace OnlyFriends {
 		}
 		public static string translateUserIdToUserName(int userId) {
 			return translateUserIdToUserInfo(userId).getUserName();
+		}
+
+		// Need to look at this
+		public static List<string> ConvertCommaSeparatedStringToList(string inputString) {
+			// Split the string by commas and remove any leading/trailing whitespaces
+			string[] stringArray = inputString.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+											  .Select(s => s.Trim())
+											  .ToArray();
+
+			// Convert the array to a list
+			List<string> stringList = new List<string>(stringArray);
+
+			return stringList;
 		}
 
 	}

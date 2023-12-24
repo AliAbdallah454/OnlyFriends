@@ -8,48 +8,43 @@ using System.Windows.Forms;
 namespace OnlyFriends {
 
 	public partial class mainUI : Form {
-		private List<UserControl> panels = new List<UserControl>() {new HomeUC(),new MyPostsUC(),new LikedPostsUC() };
+		private List<UserControl> panels;
 
-		private int currentPanel = 0,ocurrentPanel;
+		private int currentPanel = 0, ocurrentPanel;
 		private void createUser() {
 
 			DatabaseConnection connection = DatabaseConnection.Instance;
 			connection.InitializeConnection();
-
 
 			string email = "linda.white@example.com";
 			string password = "password789";
 
 			AuthFunctions.login(email, password);
 
-
 		}
+
 		private void changePanel(int i) {
-			if(i>=0&&i<panels.Count()) {
+			if (i >= 0 && i < panels.Count()) {
 				panels[ocurrentPanel].Parent = null;
 				panels[i].Parent = mainPanel;
-				
+
 			}
 		}
 		private void scalePanels() {
-            foreach (UserControl x in panels) {
-                x.ClientSize = mainPanel.ClientSize;
-                x.Scale(0.82f);
-                x.Dock = DockStyle.Fill;
-            }
-        }
-		
-
-	
-		User user;
-		public mainUI() {
-            createUser();
-            user = User.Instance;
-            InitializeComponent();
-			scalePanels();
-
+			foreach (UserControl x in panels) {
+				x.ClientSize = mainPanel.ClientSize;
+				x.Scale(0.82f);
+				x.Dock = DockStyle.Fill;
+			}
 		}
-		
+
+		public mainUI() {
+			createUser();
+			panels = new List<UserControl>() { new HomeUC(), new MyPostsUC(), new LikedPostsUC() };
+			InitializeComponent();
+			scalePanels();
+		}
+
 		private void mouseEnter_Bold(object sender, EventArgs e) {
 			if (sender is Label panel) {
 				panel.Font = new Font(panel.Font, FontStyle.Bold);
@@ -64,7 +59,7 @@ namespace OnlyFriends {
 		}
 		private void changePanel(object sender, EventArgs e) {
 			if (sender is Label x) {
-				
+
 				ocurrentPanel = currentPanel;
 				switch (x.Name) {
 
@@ -96,7 +91,7 @@ namespace OnlyFriends {
 
 				}
 				changePanel(currentPanel);
-				
+
 
 
 			}
@@ -108,7 +103,7 @@ namespace OnlyFriends {
 
 		private bool[] buttonclicked = { false, false, false };
 
-		
+
 	}
 }
 

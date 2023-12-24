@@ -19,8 +19,9 @@ namespace OnlyFriends {
 				string content = reader.GetString("content");
 				DateTime timeStamp = reader.GetDateTime("timeStamp");
 				int likes = reader.GetInt32("likes");
+				string tags = reader.GetString("tags");
 
-				posts.Add(new Post(id, userId, title, content, timeStamp, likes));
+				posts.Add(new Post(id, userId, title, content, timeStamp, likes, tags));
 
 			}
 
@@ -32,7 +33,8 @@ namespace OnlyFriends {
 		public List<Post> getPosts() {
 
 			string sql = $"SELECT * FROM posts\n" +
-						 $"	WHERE userId = {UserId}";
+						 $"WHERE userId = {UserId}\n" +
+						 $"ORDER BY timeStamp DESC";
 			return readPostsFromDb(sql);
 
 		}
@@ -41,7 +43,8 @@ namespace OnlyFriends {
 
 			string sql = $"SELECT * from likedPosts l\n" +
 						 $"JOIN posts p ON p.postId = l.postId\n" +
-						 $"WHERE l.userId = {UserId}";
+						 $"WHERE l.userId = {UserId}\n" +
+						 $"ORDER BY timeStamp DESC";
 			return readPostsFromDb(sql);
 
 		}
@@ -50,7 +53,7 @@ namespace OnlyFriends {
 
 			string sql = $"SELECT * FROM posts\n" +
 						 $"WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId})\n" +
-						 $"ORDER BY timeStamp\n" +
+						 $"ORDER BY timeStamp DESC\n" +
 						 $"LIMIT 15";
 			return readPostsFromDb(sql);
 

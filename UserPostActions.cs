@@ -5,7 +5,7 @@ using System.Windows.Forms;
 namespace OnlyFriends {
 	internal partial class User {
 
-		public void addPost(string title, string content) {
+		public void addPost(string title, string content, string tags) {
 
 			if (title.Length == 0) {
 				throw new Exception("Title can't be empty");
@@ -19,9 +19,11 @@ namespace OnlyFriends {
 			else if (content.Length > 1024) {
 				throw new Exception("Post can't be that long, the maximum is 1024 character");
 			}
-
+			else if (content.Length > 255) {
+				throw new Exception("tags can't be that long, the maximum is 255 character");
+			}
 			string sql = $"INSERT INTO posts(userId, title, content, timestamp, likes)\n" +
-						 $"VALUES({this.UserId}, \"{title}\", \"{content}\", CURRENT_TIMESTAMP, 0);";
+						 $"VALUES({this.UserId}, \"{title}\", \"{content}\", CURRENT_TIMESTAMP, 0, \"{tags}\");";
 
 			MySqlDataReader reader = connection.query(sql);
 			reader.Close();

@@ -18,8 +18,8 @@ namespace OnlyFriends {
 			connection.InitializeConnection();
 
 
-			string email = "linda.white@example.com";
-			string password = "password789";
+			string email = "aglae.harvey@example.org";
+			string password = "49c89488aeeb56a0159f8abddaa180c643c969fc";
 
 			AuthFunctions.login(email, password);
 

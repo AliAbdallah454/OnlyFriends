@@ -12,14 +12,16 @@ namespace OnlyFriends {
 		public string Content { get; set; }
 		public DateTime TimeStamp { get; set; }
 		public int Likes { get; set; }
+		public List<string> Tags { get; set; }
 
-		public Post(int postId, int userId, string title, string content, DateTime timeStamp, int likes) {
+		public Post(int postId, int userId, string title, string content, DateTime timeStamp, int likes, string tags) {
 			PostId = postId;
 			UserId = userId;
 			Title = title;
 			Content = content;
 			TimeStamp = timeStamp;
 			Likes = likes;
+			Tags = HelperFunctions.ConvertCommaSeparatedStringToList(tags);
 
 			//string resourceName = $"pic"; // Replace with the actual resource name
 
@@ -30,7 +32,7 @@ namespace OnlyFriends {
 			//PropertyInfo propertyInfo = resourcesType.GetProperty(resourceName, BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
 			//Pic = (Image)propertyInfo.GetValue(null, null);
 
-			//Pic = Properties
+			Pic = Properties.Resources.chat;
 
 			//string absolutePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "chat.png");
 
