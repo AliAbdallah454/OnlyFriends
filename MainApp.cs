@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlyFriends.User_Controls;
+using OnlyFriends.UserControls2;
+
 
 public enum UC {
 

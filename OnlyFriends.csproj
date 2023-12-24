@@ -87,6 +87,12 @@
   <ItemGroup>
     <Compile Include="AuthFunctions.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="Components\Tweet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Tweet.Designer.cs">
+      <DependentUpon>Tweet.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="ForgotPasswordForm.cs">
       <SubType>Form</SubType>
@@ -166,10 +172,19 @@
       <DependentUpon>SuggestionsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="UserControls2\HomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\HomeControl.Designer.cs">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserFriendActions.cs" />
     <Compile Include="UserPostActions.cs" />
     <Compile Include="UserFriendGetFunctions.cs" />
     <Compile Include="UserPostGetFunctions.cs" />
+    <EmbeddedResource Include="Components\Tweet.resx">
+      <DependentUpon>Tweet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\SuggestionsUC.resx">
       <DependentUpon>SuggestionsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls2\HomeControl.resx">
+      <DependentUpon>HomeControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -341,6 +359,12 @@
     <None Include="Resources\icons8-add-25.png" />
     <None Include="Resources\icons8-starred-webpage-25.png" />
     <None Include="Resources\icons8-github-25.png" />
+    <None Include="Resources\icons8-male-user-35.png" />
+    <None Include="Resources\icons8-like-25.png" />
+    <None Include="Resources\icons8-like-30.png" />
+    <None Include="Resources\icons8-chat-30.png" />
+    <None Include="Resources\icons8-chat-30 %281%29.png" />
+    <None Include="Resources\icons8-like-30 %281%29.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>
