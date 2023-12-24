@@ -20,7 +20,7 @@ namespace OnlyFriends {
 		private Dictionary<Panels, UserControl> panels = new Dictionary<Panels, UserControl>();
 
 		private Panels currentPanel = Panels.Home;
-		private Panels ocurrentPanel;
+		private Panels oldPanel;
 
 		private void createUser() {
 
@@ -35,7 +35,7 @@ namespace OnlyFriends {
 		}
 
 		private void changePanel(Panels panel) {
-			panels[ocurrentPanel].Parent = null;
+			panels[oldPanel].Parent = null;
 			panels[panel].Parent = mainPanel;
 		}
 
@@ -78,7 +78,7 @@ namespace OnlyFriends {
 
 			if (sender is Label label) {
 
-				ocurrentPanel = currentPanel;
+				oldPanel = currentPanel;
 				switch (label.Name) {
 
 					case "HomeLabel": {
