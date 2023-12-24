@@ -27,7 +27,7 @@
 			this.userPicture = new System.Windows.Forms.PictureBox();
 			this.usernameLabel = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.dataLabel = new System.Windows.Forms.Label();
+			this.timeStampLabel = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.titleLabel = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
@@ -88,7 +88,7 @@
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.dataLabel);
+			this.panel1.Controls.Add(this.timeStampLabel);
 			this.panel1.Location = new System.Drawing.Point(683, 4);
 			this.panel1.Margin = new System.Windows.Forms.Padding(4);
 			this.panel1.MaximumSize = new System.Drawing.Size(267, 43);
@@ -96,17 +96,17 @@
 			this.panel1.Size = new System.Drawing.Size(237, 43);
 			this.panel1.TabIndex = 1;
 			// 
-			// dataLabel
+			// timeStampLabel
 			// 
-			this.dataLabel.AutoSize = true;
-			this.dataLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dataLabel.ForeColor = System.Drawing.Color.White;
-			this.dataLabel.Location = new System.Drawing.Point(4, 10);
-			this.dataLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.dataLabel.Name = "dataLabel";
-			this.dataLabel.Size = new System.Drawing.Size(103, 20);
-			this.dataLabel.TabIndex = 0;
-			this.dataLabel.Text = "TimeStamp";
+			this.timeStampLabel.AutoSize = true;
+			this.timeStampLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.timeStampLabel.ForeColor = System.Drawing.Color.White;
+			this.timeStampLabel.Location = new System.Drawing.Point(4, 10);
+			this.timeStampLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.timeStampLabel.Name = "timeStampLabel";
+			this.timeStampLabel.Size = new System.Drawing.Size(103, 20);
+			this.timeStampLabel.TabIndex = 0;
+			this.timeStampLabel.Text = "TimeStamp";
 			// 
 			// panel2
 			// 
@@ -169,6 +169,7 @@
 			this.commentButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.commentButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.commentButton.UseVisualStyleBackColor = true;
+			this.commentButton.Click += new System.EventHandler(this.commentButton_Click);
 			// 
 			// likeButton
 			// 
@@ -186,6 +187,7 @@
 			this.likeButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.likeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.likeButton.UseVisualStyleBackColor = true;
+			this.likeButton.Click += new System.EventHandler(this.likeButton_Click);
 			// 
 			// Tweet
 			// 
@@ -219,7 +221,7 @@
         private System.Windows.Forms.PictureBox userPicture;
         private System.Windows.Forms.Button usernameLabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label dataLabel;
+        private System.Windows.Forms.Label timeStampLabel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Button likeButton;
