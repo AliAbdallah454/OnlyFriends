@@ -29,13 +29,16 @@
             this.searchLabel = new System.Windows.Forms.Label();
             this.addPostLabel = new System.Windows.Forms.Label();
             this.settingsLabel = new System.Windows.Forms.Label();
-            this.settingsIcon = new System.Windows.Forms.PictureBox();
             this.suggestionLabel = new System.Windows.Forms.Label();
             this.likedPostsLabel = new System.Windows.Forms.Label();
             this.friendrequestLabel = new System.Windows.Forms.Label();
             this.reelsLabel = new System.Windows.Forms.Label();
             this.myPostLabel = new System.Windows.Forms.Label();
             this.dmLabel = new System.Windows.Forms.Label();
+            this.HomeLabel = new System.Windows.Forms.Label();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.logOutButton = new System.Windows.Forms.Button();
+            this.settingsIcon = new System.Windows.Forms.PictureBox();
             this.suggestionsIcon = new System.Windows.Forms.PictureBox();
             this.likedPostsIcon = new System.Windows.Forms.PictureBox();
             this.requestIcon = new System.Windows.Forms.PictureBox();
@@ -43,10 +46,9 @@
             this.myPostsIcon = new System.Windows.Forms.PictureBox();
             this.dmIcon = new System.Windows.Forms.PictureBox();
             this.HomeIcon = new System.Windows.Forms.PictureBox();
-            this.HomeLabel = new System.Windows.Forms.Label();
             this.addPostIcon = new System.Windows.Forms.PictureBox();
             this.searchIcon = new System.Windows.Forms.PictureBox();
-            this.mainPanel = new System.Windows.Forms.Panel();
+            this.logOutIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -62,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addPostIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logOutIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -85,8 +88,8 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
             this.splitContainer1.Panel2.Controls.Add(this.mainPanel);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(25);
-            this.splitContainer1.Size = new System.Drawing.Size(814, 471);
-            this.splitContainer1.SplitterDistance = 133;
+            this.splitContainer1.Size = new System.Drawing.Size(884, 531);
+            this.splitContainer1.SplitterDistance = 145;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -116,49 +119,38 @@
             this.navBarTable.Controls.Add(this.HomeLabel, 1, 1);
             this.navBarTable.Controls.Add(this.addPostIcon, 0, 9);
             this.navBarTable.Controls.Add(this.searchIcon, 0, 10);
+            this.navBarTable.Controls.Add(this.logOutButton, 1, 11);
+            this.navBarTable.Controls.Add(this.logOutIcon, 0, 11);
             this.navBarTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navBarTable.Location = new System.Drawing.Point(4, 4);
             this.navBarTable.Name = "navBarTable";
             this.navBarTable.RowCount = 12;
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.navBarTable.Size = new System.Drawing.Size(125, 463);
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.navBarTable.Size = new System.Drawing.Size(137, 523);
             this.navBarTable.TabIndex = 0;
             // 
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.searchLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchLabel.ForeColor = System.Drawing.Color.Gray;
             this.searchLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchLabel.Location = new System.Drawing.Point(31, 296);
+            this.searchLabel.Location = new System.Drawing.Point(31, 395);
             this.searchLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(40, 25);
+            this.searchLabel.Size = new System.Drawing.Size(48, 35);
             this.searchLabel.TabIndex = 37;
             this.searchLabel.Tag = "";
             this.searchLabel.Text = "Search";
@@ -170,27 +162,31 @@
             // 
             this.addPostLabel.AutoSize = true;
             this.addPostLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addPostLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPostLabel.ForeColor = System.Drawing.Color.Gray;
             this.addPostLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addPostLabel.Location = new System.Drawing.Point(31, 271);
+            this.addPostLabel.Location = new System.Drawing.Point(31, 360);
             this.addPostLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.addPostLabel.Name = "addPostLabel";
-            this.addPostLabel.Size = new System.Drawing.Size(53, 25);
+            this.addPostLabel.Size = new System.Drawing.Size(64, 35);
             this.addPostLabel.TabIndex = 36;
             this.addPostLabel.Tag = "";
             this.addPostLabel.Text = "Add Post";
             this.addPostLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addPostLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
+            this.addPostLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
             // 
             // settingsLabel
             // 
             this.settingsLabel.AutoSize = true;
             this.settingsLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.settingsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsLabel.ForeColor = System.Drawing.Color.Gray;
             this.settingsLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsLabel.Location = new System.Drawing.Point(31, 246);
+            this.settingsLabel.Location = new System.Drawing.Point(31, 325);
             this.settingsLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.settingsLabel.Name = "settingsLabel";
-            this.settingsLabel.Size = new System.Drawing.Size(48, 25);
+            this.settingsLabel.Size = new System.Drawing.Size(57, 35);
             this.settingsLabel.TabIndex = 31;
             this.settingsLabel.Tag = "";
             this.settingsLabel.Text = "Settings";
@@ -199,29 +195,17 @@
             this.settingsLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
             this.settingsLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
             // 
-            // settingsIcon
-            // 
-            this.settingsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settingsIcon.Image = global::OnlyFriends.Properties.Resources.cogwheel;
-            this.settingsIcon.Location = new System.Drawing.Point(2, 248);
-            this.settingsIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.settingsIcon.Name = "settingsIcon";
-            this.settingsIcon.Padding = new System.Windows.Forms.Padding(1);
-            this.settingsIcon.Size = new System.Drawing.Size(20, 21);
-            this.settingsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.settingsIcon.TabIndex = 28;
-            this.settingsIcon.TabStop = false;
-            // 
             // suggestionLabel
             // 
             this.suggestionLabel.AutoSize = true;
             this.suggestionLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.suggestionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suggestionLabel.ForeColor = System.Drawing.Color.Gray;
             this.suggestionLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.suggestionLabel.Location = new System.Drawing.Point(31, 221);
+            this.suggestionLabel.Location = new System.Drawing.Point(31, 290);
             this.suggestionLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.suggestionLabel.Name = "suggestionLabel";
-            this.suggestionLabel.Size = new System.Drawing.Size(69, 25);
+            this.suggestionLabel.Size = new System.Drawing.Size(82, 35);
             this.suggestionLabel.TabIndex = 25;
             this.suggestionLabel.Tag = "";
             this.suggestionLabel.Text = "Suggestions";
@@ -234,12 +218,13 @@
             // 
             this.likedPostsLabel.AutoSize = true;
             this.likedPostsLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.likedPostsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.likedPostsLabel.ForeColor = System.Drawing.Color.Gray;
             this.likedPostsLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.likedPostsLabel.Location = new System.Drawing.Point(31, 196);
+            this.likedPostsLabel.Location = new System.Drawing.Point(31, 255);
             this.likedPostsLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.likedPostsLabel.Name = "likedPostsLabel";
-            this.likedPostsLabel.Size = new System.Drawing.Size(64, 25);
+            this.likedPostsLabel.Size = new System.Drawing.Size(76, 35);
             this.likedPostsLabel.TabIndex = 24;
             this.likedPostsLabel.Tag = "";
             this.likedPostsLabel.Text = "Liked Posts";
@@ -252,12 +237,13 @@
             // 
             this.friendrequestLabel.AutoSize = true;
             this.friendrequestLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.friendrequestLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.friendrequestLabel.ForeColor = System.Drawing.Color.Gray;
             this.friendrequestLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.friendrequestLabel.Location = new System.Drawing.Point(31, 171);
+            this.friendrequestLabel.Location = new System.Drawing.Point(31, 220);
             this.friendrequestLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.friendrequestLabel.Name = "friendrequestLabel";
-            this.friendrequestLabel.Size = new System.Drawing.Size(83, 25);
+            this.friendrequestLabel.Size = new System.Drawing.Size(99, 35);
             this.friendrequestLabel.TabIndex = 23;
             this.friendrequestLabel.Tag = "";
             this.friendrequestLabel.Text = "Friend Request";
@@ -270,12 +256,13 @@
             // 
             this.reelsLabel.AutoSize = true;
             this.reelsLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.reelsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reelsLabel.ForeColor = System.Drawing.Color.Gray;
             this.reelsLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reelsLabel.Location = new System.Drawing.Point(31, 146);
+            this.reelsLabel.Location = new System.Drawing.Point(31, 185);
             this.reelsLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.reelsLabel.Name = "reelsLabel";
-            this.reelsLabel.Size = new System.Drawing.Size(34, 25);
+            this.reelsLabel.Size = new System.Drawing.Size(39, 35);
             this.reelsLabel.TabIndex = 22;
             this.reelsLabel.Tag = "";
             this.reelsLabel.Text = "Reels";
@@ -288,12 +275,13 @@
             // 
             this.myPostLabel.AutoSize = true;
             this.myPostLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.myPostLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myPostLabel.ForeColor = System.Drawing.Color.Gray;
             this.myPostLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.myPostLabel.Location = new System.Drawing.Point(31, 121);
+            this.myPostLabel.Location = new System.Drawing.Point(31, 150);
             this.myPostLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.myPostLabel.Name = "myPostLabel";
-            this.myPostLabel.Size = new System.Drawing.Size(53, 25);
+            this.myPostLabel.Size = new System.Drawing.Size(64, 35);
             this.myPostLabel.TabIndex = 21;
             this.myPostLabel.Tag = "";
             this.myPostLabel.Text = "My Posts";
@@ -306,12 +294,13 @@
             // 
             this.dmLabel.AutoSize = true;
             this.dmLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dmLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dmLabel.ForeColor = System.Drawing.Color.Gray;
             this.dmLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dmLabel.Location = new System.Drawing.Point(31, 96);
+            this.dmLabel.Location = new System.Drawing.Point(31, 115);
             this.dmLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.dmLabel.Name = "dmLabel";
-            this.dmLabel.Size = new System.Drawing.Size(90, 25);
+            this.dmLabel.Size = new System.Drawing.Size(106, 35);
             this.dmLabel.TabIndex = 20;
             this.dmLabel.Tag = "";
             this.dmLabel.Text = "Direct Messages";
@@ -320,107 +309,17 @@
             this.dmLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
             this.dmLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
             // 
-            // suggestionsIcon
-            // 
-            this.suggestionsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.suggestionsIcon.Image = global::OnlyFriends.Properties.Resources.tips;
-            this.suggestionsIcon.Location = new System.Drawing.Point(2, 223);
-            this.suggestionsIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.suggestionsIcon.Name = "suggestionsIcon";
-            this.suggestionsIcon.Padding = new System.Windows.Forms.Padding(1);
-            this.suggestionsIcon.Size = new System.Drawing.Size(20, 21);
-            this.suggestionsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.suggestionsIcon.TabIndex = 16;
-            this.suggestionsIcon.TabStop = false;
-            // 
-            // likedPostsIcon
-            // 
-            this.likedPostsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.likedPostsIcon.Image = global::OnlyFriends.Properties.Resources.appwle;
-            this.likedPostsIcon.Location = new System.Drawing.Point(2, 198);
-            this.likedPostsIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.likedPostsIcon.Name = "likedPostsIcon";
-            this.likedPostsIcon.Padding = new System.Windows.Forms.Padding(1);
-            this.likedPostsIcon.Size = new System.Drawing.Size(20, 21);
-            this.likedPostsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.likedPostsIcon.TabIndex = 14;
-            this.likedPostsIcon.TabStop = false;
-            // 
-            // requestIcon
-            // 
-            this.requestIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.requestIcon.Image = global::OnlyFriends.Properties.Resources.apple__1_;
-            this.requestIcon.Location = new System.Drawing.Point(2, 173);
-            this.requestIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.requestIcon.Name = "requestIcon";
-            this.requestIcon.Padding = new System.Windows.Forms.Padding(1);
-            this.requestIcon.Size = new System.Drawing.Size(20, 21);
-            this.requestIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.requestIcon.TabIndex = 12;
-            this.requestIcon.TabStop = false;
-            // 
-            // reelsIcon
-            // 
-            this.reelsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reelsIcon.Image = global::OnlyFriends.Properties.Resources.video;
-            this.reelsIcon.Location = new System.Drawing.Point(2, 148);
-            this.reelsIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.reelsIcon.Name = "reelsIcon";
-            this.reelsIcon.Padding = new System.Windows.Forms.Padding(1);
-            this.reelsIcon.Size = new System.Drawing.Size(20, 21);
-            this.reelsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.reelsIcon.TabIndex = 10;
-            this.reelsIcon.TabStop = false;
-            // 
-            // myPostsIcon
-            // 
-            this.myPostsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.myPostsIcon.Image = global::OnlyFriends.Properties.Resources.icons8_ios_photos_48;
-            this.myPostsIcon.Location = new System.Drawing.Point(2, 123);
-            this.myPostsIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.myPostsIcon.Name = "myPostsIcon";
-            this.myPostsIcon.Padding = new System.Windows.Forms.Padding(1);
-            this.myPostsIcon.Size = new System.Drawing.Size(20, 21);
-            this.myPostsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.myPostsIcon.TabIndex = 8;
-            this.myPostsIcon.TabStop = false;
-            // 
-            // dmIcon
-            // 
-            this.dmIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dmIcon.Image = global::OnlyFriends.Properties.Resources.message;
-            this.dmIcon.Location = new System.Drawing.Point(2, 98);
-            this.dmIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.dmIcon.Name = "dmIcon";
-            this.dmIcon.Padding = new System.Windows.Forms.Padding(1);
-            this.dmIcon.Size = new System.Drawing.Size(20, 21);
-            this.dmIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.dmIcon.TabIndex = 6;
-            this.dmIcon.TabStop = false;
-            // 
-            // HomeIcon
-            // 
-            this.HomeIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HomeIcon.Image = global::OnlyFriends.Properties.Resources.apple;
-            this.HomeIcon.Location = new System.Drawing.Point(2, 73);
-            this.HomeIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.HomeIcon.Name = "HomeIcon";
-            this.HomeIcon.Padding = new System.Windows.Forms.Padding(1);
-            this.HomeIcon.Size = new System.Drawing.Size(20, 21);
-            this.HomeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.HomeIcon.TabIndex = 4;
-            this.HomeIcon.TabStop = false;
-            // 
             // HomeLabel
             // 
             this.HomeLabel.AutoSize = true;
             this.HomeLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.HomeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HomeLabel.ForeColor = System.Drawing.Color.Gray;
             this.HomeLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HomeLabel.Location = new System.Drawing.Point(31, 71);
+            this.HomeLabel.Location = new System.Drawing.Point(31, 80);
             this.HomeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.HomeLabel.Name = "HomeLabel";
-            this.HomeLabel.Size = new System.Drawing.Size(38, 25);
+            this.HomeLabel.Size = new System.Drawing.Size(45, 35);
             this.HomeLabel.TabIndex = 17;
             this.HomeLabel.Tag = "";
             this.HomeLabel.Text = "Home";
@@ -429,13 +328,141 @@
             this.HomeLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
             this.HomeLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
             // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(25, 25);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(688, 481);
+            this.mainPanel.TabIndex = 1;
+            // 
+            // logOutButton
+            // 
+            this.logOutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logOutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logOutButton.FlatAppearance.BorderSize = 0;
+            this.logOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOutButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutButton.Location = new System.Drawing.Point(27, 485);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(110, 35);
+            this.logOutButton.TabIndex = 38;
+            this.logOutButton.Text = "Log Out";
+            this.logOutButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
+            // settingsIcon
+            // 
+            this.settingsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settingsIcon.Image = global::OnlyFriends.Properties.Resources.cogwheel;
+            this.settingsIcon.Location = new System.Drawing.Point(2, 327);
+            this.settingsIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.settingsIcon.Name = "settingsIcon";
+            this.settingsIcon.Padding = new System.Windows.Forms.Padding(1);
+            this.settingsIcon.Size = new System.Drawing.Size(20, 31);
+            this.settingsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.settingsIcon.TabIndex = 28;
+            this.settingsIcon.TabStop = false;
+            // 
+            // suggestionsIcon
+            // 
+            this.suggestionsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.suggestionsIcon.Image = global::OnlyFriends.Properties.Resources.tips;
+            this.suggestionsIcon.Location = new System.Drawing.Point(2, 292);
+            this.suggestionsIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.suggestionsIcon.Name = "suggestionsIcon";
+            this.suggestionsIcon.Padding = new System.Windows.Forms.Padding(1);
+            this.suggestionsIcon.Size = new System.Drawing.Size(20, 31);
+            this.suggestionsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.suggestionsIcon.TabIndex = 16;
+            this.suggestionsIcon.TabStop = false;
+            // 
+            // likedPostsIcon
+            // 
+            this.likedPostsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.likedPostsIcon.Image = global::OnlyFriends.Properties.Resources.appwle;
+            this.likedPostsIcon.Location = new System.Drawing.Point(2, 257);
+            this.likedPostsIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.likedPostsIcon.Name = "likedPostsIcon";
+            this.likedPostsIcon.Padding = new System.Windows.Forms.Padding(1);
+            this.likedPostsIcon.Size = new System.Drawing.Size(20, 31);
+            this.likedPostsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.likedPostsIcon.TabIndex = 14;
+            this.likedPostsIcon.TabStop = false;
+            // 
+            // requestIcon
+            // 
+            this.requestIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.requestIcon.Image = global::OnlyFriends.Properties.Resources.apple__1_;
+            this.requestIcon.Location = new System.Drawing.Point(2, 222);
+            this.requestIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.requestIcon.Name = "requestIcon";
+            this.requestIcon.Padding = new System.Windows.Forms.Padding(1);
+            this.requestIcon.Size = new System.Drawing.Size(20, 31);
+            this.requestIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.requestIcon.TabIndex = 12;
+            this.requestIcon.TabStop = false;
+            // 
+            // reelsIcon
+            // 
+            this.reelsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reelsIcon.Image = global::OnlyFriends.Properties.Resources.video;
+            this.reelsIcon.Location = new System.Drawing.Point(2, 187);
+            this.reelsIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.reelsIcon.Name = "reelsIcon";
+            this.reelsIcon.Padding = new System.Windows.Forms.Padding(1);
+            this.reelsIcon.Size = new System.Drawing.Size(20, 31);
+            this.reelsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.reelsIcon.TabIndex = 10;
+            this.reelsIcon.TabStop = false;
+            // 
+            // myPostsIcon
+            // 
+            this.myPostsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.myPostsIcon.Image = global::OnlyFriends.Properties.Resources.icons8_ios_photos_48;
+            this.myPostsIcon.Location = new System.Drawing.Point(2, 152);
+            this.myPostsIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.myPostsIcon.Name = "myPostsIcon";
+            this.myPostsIcon.Padding = new System.Windows.Forms.Padding(1);
+            this.myPostsIcon.Size = new System.Drawing.Size(20, 31);
+            this.myPostsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.myPostsIcon.TabIndex = 8;
+            this.myPostsIcon.TabStop = false;
+            // 
+            // dmIcon
+            // 
+            this.dmIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dmIcon.Image = global::OnlyFriends.Properties.Resources.message;
+            this.dmIcon.Location = new System.Drawing.Point(2, 117);
+            this.dmIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.dmIcon.Name = "dmIcon";
+            this.dmIcon.Padding = new System.Windows.Forms.Padding(1);
+            this.dmIcon.Size = new System.Drawing.Size(20, 31);
+            this.dmIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dmIcon.TabIndex = 6;
+            this.dmIcon.TabStop = false;
+            // 
+            // HomeIcon
+            // 
+            this.HomeIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HomeIcon.Image = global::OnlyFriends.Properties.Resources.apple;
+            this.HomeIcon.Location = new System.Drawing.Point(2, 82);
+            this.HomeIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.HomeIcon.Name = "HomeIcon";
+            this.HomeIcon.Padding = new System.Windows.Forms.Padding(1);
+            this.HomeIcon.Size = new System.Drawing.Size(20, 31);
+            this.HomeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.HomeIcon.TabIndex = 4;
+            this.HomeIcon.TabStop = false;
+            // 
             // addPostIcon
             // 
             this.addPostIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addPostIcon.Image = global::OnlyFriends.Properties.Resources.addition;
-            this.addPostIcon.Location = new System.Drawing.Point(3, 274);
+            this.addPostIcon.Location = new System.Drawing.Point(3, 363);
             this.addPostIcon.Name = "addPostIcon";
-            this.addPostIcon.Size = new System.Drawing.Size(18, 19);
+            this.addPostIcon.Size = new System.Drawing.Size(18, 29);
             this.addPostIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.addPostIcon.TabIndex = 32;
             this.addPostIcon.TabStop = false;
@@ -444,35 +471,39 @@
             // 
             this.searchIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchIcon.Image = global::OnlyFriends.Properties.Resources.magnifier;
-            this.searchIcon.Location = new System.Drawing.Point(3, 299);
+            this.searchIcon.Location = new System.Drawing.Point(3, 398);
             this.searchIcon.Name = "searchIcon";
-            this.searchIcon.Size = new System.Drawing.Size(18, 19);
+            this.searchIcon.Size = new System.Drawing.Size(18, 29);
             this.searchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.searchIcon.TabIndex = 33;
             this.searchIcon.TabStop = false;
             // 
-            // mainPanel
+            // logOutIcon
             // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(25, 25);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(630, 421);
-            this.mainPanel.TabIndex = 1;
+            this.logOutIcon.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logOutIcon.Image = global::OnlyFriends.Properties.Resources.logout;
+            this.logOutIcon.Location = new System.Drawing.Point(3, 491);
+            this.logOutIcon.Name = "logOutIcon";
+            this.logOutIcon.Size = new System.Drawing.Size(18, 29);
+            this.logOutIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logOutIcon.TabIndex = 39;
+            this.logOutIcon.TabStop = false;
             // 
             // mainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 471);
+            this.ClientSize = new System.Drawing.Size(884, 531);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(830, 510);
             this.MinimumSize = new System.Drawing.Size(830, 510);
             this.Name = "mainUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Only Friends";
+            this.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
+            this.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -489,6 +520,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addPostIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logOutIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -518,5 +550,7 @@
         private System.Windows.Forms.Label addPostLabel;
         private System.Windows.Forms.PictureBox addPostIcon;
         private System.Windows.Forms.PictureBox searchIcon;
+        private System.Windows.Forms.Button logOutButton;
+        private System.Windows.Forms.PictureBox logOutIcon;
     }
 }

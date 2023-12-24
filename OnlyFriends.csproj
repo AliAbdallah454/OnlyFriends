@@ -303,6 +303,7 @@
     <None Include="Resources\addition.png" />
     <Content Include="Resources\download.jpeg" />
     <None Include="Resources\magnifier.png" />
+    <None Include="Resources\logout.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>

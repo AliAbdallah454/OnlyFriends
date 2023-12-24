@@ -93,7 +93,20 @@ namespace OnlyFriends {
 				changePanel(currentPanel);
 			}
 		}
-		private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e) {
+
+        private void logOutButton_Click(object sender, EventArgs e) {
+            try {
+                AuthFunctions.logout();
+				Login login = new Login();
+				this.Hide();
+				login.Show();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e) {
 
 		}
 
