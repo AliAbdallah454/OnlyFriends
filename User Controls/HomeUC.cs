@@ -109,15 +109,6 @@ namespace OnlyFriends.User_Controls {
 			foreach (Post post in user.getFeedPosts()) {
 				feed.Add(post);
 			}
-
-			//feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			//feed.Add(new Post(152, 1, "hello", "try1", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			//feed.Add(new Post(152, 1, "hello", "try2", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			//feed.Add(new Post(152, 1, "hello", "try3", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			//feed.Add(new Post(152, 1, "hello", "try4", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			//feed.Add(new Post(152, 1, "hello", "try5", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-			//feed.Add(new Post(152, 1, "hello", "try6", new DateTime(2022, 2, 23, 12, 25, 30), 450));
-
 		}
 		private void feedScroller(object sender, MouseEventArgs e) {
 			if (e.Delta > 0 && currentPost > 0) { showPost(feed[--currentPost]); }
