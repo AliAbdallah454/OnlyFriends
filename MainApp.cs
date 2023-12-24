@@ -21,6 +21,7 @@ public enum UC {
 
 namespace OnlyFriends {
 	public partial class MainApp : Form {
+
 		Color mouseEnterBackColor = Color.FromArgb(46, 51, 73);
 		Color mouseLeaveBackColor = Color.FromArgb(24, 30, 54);
 
@@ -28,35 +29,8 @@ namespace OnlyFriends {
 		private UC currentUserControl = UC.Home;
 		private UC oldUserControl;
 
-		private void createUser() {
-
-			DatabaseConnection connection = DatabaseConnection.Instance;
-			connection.InitializeConnection();
-
-			//string email = "linda.white@example.com";
-			//string password = "password789";
-
-			//AuthFunctions.login(email, password);
-
-
-
-		}
-
-		//private void scaleUserControl(UserControl userControl) {
-		//    userControl.ClientSize = mainPanel.ClientSize;
-		//    userControl.Dock = DockStyle.Fill;
-		//}
-
-		//private void scaleUserControls() {
-		//    foreach (var kvp in userControlsDictionary.ToList()) {
-		//        scaleUserControl(kvp.Value);
-		//    }
-		//}
-
 		public MainApp() {
 			InitializeComponent();
-
-			createUser();
 
 			User user = User.Instance;
 			usernameLabel.Text = user.UserName;
@@ -72,9 +46,7 @@ namespace OnlyFriends {
 
 			};
 
-			//scaleUserControls();
 		}
-
 
 		private void button_MouseEnter_Bold(object sender, EventArgs e) {
 			if (sender is Button button) {
