@@ -5,12 +5,23 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+public enum Panels {
+
+	Home,
+	MyPosts,
+	LikedPosts
+
+}
+
 namespace OnlyFriends {
 
 	public partial class mainUI : Form {
-		private List<UserControl> panels;
 
-		private int currentPanel = 0, ocurrentPanel;
+		private Dictionary<Panels, UserControl> panels = new Dictionary<Panels, UserControl>();
+
+		private Panels currentPanel = Panels.Home;
+		private Panels ocurrentPanel;
+
 		private void createUser() {
 
 			DatabaseConnection connection = DatabaseConnection.Instance;
@@ -23,24 +34,29 @@ namespace OnlyFriends {
 
 		}
 
-		private void changePanel(int i) {
-			if (i >= 0 && i < panels.Count()) {
-				panels[ocurrentPanel].Parent = null;
-				panels[i].Parent = mainPanel;
-
-			}
+		private void changePanel(Panels panel) {
+			panels[ocurrentPanel].Parent = null;
+			panels[panel].Parent = mainPanel;
 		}
+
+		private void scalePanel(UserControl panel) {
+			panel.ClientSize = mainPanel.ClientSize;
+			panel.Dock = DockStyle.Fill;
+		}
+
 		private void scalePanels() {
-			foreach (UserControl x in panels) {
-				x.ClientSize = mainPanel.ClientSize;
-				x.Scale(0.82f);
-				x.Dock = DockStyle.Fill;
+			foreach (var kvp in panels.ToList()) {
+				scalePanel(kvp.Value);
 			}
 		}
 
 		public mainUI() {
 			createUser();
-			panels = new List<UserControl>() { new HomeUC(), new MyPostsUC(), new LikedPostsUC() };
+
+			panels.Add(Panels.Home, new HomeUC());
+			panels.Add(Panels.MyPosts, new MyPostsUC());
+			panels.Add(Panels.LikedPosts, new LikedPostsUC());
+
 			InitializeComponent();
 			scalePanels();
 		}
@@ -57,62 +73,70 @@ namespace OnlyFriends {
 				panel.ForeColor = Color.Gray;
 			}
 		}
+
 		private void changePanel(object sender, EventArgs e) {
-			if (sender is Label x) {
+
+			if (sender is Label label) {
 
 				ocurrentPanel = currentPanel;
-				switch (x.Name) {
+				switch (label.Name) {
 
-					case "HomeLabel":
-					currentPanel = 0;
-					break;
-					case "dmLabel":
-					currentPanel = 1;
-					break;
-					case "myPostLabel":
-					currentPanel = 2;
-					break;
-					case "reelsLabel":
-					currentPanel = 3;
-					break;
-					case "friendrequestLabel":
-					currentPanel = 4;
-					break;
-					case "likedPostsLabel":
-					currentPanel = 5;
-					break;
-					case "suggestionLabel":
-					currentPanel = 6;
-					break;
-					case "settingsLabel":
-					currentPanel = 7;
-					break;
-
+					case "HomeLabel": {
+						currentPanel = Panels.Home;
+						panels[currentPanel] = new HomeUC();
+						break;
+					}
+					case "dmLabel": {
+						currentPanel = Panels.Home;
+						break;
+					}
+					case "myPostLabel": {
+						currentPanel = Panels.MyPosts;
+						panels[currentPanel] = new MyPostsUC();
+						break;
+					}
+					case "reelsLabel": {
+						currentPanel = Panels.Home;
+						break;
+					}
+					case "friendrequestLabel": {
+						currentPanel = Panels.Home;
+						break;
+					}
+					case "likedPostsLabel": {
+						currentPanel = Panels.LikedPosts;
+						panels[currentPanel] = new LikedPostsUC();
+						break;
+					}
+					case "suggestionLabel": {
+						currentPanel = Panels.Home;
+						break;
+					}
+					case "settingsLabel": {
+						currentPanel = Panels.Home;
+						break;
+					}
 
 				}
 				changePanel(currentPanel);
 			}
 		}
 
-        private void logOutButton_Click(object sender, EventArgs e) {
-            try {
-                AuthFunctions.logout();
+		private void logOutButton_Click(object sender, EventArgs e) {
+			try {
+				AuthFunctions.logout();
 				Login login = new Login();
 				this.Hide();
 				login.Show();
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e) {
-
+			}
+			catch (Exception ex) {
+				MessageBox.Show(ex.Message);
+			}
 		}
 
+		private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e) {
 
-	
-
+		}
 
 	}
 }
