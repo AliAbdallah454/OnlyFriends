@@ -4,7 +4,6 @@ using System.Windows.Forms;
 
 namespace OnlyFriends {
 
-
 	internal class AuthFunctions {
 		public static DatabaseConnection connection = DatabaseConnection.Instance;
 
