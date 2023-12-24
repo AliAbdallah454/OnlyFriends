@@ -7,15 +7,16 @@ namespace OnlyFriends.User_Controls {
 	public partial class LikedPostsUC : UserControl {
 		public LikedPostsUC() {
 			InitializeComponent();
-            flowLayoutPanel1.MouseWheel += feedScroller;
-            generatePosts();
+			flowLayoutPanel1.MouseWheel += feedScroller;
+			generatePosts();
 			showPost(feed[0]);
 		}
 
-		bool[] buttonclicked = new bool[3];
+		bool[] buttonclicked = { true, false, false };
 		private List<Post> feed = new List<Post>();
 		private int currentPost = 0;
 
+		private int currentPostId = -1;
 
 		private void likeButton_MouseEnter(object sender, EventArgs e) {
 			if (!buttonclicked[0]) {
@@ -50,22 +51,31 @@ namespace OnlyFriends.User_Controls {
 
 		//Button Click Functions
 		private void likeButton_Click(object sender, EventArgs e) {
+
+			User user = User.Instance;
+
 			if (!buttonclicked[0]) {
+				user.likePost(currentPostId);
 				likeBtn.Image = Properties.Resources.heart__1_;
 			}
 			else {
+				user.likePost(currentPostId);
 				likeBtn.Image = Properties.Resources.heart__2_;
 			}
 			buttonclicked[0] = !buttonclicked[0];
 		}
 		private void commentButton_Click(object sender, EventArgs e) {
-			if (!buttonclicked[1]) {
-				commentBtn.Image = Properties.Resources.chat;
-			}
-			else {
-				commentBtn.Image = Properties.Resources.chat_bubble;
-			}
-			buttonclicked[1] = !buttonclicked[1];
+			//if (!buttonclicked[1]) {
+			//	commentBtn.Image = Properties.Resources.chat;
+			//}
+			//else {
+			//	commentBtn.Image = Properties.Resources.chat_bubble;
+			//}
+			//buttonclicked[1] = !buttonclicked[1];
+			//User user = User.Instance;
+
+			HelperFunctions.displayPostComments(currentPostId);
+
 		}
 		private void shareButton_Click(object sender, EventArgs e) {
 			if (!buttonclicked[2]) {
@@ -78,6 +88,19 @@ namespace OnlyFriends.User_Controls {
 		}
 
 		private void showPost(Post post) {
+
+			User user = User.Instance;
+
+			currentPostId = post.PostId;
+			HashSet<int> likedPostIds = new HashSet<int>(user.getLikedPosts().Select(tempPost => tempPost.PostId));
+
+			if (likedPostIds.Contains(currentPostId)) {
+				likeBtn.Image = Properties.Resources.heart__1_;
+			}
+			else {
+				likeBtn.Image = Properties.Resources.heart__2_;
+			}
+
 			postUsername2.Text = postUsernameLabel.Text = HelperFunctions.translateUserIdToUserName(post.UserId);
 			postImage.Image = post.Pic;
 			postText.Text = post.Content;
@@ -94,7 +117,7 @@ namespace OnlyFriends.User_Controls {
 			}
 			likesLabel.Text = $"        Like ({post.Likes})";
 			commentsLabel.Text = $"        Comment ({post.getComments().Count})";
-			commentsLabel.Text = $"        Share ({post.Likes / 2})";
+			sharesLabel.Text = $"        Share ({post.Likes / 2})";
 			//postPfpUsername.Image=
 
 		}
@@ -106,14 +129,6 @@ namespace OnlyFriends.User_Controls {
 			foreach (Post post in user.getLikedPosts()) {
 				feed.Add(post);
 			}
-
-			//feed.Add(new Post(152, 1, "hello", "try", new DateTime(2022, 2, 23, 12, 25, 30), 450, "summer,winter"));
-			//feed.Add(new Post(152, 1, "hello", "try1", new DateTime(2022, 2, 23, 12, 25, 30), 450, "summer,winter"));
-			//feed.Add(new Post(152, 1, "hello", "try2", new DateTime(2022, 2, 23, 12, 25, 30), 450, "summer,winter"));
-			//feed.Add(new Post(152, 1, "hello", "try3", new DateTime(2022, 2, 23, 12, 25, 30), 450, "summer,winter"));
-			//feed.Add(new Post(152, 1, "hello", "try4", new DateTime(2022, 2, 23, 12, 25, 30), 450, "summer,winter"));
-			//feed.Add(new Post(152, 1, "hello", "try5", new DateTime(2022, 2, 23, 12, 25, 30), 450, "summer,winter"));
-			//feed.Add(new Post(152, 1, "hello", "try6", new DateTime(2022, 2, 23, 12, 25, 30), 450, "summer,winter"));
 
 		}
 		private void feedScroller(object sender, MouseEventArgs e) {

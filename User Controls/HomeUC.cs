@@ -16,11 +16,37 @@ namespace OnlyFriends.User_Controls {
 		private List<Post> feed = new List<Post>();
 		private int currentPost = 0;
 
+		private User user = User.Instance;
+		private int currentPostId = 0;
+		private int currentLikes = 0;
+
 		private void likeButton_MouseEnter(object sender, EventArgs e) {
 			if (!buttonclicked[0]) {
 				likeBtn.Image = Properties.Resources.heart__1_;
 			}
 		}
+		private void likeButton_MouseLeave(object sender, EventArgs e) {
+			if (!buttonclicked[0]) {
+				likeBtn.Image = Properties.Resources.heart__2_;
+			}
+		}
+		private void likeButton_Click(object sender, EventArgs e) {
+
+
+			if (!buttonclicked[0]) {
+				likeBtn.Image = Properties.Resources.heart__1_;
+				user.likePost(currentPostId);
+				likesLabel.Text = $"        Like ({currentLikes + 1})";
+			}
+			else {
+				user.likePost(currentPostId);
+				likeBtn.Image = Properties.Resources.heart__2_;
+				likesLabel.Text = $"        Like ({currentLikes})";
+			}
+			buttonclicked[0] = !buttonclicked[0];
+
+		}
+
 		private void commentButton_MouseEnter(object sender, EventArgs e) {
 			if (!buttonclicked[1]) {
 				commentBtn.Image = Properties.Resources.chat;
@@ -33,11 +59,7 @@ namespace OnlyFriends.User_Controls {
 		}
 
 		//Button Leave Functions
-		private void likeButton_MouseLeave(object sender, EventArgs e) {
-			if (!buttonclicked[0]) {
-				likeBtn.Image = Properties.Resources.heart__2_;
-			}
-		}
+
 		private void commentButton_MouseLeave(object sender, EventArgs e) {
 			if (!buttonclicked[1]) {
 				commentBtn.Image = Properties.Resources.chat_bubble;
@@ -50,23 +72,16 @@ namespace OnlyFriends.User_Controls {
 		}
 
 		//Button Click Functions
-		private void likeButton_Click(object sender, EventArgs e) {
-			if (!buttonclicked[0]) {
-				likeBtn.Image = Properties.Resources.heart__1_;
-			}
-			else {
-				likeBtn.Image = Properties.Resources.heart__2_;
-			}
-			buttonclicked[0] = !buttonclicked[0];
-		}
 		private void commentButton_Click(object sender, EventArgs e) {
-			if (!buttonclicked[1]) {
-				commentBtn.Image = Properties.Resources.chat;
-			}
-			else {
-				commentBtn.Image = Properties.Resources.chat_bubble;
-			}
-			buttonclicked[1] = !buttonclicked[1];
+			//if (!buttonclicked[1]) {
+			//	commentBtn.Image = Properties.Resources.chat;
+			//}
+			//else {
+			//	commentBtn.Image = Properties.Resources.chat_bubble;
+			//}
+			//buttonclicked[1] = !buttonclicked[1];
+			HelperFunctions.displayPostComments(currentPostId);
+
 		}
 		private void shareButton_Click(object sender, EventArgs e) {
 			if (!buttonclicked[2]) {
@@ -79,6 +94,17 @@ namespace OnlyFriends.User_Controls {
 		}
 
 		private void showPost(Post post) {
+
+			currentPostId = post.PostId;
+			currentLikes = post.Likes;
+			HashSet<int> likedPostIds = new HashSet<int>(user.getLikedPosts().Select(tempPost => tempPost.PostId));
+
+			if (likedPostIds.Contains(currentPostId)) {
+				likeBtn.Image = Properties.Resources.heart__1_;
+			}
+			else {
+				likeBtn.Image = Properties.Resources.heart__2_;
+			}
 
 			postUsername2.Text = postUsernameLabel.Text = HelperFunctions.translateUserIdToUserName(post.UserId);
 			postImage.Image = post.Pic;
@@ -96,7 +122,7 @@ namespace OnlyFriends.User_Controls {
 			}
 			likesLabel.Text = $"        Like ({post.Likes})";
 			commentsLabel.Text = $"        Comment ({post.getComments().Count})";
-			commentsLabel.Text = $"        Share ({post.Likes / 2})";
+			sharesLabel.Text = $"        Share ({post.Likes / 2})";
 
 			//postPfpUsername.Image=
 

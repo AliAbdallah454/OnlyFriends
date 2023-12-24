@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace OnlyFriends {
 	internal static class HelperFunctions {
@@ -89,6 +90,17 @@ namespace OnlyFriends {
 			List<string> stringList = new List<string>(stringArray);
 
 			return stringList;
+		}
+
+		public static void displayPostComments(int postId) {
+			List<Comment> comments = HelperFunctions.translatePostIdToPostInfo(postId).getComments();
+			if (comments.Count == 0) {
+				MessageBox.Show("This post has no comments");
+				return;
+			}
+			foreach (Comment comment in comments) {
+				MessageBox.Show(comment.Content);
+			}
 		}
 
 	}

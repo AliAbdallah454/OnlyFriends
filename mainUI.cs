@@ -25,8 +25,6 @@ namespace OnlyFriends {
 		private Panels currentPanel = Panels.Home;
 		private Panels oldPanel;
 
-		public object MessgeBox { get; private set; }
-
 		private void createUser() {
 
 			DatabaseConnection connection = DatabaseConnection.Instance;
@@ -140,21 +138,18 @@ namespace OnlyFriends {
 					case "suggestionLabel": {
 						currentPanel = Panels.Suggestions;
 						panels[currentPanel] = new SuggestionsUC();
-
 						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "settingsLabel": {
 						currentPanel = Panels.Home;
 						panels[currentPanel] = new HomeUC();
-
 						scalePanel(panels[currentPanel]);
 						break;
 					}
 					default: {
 						currentPanel = Panels.Home;
 						panels[currentPanel] = new HomeUC();
-
 						scalePanel(panels[currentPanel]);
 						break;
 					}
