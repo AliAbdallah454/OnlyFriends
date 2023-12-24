@@ -26,18 +26,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainUI));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.navBarTable = new System.Windows.Forms.TableLayoutPanel();
-            this.searchLabel = new System.Windows.Forms.Label();
             this.addPostLabel = new System.Windows.Forms.Label();
-            this.settingsLabel = new System.Windows.Forms.Label();
             this.suggestionLabel = new System.Windows.Forms.Label();
             this.likedPostsLabel = new System.Windows.Forms.Label();
             this.friendrequestLabel = new System.Windows.Forms.Label();
-            this.reelsLabel = new System.Windows.Forms.Label();
             this.myPostLabel = new System.Windows.Forms.Label();
-            this.dmLabel = new System.Windows.Forms.Label();
             this.HomeLabel = new System.Windows.Forms.Label();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.logOutButton = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.settingsIcon = new System.Windows.Forms.PictureBox();
             this.suggestionsIcon = new System.Windows.Forms.PictureBox();
             this.likedPostsIcon = new System.Windows.Forms.PictureBox();
@@ -99,16 +95,12 @@
             this.navBarTable.ColumnCount = 2;
             this.navBarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.navBarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.navBarTable.Controls.Add(this.searchLabel, 1, 10);
             this.navBarTable.Controls.Add(this.addPostLabel, 1, 9);
-            this.navBarTable.Controls.Add(this.settingsLabel, 1, 8);
             this.navBarTable.Controls.Add(this.settingsIcon, 0, 8);
             this.navBarTable.Controls.Add(this.suggestionLabel, 1, 7);
             this.navBarTable.Controls.Add(this.likedPostsLabel, 1, 6);
             this.navBarTable.Controls.Add(this.friendrequestLabel, 1, 5);
-            this.navBarTable.Controls.Add(this.reelsLabel, 1, 4);
             this.navBarTable.Controls.Add(this.myPostLabel, 1, 3);
-            this.navBarTable.Controls.Add(this.dmLabel, 1, 2);
             this.navBarTable.Controls.Add(this.suggestionsIcon, 0, 7);
             this.navBarTable.Controls.Add(this.likedPostsIcon, 0, 6);
             this.navBarTable.Controls.Add(this.requestIcon, 0, 5);
@@ -140,24 +132,6 @@
             this.navBarTable.Size = new System.Drawing.Size(137, 523);
             this.navBarTable.TabIndex = 0;
             // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.searchLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.ForeColor = System.Drawing.Color.Gray;
-            this.searchLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchLabel.Location = new System.Drawing.Point(31, 395);
-            this.searchLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(48, 35);
-            this.searchLabel.TabIndex = 37;
-            this.searchLabel.Tag = "";
-            this.searchLabel.Text = "Search";
-            this.searchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.searchLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
-            this.searchLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
-            // 
             // addPostLabel
             // 
             this.addPostLabel.AutoSize = true;
@@ -168,32 +142,13 @@
             this.addPostLabel.Location = new System.Drawing.Point(31, 360);
             this.addPostLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
             this.addPostLabel.Name = "addPostLabel";
-            this.addPostLabel.Size = new System.Drawing.Size(64, 35);
+            this.addPostLabel.Size = new System.Drawing.Size(12, 35);
             this.addPostLabel.TabIndex = 36;
             this.addPostLabel.Tag = "";
-            this.addPostLabel.Text = "Add Post";
+            this.addPostLabel.Text = " ";
             this.addPostLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.addPostLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
             this.addPostLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
-            // 
-            // settingsLabel
-            // 
-            this.settingsLabel.AutoSize = true;
-            this.settingsLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.settingsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.settingsLabel.ForeColor = System.Drawing.Color.Gray;
-            this.settingsLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsLabel.Location = new System.Drawing.Point(31, 325);
-            this.settingsLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
-            this.settingsLabel.Name = "settingsLabel";
-            this.settingsLabel.Size = new System.Drawing.Size(57, 35);
-            this.settingsLabel.TabIndex = 31;
-            this.settingsLabel.Tag = "";
-            this.settingsLabel.Text = "Settings";
-            this.settingsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.settingsLabel.Click += new System.EventHandler(this.changePanel);
-            this.settingsLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
-            this.settingsLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
             // 
             // suggestionLabel
             // 
@@ -252,25 +207,6 @@
             this.friendrequestLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
             this.friendrequestLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
             // 
-            // reelsLabel
-            // 
-            this.reelsLabel.AutoSize = true;
-            this.reelsLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.reelsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reelsLabel.ForeColor = System.Drawing.Color.Gray;
-            this.reelsLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reelsLabel.Location = new System.Drawing.Point(31, 185);
-            this.reelsLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
-            this.reelsLabel.Name = "reelsLabel";
-            this.reelsLabel.Size = new System.Drawing.Size(39, 35);
-            this.reelsLabel.TabIndex = 22;
-            this.reelsLabel.Tag = "";
-            this.reelsLabel.Text = "Reels";
-            this.reelsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.reelsLabel.Click += new System.EventHandler(this.changePanel);
-            this.reelsLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
-            this.reelsLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
-            // 
             // myPostLabel
             // 
             this.myPostLabel.AutoSize = true;
@@ -289,25 +225,6 @@
             this.myPostLabel.Click += new System.EventHandler(this.changePanel);
             this.myPostLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
             this.myPostLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
-            // 
-            // dmLabel
-            // 
-            this.dmLabel.AutoSize = true;
-            this.dmLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dmLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dmLabel.ForeColor = System.Drawing.Color.Gray;
-            this.dmLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dmLabel.Location = new System.Drawing.Point(31, 115);
-            this.dmLabel.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
-            this.dmLabel.Name = "dmLabel";
-            this.dmLabel.Size = new System.Drawing.Size(106, 35);
-            this.dmLabel.TabIndex = 20;
-            this.dmLabel.Tag = "";
-            this.dmLabel.Text = "Direct Messages";
-            this.dmLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.dmLabel.Click += new System.EventHandler(this.changePanel);
-            this.dmLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
-            this.dmLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
             // 
             // HomeLabel
             // 
@@ -328,14 +245,6 @@
             this.HomeLabel.MouseEnter += new System.EventHandler(this.mouseEnter_Bold);
             this.HomeLabel.MouseLeave += new System.EventHandler(this.mouseLeave_Regular);
             // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(25, 25);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(688, 481);
-            this.mainPanel.TabIndex = 1;
-            // 
             // logOutButton
             // 
             this.logOutButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -351,6 +260,14 @@
             this.logOutButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logOutButton.UseVisualStyleBackColor = true;
             this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(25, 25);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(688, 481);
+            this.mainPanel.TabIndex = 1;
             // 
             // settingsIcon
             // 
@@ -530,14 +447,11 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.TableLayoutPanel navBarTable;
-        private System.Windows.Forms.Label settingsLabel;
         private System.Windows.Forms.PictureBox settingsIcon;
         private System.Windows.Forms.Label suggestionLabel;
         private System.Windows.Forms.Label likedPostsLabel;
         private System.Windows.Forms.Label friendrequestLabel;
-        private System.Windows.Forms.Label reelsLabel;
         private System.Windows.Forms.Label myPostLabel;
-        private System.Windows.Forms.Label dmLabel;
         private System.Windows.Forms.PictureBox suggestionsIcon;
         private System.Windows.Forms.PictureBox likedPostsIcon;
         private System.Windows.Forms.PictureBox requestIcon;
@@ -546,7 +460,6 @@
         private System.Windows.Forms.PictureBox dmIcon;
         private System.Windows.Forms.PictureBox HomeIcon;
         private System.Windows.Forms.Label HomeLabel;
-        private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.Label addPostLabel;
         private System.Windows.Forms.PictureBox addPostIcon;
         private System.Windows.Forms.PictureBox searchIcon;

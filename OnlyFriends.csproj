@@ -107,6 +107,12 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="HelperFunctions.cs" />
+    <Compile Include="MainApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainApp.Designer.cs">
+      <DependentUpon>MainApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainApp.resx">
+      <DependentUpon>MainApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainUI.resx">
       <DependentUpon>mainUI.cs</DependentUpon>
@@ -322,6 +331,16 @@
     <Content Include="Resources\download.jpeg" />
     <None Include="Resources\magnifier.png" />
     <None Include="Resources\logout.png" />
+    <None Include="Resources\icons8-male-user-48.png" />
+    <None Include="Resources\icons8-male-user-100.png" />
+    <None Include="Resources\icons8-home-50.png" />
+    <None Include="Resources\icons8-home-25.png" />
+    <None Include="Resources\icons8-logout-25.png" />
+    <None Include="Resources\icons8-logout-25 %281%29.png" />
+    <None Include="Resources\icons8-gallery-25.png" />
+    <None Include="Resources\icons8-add-25.png" />
+    <None Include="Resources\icons8-starred-webpage-25.png" />
+    <None Include="Resources\icons8-github-25.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>
