@@ -33,10 +33,10 @@ namespace OnlyFriends {
 			DatabaseConnection connection = DatabaseConnection.Instance;
 			connection.InitializeConnection();
 
-			string email = "linda.white@example.com";
-			string password = "password789";
+			//string email = "linda.white@example.com";
+			//string password = "password789";
 
-			AuthFunctions.login(email, password);
+			//AuthFunctions.login(email, password);
 
 
 
