@@ -32,6 +32,10 @@ namespace OnlyFriends {
 		public MainApp() {
 			InitializeComponent();
 
+			DatabaseConnection connection = DatabaseConnection.Instance;
+			connection.InitializeConnection();
+			AuthFunctions.login("linda.white@example.com", "password789");
+
 			User user = User.Instance;
 			usernameLabel.Text = user.UserName;
 			emailLabel.Text = user.Email;

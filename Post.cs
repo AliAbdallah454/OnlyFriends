@@ -38,10 +38,10 @@ namespace OnlyFriends {
 
 		}
 
-		public HashSet<Comment> getComments() {
+		public List<Comment> getComments() {
 
 			DatabaseConnection connection = DatabaseConnection.Instance;
-			HashSet<Comment> comments = new HashSet<Comment>();
+			List<Comment> comments = new List<Comment>();
 
 			string getCommentsSql = $"SELECT * FROM comments\n" +
 									$"WHERE postId = {PostId}";

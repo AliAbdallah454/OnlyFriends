@@ -20,7 +20,13 @@ namespace OnlyFriends.UserControls2 {
 
 			for (int i = 0; i < posts.Count; i++) {
 				tweets[i] = new Tweet();
-				tweets[i].UName = HelperFunctions.translateUserIdToUserName(posts[i].UserId);
+
+				tweets[i].PostId = posts[i].PostId;
+				tweets[i].UserName = HelperFunctions.translateUserIdToUserName(posts[i].UserId);
+				tweets[i].Title = posts[i].Title;
+				tweets[i].Content = posts[i].Content;
+				tweets[i].TimeStamp = posts[i].TimeStamp;
+
 				flowLayoutPanel1.Controls.Add(tweets[i]);
 			}
 
