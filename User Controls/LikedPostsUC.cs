@@ -7,7 +7,8 @@ namespace OnlyFriends.User_Controls {
 	public partial class LikedPostsUC : UserControl {
 		public LikedPostsUC() {
 			InitializeComponent();
-			generatePosts();
+            flowLayoutPanel1.MouseWheel += feedScroller;
+            generatePosts();
 			showPost(feed[0]);
 		}
 

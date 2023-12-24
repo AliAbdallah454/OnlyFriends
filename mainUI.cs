@@ -91,9 +91,6 @@ namespace OnlyFriends {
 
 				}
 				changePanel(currentPanel);
-
-
-
 			}
 		}
 		private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e) {
@@ -101,7 +98,7 @@ namespace OnlyFriends {
 		}
 
 
-		private bool[] buttonclicked = { false, false, false };
+	
 
 
 	}
