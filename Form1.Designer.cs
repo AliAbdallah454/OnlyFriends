@@ -30,8 +30,6 @@
             this.loginBTN = new System.Windows.Forms.Button();
             this.invalidEmaillbl = new System.Windows.Forms.Label();
             this.InvalidPasswordlbl = new System.Windows.Forms.Label();
-            this.form2btn = new System.Windows.Forms.Button();
-            this.MhmdForm = new System.Windows.Forms.Button();
             this.createAccountLink = new System.Windows.Forms.LinkLabel();
             this.forgotPasswordLink = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,7 +58,6 @@
             this.textBox1.Text = "Email";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
             // 
@@ -111,28 +108,6 @@
             this.InvalidPasswordlbl.Text = "*Invalid Password";
             this.InvalidPasswordlbl.Visible = false;
             // 
-            // form2btn
-            // 
-            this.form2btn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.form2btn.Location = new System.Drawing.Point(588, 352);
-            this.form2btn.Name = "form2btn";
-            this.form2btn.Size = new System.Drawing.Size(86, 36);
-            this.form2btn.TabIndex = 8;
-            this.form2btn.Text = "form 2";
-            this.form2btn.UseVisualStyleBackColor = true;
-            this.form2btn.Click += new System.EventHandler(this.form2btn_Click);
-            // 
-            // MhmdForm
-            // 
-            this.MhmdForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MhmdForm.Location = new System.Drawing.Point(54, 366);
-            this.MhmdForm.Name = "MhmdForm";
-            this.MhmdForm.Size = new System.Drawing.Size(100, 36);
-            this.MhmdForm.TabIndex = 9;
-            this.MhmdForm.Text = "MhmdForm";
-            this.MhmdForm.UseVisualStyleBackColor = true;
-            this.MhmdForm.Click += new System.EventHandler(this.MhmdForm_Click);
-            // 
             // createAccountLink
             // 
             this.createAccountLink.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -170,11 +145,9 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::OnlyFriends.Properties.Resources.ripples_in_blank_black_6m97l43pauyhiw4e1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 451);
+            this.ClientSize = new System.Drawing.Size(780, 447);
             this.Controls.Add(this.forgotPasswordLink);
             this.Controls.Add(this.createAccountLink);
-            this.Controls.Add(this.MhmdForm);
-            this.Controls.Add(this.form2btn);
             this.Controls.Add(this.InvalidPasswordlbl);
             this.Controls.Add(this.invalidEmaillbl);
             this.Controls.Add(this.loginBTN);
@@ -207,8 +180,6 @@
         private System.Windows.Forms.Button loginBTN;
         private System.Windows.Forms.Label invalidEmaillbl;
         private System.Windows.Forms.Label InvalidPasswordlbl;
-        private System.Windows.Forms.Button form2btn;
-        private System.Windows.Forms.Button MhmdForm;
         private System.Windows.Forms.LinkLabel createAccountLink;
         private System.Windows.Forms.LinkLabel forgotPasswordLink;
     }

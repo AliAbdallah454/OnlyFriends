@@ -37,16 +37,6 @@ namespace OnlyFriends {
 			textBox2.UseSystemPasswordChar = true;
 		}
 
-		private void textBox1_Leave(object sender, EventArgs e) {
-			//check valid characters for username
-			//check for cotrect email format
-			//query request
-			//change the lbl visibility in case for any error
-
-		}
-		//to press any buttons there mustn't be any errors and thus the labels must be noot visble
-
-
 
         private void createAccountLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             SignUpForm signUpForm = new SignUpForm();
@@ -64,24 +54,28 @@ namespace OnlyFriends {
 
         //NOT DONE YET ADD THIS.HIDE MAIN-UI.SHOW TO LOGINBUTTON
         private void loginButton_Click(object sender, EventArgs e) {
-            mainUI mainUI = new mainUI();
+            MainApp mainApp = new MainApp();
             string email = textBox1.Text;
             string password = textBox2.Text;
 
             try {
                 AuthFunctions.login(email, password);
                 this.Hide();
-                mainUI.Show();
+                mainApp.Show();
             }
             catch (Exception ex) {
                 if (ex.Message == "Email doesn't Exist") {
                     invalidEmaillbl.Visible = true;
                     textBox1.Text = string.Empty;
                 }
-                if (ex.Message == "password is incorrect") {
+                else if (ex.Message == "password is incorrect") {
                     InvalidPasswordlbl.Visible = true;
                     textBox2.Text = string.Empty;
                 }
+                else {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
         }
 
@@ -97,17 +91,7 @@ namespace OnlyFriends {
             loginBTN.Enabled = !string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text);
         }
 
-        private void form2btn_Click(object sender, EventArgs e) {
-			Form2 form2 = new Form2();
-			this.Hide();
-			form2.Show();
-        }
-
-        private void MhmdForm_Click(object sender, EventArgs e) {
-			MHMDFormTest mhmdForm = new MHMDFormTest();
-			this.Hide();
-			mhmdForm.Show();
-        }
+      
 
 
 
