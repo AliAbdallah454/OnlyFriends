@@ -109,6 +109,9 @@ namespace OnlyFriends {
 			if (email.Length == 0 || !email.Contains("@gmail.com") || email.StartsWith("@")) {
 				throw new Exception("Invalid Email Entry");
 			}
+			else if(userName.Length == 0 || userName.Length >= 30) {
+				throw new Exception("Username Must Be Between 1 and 30 Characters");
+			}
 			else if (password.Length == 0) {
 				throw new Exception("Please Enter a Password");
 			}
@@ -122,7 +125,7 @@ namespace OnlyFriends {
 				throw new Exception("Bro You Dead!!");
 			}
 			else if (gender.Length == 0 || gender.Length > 50) {
-				throw new Exception("Gender Must Be Between 1 and 50 characters");
+				throw new Exception("Gender Must Be Between 1 and 50 Characters");
 			}
 			else if (phoneNumber.Length != 9 || phoneNumber[2] != '-') {
 				throw new Exception("Invalid Phone Number");
