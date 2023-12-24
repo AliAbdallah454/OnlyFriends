@@ -1,4 +1,5 @@
 ﻿using OnlyFriends.User_Controls;
+using OnlyFriends.UserControls2;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -63,7 +64,7 @@ namespace OnlyFriends {
 
 			userControlsDictionary = new Dictionary<UC, UserControl>{
 
-				{ UC.Home, new HomeUC()},
+				{ UC.Home, new HomeControl()},
 				{ UC.MyPosts, new MyPostsUC()},
 				{ UC.LikedPosts, new LikedPostsUC()},
 				{ UC.FriendRequests, new FriendRequestsUC()},
@@ -104,7 +105,7 @@ namespace OnlyFriends {
 					case "homeButton": {
 						currentUserControl = UC.Home;
 						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new HomeUC();
+						userControlsDictionary[currentUserControl] = new HomeControl();
 						userControlsDictionary[currentUserControl].Parent = mainPanel;
 						break;
 					}
