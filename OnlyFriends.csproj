@@ -129,6 +129,12 @@
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\FriendRequestsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\FriendRequestsUC.Designer.cs">
+      <DependentUpon>FriendRequestsUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\HomeUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,6 +152,12 @@
     </Compile>
     <Compile Include="User Controls\LikedPostsUC.Designer.cs">
       <DependentUpon>LikedPostsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\SuggestionsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\SuggestionsUC.Designer.cs">
+      <DependentUpon>SuggestionsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserFriendActions.cs" />
@@ -180,6 +192,9 @@
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\FriendRequestsUC.resx">
+      <DependentUpon>FriendRequestsUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\HomeUC.resx">
       <DependentUpon>HomeUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\LikedPostsUC.resx">
       <DependentUpon>LikedPostsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\SuggestionsUC.resx">
+      <DependentUpon>SuggestionsUC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

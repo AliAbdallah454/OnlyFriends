@@ -9,7 +9,11 @@ public enum Panels {
 
 	Home,
 	MyPosts,
-	LikedPosts
+	LikedPosts,
+	FriendRequests,
+	Suggestions,
+
+	UNKNOWN
 
 }
 
@@ -17,10 +21,11 @@ namespace OnlyFriends {
 
 	public partial class mainUI : Form {
 
-		private Dictionary<Panels, UserControl> panels = new Dictionary<Panels, UserControl>();
-
+		private Dictionary<Panels, UserControl> panels;
 		private Panels currentPanel = Panels.Home;
 		private Panels oldPanel;
+
+		public object MessgeBox { get; private set; }
 
 		private void createUser() {
 
@@ -35,8 +40,15 @@ namespace OnlyFriends {
 		}
 
 		private void changePanel(Panels panel) {
+
+			//if (panel == oldPanel) {
+			//	return;
+			//}
+
 			panels[oldPanel].Parent = null;
+			//Thread.Sleep(500);
 			panels[panel].Parent = mainPanel;
+			oldPanel = Panels.UNKNOWN;
 		}
 
 		private void scalePanel(UserControl panel) {
@@ -51,11 +63,18 @@ namespace OnlyFriends {
 		}
 
 		public mainUI() {
+
 			createUser();
 
-			panels.Add(Panels.Home, new HomeUC());
-			panels.Add(Panels.MyPosts, new MyPostsUC());
-			panels.Add(Panels.LikedPosts, new LikedPostsUC());
+			panels = new Dictionary<Panels, UserControl>{
+
+				{ Panels.Home, new HomeUC()},
+				{ Panels.MyPosts, new MyPostsUC()},
+				{ Panels.LikedPosts, new LikedPostsUC()},
+				{ Panels.FriendRequests, new FriendRequestsUC()},
+				{ Panels.Suggestions, new SuggestionsUC() }
+
+			};
 
 			InitializeComponent();
 			scalePanels();
@@ -79,41 +98,64 @@ namespace OnlyFriends {
 			if (sender is Label label) {
 
 				oldPanel = currentPanel;
+
 				switch (label.Name) {
 
 					case "HomeLabel": {
 						currentPanel = Panels.Home;
 						panels[currentPanel] = new HomeUC();
+						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "dmLabel": {
 						currentPanel = Panels.Home;
+						panels[currentPanel] = new HomeUC();
+						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "myPostLabel": {
 						currentPanel = Panels.MyPosts;
 						panels[currentPanel] = new MyPostsUC();
+						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "reelsLabel": {
 						currentPanel = Panels.Home;
+						panels[currentPanel] = new HomeUC();
+						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "friendrequestLabel": {
-						currentPanel = Panels.Home;
+						currentPanel = Panels.FriendRequests;
+						panels[currentPanel] = new FriendRequestsUC();
+						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "likedPostsLabel": {
 						currentPanel = Panels.LikedPosts;
 						panels[currentPanel] = new LikedPostsUC();
+						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "suggestionLabel": {
-						currentPanel = Panels.Home;
+						currentPanel = Panels.Suggestions;
+						panels[currentPanel] = new SuggestionsUC();
+
+						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "settingsLabel": {
 						currentPanel = Panels.Home;
+						panels[currentPanel] = new HomeUC();
+
+						scalePanel(panels[currentPanel]);
+						break;
+					}
+					default: {
+						currentPanel = Panels.Home;
+						panels[currentPanel] = new HomeUC();
+
+						scalePanel(panels[currentPanel]);
 						break;
 					}
 
