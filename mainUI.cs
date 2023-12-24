@@ -5,25 +5,15 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-public enum Panels {
 
-	Home,
-	MyPosts,
-	LikedPosts,
-	FriendRequests,
-	Suggestions,
-
-	UNKNOWN
-
-}
 
 namespace OnlyFriends {
 
 	public partial class mainUI : Form {
 
-		private Dictionary<Panels, UserControl> panels;
-		private Panels currentPanel = Panels.Home;
-		private Panels oldPanel;
+		private Dictionary<UC, UserControl> panels;
+		private UC currentPanel = UC.Home;
+		private UC oldPanel;
 
 		public object MessgeBox { get; private set; }
 
@@ -39,7 +29,7 @@ namespace OnlyFriends {
 
 		}
 
-		private void changePanel(Panels panel) {
+		private void changePanel(UC panel) {
 
 			//if (panel == oldPanel) {
 			//	return;
@@ -48,7 +38,7 @@ namespace OnlyFriends {
 			panels[oldPanel].Parent = null;
 			//Thread.Sleep(500);
 			panels[panel].Parent = mainPanel;
-			oldPanel = Panels.UNKNOWN;
+			oldPanel = UC.UNKNOWN;
 		}
 
 		private void scalePanel(UserControl panel) {
@@ -66,13 +56,13 @@ namespace OnlyFriends {
 
 			createUser();
 
-			panels = new Dictionary<Panels, UserControl>{
+			panels = new Dictionary<UC, UserControl>{
 
-				{ Panels.Home, new HomeUC()},
-				{ Panels.MyPosts, new MyPostsUC()},
-				{ Panels.LikedPosts, new LikedPostsUC()},
-				{ Panels.FriendRequests, new FriendRequestsUC()},
-				{ Panels.Suggestions, new SuggestionsUC() }
+				{ UC.Home, new HomeUC()},
+				{ UC.MyPosts, new MyPostsUC()},
+				{ UC.LikedPosts, new LikedPostsUC()},
+				{ UC.FriendRequests, new FriendRequestsUC()},
+				{ UC.Suggestions, new SuggestionsUC() }
 
 			};
 
@@ -102,57 +92,57 @@ namespace OnlyFriends {
 				switch (label.Name) {
 
 					case "HomeLabel": {
-						currentPanel = Panels.Home;
+						currentPanel = UC.Home;
 						panels[currentPanel] = new HomeUC();
 						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "dmLabel": {
-						currentPanel = Panels.Home;
+						currentPanel = UC.Home;
 						panels[currentPanel] = new HomeUC();
 						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "myPostLabel": {
-						currentPanel = Panels.MyPosts;
+						currentPanel = UC.MyPosts;
 						panels[currentPanel] = new MyPostsUC();
 						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "reelsLabel": {
-						currentPanel = Panels.Home;
+						currentPanel = UC.Home;
 						panels[currentPanel] = new HomeUC();
 						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "friendrequestLabel": {
-						currentPanel = Panels.FriendRequests;
+						currentPanel = UC.FriendRequests;
 						panels[currentPanel] = new FriendRequestsUC();
 						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "likedPostsLabel": {
-						currentPanel = Panels.LikedPosts;
+						currentPanel = UC.LikedPosts;
 						panels[currentPanel] = new LikedPostsUC();
 						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "suggestionLabel": {
-						currentPanel = Panels.Suggestions;
+						currentPanel = UC.Suggestions;
 						panels[currentPanel] = new SuggestionsUC();
 
 						scalePanel(panels[currentPanel]);
 						break;
 					}
 					case "settingsLabel": {
-						currentPanel = Panels.Home;
+						currentPanel = UC.Home;
 						panels[currentPanel] = new HomeUC();
 
 						scalePanel(panels[currentPanel]);
 						break;
 					}
 					default: {
-						currentPanel = Panels.Home;
+						currentPanel = UC.Home;
 						panels[currentPanel] = new HomeUC();
 
 						scalePanel(panels[currentPanel]);
