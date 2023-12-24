@@ -56,7 +56,7 @@ namespace OnlyFriends {
 					infoReader.Close();
 
 					MessageBox.Show($"Login done as {userName}");
-
+					User.CreateInstance(userId, userName, age, gender, email, password, phoneNumber);
 				}
 				else {
 					passwordReader.Close();
@@ -109,7 +109,7 @@ namespace OnlyFriends {
 			if (email.Length == 0 || !email.Contains("@gmail.com") || email.StartsWith("@")) {
 				throw new Exception("Invalid Email Entry");
 			}
-			else if(userName.Length == 0 || userName.Length >= 30) {
+			else if (userName.Length == 0 || userName.Length >= 30) {
 				throw new Exception("Username Must Be Between 1 and 30 Characters");
 			}
 			else if (password.Length == 0) {
