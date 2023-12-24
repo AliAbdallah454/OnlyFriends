@@ -41,7 +41,7 @@ namespace OnlyFriends {
 
 		public List<Post> getLikedPosts() {
 
-			string sql = $"SELECT * from likedPosts l\n" +
+			string sql = $"SELECT p.postId, p.userId, title, content, timeStamp, likes, tags from likedPosts l\n" +
 						 $"JOIN posts p ON p.postId = l.postId\n" +
 						 $"WHERE l.userId = {UserId}\n" +
 						 $"ORDER BY timeStamp DESC";
