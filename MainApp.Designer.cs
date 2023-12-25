@@ -24,17 +24,18 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.emailLabel = new System.Windows.Forms.Label();
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.friendRequestsButton = new System.Windows.Forms.Button();
+            this.myFriendsButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             this.likedPostsButton = new System.Windows.Forms.Button();
             this.addPostButton = new System.Windows.Forms.Button();
             this.myPostsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -44,6 +45,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.friendRequestsButton);
+            this.panel1.Controls.Add(this.myFriendsButton);
             this.panel1.Controls.Add(this.logoutButton);
             this.panel1.Controls.Add(this.likedPostsButton);
             this.panel1.Controls.Add(this.addPostButton);
@@ -56,49 +58,6 @@
             this.panel1.Size = new System.Drawing.Size(180, 570);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.emailLabel);
-            this.panel2.Controls.Add(this.usernameLabel);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 180);
-            this.panel2.TabIndex = 0;
-            // 
-            // emailLabel
-            // 
-            this.emailLabel.AutoSize = true;
-            this.emailLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.emailLabel.Location = new System.Drawing.Point(6, 151);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(36, 15);
-            this.emailLabel.TabIndex = 1;
-            this.emailLabel.Text = "Email";
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.usernameLabel.Location = new System.Drawing.Point(45, 130);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(87, 21);
-            this.usernameLabel.TabIndex = 1;
-            this.usernameLabel.Text = "Username";
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.AutoSize = true;
-            this.mainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(180, 0);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(720, 570);
-            this.mainPanel.TabIndex = 1;
-            // 
             // friendRequestsButton
             // 
             this.friendRequestsButton.Dock = System.Windows.Forms.DockStyle.Top;
@@ -108,16 +67,36 @@
             this.friendRequestsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.friendRequestsButton.Image = global::OnlyFriends.Properties.Resources.icons8_github_25;
             this.friendRequestsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.friendRequestsButton.Location = new System.Drawing.Point(0, 360);
+            this.friendRequestsButton.Location = new System.Drawing.Point(0, 405);
             this.friendRequestsButton.Name = "friendRequestsButton";
             this.friendRequestsButton.Size = new System.Drawing.Size(180, 45);
-            this.friendRequestsButton.TabIndex = 6;
+            this.friendRequestsButton.TabIndex = 7;
             this.friendRequestsButton.Text = "Friend Requests";
             this.friendRequestsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.friendRequestsButton.UseVisualStyleBackColor = true;
             this.friendRequestsButton.Click += new System.EventHandler(this.changePanel);
             this.friendRequestsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
             this.friendRequestsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
+            // 
+            // myFriendsButton
+            // 
+            this.myFriendsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.myFriendsButton.FlatAppearance.BorderSize = 0;
+            this.myFriendsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myFriendsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myFriendsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.myFriendsButton.Image = global::OnlyFriends.Properties.Resources.icons8_friends_25;
+            this.myFriendsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.myFriendsButton.Location = new System.Drawing.Point(0, 360);
+            this.myFriendsButton.Name = "myFriendsButton";
+            this.myFriendsButton.Size = new System.Drawing.Size(180, 45);
+            this.myFriendsButton.TabIndex = 6;
+            this.myFriendsButton.Text = "My Friends";
+            this.myFriendsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.myFriendsButton.UseVisualStyleBackColor = true;
+            this.myFriendsButton.Click += new System.EventHandler(this.changePanel);
+            this.myFriendsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
+            this.myFriendsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
             // 
             // logoutButton
             // 
@@ -219,6 +198,39 @@
             this.homeButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
             this.homeButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.emailLabel);
+            this.panel2.Controls.Add(this.usernameLabel);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(180, 180);
+            this.panel2.TabIndex = 0;
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.emailLabel.Location = new System.Drawing.Point(6, 151);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(36, 15);
+            this.emailLabel.TabIndex = 1;
+            this.emailLabel.Text = "Email";
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.usernameLabel.Location = new System.Drawing.Point(45, 130);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(87, 21);
+            this.usernameLabel.TabIndex = 1;
+            this.usernameLabel.Text = "Username";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -229,6 +241,16 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.AutoSize = true;
+            this.mainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(180, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(720, 570);
+            this.mainPanel.TabIndex = 1;
             // 
             // MainApp
             // 
@@ -263,7 +285,8 @@
         private System.Windows.Forms.Button addPostButton;
         private System.Windows.Forms.Button myPostsButton;
         private System.Windows.Forms.Button logoutButton;
-        private System.Windows.Forms.Button friendRequestsButton;
+        private System.Windows.Forms.Button myFriendsButton;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Button friendRequestsButton;
     }
 }

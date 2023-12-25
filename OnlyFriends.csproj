@@ -184,6 +184,18 @@
       <DependentUpon>SuggestionsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="UserControls2\AddPostControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\AddPostControl.Designer.cs">
+      <DependentUpon>AddPostControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls2\FriendRequestsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\FriendRequestsControl.Designer.cs">
+      <DependentUpon>FriendRequestsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls2\HomeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +207,12 @@
     </Compile>
     <Compile Include="UserControls2\LikedPostsControl.Designer.cs">
       <DependentUpon>LikedPostsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls2\MyFriendsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\MyFriendsControl.Designer.cs">
+      <DependentUpon>MyFriendsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls2\MyPostsControl.cs">
       <SubType>UserControl</SubType>
@@ -261,11 +279,20 @@
     <EmbeddedResource Include="User Controls\SuggestionsUC.resx">
       <DependentUpon>SuggestionsUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls2\AddPostControl.resx">
+      <DependentUpon>AddPostControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls2\FriendRequestsControl.resx">
+      <DependentUpon>FriendRequestsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\LikedPostsControl.resx">
       <DependentUpon>LikedPostsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls2\MyFriendsControl.resx">
+      <DependentUpon>MyFriendsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\MyPostsControl.resx">
       <DependentUpon>MyPostsControl.cs</DependentUpon>
@@ -406,6 +433,7 @@
     <None Include="Resources\icons8-like-30 %283%29.png" />
     <None Include="Resources\icons8-exit-30.png" />
     <None Include="Resources\icons8-male-user-25.png" />
+    <None Include="Resources\icons8-friends-251.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>

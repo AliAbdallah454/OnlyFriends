@@ -293,6 +293,16 @@ namespace OnlyFriends.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_friends_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-friends-25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_gallery_25 {
             get {
                 object obj = ResourceManager.GetObject("icons8-gallery-25", resourceCulture);
