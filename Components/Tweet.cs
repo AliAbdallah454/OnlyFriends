@@ -1,26 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Vml;
+using OnlyFriends.Properties;
 
 namespace OnlyFriends.Components {
 	public partial class Tweet : UserControl {
 
-		public Tweet() {
+
+        public Tweet() {
 			InitializeComponent();
 
-			//User user = User.Instance;
+			User user = User.Instance;
 			//HashSet<int> likedPostIds = user.getLikedPosts().Select(post => post.PostId).ToHashSet();
+			HashSet<int> likedPostIds = user.getLikedPosts().Select(post => post.PostId).ToHashSet();
 
-			//if (likedPostIds.Contains(postId)) {
-			//	likeButton.Image = Properties.Resources(IMAGE IF LIKED);
-			//	isLiked = true;
-			//}
 
-		}
+            if (likedPostIds.Contains(postId)) {
+                likeButton.Image = Properties.Resources.icons8_like_30__3_;
+                isLiked = true;
+            }
+            else {
+                likeButton.Image = Properties.Resources.icons8_like_30__2_;
+                isLiked = false;
+            }
 
-		#region Properties
 
-		private bool isLiked = false;
+        }
+
+       
+        #region Properties
+
+        private bool isLiked = false;
 
 		private int postId;
 		private string userName;
@@ -55,20 +68,21 @@ namespace OnlyFriends.Components {
 
 		#endregion Properties
 
+
+		
 		private void likeButton_Click(object sender, System.EventArgs e) {
+            User user = User.Instance;
+			MessageBox.Show(postId.ToString());
+            user.likePost(postId);
+            isLiked = !isLiked;
 
-			User user = User.Instance;
-			user.likePost(postId);
 
-			//if (isLiked) {
-			//	likeButton.Image = Properties.Resources.(IMAGE IF LIKED)
-			//}
-			//else {
-			//	likeButton.Image = Properties.Resources.(IMAGE IF LIKE IS REMOVED);
-			//}
-
-			isLiked = !isLiked;
-
+            if (isLiked) {
+				likeButton.Image = Properties.Resources.icons8_like_30__3_;
+			}
+			else {
+				likeButton.Image = Properties.Resources.icons8_like_30__2_;
+			}
 		}
 
 		private void commentButton_Click(object sender, System.EventArgs e) {

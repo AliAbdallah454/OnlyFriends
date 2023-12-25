@@ -365,6 +365,9 @@
     <None Include="Resources\icons8-chat-30.png" />
     <None Include="Resources\icons8-chat-30 %281%29.png" />
     <None Include="Resources\icons8-like-30 %281%29.png" />
+    <None Include="Resources\icons8-like-30 %282%29.png" />
+    <None Include="Resources\icons8-chat-30 %282%29.png" />
+    <None Include="Resources\icons8-like-30 %283%29.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>

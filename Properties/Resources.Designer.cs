@@ -273,6 +273,16 @@ namespace OnlyFriends.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_chat_30__2_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-chat-30 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_gallery_25 {
             get {
                 object obj = ResourceManager.GetObject("icons8-gallery-25", resourceCulture);
@@ -346,6 +356,26 @@ namespace OnlyFriends.Properties {
         internal static System.Drawing.Bitmap icons8_like_30__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-like-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_like_30__2_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-like-30 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_like_30__3_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-like-30 (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
