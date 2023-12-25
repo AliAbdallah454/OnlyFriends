@@ -88,7 +88,7 @@ namespace OnlyFriends {
 					case "myPostsButton": {
 						currentUserControl = UC.MyPosts;
 						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new MyPostsUC();
+						userControlsDictionary[currentUserControl] = new MyPostsControl();
 						userControlsDictionary[currentUserControl].Parent = mainPanel;
 						break;
 					}
@@ -102,7 +102,7 @@ namespace OnlyFriends {
 					case "likedPostsButton": {
 						currentUserControl = UC.LikedPosts;
 						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new LikedPostsUC();
+						userControlsDictionary[currentUserControl] = new LikedPostsControl();
 						userControlsDictionary[currentUserControl].Parent = mainPanel;
 						break;
 					}

@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace OnlyFriends.Components {
 
 	public partial class Tweet : UserControl {
 
-		public Tweet(int postId) {
+		public Tweet(int postId, HashSet<int> likedPostIds) {
 
 			InitializeComponent();
-
-			User user = User.Instance;
-			HashSet<int> likedPostIds = user.getLikedPosts().Select(post => post.PostId).ToHashSet();
 
 			if (likedPostIds.Contains(postId)) {
 				likeButton.Image = Properties.Resources.icons8_like_30__3_;
@@ -31,11 +27,10 @@ namespace OnlyFriends.Components {
 		private int postId;
 		private string userName;
 		private string title;
-		private DateTime timeStamp;
-		private string timeStampString;
 		private string content;
-		private string likes;
-		private string comments;
+		private DateTime timeStamp;
+		private int numberOfLikes;
+		private int numberOfComments;
 
 		public int PostId {
 			get { return postId; }
@@ -57,6 +52,14 @@ namespace OnlyFriends.Components {
 			get { return timeStamp; }
 			set { timeStamp = value; timeStampLabel.Text = value.ToString(); }
 		}
+		public int NumberOfLikes {
+			get { return numberOfLikes; }
+			set { numberOfLikes = value; likeNumberLabel.Text = value.ToString(); }
+		}
+		public int NumberOfComments {
+			get { return numberOfComments; }
+			set { numberOfComments = value; commentNumberLabel.Text = value.ToString(); }
+		}
 
 		#endregion Properties
 
@@ -68,9 +71,13 @@ namespace OnlyFriends.Components {
 
 			if (isLiked) {
 				likeButton.Image = Properties.Resources.icons8_like_30__3_;
+				NumberOfLikes++;
+				likeNumberLabel.Text = (NumberOfLikes).ToString();
 			}
 			else {
 				likeButton.Image = Properties.Resources.icons8_like_30__2_;
+				NumberOfLikes--;
+				likeNumberLabel.Text = NumberOfLikes.ToString();
 			}
 		}
 

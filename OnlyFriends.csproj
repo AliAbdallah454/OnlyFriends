@@ -190,6 +190,18 @@
     <Compile Include="UserControls2\HomeControl.Designer.cs">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls2\LikedPostsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\LikedPostsControl.Designer.cs">
+      <DependentUpon>LikedPostsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls2\MyPostsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\MyPostsControl.Designer.cs">
+      <DependentUpon>MyPostsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserFriendActions.cs" />
     <Compile Include="UserPostActions.cs" />
     <Compile Include="UserFriendGetFunctions.cs" />
@@ -251,6 +263,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls2\LikedPostsControl.resx">
+      <DependentUpon>LikedPostsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls2\MyPostsControl.resx">
+      <DependentUpon>MyPostsControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
