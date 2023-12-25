@@ -1,11 +1,12 @@
 ﻿using OnlyFriends.Components;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace OnlyFriends.UserControls2 {
-	public partial class HomeControl : UserControl {
-		public HomeControl() {
+	public partial class MyPostsControl : UserControl {
+		public MyPostsControl() {
 			InitializeComponent();
 			populate();
 		}
@@ -14,7 +15,7 @@ namespace OnlyFriends.UserControls2 {
 
 			User user = User.Instance;
 
-			List<Post> posts = user.getFeedPosts();
+			List<Post> posts = user.getPosts();
 			HashSet<int> likedPostIds = user.getLikedPosts().Select(post => post.PostId).ToHashSet();
 
 			int nbOfPosts = posts.Count;

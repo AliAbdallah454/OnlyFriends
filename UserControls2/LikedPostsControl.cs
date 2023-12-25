@@ -1,11 +1,13 @@
 ﻿using OnlyFriends.Components;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace OnlyFriends.UserControls2 {
-	public partial class HomeControl : UserControl {
-		public HomeControl() {
+	public partial class LikedPostsControl : UserControl {
+		public LikedPostsControl() {
 			InitializeComponent();
 			populate();
 		}
@@ -14,7 +16,7 @@ namespace OnlyFriends.UserControls2 {
 
 			User user = User.Instance;
 
-			List<Post> posts = user.getFeedPosts();
+			List<Post> posts = user.getLikedPosts();
 			HashSet<int> likedPostIds = user.getLikedPosts().Select(post => post.PostId).ToHashSet();
 
 			int nbOfPosts = posts.Count;
@@ -36,7 +38,16 @@ namespace OnlyFriends.UserControls2 {
 				flowLayoutPanel1.Controls.Add(tweets[i]);
 			}
 
+
 		}
 
+
+		private void LikedPostsControl_Load(object sender, EventArgs e) {
+
+		}
+
+		private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e) {
+
+		}
 	}
 }
