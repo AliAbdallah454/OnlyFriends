@@ -2,38 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using DocumentFormat.OpenXml.Bibliography;
-using DocumentFormat.OpenXml.Vml;
-using OnlyFriends.Properties;
 
 namespace OnlyFriends.Components {
+
 	public partial class Tweet : UserControl {
 
+		public Tweet(int postId) {
 
-        public Tweet() {
 			InitializeComponent();
 
 			User user = User.Instance;
-			//HashSet<int> likedPostIds = user.getLikedPosts().Select(post => post.PostId).ToHashSet();
 			HashSet<int> likedPostIds = user.getLikedPosts().Select(post => post.PostId).ToHashSet();
 
+			if (likedPostIds.Contains(postId)) {
+				likeButton.Image = Properties.Resources.icons8_like_30__3_;
+				isLiked = true;
+			}
+			else {
+				likeButton.Image = Properties.Resources.icons8_like_30__2_;
+				isLiked = false;
+			}
+		}
 
-            if (likedPostIds.Contains(postId)) {
-                likeButton.Image = Properties.Resources.icons8_like_30__3_;
-                isLiked = true;
-            }
-            else {
-                likeButton.Image = Properties.Resources.icons8_like_30__2_;
-                isLiked = false;
-            }
+		#region Properties
 
-
-        }
-
-       
-        #region Properties
-
-        private bool isLiked = false;
+		private bool isLiked = false;
 
 		private int postId;
 		private string userName;
@@ -60,7 +53,6 @@ namespace OnlyFriends.Components {
 			get { return content; }
 			set { content = value; contentLabel.Text = value; }
 		}
-
 		public DateTime TimeStamp {
 			get { return timeStamp; }
 			set { timeStamp = value; timeStampLabel.Text = value.ToString(); }
@@ -68,15 +60,13 @@ namespace OnlyFriends.Components {
 
 		#endregion Properties
 
-
-		
 		private void likeButton_Click(object sender, System.EventArgs e) {
-            User user = User.Instance;
-            user.likePost(postId);
-            isLiked = !isLiked;
 
+			User user = User.Instance;
+			user.likePost(postId);
+			isLiked = !isLiked;
 
-            if (isLiked) {
+			if (isLiked) {
 				likeButton.Image = Properties.Resources.icons8_like_30__3_;
 			}
 			else {
