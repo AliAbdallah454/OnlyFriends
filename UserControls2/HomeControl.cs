@@ -19,7 +19,8 @@ namespace OnlyFriends.UserControls2 {
 			Tweet[] tweets = new Tweet[nbOfPosts];
 
 			for (int i = 0; i < posts.Count; i++) {
-				tweets[i] = new Tweet();
+
+				tweets[i] = new Tweet(posts[i].PostId);
 
 				tweets[i].PostId = posts[i].PostId;
 				tweets[i].UserName = HelperFunctions.translateUserIdToUserName(posts[i].UserId);
