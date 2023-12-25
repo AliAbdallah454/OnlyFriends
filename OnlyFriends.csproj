@@ -87,6 +87,18 @@
   <ItemGroup>
     <Compile Include="AuthFunctions.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="Comments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comments.Designer.cs">
+      <DependentUpon>Comments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Comment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Comment.Designer.cs">
+      <DependentUpon>Comment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Tweet.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,6 +206,12 @@
     <Compile Include="UserPostActions.cs" />
     <Compile Include="UserFriendGetFunctions.cs" />
     <Compile Include="UserPostGetFunctions.cs" />
+    <EmbeddedResource Include="Comments.resx">
+      <DependentUpon>Comments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Comment.resx">
+      <DependentUpon>Comment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Tweet.resx">
       <DependentUpon>Tweet.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +404,8 @@
     <None Include="Resources\icons8-like-30 %282%29.png" />
     <None Include="Resources\icons8-chat-30 %282%29.png" />
     <None Include="Resources\icons8-like-30 %283%29.png" />
+    <None Include="Resources\icons8-exit-30.png" />
+    <None Include="Resources\icons8-male-user-25.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>
