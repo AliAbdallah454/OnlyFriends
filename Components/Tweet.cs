@@ -75,12 +75,15 @@ namespace OnlyFriends.Components {
 		}
 
 		private void commentButton_Click(object sender, System.EventArgs e) {
+			Comments comments = new Comments();
+			comments.Show();
 
-			List<Comment> comments = HelperFunctions.translatePostIdToPostInfo(postId).getComments();
-			if (comments.Count == 0) MessageBox.Show("This post has not Comments");
-			foreach (Comment comment in comments) {
-				MessageBox.Show(comment.Content, comment.UserId.ToString());
-			}
+
+			//List<Comment> comments = HelperFunctions.translatePostIdToPostInfo(postId).getComments();
+			//if (comments.Count == 0) MessageBox.Show("This post has no Comments");
+			//foreach (Comment comment in comments) {
+			//	MessageBox.Show(comment.Content, comment.UserId.ToString());
+			//}
 
 		}
 	}

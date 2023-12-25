@@ -26,7 +26,7 @@ namespace OnlyFriends {
             try {
                 AuthFunctions.changePassword(email, password, confirmPassword);
                 MessageBox.Show("You Can LogIn Now With the New Password", "Password Changed Successfully");
-                this.Hide();
+                this.Close();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
