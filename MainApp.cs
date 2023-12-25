@@ -14,8 +14,10 @@ public enum UC {
 	FriendRequests,
 	Suggestions,
 	AddPost,
+    MyFriends,
 
-	UNKNOWN
+
+    UNKNOWN
 
 }
 
@@ -43,12 +45,15 @@ namespace OnlyFriends {
 			userControlsDictionary = new Dictionary<UC, UserControl>{
 
 				{ UC.Home, new HomeControl()},
-				{ UC.MyPosts, new MyPostsUC()},
-				{ UC.LikedPosts, new LikedPostsUC()},
-				{ UC.FriendRequests, new FriendRequestsUC()},
-				{ UC.Suggestions, new SuggestionsUC() }
+				{ UC.MyPosts, new MyPostsControl()},
+				{ UC.LikedPosts, new LikedPostsControl()},
+				{ UC.FriendRequests, new FriendRequestsControl()},
+				{ UC.Suggestions, new SuggestionsUC() },
+                { UC.MyFriends, new MyFriendsControl() },
+				{UC.AddPost, new AddPostControl() }
 
-			};
+
+            };
 
 		}
 
@@ -95,7 +100,7 @@ namespace OnlyFriends {
 					case "addPostButton": {
 						currentUserControl = UC.Suggestions;
 						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new SuggestionsUC();
+						userControlsDictionary[currentUserControl] = new AddPostControl();
 						userControlsDictionary[currentUserControl].Parent = mainPanel;
 						break;
 					}
@@ -106,10 +111,17 @@ namespace OnlyFriends {
 						userControlsDictionary[currentUserControl].Parent = mainPanel;
 						break;
 					}
-					case "friendRequestsButton": {
+                    case "myFriendsButton": {
+                        currentUserControl = UC.MyFriends;
+                        userControlsDictionary[oldUserControl].Parent = null;
+                        userControlsDictionary[currentUserControl] = new MyFriendsControl();
+                        userControlsDictionary[currentUserControl].Parent = mainPanel;
+                        break;
+                    }
+                    case "friendRequestsButton": {
 						currentUserControl = UC.FriendRequests;
 						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new FriendRequestsUC();
+						userControlsDictionary[currentUserControl] = new FriendRequestsControl();
 						userControlsDictionary[currentUserControl].Parent = mainPanel;
 						break;
 					}
