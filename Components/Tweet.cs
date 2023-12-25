@@ -72,7 +72,6 @@ namespace OnlyFriends.Components {
 		
 		private void likeButton_Click(object sender, System.EventArgs e) {
             User user = User.Instance;
-			MessageBox.Show(postId.ToString());
             user.likePost(postId);
             isLiked = !isLiked;
 
