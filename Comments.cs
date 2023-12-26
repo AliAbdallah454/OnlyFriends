@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace OnlyFriends {
 	public partial class Comments : Form {
@@ -10,6 +11,7 @@ namespace OnlyFriends {
 		public Comments(int postId, string userName) {
 
 			User user = User.Instance;
+			
 
 			InitializeComponent();
 
@@ -31,8 +33,9 @@ namespace OnlyFriends {
 			tweet.TimeStamp = post.TimeStamp;
 			tweet.NumberOfLikes = post.Likes;
 			tweet.NumberOfComments = HelperFunctions.translatePostIdToPostInfo(post.PostId).getComments().Count;
+			commentNumberLabel.Text = $"({tweet.NumberOfComments.ToString()})";
 
-			tweet.disableCommentButton();
+			tweet.eraseButtons();
 
 			tweetPanel.Controls.Add(tweet);
 
@@ -41,7 +44,8 @@ namespace OnlyFriends {
 		public int PostId { get; set; }
 		public string UserName { get; set; }
 
-		private void populate() {
+       
+        private void populate() {
 
 			List<Comment> comments = HelperFunctions.translatePostIdToPostInfo(PostId).getComments();
 
@@ -80,16 +84,20 @@ namespace OnlyFriends {
 
 		private void addCommentButton_Click(object sender, EventArgs e) {
 			string comment = addCommentBox.Text;
-
-			try {
-
-				User user = User.Instance;
-				user.commentOnPost(12, comment);
-				addCommentBox.Text = "";
-			}
-			catch (Exception ex) {
-				addCommentBox.Text = "";
-				MessageBox.Show(ex.Message);
+			if (textBoxEntered) {
+                try {
+                    User user = User.Instance;
+                    user.commentOnPost(PostId, comment);
+                    addCommentBox.Text = "";
+					Comments(PostId, UserName);
+                }
+                catch (Exception ex) {
+                    addCommentBox.Text = "";
+                    MessageBox.Show(ex.Message);
+                }
+            }
+			else {
+				MessageBox.Show("Write a Comment to Add");
 			}
 		}
 	}
