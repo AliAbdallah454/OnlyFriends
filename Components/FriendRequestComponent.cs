@@ -47,8 +47,15 @@ namespace OnlyFriends.Components {
         }
 
         private void rejectButton_Click(object sender, EventArgs e) {
-            this.Visible = false;
-            MessageBox.Show($"{UserName} is removed from your friend requests");
+            try {
+                User user = User.Instance;
+                user.declineFriendRequest(FriendId);
+                MessageBox.Show($"{UserName}'s request was rejected", "Rejecting User");
+                this.Visible = false;
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
