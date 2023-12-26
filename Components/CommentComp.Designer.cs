@@ -150,7 +150,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Snow;
             this.Controls.Add(this.removeCommentButton);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);

@@ -222,6 +222,12 @@
     <Compile Include="UserControls2\AddPostControl.Designer.cs">
       <DependentUpon>AddPostControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls2\FindFriend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\FindFriend.Designer.cs">
+      <DependentUpon>FindFriend.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls2\FriendRequestsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,6 +257,12 @@
     </Compile>
     <Compile Include="UserControls2\MyPostsControl.Designer.cs">
       <DependentUpon>MyPostsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls2\SuggestedFriends.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\SuggestedFriends.Designer.cs">
+      <DependentUpon>SuggestedFriends.cs</DependentUpon>
     </Compile>
     <Compile Include="UserFriendActions.cs" />
     <Compile Include="UserPostActions.cs" />
@@ -314,6 +326,9 @@
     <EmbeddedResource Include="UserControls2\AddPostControl.resx">
       <DependentUpon>AddPostControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls2\FindFriend.resx">
+      <DependentUpon>FindFriend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\FriendRequestsControl.resx">
       <DependentUpon>FriendRequestsControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\MyPostsControl.resx">
       <DependentUpon>MyPostsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls2\SuggestedFriends.resx">
+      <DependentUpon>SuggestedFriends.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -470,6 +488,8 @@
     <None Include="Resources\icons8-remove-30.png" />
     <None Include="Resources\icons8-remove-25.png" />
     <None Include="Resources\icons8-remove-251.png" />
+    <None Include="Resources\icons8-find-25.png" />
+    <None Include="Resources\icons8-coaching-25.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>
