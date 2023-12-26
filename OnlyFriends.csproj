@@ -169,12 +169,6 @@
     <Compile Include="MainApp.Designer.cs">
       <DependentUpon>MainApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mainUI.Designer.cs">
-      <DependentUpon>mainUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="MHMDFormTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,9 +279,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainApp.resx">
       <DependentUpon>MainApp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mainUI.resx">
-      <DependentUpon>mainUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MHMDFormTest.resx">
       <DependentUpon>MHMDFormTest.cs</DependentUpon>
@@ -478,6 +469,7 @@
     <None Include="Resources\icons8-friends-251.png" />
     <None Include="Resources\icons8-remove-30.png" />
     <None Include="Resources\icons8-remove-25.png" />
+    <None Include="Resources\icons8-remove-251.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>
