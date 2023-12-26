@@ -22,7 +22,7 @@ namespace OnlyFriends {
 			else if (content.Length > 255) {
 				throw new Exception("tags can't be that long, the maximum is 255 character");
 			}
-			string sql = $"INSERT INTO posts(userId, title, content, timestamp, likes)\n" +
+			string sql = $"INSERT INTO posts(userId, title, content, timestamp, likes, tags)\n" +
 						 $"VALUES({this.UserId}, \"{title}\", \"{content}\", CURRENT_TIMESTAMP, 0, \"{tags}\");";
 
 			MySqlDataReader reader = connection.query(sql);
