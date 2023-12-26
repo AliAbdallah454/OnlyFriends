@@ -92,5 +92,12 @@ namespace OnlyFriends.Components {
 			commentButton.Enabled = false;
 		}
 
+		public void eraseButtons() {
+			likeButton.Visible = false;
+			commentButton.Visible = false;
+			likeNumberLabel.Visible = false;
+			commentNumberLabel.Visible = false;
+		}
+
 	}
 }

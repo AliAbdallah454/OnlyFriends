@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.userPicture = new System.Windows.Forms.PictureBox();
 			this.usernameLabel = new System.Windows.Forms.Button();
@@ -161,6 +162,7 @@
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
 			this.ResumeLayout(false);
+
 
         }
 
