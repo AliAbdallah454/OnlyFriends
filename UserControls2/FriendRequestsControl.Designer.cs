@@ -32,6 +32,7 @@
             // 
             // contentFlowLayoutPanel
             // 
+            this.contentFlowLayoutPanel.AutoScroll = true;
             this.contentFlowLayoutPanel.Location = new System.Drawing.Point(13, 53);
             this.contentFlowLayoutPanel.MaximumSize = new System.Drawing.Size(720, 1000);
             this.contentFlowLayoutPanel.Name = "contentFlowLayoutPanel";
