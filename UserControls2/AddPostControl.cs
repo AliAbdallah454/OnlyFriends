@@ -19,7 +19,8 @@ namespace OnlyFriends.UserControls2 {
         }
         private void clearer(object sender, EventArgs e) {
             if(sender is RichTextBox x) {
-                if(x.Text == "Title" ||x.Text == "What are you thinking about?" || x.Text== "Tags" ) {
+                error.Visible = !true;
+                if (x.Text == "Title" ||x.Text == "What are you thinking about?" || x.Text== "Tags" ) {
                     x.Text = string.Empty;
                 }
             }
@@ -42,8 +43,13 @@ namespace OnlyFriends.UserControls2 {
         }
 
         private void postButton_Click(object sender, EventArgs e) {
-            user.addPost(postTitleInput.Text, postContentInput.Text, postTagsInput.Text);
-            
+            if (sender is Button x) {
+                if (postTitleInput.Text == "Title" || postContentInput.Text == "What are you thinking about?" || postTagsInput.Text == "Tags") {
+                    error.Visible = true;
+                    return;
+                }
+                user.addPost(postTitleInput.Text, postContentInput.Text, postTagsInput.Text);
+            }
         }
     }
 }
