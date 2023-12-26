@@ -279,7 +279,7 @@ namespace OnlyFriends {
             // 
             // mainPanel
             // 
-            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(202)))));
+            this.mainPanel.BackColor = System.Drawing.Color.Gray;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.mainPanel.Location = new System.Drawing.Point(193, 0);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(10);
