@@ -25,10 +25,10 @@
         private void InitializeComponent() {
             this.emailLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.userPicture = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Button();
             this.acceptButton = new System.Windows.Forms.Button();
             this.rejectButton = new System.Windows.Forms.Button();
-            this.userPicture = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPicture)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 35);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // userPicture
+            // 
+            this.userPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userPicture.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_35;
+            this.userPicture.Location = new System.Drawing.Point(3, 3);
+            this.userPicture.Name = "userPicture";
+            this.userPicture.Size = new System.Drawing.Size(29, 29);
+            this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userPicture.TabIndex = 0;
+            this.userPicture.TabStop = false;
             // 
             // usernameLabel
             // 
@@ -112,17 +123,6 @@
             this.rejectButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.rejectButton.UseVisualStyleBackColor = false;
             this.rejectButton.Click += new System.EventHandler(this.rejectButton_Click);
-            // 
-            // userPicture
-            // 
-            this.userPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userPicture.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_35;
-            this.userPicture.Location = new System.Drawing.Point(3, 3);
-            this.userPicture.Name = "userPicture";
-            this.userPicture.Size = new System.Drawing.Size(29, 29);
-            this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userPicture.TabIndex = 0;
-            this.userPicture.TabStop = false;
             // 
             // FriendRequestComponent
             // 
