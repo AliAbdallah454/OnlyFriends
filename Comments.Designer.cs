@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-
             this.tweetPanel = new System.Windows.Forms.Panel();
             this.commentsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.exitButton = new System.Windows.Forms.Button();
@@ -37,6 +36,7 @@
             // 
             // tweetPanel
             // 
+            this.tweetPanel.AutoSize = true;
             this.tweetPanel.Location = new System.Drawing.Point(13, 56);
             this.tweetPanel.MaximumSize = new System.Drawing.Size(690, 140);
             this.tweetPanel.MinimumSize = new System.Drawing.Size(690, 140);
@@ -158,7 +158,6 @@
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
 
         }
 

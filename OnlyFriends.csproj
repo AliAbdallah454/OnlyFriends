@@ -131,6 +131,12 @@
     <Compile Include="Components\CommentComp.Designer.cs">
       <DependentUpon>CommentComp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\MyFriendsComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\MyFriendsComponent.Designer.cs">
+      <DependentUpon>MyFriendsComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Tweet.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\CommentComp.resx">
       <DependentUpon>CommentComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\MyFriendsComponent.resx">
+      <DependentUpon>MyFriendsComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Tweet.resx">
       <DependentUpon>Tweet.cs</DependentUpon>
@@ -467,6 +476,8 @@
     <None Include="Resources\icons8-exit-30.png" />
     <None Include="Resources\icons8-male-user-25.png" />
     <None Include="Resources\icons8-friends-251.png" />
+    <None Include="Resources\icons8-remove-30.png" />
+    <None Include="Resources\icons8-remove-25.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>

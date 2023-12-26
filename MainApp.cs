@@ -14,10 +14,10 @@ public enum UC {
 	FriendRequests,
 	Suggestions,
 	AddPost,
-    MyFriends,
+	MyFriends,
 
 
-    UNKNOWN
+	UNKNOWN
 
 }
 
@@ -28,10 +28,10 @@ namespace OnlyFriends {
 
 
 
-        private Dictionary<UC, UserControl> userControlsDictionary;
+		private Dictionary<UC, UserControl> userControlsDictionary;
 		private UC currentUserControl = UC.Home;
 		private UC oldUserControl;
-		private Button oldButton=null ,currentButton=null;
+		private Button oldButton = null, currentButton = null;
 
 		public MainApp() {
 			InitializeComponent();
@@ -51,29 +51,29 @@ namespace OnlyFriends {
 				{ UC.LikedPosts, new LikedPostsControl()},
 				{ UC.FriendRequests, new FriendRequestsControl()},
 				{ UC.Suggestions, new SuggestionsUC() },
-                { UC.MyFriends, new MyFriendsControl() },
-				{UC.AddPost, new AddPostControl() }
+				{ UC.MyFriends, new MyFriendsControl() },
+				{ UC.AddPost, new AddPostControl() }
 
 
-            };
-            mouseEnterBackColor = mainPanel.BackColor;
-            mouseLeaveBackColor = navPanel.BackColor;
-            currentUserControl = UC.Home;
+			};
+			mouseEnterBackColor = mainPanel.BackColor;
+			mouseLeaveBackColor = navPanel.BackColor;
+			currentUserControl = UC.Home;
 			changePanel(homeButton, EventArgs.Empty);
 
-        }
+		}
 
 		private void button_MouseEnter_Bold(object sender, EventArgs e) {
 			if (sender is Button button) {
-				if(button!=currentButton)
+				if (button != currentButton)
 					button.BackColor = mouseEnterBackColor;
 			}
 		}
 
 		private void button_MouseLeave_Regular(object sender, EventArgs e) {
 			if (sender is Button button) {
-                if (button!=currentButton)
-                    button.BackColor = mouseLeaveBackColor;
+				if (button != currentButton)
+					button.BackColor = mouseLeaveBackColor;
 			}
 		}
 
@@ -90,11 +90,11 @@ namespace OnlyFriends {
 					oldButton = currentButton;
 					currentButton = button;
 					currentButton.BackColor = mainPanel.BackColor;
-					if(oldButton!=null)
+					if (oldButton != null)
 						oldButton.BackColor = Color.Transparent;
 				}
 
-				
+
 				oldUserControl = currentUserControl;
 
 				switch (button.Name) {
@@ -127,14 +127,14 @@ namespace OnlyFriends {
 						userControlsDictionary[currentUserControl].Parent = mainPanel;
 						break;
 					}
-                    case "myFriendsButton": {
-                        currentUserControl = UC.MyFriends;
-                        userControlsDictionary[oldUserControl].Parent = null;
-                        userControlsDictionary[currentUserControl] = new MyFriendsControl();
-                        userControlsDictionary[currentUserControl].Parent = mainPanel;
-                        break;
-                    }
-                    case "friendRequestsButton": {
+					case "myFriendsButton": {
+						currentUserControl = UC.MyFriends;
+						userControlsDictionary[oldUserControl].Parent = null;
+						userControlsDictionary[currentUserControl] = new MyFriendsControl();
+						userControlsDictionary[currentUserControl].Parent = mainPanel;
+						break;
+					}
+					case "friendRequestsButton": {
 						currentUserControl = UC.FriendRequests;
 						userControlsDictionary[oldUserControl].Parent = null;
 						userControlsDictionary[currentUserControl] = new FriendRequestsControl();
@@ -166,6 +166,6 @@ namespace OnlyFriends {
 			}
 		}
 
-        
-    }
+
+	}
 }
