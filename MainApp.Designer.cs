@@ -55,7 +55,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 570);
+            this.panel1.Size = new System.Drawing.Size(180, 567);
             this.panel1.TabIndex = 0;
             // 
             // friendRequestsButton
@@ -107,7 +107,7 @@
             this.logoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.logoutButton.Image = global::OnlyFriends.Properties.Resources.icons8_logout_25__1_;
             this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.logoutButton.Location = new System.Drawing.Point(0, 525);
+            this.logoutButton.Location = new System.Drawing.Point(0, 522);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(180, 45);
             this.logoutButton.TabIndex = 5;
@@ -249,7 +249,7 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(180, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(720, 570);
+            this.mainPanel.Size = new System.Drawing.Size(720, 567);
             this.mainPanel.TabIndex = 1;
             // 
             // MainApp
@@ -257,10 +257,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(900, 570);
+            this.ClientSize = new System.Drawing.Size(904, 571);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximumSize = new System.Drawing.Size(920, 610);
+            this.MinimumSize = new System.Drawing.Size(920, 610);
             this.Name = "MainApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainApp";
