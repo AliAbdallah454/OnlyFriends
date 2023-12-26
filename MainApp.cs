@@ -56,7 +56,7 @@ namespace OnlyFriends {
 
 
             };
-            mouseEnterBackColor = mainPanel.BackColor;
+            mouseEnterBackColor = this.BackColor;
             mouseLeaveBackColor = navPanel.BackColor;
             currentUserControl = UC.Home;
 			changePanel(homeButton, EventArgs.Empty);
@@ -83,7 +83,7 @@ namespace OnlyFriends {
 			oldUserControl = UC.UNKNOWN;
 		}
 
-		private void changePanel(object sender, EventArgs e) {
+		public void changePanel(object sender, EventArgs e) {
 
 			if (sender is Button button) {
 				if (button != currentButton) {
@@ -154,7 +154,7 @@ namespace OnlyFriends {
 			}
 		}
 
-		private void logOutButton_Click(object sender, EventArgs e) {
+        private void logOutButton_Click(object sender, EventArgs e) {
 			try {
 				AuthFunctions.logout();
 				Login login = new Login();
