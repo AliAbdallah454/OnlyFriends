@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlyFriends.Components;
 
 namespace OnlyFriends.UserControls2 {
     public partial class FriendRequestsControl : UserControl {
@@ -15,6 +16,7 @@ namespace OnlyFriends.UserControls2 {
 
         public FriendRequestsControl() {
             InitializeComponent();
+            populate();
 
             suggestedFriends = new SuggestedFriends();
             findFriend = new FindFriend();
@@ -40,6 +42,32 @@ namespace OnlyFriends.UserControls2 {
             suggestedFriends.Location = new Point(contentFlowLayoutPanel.Left, contentFlowLayoutPanel.Top);
 
 
+        }
+
+
+        public void populate() {
+            try {
+                User user = User.Instance;
+                List<User> friendRequests = user.getFriendRequests();
+                FriendRequestComponent[] friendRequestComponent = new FriendRequestComponent[friendRequests.Count];
+
+                for (int i = 0; i < friendRequests.Count; i++) {
+
+                    friendRequestComponent[i] = new FriendRequestComponent();
+
+                    User friend = HelperFunctions.translateUserIdToUserInfo(friendRequests[i].UserId);
+
+                    friendRequestComponent[i].FriendId = friend.UserId;
+                    friendRequestComponent[i].UserName = friend.UserName;
+                    friendRequestComponent[i].Email = friend.Email;
+
+                    contentFlowLayoutPanel.Controls.Add(friendRequestComponent[i]);
+
+                }
+            }
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

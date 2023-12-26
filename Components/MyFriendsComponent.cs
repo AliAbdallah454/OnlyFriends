@@ -5,7 +5,7 @@ namespace OnlyFriends.Components {
 	public partial class MyFriendsComponent : UserControl {
 		public MyFriendsComponent() {
 			InitializeComponent();
-			User user = User.Instance;
+			//User user = User.Instance;
 		}
 
 		#region Properties

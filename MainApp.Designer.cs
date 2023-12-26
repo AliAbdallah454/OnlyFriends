@@ -277,7 +277,7 @@ namespace OnlyFriends {
             this.ClientSize = new System.Drawing.Size(930, 590);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.navPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainApp";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
