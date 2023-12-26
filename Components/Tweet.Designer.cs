@@ -215,7 +215,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 3, 10);
             this.Name = "Tweet";
             this.Size = new System.Drawing.Size(690, 180);
             this.tableLayoutPanel1.ResumeLayout(false);
