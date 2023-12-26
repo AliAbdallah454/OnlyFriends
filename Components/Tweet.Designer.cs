@@ -51,7 +51,7 @@
             this.tableLayoutPanel1.Controls.Add(this.userPicture, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.usernameLabel, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(9);
             this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(200, 35);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -215,7 +215,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.Margin = new System.Windows.Forms.Padding(6, 3, 3, 10);
             this.Name = "Tweet";
             this.Size = new System.Drawing.Size(690, 180);
             this.tableLayoutPanel1.ResumeLayout(false);
