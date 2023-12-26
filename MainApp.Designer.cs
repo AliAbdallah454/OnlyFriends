@@ -69,10 +69,10 @@ namespace OnlyFriends {
             this.friendRequestsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.friendRequestsButton.Image = global::OnlyFriends.Properties.Resources.icons8_github_25;
             this.friendRequestsButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.friendRequestsButton.Location = new System.Drawing.Point(0, 405);
+            this.friendRequestsButton.Location = new System.Drawing.Point(0, 394);
             this.friendRequestsButton.Name = "friendRequestsButton";
             this.friendRequestsButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.friendRequestsButton.Size = new System.Drawing.Size(184, 45);
+            this.friendRequestsButton.Size = new System.Drawing.Size(184, 41);
             this.friendRequestsButton.TabIndex = 7;
             this.friendRequestsButton.Text = "Friend Requests";
             this.friendRequestsButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -93,10 +93,10 @@ namespace OnlyFriends {
             this.myFriendsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.myFriendsButton.Image = global::OnlyFriends.Properties.Resources.icons8_friends_25;
             this.myFriendsButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.myFriendsButton.Location = new System.Drawing.Point(0, 360);
+            this.myFriendsButton.Location = new System.Drawing.Point(0, 353);
             this.myFriendsButton.Name = "myFriendsButton";
             this.myFriendsButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.myFriendsButton.Size = new System.Drawing.Size(184, 45);
+            this.myFriendsButton.Size = new System.Drawing.Size(184, 41);
             this.myFriendsButton.TabIndex = 6;
             this.myFriendsButton.Text = "My Friends";
             this.myFriendsButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -139,10 +139,10 @@ namespace OnlyFriends {
             this.likedPostsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.likedPostsButton.Image = global::OnlyFriends.Properties.Resources.icons8_starred_webpage_25;
             this.likedPostsButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.likedPostsButton.Location = new System.Drawing.Point(0, 315);
+            this.likedPostsButton.Location = new System.Drawing.Point(0, 312);
             this.likedPostsButton.Name = "likedPostsButton";
             this.likedPostsButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.likedPostsButton.Size = new System.Drawing.Size(184, 45);
+            this.likedPostsButton.Size = new System.Drawing.Size(184, 41);
             this.likedPostsButton.TabIndex = 4;
             this.likedPostsButton.Text = "Liked Posts";
             this.likedPostsButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -163,10 +163,10 @@ namespace OnlyFriends {
             this.addPostButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.addPostButton.Image = global::OnlyFriends.Properties.Resources.icons8_add_25;
             this.addPostButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.addPostButton.Location = new System.Drawing.Point(0, 270);
+            this.addPostButton.Location = new System.Drawing.Point(0, 271);
             this.addPostButton.Name = "addPostButton";
             this.addPostButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.addPostButton.Size = new System.Drawing.Size(184, 45);
+            this.addPostButton.Size = new System.Drawing.Size(184, 41);
             this.addPostButton.TabIndex = 3;
             this.addPostButton.Text = "Add a Post";
             this.addPostButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -187,10 +187,10 @@ namespace OnlyFriends {
             this.myPostsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.myPostsButton.Image = global::OnlyFriends.Properties.Resources.icons8_gallery_25;
             this.myPostsButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.myPostsButton.Location = new System.Drawing.Point(0, 225);
+            this.myPostsButton.Location = new System.Drawing.Point(0, 230);
             this.myPostsButton.Name = "myPostsButton";
             this.myPostsButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.myPostsButton.Size = new System.Drawing.Size(184, 45);
+            this.myPostsButton.Size = new System.Drawing.Size(184, 41);
             this.myPostsButton.TabIndex = 2;
             this.myPostsButton.Text = "My Posts";
             this.myPostsButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -211,10 +211,10 @@ namespace OnlyFriends {
             this.homeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.homeButton.Image = global::OnlyFriends.Properties.Resources.icons8_home_25;
             this.homeButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.homeButton.Location = new System.Drawing.Point(0, 180);
+            this.homeButton.Location = new System.Drawing.Point(0, 189);
             this.homeButton.Name = "homeButton";
             this.homeButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.homeButton.Size = new System.Drawing.Size(184, 45);
+            this.homeButton.Size = new System.Drawing.Size(184, 41);
             this.homeButton.TabIndex = 1;
             this.homeButton.Text = "Home";
             this.homeButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -233,7 +233,7 @@ namespace OnlyFriends {
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(184, 180);
+            this.panel2.Size = new System.Drawing.Size(184, 189);
             this.panel2.TabIndex = 0;
             // 
             // emailLabel
@@ -275,6 +275,8 @@ namespace OnlyFriends {
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.mainPanel.Location = new System.Drawing.Point(193, 0);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.mainPanel.MaximumSize = new System.Drawing.Size(700, 570);
+            this.mainPanel.MinimumSize = new System.Drawing.Size(700, 570);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(700, 570);
             this.mainPanel.TabIndex = 1;

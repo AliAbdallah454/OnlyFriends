@@ -441,6 +441,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addition.png" />
+    <None Include="Resources\1345874.png" />
     <Content Include="Resources\download.jpeg" />
     <None Include="Resources\magnifier.png" />
     <None Include="Resources\logout.png" />

@@ -83,7 +83,7 @@ namespace OnlyFriends {
 			oldUserControl = UC.UNKNOWN;
 		}
 
-		private void changePanel(object sender, EventArgs e) {
+		public void changePanel(object sender, EventArgs e) {
 
 			if (sender is Button button) {
 				if (button != currentButton) {
