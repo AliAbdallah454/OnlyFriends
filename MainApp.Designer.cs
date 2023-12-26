@@ -45,18 +45,9 @@ namespace OnlyFriends {
             // navPanel
             // 
             this.navPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.navPanel.Controls.Add(this.friendRequestsButton);
-            this.navPanel.Controls.Add(this.myFriendsButton);
-            this.navPanel.Controls.Add(this.logoutButton);
-            this.navPanel.Controls.Add(this.likedPostsButton);
-            this.navPanel.Controls.Add(this.addPostButton);
-            this.navPanel.Controls.Add(this.myPostsButton);
-            this.navPanel.Controls.Add(this.homeButton);
-            this.navPanel.Controls.Add(this.panel2);
-            this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navPanel.Location = new System.Drawing.Point(0, 0);
-            this.navPanel.Name = "navPanel";
+
             this.navPanel.Size = new System.Drawing.Size(180, 570);
+
             this.navPanel.TabIndex = 0;
             // 
             // friendRequestsButton
@@ -75,10 +66,10 @@ namespace OnlyFriends {
             this.friendRequestsButton.Name = "friendRequestsButton";
             this.friendRequestsButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.friendRequestsButton.Size = new System.Drawing.Size(180, 43);
+
             this.friendRequestsButton.TabIndex = 7;
             this.friendRequestsButton.Text = "Friend Requests";
-            this.friendRequestsButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.friendRequestsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.friendRequestsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.friendRequestsButton.UseVisualStyleBackColor = false;
             this.friendRequestsButton.Click += new System.EventHandler(this.changePanel);
             this.friendRequestsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
@@ -100,10 +91,10 @@ namespace OnlyFriends {
             this.myFriendsButton.Name = "myFriendsButton";
             this.myFriendsButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.myFriendsButton.Size = new System.Drawing.Size(180, 43);
+
             this.myFriendsButton.TabIndex = 6;
             this.myFriendsButton.Text = "My Friends";
-            this.myFriendsButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.myFriendsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.myFriendsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.myFriendsButton.UseVisualStyleBackColor = false;
             this.myFriendsButton.Click += new System.EventHandler(this.changePanel);
             this.myFriendsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
@@ -116,16 +107,17 @@ namespace OnlyFriends {
             this.logoutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.logoutButton.FlatAppearance.BorderSize = 0;
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logoutButton.Font = new System.Drawing.Font("Nirmala UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.logoutButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.logoutButton.Image = global::OnlyFriends.Properties.Resources.icons8_logout_25__1_;
             this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutButton.Location = new System.Drawing.Point(0, 530);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(180, 40);
+
             this.logoutButton.TabIndex = 5;
             this.logoutButton.Text = "Logout";
-            this.logoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.logoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.logoutButton.UseVisualStyleBackColor = false;
             this.logoutButton.Click += new System.EventHandler(this.logOutButton_Click);
             this.logoutButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
@@ -147,10 +139,10 @@ namespace OnlyFriends {
             this.likedPostsButton.Name = "likedPostsButton";
             this.likedPostsButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.likedPostsButton.Size = new System.Drawing.Size(180, 43);
+
             this.likedPostsButton.TabIndex = 4;
             this.likedPostsButton.Text = "Liked Posts";
-            this.likedPostsButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.likedPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.likedPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.likedPostsButton.UseVisualStyleBackColor = false;
             this.likedPostsButton.Click += new System.EventHandler(this.changePanel);
             this.likedPostsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
@@ -172,10 +164,10 @@ namespace OnlyFriends {
             this.addPostButton.Name = "addPostButton";
             this.addPostButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.addPostButton.Size = new System.Drawing.Size(180, 43);
+
             this.addPostButton.TabIndex = 3;
             this.addPostButton.Text = "Add a Post";
-            this.addPostButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.addPostButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.addPostButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.addPostButton.UseVisualStyleBackColor = false;
             this.addPostButton.Click += new System.EventHandler(this.changePanel);
             this.addPostButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
@@ -197,10 +189,10 @@ namespace OnlyFriends {
             this.myPostsButton.Name = "myPostsButton";
             this.myPostsButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.myPostsButton.Size = new System.Drawing.Size(180, 43);
+
             this.myPostsButton.TabIndex = 2;
             this.myPostsButton.Text = "My Posts";
-            this.myPostsButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.myPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.myPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.myPostsButton.UseVisualStyleBackColor = false;
             this.myPostsButton.Click += new System.EventHandler(this.changePanel);
             this.myPostsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
@@ -217,15 +209,16 @@ namespace OnlyFriends {
             this.homeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.homeButton.Image = global::OnlyFriends.Properties.Resources.icons8_home_25;
             this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             this.homeButton.Location = new System.Drawing.Point(0, 180);
             this.homeButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.homeButton.Name = "homeButton";
             this.homeButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.homeButton.Size = new System.Drawing.Size(180, 43);
+
             this.homeButton.TabIndex = 1;
             this.homeButton.Text = "Home";
-            this.homeButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.homeButton.UseVisualStyleBackColor = false;
             this.homeButton.Click += new System.EventHandler(this.changePanel);
             this.homeButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
@@ -283,8 +276,9 @@ namespace OnlyFriends {
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.mainPanel.Location = new System.Drawing.Point(193, 0);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(10);
+
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(700, 570);
+            this.mainPanel.Size = new System.Drawing.Size(720, 567);
             this.mainPanel.TabIndex = 1;
             // 
             // MainApp
@@ -297,6 +291,7 @@ namespace OnlyFriends {
             this.Controls.Add(this.navPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+
             this.Name = "MainApp";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
