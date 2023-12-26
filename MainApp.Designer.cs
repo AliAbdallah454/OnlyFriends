@@ -23,6 +23,7 @@ namespace OnlyFriends {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApp));
             this.navPanel = new System.Windows.Forms.Panel();
             this.friendRequestsButton = new System.Windows.Forms.Button();
             this.myFriendsButton = new System.Windows.Forms.Button();
@@ -43,19 +44,10 @@ namespace OnlyFriends {
             // 
             // navPanel
             // 
-            this.navPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.navPanel.Controls.Add(this.friendRequestsButton);
-            this.navPanel.Controls.Add(this.myFriendsButton);
-            this.navPanel.Controls.Add(this.logoutButton);
-            this.navPanel.Controls.Add(this.likedPostsButton);
-            this.navPanel.Controls.Add(this.addPostButton);
-            this.navPanel.Controls.Add(this.myPostsButton);
-            this.navPanel.Controls.Add(this.homeButton);
-            this.navPanel.Controls.Add(this.panel2);
-            this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navPanel.Location = new System.Drawing.Point(0, 0);
-            this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(180, 567);
+            this.navPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+
+            this.navPanel.Size = new System.Drawing.Size(180, 570);
+
             this.navPanel.TabIndex = 0;
             // 
             // friendRequestsButton
@@ -65,13 +57,16 @@ namespace OnlyFriends {
             this.friendRequestsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.friendRequestsButton.FlatAppearance.BorderSize = 0;
             this.friendRequestsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.friendRequestsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.friendRequestsButton.Font = new System.Drawing.Font("Nirmala UI", 8.5F, System.Drawing.FontStyle.Bold);
             this.friendRequestsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.friendRequestsButton.Image = global::OnlyFriends.Properties.Resources.icons8_github_25;
-            this.friendRequestsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.friendRequestsButton.Location = new System.Drawing.Point(0, 405);
+            this.friendRequestsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.friendRequestsButton.Location = new System.Drawing.Point(0, 395);
+            this.friendRequestsButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.friendRequestsButton.Name = "friendRequestsButton";
-            this.friendRequestsButton.Size = new System.Drawing.Size(180, 45);
+            this.friendRequestsButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.friendRequestsButton.Size = new System.Drawing.Size(180, 43);
+
             this.friendRequestsButton.TabIndex = 7;
             this.friendRequestsButton.Text = "Friend Requests";
             this.friendRequestsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -87,13 +82,16 @@ namespace OnlyFriends {
             this.myFriendsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.myFriendsButton.FlatAppearance.BorderSize = 0;
             this.myFriendsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.myFriendsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myFriendsButton.Font = new System.Drawing.Font("Nirmala UI", 8.5F, System.Drawing.FontStyle.Bold);
             this.myFriendsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.myFriendsButton.Image = global::OnlyFriends.Properties.Resources.icons8_friends_25;
-            this.myFriendsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.myFriendsButton.Location = new System.Drawing.Point(0, 360);
+            this.myFriendsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.myFriendsButton.Location = new System.Drawing.Point(0, 352);
+            this.myFriendsButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.myFriendsButton.Name = "myFriendsButton";
-            this.myFriendsButton.Size = new System.Drawing.Size(180, 45);
+            this.myFriendsButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.myFriendsButton.Size = new System.Drawing.Size(180, 43);
+
             this.myFriendsButton.TabIndex = 6;
             this.myFriendsButton.Text = "My Friends";
             this.myFriendsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -112,10 +110,11 @@ namespace OnlyFriends {
             this.logoutButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.logoutButton.Image = global::OnlyFriends.Properties.Resources.icons8_logout_25__1_;
-            this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.logoutButton.Location = new System.Drawing.Point(0, 522);
+            this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutButton.Location = new System.Drawing.Point(0, 530);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(180, 45);
+            this.logoutButton.Size = new System.Drawing.Size(180, 40);
+
             this.logoutButton.TabIndex = 5;
             this.logoutButton.Text = "Logout";
             this.logoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -131,13 +130,16 @@ namespace OnlyFriends {
             this.likedPostsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.likedPostsButton.FlatAppearance.BorderSize = 0;
             this.likedPostsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.likedPostsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.likedPostsButton.Font = new System.Drawing.Font("Nirmala UI", 8.5F, System.Drawing.FontStyle.Bold);
             this.likedPostsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.likedPostsButton.Image = global::OnlyFriends.Properties.Resources.icons8_starred_webpage_25;
-            this.likedPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.likedPostsButton.Location = new System.Drawing.Point(0, 315);
+            this.likedPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.likedPostsButton.Location = new System.Drawing.Point(0, 309);
+            this.likedPostsButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.likedPostsButton.Name = "likedPostsButton";
-            this.likedPostsButton.Size = new System.Drawing.Size(180, 45);
+            this.likedPostsButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.likedPostsButton.Size = new System.Drawing.Size(180, 43);
+
             this.likedPostsButton.TabIndex = 4;
             this.likedPostsButton.Text = "Liked Posts";
             this.likedPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -153,13 +155,16 @@ namespace OnlyFriends {
             this.addPostButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.addPostButton.FlatAppearance.BorderSize = 0;
             this.addPostButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addPostButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPostButton.Font = new System.Drawing.Font("Nirmala UI", 8.5F, System.Drawing.FontStyle.Bold);
             this.addPostButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.addPostButton.Image = global::OnlyFriends.Properties.Resources.icons8_add_25;
-            this.addPostButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addPostButton.Location = new System.Drawing.Point(0, 270);
+            this.addPostButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addPostButton.Location = new System.Drawing.Point(0, 266);
+            this.addPostButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.addPostButton.Name = "addPostButton";
-            this.addPostButton.Size = new System.Drawing.Size(180, 45);
+            this.addPostButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.addPostButton.Size = new System.Drawing.Size(180, 43);
+
             this.addPostButton.TabIndex = 3;
             this.addPostButton.Text = "Add a Post";
             this.addPostButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -175,13 +180,16 @@ namespace OnlyFriends {
             this.myPostsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.myPostsButton.FlatAppearance.BorderSize = 0;
             this.myPostsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.myPostsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myPostsButton.Font = new System.Drawing.Font("Nirmala UI", 8.5F, System.Drawing.FontStyle.Bold);
             this.myPostsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.myPostsButton.Image = global::OnlyFriends.Properties.Resources.icons8_gallery_25;
-            this.myPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.myPostsButton.Location = new System.Drawing.Point(0, 225);
+            this.myPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.myPostsButton.Location = new System.Drawing.Point(0, 223);
+            this.myPostsButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.myPostsButton.Name = "myPostsButton";
-            this.myPostsButton.Size = new System.Drawing.Size(180, 45);
+            this.myPostsButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.myPostsButton.Size = new System.Drawing.Size(180, 43);
+
             this.myPostsButton.TabIndex = 2;
             this.myPostsButton.Text = "My Posts";
             this.myPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -197,13 +205,17 @@ namespace OnlyFriends {
             this.homeButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.homeButton.FlatAppearance.BorderSize = 0;
             this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.Font = new System.Drawing.Font("Nirmala UI", 8.5F, System.Drawing.FontStyle.Bold);
             this.homeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.homeButton.Image = global::OnlyFriends.Properties.Resources.icons8_home_25;
-            this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             this.homeButton.Location = new System.Drawing.Point(0, 180);
+            this.homeButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(180, 45);
+            this.homeButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.homeButton.Size = new System.Drawing.Size(180, 43);
+
             this.homeButton.TabIndex = 1;
             this.homeButton.Text = "Home";
             this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -260,11 +272,11 @@ namespace OnlyFriends {
             // 
             // mainPanel
             // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(180, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(5);
-            this.mainPanel.MaximumSize = new System.Drawing.Size(720, 567);
-            this.mainPanel.MinimumSize = new System.Drawing.Size(720, 567);
+            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(202)))));
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.mainPanel.Location = new System.Drawing.Point(193, 0);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(10);
+
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(720, 567);
             this.mainPanel.TabIndex = 1;
@@ -273,13 +285,13 @@ namespace OnlyFriends {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(900, 567);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.ClientSize = new System.Drawing.Size(903, 570);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.navPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximumSize = new System.Drawing.Size(920, 610);
-            this.MinimumSize = new System.Drawing.Size(920, 610);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+
             this.Name = "MainApp";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
