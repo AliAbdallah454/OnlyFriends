@@ -5,11 +5,11 @@ using System.Windows.Forms;
 namespace OnlyFriends {
 	internal partial class User {
 
-		private HashSet<User> readFriendsFromDb(string sql) {
+		private List<User> readFriendsFromDb(string sql) {
 
 			DatabaseConnection connection = DatabaseConnection.Instance;
 			MySqlDataReader reader = connection.query(sql);
-			HashSet<User> friends = new HashSet<User>();
+			List<User> friends = new List<User>();
 
 			while (reader.Read()) {
 
@@ -29,7 +29,7 @@ namespace OnlyFriends {
 
 		}
 
-		public HashSet<User> getFriends() {
+		public List<User> getFriends() {
 
 			MessageBox.Show("in fn");
 
@@ -39,13 +39,13 @@ namespace OnlyFriends {
 
 		}
 
-		public HashSet<User> getFriendRequests() {
+		public List<User> getFriendRequests() {
 			string sql = $"SELECT * FROM users\n" +
 						 $"WHERE userId IN (SELECT friendId FROM friendRequests WHERE userId = {UserId})";
 			return readFriendsFromDb(sql);
 		}
 
-		public HashSet<User> getSuggestedFriends() {
+		public List<User> getSuggestedFriends() {
 
 			string sql = $@"
 				SELECT * FROM users

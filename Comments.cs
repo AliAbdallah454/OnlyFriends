@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace OnlyFriends {
 	public partial class Comments : Form {
@@ -11,7 +10,7 @@ namespace OnlyFriends {
 		public Comments(int postId, string userName) {
 
 			User user = User.Instance;
-			
+
 
 			InitializeComponent();
 
@@ -44,8 +43,8 @@ namespace OnlyFriends {
 		public int PostId { get; set; }
 		public string UserName { get; set; }
 
-       
-        private void populate() {
+
+		private void populate() {
 
 			List<Comment> comments = HelperFunctions.translatePostIdToPostInfo(PostId).getComments();
 
@@ -87,17 +86,17 @@ namespace OnlyFriends {
 			string comment = addCommentBox.Text;
 
 			if (textBoxEntered) {
-                try {
-                    User user = User.Instance;
-                    user.commentOnPost(PostId, comment);
-                    addCommentBox.Text = "";
-					
-                }
-                catch (Exception ex) {
-                    addCommentBox.Text = "";
-                    MessageBox.Show(ex.Message);
-                }
-            }
+				try {
+					User user = User.Instance;
+					user.commentOnPost(PostId, comment);
+					addCommentBox.Text = "";
+
+				}
+				catch (Exception ex) {
+					addCommentBox.Text = "";
+					MessageBox.Show(ex.Message);
+				}
+			}
 			else {
 				MessageBox.Show("Write a Comment to Add");
 			}
