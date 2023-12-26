@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Snow;
             this.Controls.Add(this.removeFriendButton);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.tableLayoutPanel1);

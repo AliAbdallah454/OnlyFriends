@@ -93,6 +93,26 @@ namespace OnlyFriends {
 
 		}
 
+		public void addFriendByUserName(string userName) {
 
+			DatabaseConnection connection = DatabaseConnection.Instance;
+
+			string sql = $"SELECT * FROM users\n" +
+						 $"WHERE userName = \"{userName}\"";
+
+			MySqlDataReader reader = connection.query(sql);
+
+			if (reader.HasRows) {
+				reader.Read();
+				int userId = reader.GetInt32("userId");
+				reader.Close();
+				this.addFriend(userId);
+			}
+			else {
+				reader.Close();
+				throw new Exception("Error");
+			}
+
+		}
 	}
 }

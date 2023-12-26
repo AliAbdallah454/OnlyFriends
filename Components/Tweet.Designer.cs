@@ -90,7 +90,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.timeStampLabel);
-            this.panel1.Location = new System.Drawing.Point(512, 3);
+            this.panel1.Location = new System.Drawing.Point(516, 3);
             this.panel1.MaximumSize = new System.Drawing.Size(200, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(156, 35);
@@ -101,7 +101,7 @@
             this.timeStampLabel.AutoSize = true;
             this.timeStampLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeStampLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.timeStampLabel.Location = new System.Drawing.Point(3, 8);
+            this.timeStampLabel.Location = new System.Drawing.Point(7, 8);
             this.timeStampLabel.Name = "timeStampLabel";
             this.timeStampLabel.Size = new System.Drawing.Size(74, 14);
             this.timeStampLabel.TabIndex = 0;
@@ -110,7 +110,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.titleLabel);
-            this.panel2.Location = new System.Drawing.Point(263, 11);
+            this.panel2.Location = new System.Drawing.Point(247, 11);
             this.panel2.MaximumSize = new System.Drawing.Size(250, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 40);
@@ -131,9 +131,9 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.contentLabel);
-            this.panel3.Location = new System.Drawing.Point(22, 47);
+            this.panel3.Location = new System.Drawing.Point(26, 47);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(630, 82);
+            this.panel3.Size = new System.Drawing.Size(646, 82);
             this.panel3.TabIndex = 5;
             // 
             // contentLabel
@@ -153,7 +153,7 @@
             this.likeNumberLabel.AutoSize = true;
             this.likeNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.likeNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.likeNumberLabel.Location = new System.Drawing.Point(221, 151);
+            this.likeNumberLabel.Location = new System.Drawing.Point(225, 151);
             this.likeNumberLabel.Name = "likeNumberLabel";
             this.likeNumberLabel.Size = new System.Drawing.Size(25, 16);
             this.likeNumberLabel.TabIndex = 6;
@@ -164,7 +164,7 @@
             this.commentNumberLabel.AutoSize = true;
             this.commentNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commentNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.commentNumberLabel.Location = new System.Drawing.Point(552, 151);
+            this.commentNumberLabel.Location = new System.Drawing.Point(556, 151);
             this.commentNumberLabel.Name = "commentNumberLabel";
             this.commentNumberLabel.Size = new System.Drawing.Size(25, 16);
             this.commentNumberLabel.TabIndex = 6;
@@ -173,7 +173,7 @@
             // deletePostButton
             // 
             this.deletePostButton.Image = global::OnlyFriends.Properties.Resources._1345874;
-            this.deletePostButton.Location = new System.Drawing.Point(668, 151);
+            this.deletePostButton.Location = new System.Drawing.Point(672, 151);
             this.deletePostButton.Name = "deletePostButton";
             this.deletePostButton.Size = new System.Drawing.Size(19, 32);
             this.deletePostButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -188,7 +188,7 @@
             this.commentButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.commentButton.Image = global::OnlyFriends.Properties.Resources.icons8_chat_30__2_;
-            this.commentButton.Location = new System.Drawing.Point(383, 135);
+            this.commentButton.Location = new System.Drawing.Point(387, 135);
             this.commentButton.Name = "commentButton";
             this.commentButton.Size = new System.Drawing.Size(194, 45);
             this.commentButton.TabIndex = 4;
@@ -205,7 +205,7 @@
             this.likeButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.likeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.likeButton.Image = global::OnlyFriends.Properties.Resources.icons8_like_30__2_;
-            this.likeButton.Location = new System.Drawing.Point(77, 135);
+            this.likeButton.Location = new System.Drawing.Point(81, 135);
             this.likeButton.Name = "likeButton";
             this.likeButton.Size = new System.Drawing.Size(194, 45);
             this.likeButton.TabIndex = 4;
@@ -231,7 +231,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(5, 3, 3, 10);
             this.Name = "Tweet";
-            this.Size = new System.Drawing.Size(690, 180);
+            this.Size = new System.Drawing.Size(700, 180);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userPicture)).EndInit();
             this.panel1.ResumeLayout(false);
