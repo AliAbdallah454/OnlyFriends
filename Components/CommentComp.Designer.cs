@@ -30,6 +30,7 @@
 			this.timeStampLabel = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.contentLabel = new System.Windows.Forms.Label();
+			this.removeCommentButton = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.userPicture)).BeginInit();
 			this.panel1.SuspendLayout();
@@ -58,7 +59,7 @@
 			this.userPicture.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.userPicture.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_25;
 			this.userPicture.Location = new System.Drawing.Point(4, 4);
-			this.userPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.userPicture.Margin = new System.Windows.Forms.Padding(4);
 			this.userPicture.Name = "userPicture";
 			this.userPicture.Size = new System.Drawing.Size(39, 35);
 			this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -73,7 +74,7 @@
 			this.usernameLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.usernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
 			this.usernameLabel.Location = new System.Drawing.Point(51, 4);
-			this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.usernameLabel.Margin = new System.Windows.Forms.Padding(4);
 			this.usernameLabel.Name = "usernameLabel";
 			this.usernameLabel.Size = new System.Drawing.Size(212, 35);
 			this.usernameLabel.TabIndex = 1;
@@ -85,7 +86,7 @@
 			// 
 			this.panel1.Controls.Add(this.timeStampLabel);
 			this.panel1.Location = new System.Drawing.Point(711, 4);
-			this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel1.Margin = new System.Windows.Forms.Padding(4);
 			this.panel1.MaximumSize = new System.Drawing.Size(207, 43);
 			this.panel1.MinimumSize = new System.Drawing.Size(207, 43);
 			this.panel1.Name = "panel1";
@@ -108,7 +109,7 @@
 			// 
 			this.panel3.Controls.Add(this.contentLabel);
 			this.panel3.Location = new System.Drawing.Point(39, 47);
-			this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel3.Margin = new System.Windows.Forms.Padding(4);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(847, 79);
 			this.panel3.TabIndex = 6;
@@ -127,12 +128,23 @@
 			this.contentLabel.TabIndex = 0;
 			this.contentLabel.Text = "Content";
 			// 
+			// removeCommentButton
+			// 
+			this.removeCommentButton.Location = new System.Drawing.Point(511, 16);
+			this.removeCommentButton.Name = "removeCommentButton";
+			this.removeCommentButton.Size = new System.Drawing.Size(75, 23);
+			this.removeCommentButton.TabIndex = 7;
+			this.removeCommentButton.Text = "Remove";
+			this.removeCommentButton.UseVisualStyleBackColor = true;
+			this.removeCommentButton.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// CommentComp
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.White;
+			this.Controls.Add(this.removeCommentButton);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.tableLayoutPanel1);
@@ -161,5 +173,6 @@
         private System.Windows.Forms.Label timeStampLabel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label contentLabel;
-    }
+		private System.Windows.Forms.Button removeCommentButton;
+	}
 }
