@@ -26,8 +26,8 @@ namespace OnlyFriends.UserControls2 {
 
 				int postId = posts[i].PostId;
 				tweets[i] = new Tweet(postId, likedPostIds);
-
-				tweets[i].PostId = postId;
+                tweets[i].disableDeleteButton();
+                tweets[i].PostId = postId;
 				tweets[i].UserName = HelperFunctions.translateUserIdToUserName(posts[i].UserId);
 				tweets[i].Title = posts[i].Title;
 				tweets[i].Content = posts[i].Content;

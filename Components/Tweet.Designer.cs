@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.userPicture = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timeStampLabel = new System.Windows.Forms.Label();
@@ -34,13 +33,16 @@
             this.contentLabel = new System.Windows.Forms.Label();
             this.likeNumberLabel = new System.Windows.Forms.Label();
             this.commentNumberLabel = new System.Windows.Forms.Label();
+            this.deletePostButton = new System.Windows.Forms.PictureBox();
             this.commentButton = new System.Windows.Forms.Button();
             this.likeButton = new System.Windows.Forms.Button();
+            this.userPicture = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userPicture)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deletePostButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -58,17 +60,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 35);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // userPicture
-            // 
-            this.userPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userPicture.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_35;
-            this.userPicture.Location = new System.Drawing.Point(3, 3);
-            this.userPicture.Name = "userPicture";
-            this.userPicture.Size = new System.Drawing.Size(29, 29);
-            this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userPicture.TabIndex = 0;
-            this.userPicture.TabStop = false;
             // 
             // usernameLabel
             // 
@@ -168,6 +159,17 @@
             this.commentNumberLabel.TabIndex = 6;
             this.commentNumberLabel.Text = "(0)";
             // 
+            // deletePostButton
+            // 
+            this.deletePostButton.Image = global::OnlyFriends.Properties.Resources._1345874;
+            this.deletePostButton.Location = new System.Drawing.Point(668, 151);
+            this.deletePostButton.Name = "deletePostButton";
+            this.deletePostButton.Size = new System.Drawing.Size(19, 32);
+            this.deletePostButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.deletePostButton.TabIndex = 7;
+            this.deletePostButton.TabStop = false;
+            this.deletePostButton.Click += new System.EventHandler(this.deletePostButton_Click);
+            // 
             // commentButton
             // 
             this.commentButton.FlatAppearance.BorderSize = 0;
@@ -202,11 +204,23 @@
             this.likeButton.UseVisualStyleBackColor = true;
             this.likeButton.Click += new System.EventHandler(this.likeButton_Click);
             // 
+            // userPicture
+            // 
+            this.userPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userPicture.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_35;
+            this.userPicture.Location = new System.Drawing.Point(3, 3);
+            this.userPicture.Name = "userPicture";
+            this.userPicture.Size = new System.Drawing.Size(29, 29);
+            this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userPicture.TabIndex = 0;
+            this.userPicture.TabStop = false;
+            // 
             // Tweet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.deletePostButton);
             this.Controls.Add(this.commentNumberLabel);
             this.Controls.Add(this.likeNumberLabel);
             this.Controls.Add(this.panel3);
@@ -219,13 +233,14 @@
             this.Name = "Tweet";
             this.Size = new System.Drawing.Size(690, 180);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userPicture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deletePostButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +261,6 @@
         private System.Windows.Forms.Label contentLabel;
         private System.Windows.Forms.Label likeNumberLabel;
         private System.Windows.Forms.Label commentNumberLabel;
+        private System.Windows.Forms.PictureBox deletePostButton;
     }
 }
