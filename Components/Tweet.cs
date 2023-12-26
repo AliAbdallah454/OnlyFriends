@@ -82,16 +82,22 @@ namespace OnlyFriends.Components {
 		}
 
 		private void commentButton_Click(object sender, System.EventArgs e) {
-			Comments comments = new Comments();
+
+			Comments comments = new Comments(PostId, UserName);
 			comments.Show();
 
-
-			//List<Comment> comments = HelperFunctions.translatePostIdToPostInfo(postId).getComments();
-			//if (comments.Count == 0) MessageBox.Show("This post has no Comments");
-			//foreach (Comment comment in comments) {
-			//	MessageBox.Show(comment.Content, comment.UserId.ToString());
-			//}
-
 		}
+
+		public void disableCommentButton() {
+			commentButton.Enabled = false;
+		}
+
+		public void eraseButtons() {
+			likeButton.Visible = false;
+			commentButton.Visible = false;
+			likeNumberLabel.Visible = false;
+			commentNumberLabel.Visible = false;
+		}
+
 	}
 }

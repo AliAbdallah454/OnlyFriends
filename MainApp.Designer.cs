@@ -1,4 +1,4 @@
-﻿namespace OnlyFriends {
+namespace OnlyFriends {
     partial class MainApp {
         /// <summary>
         /// Required designer variable.
