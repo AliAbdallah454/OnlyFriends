@@ -93,11 +93,11 @@
     <Compile Include="Comments.Designer.cs">
       <DependentUpon>Comments.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Comment.cs">
+    <Compile Include="Components\CommentComp.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Comment.Designer.cs">
-      <DependentUpon>Comment.cs</DependentUpon>
+    <Compile Include="Components\CommentComp.Designer.cs">
+      <DependentUpon>CommentComp.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Tweet.cs">
       <SubType>UserControl</SubType>
@@ -227,8 +227,8 @@
     <EmbeddedResource Include="Comments.resx">
       <DependentUpon>Comments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Comment.resx">
-      <DependentUpon>Comment.cs</DependentUpon>
+    <EmbeddedResource Include="Components\CommentComp.resx">
+      <DependentUpon>CommentComp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Tweet.resx">
       <DependentUpon>Tweet.cs</DependentUpon>

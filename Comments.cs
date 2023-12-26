@@ -1,52 +1,96 @@
-﻿using System;
+﻿using OnlyFriends.Components;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OnlyFriends {
-    public partial class Comments : Form {
-        bool textBoxEntered = false;
-        public Comments() {
-            InitializeComponent();
-        }
+	public partial class Comments : Form {
+		bool textBoxEntered = false;
+		public Comments(int postId, string userName) {
 
-        private void exitButton_Click(object sender, EventArgs e) {
-            this.Close();
-        }
+			User user = User.Instance;
+
+			InitializeComponent();
+
+			PostId = postId;
+			UserName = userName;
+
+			populate();
+
+			HashSet<int> likedPostIds = user.getLikedPosts().Select(tempPost => tempPost.PostId).ToHashSet();
+			Post post = HelperFunctions.translatePostIdToPostInfo(postId);
+
+			Tweet tweet = new Tweet(PostId, likedPostIds);
+
+			tweet.PostId = post.PostId;
+			tweet.UserName = HelperFunctions.translateUserIdToUserName(post.UserId);
+			tweet.PostId = postId;
+			tweet.Title = post.Title;
+			tweet.Content = post.Content;
+			tweet.TimeStamp = post.TimeStamp;
+			tweet.NumberOfLikes = post.Likes;
+			tweet.NumberOfComments = HelperFunctions.translatePostIdToPostInfo(post.PostId).getComments().Count;
+
+			tweet.disableCommentButton();
+
+			tweetPanel.Controls.Add(tweet);
+
+		}
+
+		public int PostId { get; set; }
+		public string UserName { get; set; }
+
+		private void populate() {
+
+			List<Comment> comments = HelperFunctions.translatePostIdToPostInfo(PostId).getComments();
+
+			CommentComp[] commentComps = new CommentComp[comments.Count];
+			for (int i = 0; i < comments.Count; i++) {
+				commentComps[i] = new CommentComp();
+
+				commentComps[i].UserName = HelperFunctions.translateUserIdToUserName(comments[i].UserId);
+				commentComps[i].Content = comments[i].Content;
+				commentComps[i].TimeStamp = comments[i].TimeStamp;
+
+				commentsFlowPanel.Controls.Add(commentComps[i]);
+
+			}
+
+		}
+
+		private void exitButton_Click(object sender, EventArgs e) {
+			this.Close();
+		}
 
 
-        private void addCommentBox_Enter(object sender, EventArgs e) {
-            if (!textBoxEntered) {
-                addCommentBox.Text = string.Empty;
-                textBoxEntered = true;
-            }
-        }
+		private void addCommentBox_Enter(object sender, EventArgs e) {
+			if (!textBoxEntered) {
+				addCommentBox.Text = string.Empty;
+				textBoxEntered = true;
+			}
+		}
 
-        private void addCommentBox_Leave(object sender, EventArgs e) {
-            if(addCommentBox.Text == string.Empty) {
-                addCommentBox.Text = "add comment...";
-                textBoxEntered = false;
-            }
-        }
+		private void addCommentBox_Leave(object sender, EventArgs e) {
+			if (addCommentBox.Text == string.Empty) {
+				addCommentBox.Text = "add comment...";
+				textBoxEntered = false;
+			}
+		}
 
-        private void addCommentButton_Click(object sender, EventArgs e) {
-            string comment = addCommentBox.Text;
+		private void addCommentButton_Click(object sender, EventArgs e) {
+			string comment = addCommentBox.Text;
 
-            try {
+			try {
 
-                User user = User.Instance;
-                user.commentOnPost(12, comment);
-                addCommentBox.Text = "";
-            }
-            catch (Exception ex) {
-                addCommentBox.Text = "";
-                MessageBox.Show(ex.Message);
-            }
-        }
-    }
+				User user = User.Instance;
+				user.commentOnPost(12, comment);
+				addCommentBox.Text = "";
+			}
+			catch (Exception ex) {
+				addCommentBox.Text = "";
+				MessageBox.Show(ex.Message);
+			}
+		}
+	}
 }
