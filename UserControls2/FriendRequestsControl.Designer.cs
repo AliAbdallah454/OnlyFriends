@@ -27,14 +27,11 @@
             this.buttonsTablePanel = new System.Windows.Forms.TableLayoutPanel();
             this.findFriendButton = new System.Windows.Forms.Button();
             this.suggestedFriendButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.contentFlowLayoutPanel.SuspendLayout();
             this.buttonsTablePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentFlowLayoutPanel
             // 
-            this.contentFlowLayoutPanel.Controls.Add(this.button1);
             this.contentFlowLayoutPanel.Location = new System.Drawing.Point(13, 53);
             this.contentFlowLayoutPanel.MaximumSize = new System.Drawing.Size(720, 1000);
             this.contentFlowLayoutPanel.Name = "contentFlowLayoutPanel";
@@ -97,15 +94,6 @@
             this.suggestedFriendButton.UseVisualStyleBackColor = false;
             this.suggestedFriendButton.Click += new System.EventHandler(this.suggestedFriendButton_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(355, 261);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Friend request";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FriendRequestsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,7 +104,6 @@
             this.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.Name = "FriendRequestsControl";
             this.Size = new System.Drawing.Size(745, 570);
-            this.contentFlowLayoutPanel.ResumeLayout(false);
             this.buttonsTablePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -128,6 +115,5 @@
         private System.Windows.Forms.Button suggestedFriendButton;
         private System.Windows.Forms.FlowLayoutPanel contentFlowLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel buttonsTablePanel;
-        private System.Windows.Forms.Button button1;
     }
 }

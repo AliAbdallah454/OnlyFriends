@@ -131,11 +131,23 @@
     <Compile Include="Components\CommentComp.Designer.cs">
       <DependentUpon>CommentComp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\FriendRequestComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\FriendRequestComponent.Designer.cs">
+      <DependentUpon>FriendRequestComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\MyFriendsComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\MyFriendsComponent.Designer.cs">
       <DependentUpon>MyFriendsComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\SuggestedFriendComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\SuggestedFriendComponent.Designer.cs">
+      <DependentUpon>SuggestedFriendComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Tweet.cs">
       <SubType>UserControl</SubType>
@@ -280,8 +292,14 @@
     <EmbeddedResource Include="Components\CommentComp.resx">
       <DependentUpon>CommentComp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\FriendRequestComponent.resx">
+      <DependentUpon>FriendRequestComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\MyFriendsComponent.resx">
       <DependentUpon>MyFriendsComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\SuggestedFriendComponent.resx">
+      <DependentUpon>SuggestedFriendComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Tweet.resx">
       <DependentUpon>Tweet.cs</DependentUpon>
@@ -499,7 +517,15 @@
     <None Include="Resources\icons8-remove-30.png" />
     <None Include="Resources\icons8-remove-25.png" />
     <None Include="Resources\icons8-remove-251.png" />
+
+    <None Include="Resources\icons8-find-25.png" />
+    <None Include="Resources\icons8-coaching-25.png" />
+    <None Include="Resources\icons8-accept-30.png" />
+    <None Include="Resources\icons8-wait-25.png" />
+
+
     <None Include="Resources\onlyfans-logo-152222.png" />
+
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>

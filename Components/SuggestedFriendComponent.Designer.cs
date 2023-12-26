@@ -1,5 +1,5 @@
 ﻿namespace OnlyFriends.Components {
-    partial class MyFriendsComponent {
+    partial class SuggestedFriendComponent {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -23,14 +23,25 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.emailLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.userPicture = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Button();
-            this.emailLabel = new System.Windows.Forms.Label();
-            this.removeFriendButton = new System.Windows.Forms.Button();
+            this.requestedButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPicture)).BeginInit();
             this.SuspendLayout();
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.Location = new System.Drawing.Point(42, 37);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(44, 15);
+            this.emailLabel.TabIndex = 8;
+            this.emailLabel.Text = "Email";
             // 
             // tableLayoutPanel1
             // 
@@ -47,7 +58,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 35);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.TabIndex = 7;
             // 
             // userPicture
             // 
@@ -75,46 +86,56 @@
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.usernameLabel.UseVisualStyleBackColor = true;
             // 
-            // emailLabel
+            // requestedButton
             // 
-            this.emailLabel.AutoSize = true;
-            this.emailLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLabel.Location = new System.Drawing.Point(43, 37);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(44, 15);
-            this.emailLabel.TabIndex = 2;
-            this.emailLabel.Text = "Email";
+            this.requestedButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.requestedButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.requestedButton.FlatAppearance.BorderSize = 0;
+            this.requestedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.requestedButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.requestedButton.Image = global::OnlyFriends.Properties.Resources.icons8_wait_25;
+            this.requestedButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.requestedButton.Location = new System.Drawing.Point(482, 23);
+            this.requestedButton.Name = "requestedButton";
+            this.requestedButton.Size = new System.Drawing.Size(170, 45);
+            this.requestedButton.TabIndex = 11;
+            this.requestedButton.Text = "Requested";
+            this.requestedButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.requestedButton.UseVisualStyleBackColor = false;
+            this.requestedButton.Click += new System.EventHandler(this.requestedButton_Click);
             // 
-            // removeFriendButton
+            // addButton
             // 
-            this.removeFriendButton.BackColor = System.Drawing.Color.Gainsboro;
-            this.removeFriendButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.removeFriendButton.FlatAppearance.BorderSize = 0;
-            this.removeFriendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeFriendButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeFriendButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(60)))), ((int)(((byte)(79)))));
-            this.removeFriendButton.Image = global::OnlyFriends.Properties.Resources.icons8_remove_30;
-            this.removeFriendButton.Location = new System.Drawing.Point(507, 23);
-            this.removeFriendButton.Name = "removeFriendButton";
-            this.removeFriendButton.Size = new System.Drawing.Size(130, 45);
-            this.removeFriendButton.TabIndex = 3;
-            this.removeFriendButton.Text = "Remove";
-            this.removeFriendButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.removeFriendButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.removeFriendButton.UseVisualStyleBackColor = false;
-            this.removeFriendButton.Click += new System.EventHandler(this.removeFriendButton_Click);
+            this.addButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.addButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addButton.FlatAppearance.BorderSize = 0;
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(191)))), ((int)(((byte)(0)))));
+            this.addButton.Image = global::OnlyFriends.Properties.Resources.icons8_accept_30;
+            this.addButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addButton.Location = new System.Drawing.Point(522, 23);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(130, 45);
+            this.addButton.TabIndex = 10;
+            this.addButton.Text = "Add ";
+            this.addButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // MyFriendsComponent
+            // SuggestedFriendComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.Controls.Add(this.removeFriendButton);
+            this.Controls.Add(this.requestedButton);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.addButton);
             this.MaximumSize = new System.Drawing.Size(690, 90);
             this.MinimumSize = new System.Drawing.Size(690, 90);
-            this.Name = "MyFriendsComponent";
+            this.Name = "SuggestedFriendComponent";
             this.Size = new System.Drawing.Size(690, 90);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userPicture)).EndInit();
@@ -125,10 +146,11 @@
 
         #endregion
 
+        private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox userPicture;
         private System.Windows.Forms.Button usernameLabel;
-        private System.Windows.Forms.Label emailLabel;
-        private System.Windows.Forms.Button removeFriendButton;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button requestedButton;
     }
 }
