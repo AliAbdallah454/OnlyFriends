@@ -55,7 +55,7 @@ namespace OnlyFriends {
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.navPanel.Location = new System.Drawing.Point(0, 0);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(184, 570);
+            this.navPanel.Size = new System.Drawing.Size(180, 570);
             this.navPanel.TabIndex = 0;
             // 
             // friendRequestsButton
@@ -71,7 +71,7 @@ namespace OnlyFriends {
             this.friendRequestsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.friendRequestsButton.Location = new System.Drawing.Point(0, 394);
             this.friendRequestsButton.Name = "friendRequestsButton";
-            this.friendRequestsButton.Size = new System.Drawing.Size(184, 41);
+            this.friendRequestsButton.Size = new System.Drawing.Size(180, 41);
             this.friendRequestsButton.TabIndex = 7;
             this.friendRequestsButton.Text = "Friend Requests";
             this.friendRequestsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -93,7 +93,7 @@ namespace OnlyFriends {
             this.myFriendsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.myFriendsButton.Location = new System.Drawing.Point(0, 353);
             this.myFriendsButton.Name = "myFriendsButton";
-            this.myFriendsButton.Size = new System.Drawing.Size(184, 41);
+            this.myFriendsButton.Size = new System.Drawing.Size(180, 41);
             this.myFriendsButton.TabIndex = 6;
             this.myFriendsButton.Text = "My Friends";
             this.myFriendsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -115,7 +115,7 @@ namespace OnlyFriends {
             this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.logoutButton.Location = new System.Drawing.Point(0, 525);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(184, 45);
+            this.logoutButton.Size = new System.Drawing.Size(180, 45);
             this.logoutButton.TabIndex = 5;
             this.logoutButton.Text = "Logout";
             this.logoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -137,7 +137,7 @@ namespace OnlyFriends {
             this.likedPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.likedPostsButton.Location = new System.Drawing.Point(0, 312);
             this.likedPostsButton.Name = "likedPostsButton";
-            this.likedPostsButton.Size = new System.Drawing.Size(184, 41);
+            this.likedPostsButton.Size = new System.Drawing.Size(180, 41);
             this.likedPostsButton.TabIndex = 4;
             this.likedPostsButton.Text = "Liked Posts";
             this.likedPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -159,7 +159,7 @@ namespace OnlyFriends {
             this.addPostButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addPostButton.Location = new System.Drawing.Point(0, 271);
             this.addPostButton.Name = "addPostButton";
-            this.addPostButton.Size = new System.Drawing.Size(184, 41);
+            this.addPostButton.Size = new System.Drawing.Size(180, 41);
             this.addPostButton.TabIndex = 3;
             this.addPostButton.Text = "Add a Post";
             this.addPostButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -181,7 +181,7 @@ namespace OnlyFriends {
             this.myPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.myPostsButton.Location = new System.Drawing.Point(0, 230);
             this.myPostsButton.Name = "myPostsButton";
-            this.myPostsButton.Size = new System.Drawing.Size(184, 41);
+            this.myPostsButton.Size = new System.Drawing.Size(180, 41);
             this.myPostsButton.TabIndex = 2;
             this.myPostsButton.Text = "My Posts";
             this.myPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -203,7 +203,7 @@ namespace OnlyFriends {
             this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.homeButton.Location = new System.Drawing.Point(0, 189);
             this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(184, 41);
+            this.homeButton.Size = new System.Drawing.Size(180, 41);
             this.homeButton.TabIndex = 1;
             this.homeButton.Text = "Home";
             this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -221,7 +221,7 @@ namespace OnlyFriends {
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(184, 189);
+            this.panel2.Size = new System.Drawing.Size(180, 189);
             this.panel2.TabIndex = 0;
             // 
             // emailLabel
@@ -260,13 +260,13 @@ namespace OnlyFriends {
             // 
             // mainPanel
             // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.mainPanel.Location = new System.Drawing.Point(200, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(10);
-            this.mainPanel.MaximumSize = new System.Drawing.Size(700, 570);
-            this.mainPanel.MinimumSize = new System.Drawing.Size(700, 570);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(180, 0);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.mainPanel.MaximumSize = new System.Drawing.Size(745, 570);
+            this.mainPanel.MinimumSize = new System.Drawing.Size(745, 570);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(700, 570);
+            this.mainPanel.Size = new System.Drawing.Size(745, 570);
             this.mainPanel.TabIndex = 1;
             // 
             // MainApp
@@ -274,7 +274,7 @@ namespace OnlyFriends {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(900, 570);
+            this.ClientSize = new System.Drawing.Size(930, 570);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.navPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
