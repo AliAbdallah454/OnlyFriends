@@ -553,6 +553,16 @@ namespace OnlyFriends.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap onlyfans_logo_152222 {
+            get {
+                object obj = ResourceManager.GetObject("onlyfans-logo-152222", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap onlyfans_logotype_black_background_with_copy_space_3d_illustration_339569_1533 {
             get {
                 object obj = ResourceManager.GetObject("onlyfans-logotype-black-background-with-copy-space-3d-illustration_339569-1533", resourceCulture);
@@ -586,6 +596,26 @@ namespace OnlyFriends.Properties {
         internal static System.Drawing.Bitmap ripples_in_blank_black_6m97l43pauyhiw4e1 {
             get {
                 object obj = ResourceManager.GetObject("ripples-in-blank-black-6m97l43pauyhiw4e1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ripples_in_blank_black_6m97l43pauyhiw4e2 {
+            get {
+                object obj = ResourceManager.GetObject("ripples-in-blank-black-6m97l43pauyhiw4e2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ripples_in_blank_black_6m97l43pauyhiw4e3 {
+            get {
+                object obj = ResourceManager.GetObject("ripples-in-blank-black-6m97l43pauyhiw4e3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
