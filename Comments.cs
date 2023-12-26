@@ -51,7 +51,8 @@ namespace OnlyFriends {
 
 			CommentComp[] commentComps = new CommentComp[comments.Count];
 			for (int i = 0; i < comments.Count; i++) {
-				commentComps[i] = new CommentComp();
+
+				commentComps[i] = new CommentComp(comments[i].UserId, comments[i].CommentId);
 
 				commentComps[i].UserName = HelperFunctions.translateUserIdToUserName(comments[i].UserId);
 				commentComps[i].Content = comments[i].Content;
@@ -84,6 +85,7 @@ namespace OnlyFriends {
 
 		private void addCommentButton_Click(object sender, EventArgs e) {
 			string comment = addCommentBox.Text;
+
 			if (textBoxEntered) {
                 try {
                     User user = User.Instance;
