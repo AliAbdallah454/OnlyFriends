@@ -91,7 +91,7 @@ namespace OnlyFriends {
                     User user = User.Instance;
                     user.commentOnPost(PostId, comment);
                     addCommentBox.Text = "";
-					Comments(PostId, UserName);
+					
                 }
                 catch (Exception ex) {
                     addCommentBox.Text = "";
