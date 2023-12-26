@@ -270,13 +270,17 @@
     <Compile Include="UserControls2\MyPostsControl.Designer.cs">
       <DependentUpon>MyPostsControl.cs</DependentUpon>
     </Compile>
-
+    <Compile Include="UserControls2\SuggestedFriends.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\SuggestedFriends.Designer.cs">
+      <DependentUpon>SuggestedFriends.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls2\WelcomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls2\WelcomePage.Designer.cs">
       <DependentUpon>WelcomePage.cs</DependentUpon>
-
     </Compile>
     <Compile Include="UserFriendActions.cs" />
     <Compile Include="UserPostActions.cs" />
@@ -364,10 +368,11 @@
     <EmbeddedResource Include="UserControls2\MyPostsControl.resx">
       <DependentUpon>MyPostsControl.cs</DependentUpon>
     </EmbeddedResource>
-
+    <EmbeddedResource Include="UserControls2\SuggestedFriends.resx">
+      <DependentUpon>SuggestedFriends.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\WelcomePage.resx">
       <DependentUpon>WelcomePage.cs</DependentUpon>
-
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -520,7 +525,6 @@
 
 
     <None Include="Resources\onlyfans-logo-152222.png" />
-
 
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
