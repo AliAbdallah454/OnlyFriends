@@ -21,17 +21,15 @@ namespace OnlyFriends {
 			//string email = "linda.white@example.com";
 			//string password = "password789";
 
-			string email = "alice.johnson@example.com";
-			string password = "pass123";
+			string email = "charlie.davis@example.com";
+			string password = "letmein";
 
 			AuthFunctions.login(email, password);
 
 			try {
-				User user = User.Instance;
 
-				user.declineFriendRequest(9);
-				//user.addFriend(3);
-				//user.addFriendByUserName("CharlieDavis");
+
+				MessageBox.Show(HelperFunctions.isInFriendRequests(9).ToString());
 
 			}
 			catch (Exception ex) {

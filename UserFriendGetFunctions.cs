@@ -47,8 +47,8 @@ namespace OnlyFriends {
 			string sql = $@"
 				SELECT * FROM users
 					WHERE userId IN (SELECT DISTINCT friendId FROM (SELECT * FROM friends
-					WHERE userId IN (SELECT friendId FROM friends WHERE userId = 9)) 
-					AS ff WHERE friendId != 9 AND friendId NOT IN (SELECT friendId FROM pendingrequests WHERE userId = 9))
+					WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId})) 
+					AS ff WHERE friendId != {UserId} AND friendId NOT IN (SELECT friendId FROM pendingrequests WHERE userId = {UserId}))
 			";
 
 			return readFriendsFromDb(sql);
