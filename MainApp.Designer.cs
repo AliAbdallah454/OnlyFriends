@@ -24,6 +24,10 @@ namespace OnlyFriends {
         /// </summary>
         private void InitializeComponent() {
             this.navPanel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.friendRequestsButton = new System.Windows.Forms.Button();
             this.myFriendsButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
@@ -31,11 +35,7 @@ namespace OnlyFriends {
             this.addPostButton = new System.Windows.Forms.Button();
             this.myPostsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.emailLabel = new System.Windows.Forms.Label();
-            this.usernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.navPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,162 +55,8 @@ namespace OnlyFriends {
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.navPanel.Location = new System.Drawing.Point(0, 0);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(185, 590);
+            this.navPanel.Size = new System.Drawing.Size(184, 570);
             this.navPanel.TabIndex = 0;
-            // 
-            // friendRequestsButton
-            // 
-            this.friendRequestsButton.BackColor = System.Drawing.Color.Transparent;
-            this.friendRequestsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.friendRequestsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.friendRequestsButton.FlatAppearance.BorderSize = 0;
-            this.friendRequestsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.friendRequestsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.friendRequestsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.friendRequestsButton.Image = global::OnlyFriends.Properties.Resources.icons8_github_25;
-            this.friendRequestsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.friendRequestsButton.Location = new System.Drawing.Point(0, 414);
-            this.friendRequestsButton.Name = "friendRequestsButton";
-            this.friendRequestsButton.Size = new System.Drawing.Size(185, 45);
-            this.friendRequestsButton.TabIndex = 7;
-            this.friendRequestsButton.Text = "Friend Requests";
-            this.friendRequestsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.friendRequestsButton.UseVisualStyleBackColor = false;
-            this.friendRequestsButton.Click += new System.EventHandler(this.changePanel);
-            this.friendRequestsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
-            this.friendRequestsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
-            // 
-            // myFriendsButton
-            // 
-            this.myFriendsButton.BackColor = System.Drawing.Color.Transparent;
-            this.myFriendsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.myFriendsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.myFriendsButton.FlatAppearance.BorderSize = 0;
-            this.myFriendsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.myFriendsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myFriendsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.myFriendsButton.Image = global::OnlyFriends.Properties.Resources.icons8_friends_25;
-            this.myFriendsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.myFriendsButton.Location = new System.Drawing.Point(0, 369);
-            this.myFriendsButton.Name = "myFriendsButton";
-            this.myFriendsButton.Size = new System.Drawing.Size(185, 45);
-            this.myFriendsButton.TabIndex = 6;
-            this.myFriendsButton.Text = "My Friends";
-            this.myFriendsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.myFriendsButton.UseVisualStyleBackColor = false;
-            this.myFriendsButton.Click += new System.EventHandler(this.changePanel);
-            this.myFriendsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
-            this.myFriendsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
-            // 
-            // logoutButton
-            // 
-            this.logoutButton.BackColor = System.Drawing.Color.Transparent;
-            this.logoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logoutButton.FlatAppearance.BorderSize = 0;
-            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logoutButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.logoutButton.Image = global::OnlyFriends.Properties.Resources.icons8_logout_25__1_;
-            this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.logoutButton.Location = new System.Drawing.Point(0, 545);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(185, 45);
-            this.logoutButton.TabIndex = 5;
-            this.logoutButton.Text = "Logout";
-            this.logoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.logoutButton.UseVisualStyleBackColor = false;
-            this.logoutButton.Click += new System.EventHandler(this.logOutButton_Click);
-            this.logoutButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
-            this.logoutButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
-            // 
-            // likedPostsButton
-            // 
-            this.likedPostsButton.BackColor = System.Drawing.Color.Transparent;
-            this.likedPostsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.likedPostsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.likedPostsButton.FlatAppearance.BorderSize = 0;
-            this.likedPostsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.likedPostsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.likedPostsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.likedPostsButton.Image = global::OnlyFriends.Properties.Resources.icons8_starred_webpage_25;
-            this.likedPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.likedPostsButton.Location = new System.Drawing.Point(0, 324);
-            this.likedPostsButton.Name = "likedPostsButton";
-            this.likedPostsButton.Size = new System.Drawing.Size(185, 45);
-            this.likedPostsButton.TabIndex = 4;
-            this.likedPostsButton.Text = "Liked Posts";
-            this.likedPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.likedPostsButton.UseVisualStyleBackColor = false;
-            this.likedPostsButton.Click += new System.EventHandler(this.changePanel);
-            this.likedPostsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
-            this.likedPostsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
-            // 
-            // addPostButton
-            // 
-            this.addPostButton.BackColor = System.Drawing.Color.Transparent;
-            this.addPostButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addPostButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.addPostButton.FlatAppearance.BorderSize = 0;
-            this.addPostButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addPostButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPostButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.addPostButton.Image = global::OnlyFriends.Properties.Resources.icons8_add_25;
-            this.addPostButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addPostButton.Location = new System.Drawing.Point(0, 279);
-            this.addPostButton.Name = "addPostButton";
-            this.addPostButton.Size = new System.Drawing.Size(185, 45);
-            this.addPostButton.TabIndex = 3;
-            this.addPostButton.Text = "Add a Post";
-            this.addPostButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.addPostButton.UseVisualStyleBackColor = false;
-            this.addPostButton.Click += new System.EventHandler(this.changePanel);
-            this.addPostButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
-            this.addPostButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
-            // 
-            // myPostsButton
-            // 
-            this.myPostsButton.BackColor = System.Drawing.Color.Transparent;
-            this.myPostsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.myPostsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.myPostsButton.FlatAppearance.BorderSize = 0;
-            this.myPostsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.myPostsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myPostsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.myPostsButton.Image = global::OnlyFriends.Properties.Resources.icons8_gallery_25;
-            this.myPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.myPostsButton.Location = new System.Drawing.Point(0, 234);
-            this.myPostsButton.Name = "myPostsButton";
-            this.myPostsButton.Size = new System.Drawing.Size(185, 45);
-            this.myPostsButton.TabIndex = 2;
-            this.myPostsButton.Text = "My Posts";
-            this.myPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.myPostsButton.UseVisualStyleBackColor = false;
-            this.myPostsButton.Click += new System.EventHandler(this.changePanel);
-            this.myPostsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
-            this.myPostsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
-            // 
-            // homeButton
-            // 
-            this.homeButton.BackColor = System.Drawing.Color.Transparent;
-            this.homeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.homeButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.homeButton.FlatAppearance.BorderSize = 0;
-            this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.homeButton.Image = global::OnlyFriends.Properties.Resources.icons8_home_25;
-            this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.homeButton.Location = new System.Drawing.Point(0, 189);
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(185, 45);
-            this.homeButton.TabIndex = 1;
-            this.homeButton.Text = "Home";
-            this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.homeButton.UseVisualStyleBackColor = false;
-            this.homeButton.Click += new System.EventHandler(this.changePanel);
-            this.homeButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
-            this.homeButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
             // 
             // panel2
             // 
@@ -221,7 +67,7 @@ namespace OnlyFriends {
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(185, 189);
+            this.panel2.Size = new System.Drawing.Size(184, 189);
             this.panel2.TabIndex = 0;
             // 
             // emailLabel
@@ -246,6 +92,171 @@ namespace OnlyFriends {
             this.usernameLabel.TabIndex = 1;
             this.usernameLabel.Text = "Username";
             // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.mainPanel.Location = new System.Drawing.Point(190, 0);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.mainPanel.MaximumSize = new System.Drawing.Size(700, 570);
+            this.mainPanel.MinimumSize = new System.Drawing.Size(700, 570);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(700, 570);
+            this.mainPanel.TabIndex = 1;
+            // 
+            // friendRequestsButton
+            // 
+            this.friendRequestsButton.BackColor = System.Drawing.Color.Transparent;
+            this.friendRequestsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.friendRequestsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.friendRequestsButton.FlatAppearance.BorderSize = 0;
+            this.friendRequestsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.friendRequestsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.friendRequestsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.friendRequestsButton.Image = global::OnlyFriends.Properties.Resources.icons8_github_25;
+            this.friendRequestsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.friendRequestsButton.Location = new System.Drawing.Point(0, 394);
+            this.friendRequestsButton.Name = "friendRequestsButton";
+            this.friendRequestsButton.Size = new System.Drawing.Size(184, 41);
+            this.friendRequestsButton.TabIndex = 7;
+            this.friendRequestsButton.Text = "Friend Requests";
+            this.friendRequestsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.friendRequestsButton.UseVisualStyleBackColor = false;
+            this.friendRequestsButton.Click += new System.EventHandler(this.changePanel);
+            this.friendRequestsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
+            this.friendRequestsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
+            // 
+            // myFriendsButton
+            // 
+            this.myFriendsButton.BackColor = System.Drawing.Color.Transparent;
+            this.myFriendsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.myFriendsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.myFriendsButton.FlatAppearance.BorderSize = 0;
+            this.myFriendsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myFriendsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myFriendsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.myFriendsButton.Image = global::OnlyFriends.Properties.Resources.icons8_friends_25;
+            this.myFriendsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.myFriendsButton.Location = new System.Drawing.Point(0, 353);
+            this.myFriendsButton.Name = "myFriendsButton";
+            this.myFriendsButton.Size = new System.Drawing.Size(184, 41);
+            this.myFriendsButton.TabIndex = 6;
+            this.myFriendsButton.Text = "My Friends";
+            this.myFriendsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.myFriendsButton.UseVisualStyleBackColor = false;
+            this.myFriendsButton.Click += new System.EventHandler(this.changePanel);
+            this.myFriendsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
+            this.myFriendsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.BackColor = System.Drawing.Color.Transparent;
+            this.logoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logoutButton.FlatAppearance.BorderSize = 0;
+            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.logoutButton.Image = global::OnlyFriends.Properties.Resources.icons8_logout_25__1_;
+            this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.logoutButton.Location = new System.Drawing.Point(0, 525);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(184, 45);
+            this.logoutButton.TabIndex = 5;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            this.logoutButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
+            this.logoutButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
+            // 
+            // likedPostsButton
+            // 
+            this.likedPostsButton.BackColor = System.Drawing.Color.Transparent;
+            this.likedPostsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.likedPostsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.likedPostsButton.FlatAppearance.BorderSize = 0;
+            this.likedPostsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.likedPostsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.likedPostsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.likedPostsButton.Image = global::OnlyFriends.Properties.Resources.icons8_starred_webpage_25;
+            this.likedPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.likedPostsButton.Location = new System.Drawing.Point(0, 312);
+            this.likedPostsButton.Name = "likedPostsButton";
+            this.likedPostsButton.Size = new System.Drawing.Size(184, 41);
+            this.likedPostsButton.TabIndex = 4;
+            this.likedPostsButton.Text = "Liked Posts";
+            this.likedPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.likedPostsButton.UseVisualStyleBackColor = false;
+            this.likedPostsButton.Click += new System.EventHandler(this.changePanel);
+            this.likedPostsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
+            this.likedPostsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
+            // 
+            // addPostButton
+            // 
+            this.addPostButton.BackColor = System.Drawing.Color.Transparent;
+            this.addPostButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addPostButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addPostButton.FlatAppearance.BorderSize = 0;
+            this.addPostButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addPostButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPostButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.addPostButton.Image = global::OnlyFriends.Properties.Resources.icons8_add_25;
+            this.addPostButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addPostButton.Location = new System.Drawing.Point(0, 271);
+            this.addPostButton.Name = "addPostButton";
+            this.addPostButton.Size = new System.Drawing.Size(184, 41);
+            this.addPostButton.TabIndex = 3;
+            this.addPostButton.Text = "Add a Post";
+            this.addPostButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.addPostButton.UseVisualStyleBackColor = false;
+            this.addPostButton.Click += new System.EventHandler(this.changePanel);
+            this.addPostButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
+            this.addPostButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
+            // 
+            // myPostsButton
+            // 
+            this.myPostsButton.BackColor = System.Drawing.Color.Transparent;
+            this.myPostsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.myPostsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.myPostsButton.FlatAppearance.BorderSize = 0;
+            this.myPostsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myPostsButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myPostsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.myPostsButton.Image = global::OnlyFriends.Properties.Resources.icons8_gallery_25;
+            this.myPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.myPostsButton.Location = new System.Drawing.Point(0, 230);
+            this.myPostsButton.Name = "myPostsButton";
+            this.myPostsButton.Size = new System.Drawing.Size(184, 41);
+            this.myPostsButton.TabIndex = 2;
+            this.myPostsButton.Text = "My Posts";
+            this.myPostsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.myPostsButton.UseVisualStyleBackColor = false;
+            this.myPostsButton.Click += new System.EventHandler(this.changePanel);
+            this.myPostsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
+            this.myPostsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
+            // 
+            // homeButton
+            // 
+            this.homeButton.BackColor = System.Drawing.Color.Transparent;
+            this.homeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homeButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.homeButton.FlatAppearance.BorderSize = 0;
+            this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.homeButton.Image = global::OnlyFriends.Properties.Resources.icons8_home_25;
+            this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.homeButton.Location = new System.Drawing.Point(0, 189);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(184, 41);
+            this.homeButton.TabIndex = 1;
+            this.homeButton.Text = "Home";
+            this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.homeButton.UseVisualStyleBackColor = false;
+            this.homeButton.Click += new System.EventHandler(this.changePanel);
+            this.homeButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
+            this.homeButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -258,26 +269,17 @@ namespace OnlyFriends {
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(185, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.mainPanel.MaximumSize = new System.Drawing.Size(745, 590);
-            this.mainPanel.MinimumSize = new System.Drawing.Size(745, 590);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(745, 590);
-            this.mainPanel.TabIndex = 1;
-            // 
             // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(930, 590);
+            this.ClientSize = new System.Drawing.Size(900, 570);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.navPanel);
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+
             this.Name = "MainApp";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

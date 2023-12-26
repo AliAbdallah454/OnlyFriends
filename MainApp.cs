@@ -32,18 +32,27 @@ namespace OnlyFriends {
 		private UC currentUserControl = UC.Home;
 		private UC oldUserControl;
 		private Button oldButton = null, currentButton = null;
-
-		public MainApp() {
+		WelcomePage wlc;
+		User user;
+		private string SplitUsername(string s) {
+			int i = 0;
+			while (s[i] < 'A' || s[i]>'Z') {
+				i++;
+			}
+            return s.Substring(0,i)+"  "+s.Substring(i,s.Length);
+        }
+        public MainApp() {
 			InitializeComponent();
-
+            
+            
 			DatabaseConnection connection = DatabaseConnection.Instance;
 			connection.InitializeConnection();
 			AuthFunctions.login("linda.white@example.com", "password789");
 
-			User user = User.Instance;
+             user = User.Instance;
 			usernameLabel.Text = user.UserName;
 			emailLabel.Text = user.Email;
-
+			displayWelcomePage();
 			userControlsDictionary = new Dictionary<UC, UserControl>{
 
 				{ UC.Home, new HomeControl()},
@@ -62,8 +71,12 @@ namespace OnlyFriends {
 			changePanel(homeButton, EventArgs.Empty);
 
 		}
-
-		private void button_MouseEnter_Bold(object sender, EventArgs e) {
+		private void displayWelcomePage() {
+            wlc = new WelcomePage(SplitUsername(user.UserName));
+            wlc.Parent = this;
+            wlc.BringToFront();
+        }
+        private void button_MouseEnter_Bold(object sender, EventArgs e) {
 			if (sender is Button button) {
 				if (button != currentButton)
 					button.BackColor = mouseEnterBackColor;
