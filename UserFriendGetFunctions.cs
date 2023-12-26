@@ -31,8 +31,6 @@ namespace OnlyFriends {
 
 		public List<User> getFriends() {
 
-			MessageBox.Show("in fn");
-
 			string sql = $"SELECT * FROM users\n" +
 				$"WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId})";
 			return readFriendsFromDb(sql);
