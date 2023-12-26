@@ -522,6 +522,7 @@
     <None Include="Resources\icons8-accept-30.png" />
     <None Include="Resources\icons8-wait-25.png" />
     <None Include="Resources\onlyfans-logo-152222.png" />
+    <None Include="Resources\icons8-add-30.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>
