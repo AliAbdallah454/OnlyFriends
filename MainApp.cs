@@ -23,13 +23,15 @@ public enum UC {
 
 namespace OnlyFriends {
 	public partial class MainApp : Form {
+		Color mouseEnterBackColor;
+		Color mouseLeaveBackColor;
 
-		Color mouseEnterBackColor = Color.FromArgb(46, 51, 73);
-		Color mouseLeaveBackColor = Color.FromArgb(24, 30, 54);
 
-		private Dictionary<UC, UserControl> userControlsDictionary;
+
+        private Dictionary<UC, UserControl> userControlsDictionary;
 		private UC currentUserControl = UC.Home;
 		private UC oldUserControl;
+		private Button oldButton=null ,currentButton=null;
 
 		public MainApp() {
 			InitializeComponent();
@@ -54,18 +56,24 @@ namespace OnlyFriends {
 
 
             };
+            mouseEnterBackColor = mainPanel.BackColor;
+            mouseLeaveBackColor = navPanel.BackColor;
+            currentUserControl = UC.Home;
+			changePanel(homeButton, EventArgs.Empty);
 
-		}
+        }
 
 		private void button_MouseEnter_Bold(object sender, EventArgs e) {
 			if (sender is Button button) {
-				button.BackColor = mouseEnterBackColor;
+				if(button!=currentButton)
+					button.BackColor = mouseEnterBackColor;
 			}
 		}
 
 		private void button_MouseLeave_Regular(object sender, EventArgs e) {
 			if (sender is Button button) {
-				button.BackColor = mouseLeaveBackColor;
+                if (button!=currentButton)
+                    button.BackColor = mouseLeaveBackColor;
 			}
 		}
 
@@ -78,7 +86,15 @@ namespace OnlyFriends {
 		private void changePanel(object sender, EventArgs e) {
 
 			if (sender is Button button) {
+				if (button != currentButton) {
+					oldButton = currentButton;
+					currentButton = button;
+					currentButton.BackColor = mainPanel.BackColor;
+					if(oldButton!=null)
+						oldButton.BackColor = Color.Transparent;
+				}
 
+				
 				oldUserControl = currentUserControl;
 
 				switch (button.Name) {
@@ -149,5 +165,7 @@ namespace OnlyFriends {
 				MessageBox.Show(ex.Message);
 			}
 		}
-	}
+
+        
+    }
 }
