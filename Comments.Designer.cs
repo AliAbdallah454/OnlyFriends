@@ -36,6 +36,7 @@
             // 
             // tweetPanel
             // 
+            this.tweetPanel.AutoSize = true;
             this.tweetPanel.Location = new System.Drawing.Point(13, 56);
             this.tweetPanel.MaximumSize = new System.Drawing.Size(690, 140);
             this.tweetPanel.MinimumSize = new System.Drawing.Size(690, 140);
