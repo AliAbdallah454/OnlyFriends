@@ -72,6 +72,39 @@ namespace OnlyFriends {
 			}
 		}
 
+		public void declineFriendRequest(int friendId) {
+
+			DatabaseConnection connection = DatabaseConnection.Instance;
+
+			string checkSql = $"SELECT * FROM friendRequests\n" +
+							  $"WHERE userId = {this.UserId} AND friendId = {friendId}";
+
+			MySqlDataReader checkReader = connection.query(checkSql);
+
+			if (checkReader.HasRows) {
+
+				checkReader.Close();
+
+				// Removing from pending friends table
+				string removeFriendFromPendingRequestsSql = $"DELETE FROM pendingRequests\n" +
+															$"WHERE userId = {friendId} AND friendId = {this.UserId}";
+				MySqlDataReader removeFriendFromPendingRequestsReader = connection.query(removeFriendFromPendingRequestsSql);
+				removeFriendFromPendingRequestsReader.Close();
+
+				// Removing from friend requests table
+				string removeFriendFromFriendRequestsSql = $"DELETE FROM friendRequests\n" +
+														   $"WHERE userID = {this.UserId} AND friendId = {friendId}";
+				MySqlDataReader removeFriendFromFriendRequestsReader = connection.query(removeFriendFromFriendRequestsSql);
+				removeFriendFromFriendRequestsReader.Close();
+
+			}
+			else {
+				checkReader.Close();
+				throw new Exception("No such Friend Request exists");
+			}
+
+		}
+
 		public void removeFriend(int friendId) {
 
 			string checkSql = $"SELECT * FROM friends\n" +
@@ -114,5 +147,6 @@ namespace OnlyFriends {
 			}
 
 		}
+
 	}
 }

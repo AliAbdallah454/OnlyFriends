@@ -92,8 +92,8 @@ namespace OnlyFriends.Components {
 			commentButton.Enabled = false;
 		}
 		public void disableDeleteButton() {
-            deletePostButton.Visible = false;
-        }
+			deletePostButton.Visible = false;
+		}
 
 		public void eraseButtons() {
 			likeButton.Visible = false;
@@ -102,12 +102,13 @@ namespace OnlyFriends.Components {
 			commentNumberLabel.Visible = false;
 		}
 
-        private void deletePostButton_Click(object sender, EventArgs e) {
-            User user = User.Instance;
-            DialogResult result = MessageBox.Show("Do you want to delete this post?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+		private void deletePostButton_Click(object sender, EventArgs e) {
+			User user = User.Instance;
+			DialogResult result = MessageBox.Show("Do you want to delete this post?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (result == DialogResult.Yes) {
 				user.deletePost(postId);
+				this.Visible = false;
 			}
-        }
-    }
+		}
+	}
 }

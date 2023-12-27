@@ -2,10 +2,9 @@
 using System.Windows.Forms;
 
 namespace OnlyFriends.Components {
-	public partial class MyFriendsComponent : UserControl {
-		public MyFriendsComponent() {
+	public partial class FriendRequestComponent : UserControl {
+		public FriendRequestComponent() {
 			InitializeComponent();
-			//User user = User.Instance;
 		}
 
 		#region Properties
@@ -27,18 +26,29 @@ namespace OnlyFriends.Components {
 
 		#endregion Properties
 
-		private void removeFriendButton_Click(object sender, System.EventArgs e) {
-
+		private void acceptButton_Click(object sender, EventArgs e) {
 			try {
 				User user = User.Instance;
-				user.removeFriend(FriendId);
-				MessageBox.Show($"{UserName} has been removed from your friends");
+				user.acceptFriendRequest(FriendId);
+				MessageBox.Show($"{UserName} is now added to your friends list", "New Friend");
+				this.Visible = false;
+
+			}
+			catch (Exception ex) {
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void rejectButton_Click(object sender, EventArgs e) {
+			try {
+				User user = User.Instance;
+				user.declineFriendRequest(FriendId);
+				MessageBox.Show($"{UserName}'s request was rejected", "Rejecting User");
 				this.Visible = false;
 			}
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);
 			}
-
 		}
 	}
 }

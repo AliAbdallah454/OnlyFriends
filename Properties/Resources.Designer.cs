@@ -263,6 +263,16 @@ namespace OnlyFriends.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_accept_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-accept-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_25 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-25", resourceCulture);
@@ -276,6 +286,7 @@ namespace OnlyFriends.Properties {
         internal static System.Drawing.Bitmap icons8_add_42 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-42", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -546,6 +557,16 @@ namespace OnlyFriends.Properties {
         internal static System.Drawing.Bitmap icons8_starred_webpage_25 {
             get {
                 object obj = ResourceManager.GetObject("icons8-starred-webpage-25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_wait_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-wait-25", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,6 +1,5 @@
 ﻿using MySqlConnector;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace OnlyFriends {
 	internal partial class User {
@@ -30,11 +29,9 @@ namespace OnlyFriends {
 		}
 
 		public List<User> getFriends() {
-
 			string sql = $"SELECT * FROM users\n" +
 				$"WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId})";
 			return readFriendsFromDb(sql);
-
 		}
 
 		public List<User> getFriendRequests() {
@@ -43,18 +40,21 @@ namespace OnlyFriends {
 			return readFriendsFromDb(sql);
 		}
 
-		public List<User> getSuggestedFriends() {
+		public List<User> getPendingRequests() {
+			string sql = $"SELECT * FROM users\n" +
+						 $"WHERE userId IN (SELECT friendId FROM pendingRequests WHERE userId = {UserId})";
+			return readFriendsFromDb(sql);
+		}
 
+		public List<User> getSuggestedFriends() {
 			string sql = $@"
 				SELECT * FROM users
-				WHERE userId IN (SELECT DISTINCT friendId FROM (SELECT * FROM friends
-						WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId}))
-						AS ff WHERE friendId != {UserId})
-				ORDER BY userId
+				WHERE userId IN (SELECT DISTINCT friendId FROM friends WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId}))
+				AND userId != {UserId}
+				AND userId NOT IN (SELECT friendId FROM friends WHERE userId = {UserId})
+				AND userId NOT IN (SELECT friendId FROM pendingRequests WHERE userId = {UserId})
 			";
-
 			return readFriendsFromDb(sql);
-
 		}
 
 	}

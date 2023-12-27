@@ -78,6 +78,38 @@ namespace OnlyFriends {
 			return translateUserIdToUserInfo(userId).getUserName();
 		}
 
+		public static bool isInFriendRequests(int friendId) {
+
+			DatabaseConnection connection = DatabaseConnection.Instance;
+			User user = User.Instance;
+
+			string sql = $"SELECT * FROM friendRequests\n" +
+				$"WHERE userId = {user.UserId} AND friendId = {friendId}";
+			MySqlDataReader reader = connection.query(sql);
+			if (reader.HasRows) {
+				reader.Close();
+				return true;
+			}
+			reader.Close();
+			return false;
+
+		}
+
+		public static bool isInPendingRequests(int friendId) {
+			DatabaseConnection connection = DatabaseConnection.Instance;
+			User user = User.Instance;
+
+			string sql = $"SELECT * FROM pendingRequests\n" +
+				$"WHERE userId = {user.UserId} AND friendId = {friendId}";
+			MySqlDataReader reader = connection.query(sql);
+			if (reader.HasRows) {
+				reader.Close();
+				return true;
+			}
+			reader.Close();
+			return false;
+		}
+
 		// Need to look at this
 		public static List<string> ConvertCommaSeparatedStringToList(string inputString) {
 			// Split the string by commas and remove any leading/trailing whitespaces
