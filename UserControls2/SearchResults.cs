@@ -17,7 +17,7 @@ namespace OnlyFriends.UserControls2 {
 
 			try {
 				User user = User.Instance;
-				List<User> searchedFriends = user.searcByUserName(UserName);
+				List<User> searchedFriends = user.searchByUserName(UserName);
 				SuggestedFriendComponent[] suggestedFriendComponents = new SuggestedFriendComponent[searchedFriends.Count];
 
 				for (int i = 0; i < searchedFriends.Count; i++) {

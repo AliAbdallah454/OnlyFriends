@@ -57,10 +57,12 @@ namespace OnlyFriends {
 			return readFriendsFromDb(sql);
 		}
 
-		public List<User> searcByUserName(string userName) {
+		public List<User> searchByUserName(string userName) {
 
 			string sql = $"SELECT * FROM users\n" +
-						 $"WHERE userName REGEXP '{userName}'";
+						 $"WHERE userName REGEXP '{userName}'\n" +
+						 $"AND userId != {UserId}\n" +
+						 $"AND userId NOT IN (SELECT friendId FROM pendingRequests WHERE userId = {UserId})";
 			return readFriendsFromDb(sql);
 		}
 
