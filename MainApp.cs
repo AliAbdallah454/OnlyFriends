@@ -167,7 +167,29 @@ namespace OnlyFriends {
 			}
 		}
 
-		private void logOutButton_Click(object sender, EventArgs e) {
+        private void searchInput_Click(object sender, EventArgs e) {
+			if(sender is TextBox x) {
+				if (x.Text == "Search")
+					x.Text = String.Empty;
+			}
+        }
+
+        private void searchInput_MouseLeave(object sender, EventArgs e) {
+            if (sender is TextBox x) {
+                if (x.Text == " "||x.Text=="")
+                    x.Text = "Search";
+            }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e) {
+			SearchResults px=new SearchResults();
+			px.Parent = mainPanel;
+			px.ClientSize = mainPanel.ClientSize;
+			px.Dock = DockStyle.Fill;
+			px.BringToFront();
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e) {
 			try {
 				AuthFunctions.logout();
 				Login login = new Login();

@@ -83,6 +83,16 @@ namespace OnlyFriends.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add1 {
+            get {
+                object obj = ResourceManager.GetObject("add1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap addition {
             get {
                 object obj = ResourceManager.GetObject("addition", resourceCulture);
@@ -273,9 +283,10 @@ namespace OnlyFriends.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_add_30 {
+        internal static System.Drawing.Bitmap icons8_add_42 {
             get {
-                object obj = ResourceManager.GetObject("icons8-add-30", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-add-42", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +324,19 @@ namespace OnlyFriends.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_coaching_25 {
+        internal static System.Drawing.Bitmap icons8_close_button_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-coaching-25", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-close-button-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_done_26 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-done-26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -686,6 +707,26 @@ namespace OnlyFriends.Properties {
         internal static System.Drawing.Bitmap Screenshot_2023_12_23_174814_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Screenshot_2023-12-23_174814-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search__2_ {
+            get {
+                object obj = ResourceManager.GetObject("search (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search__2___1_ {
+            get {
+                object obj = ResourceManager.GetObject("search (2) (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

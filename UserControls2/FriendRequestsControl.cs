@@ -11,7 +11,7 @@ using OnlyFriends.Components;
 
 namespace OnlyFriends.UserControls2 {
     public partial class FriendRequestsControl : UserControl {
-        private SuggestedFriends suggestedFriends;
+        /*//private SuggestedFriends suggestedFriends;
         private FindFriend findFriend;
 
         public FriendRequestsControl() {
@@ -44,6 +44,9 @@ namespace OnlyFriends.UserControls2 {
 
         }
 
+        */
+
+
 
         public void populate() {
             try {
@@ -69,6 +72,7 @@ namespace OnlyFriends.UserControls2 {
                 MessageBox.Show(ex.Message);
             }
         }
+
 
     }
 }
