@@ -95,7 +95,6 @@ namespace OnlyFriends {
 		private void addCommentButton_Click(object sender, EventArgs e) {
 			string comment = addCommentBox.Text;
 
-			MessageBox.Show("Accessed");
 
 			if (textBoxEntered) {
 
@@ -104,7 +103,6 @@ namespace OnlyFriends {
 					user.commentOnPost(PostId, comment);
 
 					addCommentBox.Text = "";
-					MessageBox.Show("Pressed");
 					addCommentBox.Text = "add comment...";
 					textBoxEntered = false;
 
