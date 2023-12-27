@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-
             this.emailLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.userPicture = new System.Windows.Forms.PictureBox();
@@ -97,7 +96,7 @@
             this.requestedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.requestedButton.Image = global::OnlyFriends.Properties.Resources.icons8_wait_251;
             this.requestedButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.requestedButton.Location = new System.Drawing.Point(482, 22);
+            this.requestedButton.Location = new System.Drawing.Point(482, 23);
             this.requestedButton.Name = "requestedButton";
             this.requestedButton.Size = new System.Drawing.Size(170, 45);
             this.requestedButton.TabIndex = 11;
