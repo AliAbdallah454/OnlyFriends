@@ -282,6 +282,12 @@
     <Compile Include="UserControls2\SearchResults.Designer.cs">
       <DependentUpon>SearchResults.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls2\SuggestedFriends.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\SuggestedFriends.Designer.cs">
+      <DependentUpon>SuggestedFriends.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls2\WelcomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\SearchResults.resx">
       <DependentUpon>SearchResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls2\SuggestedFriends.resx">
+      <DependentUpon>SuggestedFriends.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\WelcomePage.resx">
       <DependentUpon>WelcomePage.cs</DependentUpon>

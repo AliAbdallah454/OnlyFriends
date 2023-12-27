@@ -11,7 +11,7 @@ using OnlyFriends.Components;
 
 namespace OnlyFriends.UserControls2 {
     public partial class FriendRequestsControl : UserControl {
-        /*//private SuggestedFriends suggestedFriends;
+        private SuggestedFriends suggestedFriends;
         private FindFriend findFriend;
 
         public FriendRequestsControl() {
@@ -44,7 +44,7 @@ namespace OnlyFriends.UserControls2 {
 
         }
 
-        */
+        
 
 
 
@@ -73,8 +73,6 @@ namespace OnlyFriends.UserControls2 {
             }
         }
 
-        private void suggestedFriendButton_Click(object sender, EventArgs e) {
-
-        }
+        
     }
 }
