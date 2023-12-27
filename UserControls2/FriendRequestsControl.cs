@@ -44,7 +44,6 @@ namespace OnlyFriends.UserControls2 {
 				User user = User.Instance;
 				List<User> friendRequests = user.getFriendRequests();
 				FriendRequestComponent[] friendRequestComponent = new FriendRequestComponent[friendRequests.Count];
-				MessageBox.Show(friendRequests.Count.ToString());
 				for (int i = 0; i < friendRequests.Count; i++) {
 
 					friendRequestComponent[i] = new FriendRequestComponent();
