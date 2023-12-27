@@ -73,7 +73,6 @@
             this.findFriendButton.Text = "Find a Friend";
             this.findFriendButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.findFriendButton.UseVisualStyleBackColor = false;
-            //this.findFriendButton.Click += new System.EventHandler(this.findFriend_Click);
             // 
             // suggestedFriendButton
             // 
@@ -83,7 +82,6 @@
             this.suggestedFriendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.suggestedFriendButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suggestedFriendButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(246)))));
-            //this.suggestedFriendButton.Image = global::OnlyFriends.Properties.Resources.icons8_coaching_25;
             this.suggestedFriendButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.suggestedFriendButton.Location = new System.Drawing.Point(542, 3);
             this.suggestedFriendButton.MaximumSize = new System.Drawing.Size(200, 45);
@@ -93,7 +91,7 @@
             this.suggestedFriendButton.Text = "Suggested Friends";
             this.suggestedFriendButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.suggestedFriendButton.UseVisualStyleBackColor = false;
-            //this.suggestedFriendButton.Click += new System.EventHandler(this.suggestedFriendButton_Click);
+            this.suggestedFriendButton.Click += new System.EventHandler(this.suggestedFriendButton_Click);
             // 
             // FriendRequestsControl
             // 

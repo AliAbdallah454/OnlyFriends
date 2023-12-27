@@ -131,12 +131,17 @@
     <Compile Include="Components\CommentComp.Designer.cs">
       <DependentUpon>CommentComp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\FriendRequestComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\FriendRequestComponent.Designer.cs">
+      <DependentUpon>FriendRequestComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\FriendSearchResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\FriendSearchResult.Designer.cs">
       <DependentUpon>FriendSearchResult.cs</DependentUpon>
-
     </Compile>
     <Compile Include="Components\MyFriendsComponent.cs">
       <SubType>UserControl</SubType>
@@ -276,7 +281,6 @@
     </Compile>
     <Compile Include="UserControls2\SearchResults.Designer.cs">
       <DependentUpon>SearchResults.cs</DependentUpon>
-
     </Compile>
     <Compile Include="UserControls2\WelcomePage.cs">
       <SubType>UserControl</SubType>
@@ -294,9 +298,11 @@
     <EmbeddedResource Include="Components\CommentComp.resx">
       <DependentUpon>CommentComp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\FriendRequestComponent.resx">
+      <DependentUpon>FriendRequestComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\FriendSearchResult.resx">
       <DependentUpon>FriendSearchResult.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="Components\MyFriendsComponent.resx">
       <DependentUpon>MyFriendsComponent.cs</DependentUpon>
@@ -373,7 +379,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\SearchResults.resx">
       <DependentUpon>SearchResults.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\WelcomePage.resx">
       <DependentUpon>WelcomePage.cs</DependentUpon>
@@ -528,7 +533,10 @@
     <None Include="Resources\icons8-close-button-16.png" />
     <None Include="Resources\icons8-add-42.png" />
     <None Include="Resources\icons8-done-26.png" />
-
+    <None Include="Resources\icons8-wait-251.png" />
+    <None Include="Resources\icons8-add-301.png" />
+    <None Include="Resources\icons8-accept-301.png" />
+    <None Include="Resources\icons8-wait-252.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>

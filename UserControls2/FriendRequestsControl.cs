@@ -73,6 +73,8 @@ namespace OnlyFriends.UserControls2 {
             }
         }
 
+        private void suggestedFriendButton_Click(object sender, EventArgs e) {
 
+        }
     }
 }
