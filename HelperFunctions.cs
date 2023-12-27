@@ -108,8 +108,6 @@ namespace OnlyFriends {
 			return false;
 		}
 
-
-
 		// Need to look at this
 		public static List<string> ConvertCommaSeparatedStringToList(string inputString) {
 			// Split the string by commas and remove any leading/trailing whitespaces

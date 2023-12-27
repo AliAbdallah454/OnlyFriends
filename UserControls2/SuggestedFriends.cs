@@ -15,9 +15,7 @@ namespace OnlyFriends.UserControls2 {
 			try {
 
 				User user = User.Instance;
-
 				List<User> suggestedFriends = user.getSuggestedFriends();
-
 				SuggestedFriendComponent[] suggestedFriendComponents = new SuggestedFriendComponent[suggestedFriends.Count];
 
 				for (int i = 0; i < suggestedFriends.Count; i++) {

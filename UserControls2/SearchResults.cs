@@ -1,23 +1,46 @@
-﻿using System;
+﻿using OnlyFriends.Components;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OnlyFriends.UserControls2 {
-    public partial class SearchResults : UserControl {
-        public SearchResults() {
-            InitializeComponent();
-            populate();
-        }
-        private void populate() { }
+	public partial class SearchResults : UserControl {
+		public SearchResults(string userName) {
+			InitializeComponent();
+			UserName = userName;
+			populate();
+		}
 
-        private void button1_Click(object sender, EventArgs e) {
-            this.Hide();
-        }
-    }
+		string UserName { get; set; }
+
+		private void populate() {
+
+			try {
+				User user = User.Instance;
+				List<User> searchedFriends = user.searcByUserName(UserName);
+				SuggestedFriendComponent[] suggestedFriendComponents = new SuggestedFriendComponent[searchedFriends.Count];
+
+				for (int i = 0; i < searchedFriends.Count; i++) {
+
+					suggestedFriendComponents[i] = new SuggestedFriendComponent(searchedFriends[i].UserId);
+
+					suggestedFriendComponents[i].UserName = searchedFriends[i].UserName;
+					suggestedFriendComponents[i].Email = searchedFriends[i].Email;
+					suggestedFriendComponents[i].FriendId = searchedFriends[i].UserId;
+
+					flowLayoutPanel1.Controls.Add(suggestedFriendComponents[i]);
+
+				}
+
+			}
+			catch (Exception ex) {
+				MessageBox.Show(ex.Message);
+			}
+
+		}
+
+		private void button1_Click(object sender, EventArgs e) {
+			this.Hide();
+		}
+	}
 }

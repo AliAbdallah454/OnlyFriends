@@ -15,7 +15,7 @@ public enum UC {
 	Suggestions,
 	AddPost,
 	MyFriends,
-
+	Seach,
 
 	UNKNOWN
 
@@ -36,20 +36,20 @@ namespace OnlyFriends {
 		User user;
 		private string SplitUsername(string s) {
 			int i = 0;
-			while (s[i] < 'A' || s[i]>'Z') {
+			while (s[i] < 'A' || s[i] > 'Z') {
 				i++;
 			}
-            return s.Substring(0,i)+"  "+s.Substring(i,s.Length);
-        }
-        public MainApp() {
+			return s.Substring(0, i) + "  " + s.Substring(i, s.Length);
+		}
+		public MainApp() {
 			InitializeComponent();
-            
-            
+
+
 			DatabaseConnection connection = DatabaseConnection.Instance;
 			connection.InitializeConnection();
 			AuthFunctions.login("linda.white@example.com", "password789");
 
-             user = User.Instance;
+			user = User.Instance;
 			usernameLabel.Text = user.UserName;
 			emailLabel.Text = user.Email;
 			displayWelcomePage();
@@ -61,7 +61,8 @@ namespace OnlyFriends {
 				{ UC.FriendRequests, new FriendRequestsControl()},
 				{ UC.Suggestions, new SuggestionsUC() },
 				{ UC.MyFriends, new MyFriendsControl() },
-				{ UC.AddPost, new AddPostControl() }
+				{ UC.AddPost, new AddPostControl() },
+				{ UC.Seach, new SearchResults("Ali") }
 
 
 			};
@@ -72,11 +73,11 @@ namespace OnlyFriends {
 
 		}
 		private void displayWelcomePage() {
-            wlc = new WelcomePage(SplitUsername(user.UserName));
-            wlc.Parent = this;
-            wlc.BringToFront();
-        }
-        private void button_MouseEnter_Bold(object sender, EventArgs e) {
+			wlc = new WelcomePage(SplitUsername(user.UserName));
+			wlc.Parent = this;
+			wlc.BringToFront();
+		}
+		private void button_MouseEnter_Bold(object sender, EventArgs e) {
 			if (sender is Button button) {
 				if (button != currentButton)
 					button.BackColor = mouseEnterBackColor;
@@ -154,6 +155,14 @@ namespace OnlyFriends {
 						userControlsDictionary[currentUserControl].Parent = mainPanel;
 						break;
 					}
+					case "searchButton": {
+						MessageBox.Show("Here");
+						currentUserControl = UC.Seach;
+						userControlsDictionary[oldUserControl].Parent = null;
+						userControlsDictionary[currentUserControl] = new SearchResults(searchInput.Text);
+						userControlsDictionary[currentUserControl].Parent = mainPanel;
+						break;
+					}
 					default: {
 						currentUserControl = UC.Home;
 						userControlsDictionary[oldUserControl].Parent = null;
@@ -167,6 +176,13 @@ namespace OnlyFriends {
 			}
 		}
 
+		private void searchButton_Click(object sender, EventArgs e) {
+			//SearchResults px = new SearchResults();
+			//px.Parent = mainPanel;
+			//px.ClientSize = mainPanel.ClientSize;
+			//px.Dock = DockStyle.Fill;
+			//px.BringToFront();
+		}
        
 
 		private void searchInput_Enter(object sender, EventArgs e) {
@@ -181,20 +197,8 @@ namespace OnlyFriends {
 			}
 		}
 
-       
-
-        private void searchButton_Click(object sender, EventArgs e) {
-			SearchResults px=new SearchResults();
-			px.Parent = mainPanel;
-			px.ClientSize = mainPanel.ClientSize;
-			px.Dock = DockStyle.Fill;
-			px.BringToFront();
-        }
-
-      
-
-        private void logOutButton_Click(object sender, EventArgs e) {
-			try {
+	private void logOutButton_Click(object sender, EventArgs e) {	
+  try {
 				AuthFunctions.logout();
 				Login login = new Login();
 				this.Hide();
