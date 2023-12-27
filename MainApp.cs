@@ -176,20 +176,6 @@ namespace OnlyFriends {
 			}
 		}
 
-		private void searchInput_Click(object sender, EventArgs e) {
-			if (sender is TextBox x) {
-				if (x.Text == "Search")
-					x.Text = String.Empty;
-			}
-		}
-
-		private void searchInput_MouseLeave(object sender, EventArgs e) {
-			if (sender is TextBox x) {
-				if (x.Text == " " || x.Text == "")
-					x.Text = "Search";
-			}
-		}
-
 		private void searchButton_Click(object sender, EventArgs e) {
 			//SearchResults px = new SearchResults();
 			//px.Parent = mainPanel;
@@ -197,9 +183,22 @@ namespace OnlyFriends {
 			//px.Dock = DockStyle.Fill;
 			//px.BringToFront();
 		}
+       
 
-		private void logOutButton_Click(object sender, EventArgs e) {
-			try {
+		private void searchInput_Enter(object sender, EventArgs e) {
+			if(searchInput.Text == "Search") {
+				searchInput.Text = String.Empty;
+			}
+		}
+
+		private void searchInput_Leave(object sender, EventArgs e) {
+			if(searchInput.Text == string.Empty) {
+				searchInput.Text = "Search";
+			}
+		}
+
+	private void logOutButton_Click(object sender, EventArgs e) {	
+  try {
 				AuthFunctions.logout();
 				Login login = new Login();
 				this.Hide();

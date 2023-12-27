@@ -33,5 +33,9 @@ namespace OnlyFriends {
             }
 
         }
+
+        private void emailBox_TextChanged(object sender, EventArgs e) {
+
+        }
     }
 }
