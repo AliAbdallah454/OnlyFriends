@@ -12,7 +12,7 @@ namespace OnlyFriends {
 		public string Content { get; set; }
 		public DateTime TimeStamp { get; set; }
 		public int Likes { get; set; }
-		public List<string> Tags { get; set; }
+		public string Tags { get; set; }
 
 		public Post(int postId, int userId, string title, string content, DateTime timeStamp, int likes, string tags) {
 			PostId = postId;

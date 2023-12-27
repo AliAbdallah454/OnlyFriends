@@ -59,7 +59,7 @@
 			this.userPicture.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.userPicture.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_25;
 			this.userPicture.Location = new System.Drawing.Point(4, 4);
-			this.userPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.userPicture.Margin = new System.Windows.Forms.Padding(4);
 			this.userPicture.Name = "userPicture";
 			this.userPicture.Size = new System.Drawing.Size(39, 35);
 			this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -74,7 +74,7 @@
 			this.usernameLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.usernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
 			this.usernameLabel.Location = new System.Drawing.Point(51, 4);
-			this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.usernameLabel.Margin = new System.Windows.Forms.Padding(4);
 			this.usernameLabel.Name = "usernameLabel";
 			this.usernameLabel.Size = new System.Drawing.Size(212, 35);
 			this.usernameLabel.TabIndex = 1;
@@ -86,7 +86,7 @@
 			// 
 			this.panel1.Controls.Add(this.timeStampLabel);
 			this.panel1.Location = new System.Drawing.Point(711, 4);
-			this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel1.Margin = new System.Windows.Forms.Padding(4);
 			this.panel1.MaximumSize = new System.Drawing.Size(207, 43);
 			this.panel1.MinimumSize = new System.Drawing.Size(207, 43);
 			this.panel1.Name = "panel1";
@@ -110,7 +110,7 @@
 			this.panel3.AutoSize = true;
 			this.panel3.Controls.Add(this.contentLabel);
 			this.panel3.Location = new System.Drawing.Point(39, 47);
-			this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel3.Margin = new System.Windows.Forms.Padding(4);
 			this.panel3.MaximumSize = new System.Drawing.Size(847, 222);
 			this.panel3.MinimumSize = new System.Drawing.Size(847, 79);
 			this.panel3.Name = "panel3";
