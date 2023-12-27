@@ -6,28 +6,28 @@ using System.Drawing;
 using System.Windows.Forms;
 
 
-public enum UC {
-
-	Profile,
-	Home,
-	MyPosts,
-	LikedPosts,
-	FriendRequests,
-	Suggestions,
-	AddPost,
-	MyFriends,
-	Seach,
-
-	UNKNOWN
-
-}
-
 namespace OnlyFriends {
+
+	public enum UC {
+
+		Profile,
+		Home,
+		MyPosts,
+		LikedPosts,
+		FriendRequests,
+		Suggestions,
+		AddPost,
+		MyFriends,
+		Search,
+
+		UNKNOWN
+
+	}
+
 	public partial class MainApp : Form {
+
 		Color mouseEnterBackColor;
 		Color mouseLeaveBackColor;
-
-
 
 		private Dictionary<UC, UserControl> userControlsDictionary;
 		private UC currentUserControl = UC.Home;
@@ -48,7 +48,7 @@ namespace OnlyFriends {
 
 			DatabaseConnection connection = DatabaseConnection.Instance;
 			connection.InitializeConnection();
-			
+
 
 			user = User.Instance;
 			usernameLabel.Text = user.UserName;
@@ -64,8 +64,7 @@ namespace OnlyFriends {
 				{ UC.Suggestions, new SuggestionsUC() },
 				{ UC.MyFriends, new MyFriendsControl() },
 				{ UC.AddPost, new AddPostControl() },
-				{ UC.Seach, new SearchResults("username") }
-
+				{ UC.Search, new SearchResults("userName") }
 
 			};
 			mouseEnterBackColor = mainPanel.BackColor;
@@ -74,6 +73,9 @@ namespace OnlyFriends {
 			changePanel(profileButton, EventArgs.Empty);
 
 		}
+
+
+
 		private void displayWelcomePage() {
 			wlc = new WelcomePage(SplitUsername(user.UserName));
 			wlc.Parent = this;
@@ -93,18 +95,47 @@ namespace OnlyFriends {
 			}
 		}
 
-		private void changePanel(UC userControl) {
+		private void changePanelFactory(UC uc, string userName = "") {
+			currentUserControl = uc;
 			userControlsDictionary[oldUserControl].Parent = null;
-			userControlsDictionary[userControl].Parent = mainPanel;
-			oldUserControl = UC.UNKNOWN;
+			userControlsDictionary[currentUserControl] = UserControlFactory.Create(uc, userName);
+			userControlsDictionary[currentUserControl].Parent = mainPanel;
+		}
+
+		public class UserControlFactory {
+			public UserControlFactory() { }
+			public static UserControl Create(UC uc, string userName = "") {
+				switch (uc) {
+					case UC.Profile: {
+						return new ProfileControl();
+					}
+					case UC.Home: {
+						return new HomeControl();
+					}
+					case UC.MyPosts: {
+						return new MyPostsControl();
+					}
+					case UC.LikedPosts: {
+						return new LikedPostsControl();
+					}
+					case UC.FriendRequests: {
+						return new FriendRequestsControl();
+					}
+					case UC.AddPost: {
+						return new AddPostControl();
+					}
+					case UC.MyFriends: {
+						return new MyFriendsControl();
+					}
+					case UC.Search: {
+						return new SearchResults(userName);
+					}
+				}
+				return new ProfileControl();
+			}
 		}
 
 		public void changePanel(object sender, EventArgs e) {
-
-			if(sender is PictureBox pictureBox) {
-                 
-				
-            }
 
 			if (sender is Button button) {
 				if (button != currentButton) {
@@ -121,71 +152,44 @@ namespace OnlyFriends {
 				switch (button.Name) {
 
 					case "profileButton": {
-                        currentUserControl = UC.Profile;
-                        userControlsDictionary[oldUserControl].Parent = null;
-                        userControlsDictionary[currentUserControl] = new ProfileControl();
-                        userControlsDictionary[currentUserControl].Parent = mainPanel;
-                        break;
-                    }
-                    case "homeButton": {
-						currentUserControl = UC.Home;
-						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new HomeControl();
-						userControlsDictionary[currentUserControl].Parent = mainPanel;
+						changePanelFactory(UC.Profile);
+						break;
+					}
+					case "homeButton": {
+						changePanelFactory(UC.Home);
 						break;
 					}
 					case "myPostsButton": {
-						currentUserControl = UC.MyPosts;
-						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new MyPostsControl();
-						userControlsDictionary[currentUserControl].Parent = mainPanel;
+						changePanelFactory(UC.MyPosts);
 						break;
 					}
 					case "addPostButton": {
-						currentUserControl = UC.Suggestions;
-						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new AddPostControl();
-						userControlsDictionary[currentUserControl].Parent = mainPanel;
+						changePanelFactory(UC.AddPost);
 						break;
 					}
 					case "likedPostsButton": {
-						currentUserControl = UC.LikedPosts;
-						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new LikedPostsControl();
-						userControlsDictionary[currentUserControl].Parent = mainPanel;
+						changePanelFactory(UC.LikedPosts);
+
 						break;
 					}
 					case "myFriendsButton": {
-						currentUserControl = UC.MyFriends;
-						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new MyFriendsControl();
-						userControlsDictionary[currentUserControl].Parent = mainPanel;
+						changePanelFactory(UC.MyFriends);
 						break;
 					}
 					case "friendRequestsButton": {
-						currentUserControl = UC.FriendRequests;
-						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new FriendRequestsControl();
-						userControlsDictionary[currentUserControl].Parent = mainPanel;
+						changePanelFactory(UC.FriendRequests);
 						break;
 					}
 					case "searchButton": {
-						currentUserControl = UC.Seach;
-						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new SearchResults(searchInput.Text);
-						userControlsDictionary[currentUserControl].Parent = mainPanel;
+						changePanelFactory(UC.Search, searchInput.Text);
 						break;
 					}
 					default: {
-						currentUserControl = UC.Home;
-						userControlsDictionary[oldUserControl].Parent = null;
-						userControlsDictionary[currentUserControl] = new HomeUC();
-						userControlsDictionary[currentUserControl].Parent = mainPanel;
+						changePanelFactory(UC.Home);
 						break;
 					}
 
 				}
-				changePanel(currentUserControl);
 			}
 		}
 
@@ -212,17 +216,17 @@ namespace OnlyFriends {
 
 		private void logOutButton_Click(object sender, EventArgs e) {
 			DialogResult result = MessageBox.Show("Click yes to logout from this account\nClick no to stay in your account", "Do You Want to Logout?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-			if(result.Equals(DialogResult.Yes)) {
-                try {
-                    AuthFunctions.logout();
-                    Login login = new Login();
-                    this.Hide();
-                    login.Show();
-                }
-                catch (Exception ex) {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+			if (result.Equals(DialogResult.Yes)) {
+				try {
+					AuthFunctions.logout();
+					Login login = new Login();
+					this.Hide();
+					login.Show();
+				}
+				catch (Exception ex) {
+					MessageBox.Show(ex.Message);
+				}
+			}
 		}
 
 
