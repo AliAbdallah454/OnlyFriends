@@ -28,6 +28,7 @@ namespace OnlyFriends.Components {
 		private string userName;
 		private string title;
 		private string content;
+		private string tags;
 		private DateTime timeStamp;
 		private int numberOfLikes;
 		private int numberOfComments;
@@ -47,6 +48,10 @@ namespace OnlyFriends.Components {
 		public string Content {
 			get { return content; }
 			set { content = value; contentLabel.Text = value; }
+		}
+		public string Tags {
+			get { return tags; }
+			set { tags = value; tagLabel.Text = value; }
 		}
 		public DateTime TimeStamp {
 			get { return timeStamp; }
