@@ -90,12 +90,12 @@ namespace OnlyFriends {
                 age = 0;
             }
 
-            MainApp mainApp = new MainApp();
 
 			try {
 				AuthFunctions.signup(userName, email, password, confirmPassword, phoneNumber, gender, age);
 				this.Hide();
-				mainApp.Show();
+                MainApp mainApp = new MainApp();
+                mainApp.Show();
 			}
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);

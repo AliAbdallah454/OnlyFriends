@@ -273,7 +273,7 @@ namespace OnlyFriends {
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.usernameLabel.Location = new System.Drawing.Point(45, 118);
+            this.usernameLabel.Location = new System.Drawing.Point(35, 118);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(87, 21);
             this.usernameLabel.TabIndex = 1;

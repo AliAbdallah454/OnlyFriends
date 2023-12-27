@@ -47,7 +47,7 @@ namespace OnlyFriends {
 
 			DatabaseConnection connection = DatabaseConnection.Instance;
 			connection.InitializeConnection();
-			AuthFunctions.login("linda.white@example.com", "password789");
+			
 
 			user = User.Instance;
 			usernameLabel.Text = user.UserName;
