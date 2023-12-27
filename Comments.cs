@@ -36,13 +36,17 @@ namespace OnlyFriends {
 
 			tweet.eraseButtons();
 
+			T = tweet;
+			L = commentNumberLabel;
+
 			tweetPanel.Controls.Add(tweet);
 
 		}
 
+		public Label L { get; set; }
+		public Tweet T { get; set; }
 		public int PostId { get; set; }
 		public string UserName { get; set; }
-
 
 		private void populate() {
 
@@ -55,7 +59,7 @@ namespace OnlyFriends {
 			CommentComp[] commentComps = new CommentComp[comments.Count];
 			for (int i = 0; i < comments.Count; i++) {
 
-				commentComps[i] = new CommentComp(comments[i].UserId, comments[i].CommentId);
+				commentComps[i] = new CommentComp(comments[i].UserId, comments[i].CommentId, this);
 
 				commentComps[i].UserName = HelperFunctions.translateUserIdToUserName(comments[i].UserId);
 				commentComps[i].Content = comments[i].Content;
@@ -91,25 +95,21 @@ namespace OnlyFriends {
 		private void addCommentButton_Click(object sender, EventArgs e) {
 			string comment = addCommentBox.Text;
 
+			MessageBox.Show("Accessed");
+
 			if (textBoxEntered) {
 
 				try {
 					User user = User.Instance;
 					user.commentOnPost(PostId, comment);
+
 					addCommentBox.Text = "";
 					MessageBox.Show("Pressed");
-
-					//this.Visible = false;
-					//this. = new Comments(PostId, UserName);
-
+					addCommentBox.Text = "add comment...";
+					textBoxEntered = false;
 
 					populate();
 
-					//this.commentsFlowPanel.Visible = false;
-					//this.commentsFlowPanel.Visible = true;
-					//this.commentsFlowPanel.Refresh();
-					//this.Invalidate();
-					//this.Refresh();
 				}
 				catch (Exception ex) {
 					addCommentBox.Text = "";
