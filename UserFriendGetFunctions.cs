@@ -62,7 +62,8 @@ namespace OnlyFriends {
 			string sql = $"SELECT * FROM users\n" +
 						 $"WHERE userName REGEXP '{userName}'\n" +
 						 $"AND userId != {UserId}\n" +
-						 $"AND userId NOT IN (SELECT friendId FROM pendingRequests WHERE userId = {UserId})";
+						 $"AND userId NOT IN (SELECT friendId FROM pendingRequests WHERE userId = {UserId})\n" +
+						 $"AND userId NOT IN (SELECT friendId FROM friends WHERE userId = {UserId});";
 			return readFriendsFromDb(sql);
 		}
 
