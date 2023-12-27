@@ -33,6 +33,8 @@ namespace OnlyFriends.UserControls2 {
 				tweets[i].NumberOfLikes = posts[i].Likes;
 				tweets[i].NumberOfComments = HelperFunctions.translatePostIdToPostInfo(postId).getComments().Count;
 
+				tweets[i].Tags = posts[i].Tags;
+
 				flowLayoutPanel1.Controls.Add(tweets[i]);
 			}
 

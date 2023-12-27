@@ -109,7 +109,7 @@ namespace OnlyFriends {
 		}
 
 		// Need to look at this
-		public static List<string> ConvertCommaSeparatedStringToList(string inputString) {
+		public static string ConvertCommaSeparatedStringToList(string inputString) {
 			// Split the string by commas and remove any leading/trailing whitespaces
 			string[] stringArray = inputString.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
 											  .Select(s => s.Trim())
@@ -118,7 +118,13 @@ namespace OnlyFriends {
 			// Convert the array to a list
 			List<string> stringList = new List<string>(stringArray);
 
-			return stringList;
+			string ts = "";
+			foreach (string str in stringList) {
+				ts += $"#{str}";
+			}
+
+			return ts;
+			//return stringList;
 		}
 
 	}

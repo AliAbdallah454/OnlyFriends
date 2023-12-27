@@ -7,8 +7,8 @@ namespace OnlyFriends.User_Controls {
 	public partial class MyPostsUC : UserControl {
 		public MyPostsUC() {
 			InitializeComponent();
-            flowLayoutPanel1.MouseWheel += feedScroller;
-            generatePosts();
+			flowLayoutPanel1.MouseWheel += feedScroller;
+			generatePosts();
 			showPost(feed[0]);
 		}
 
@@ -88,15 +88,15 @@ namespace OnlyFriends.User_Controls {
 			if (post.Tags.Count() == 0) {
 				HashtagsLabel.Hide();
 			}
-			else {
-				HashtagsLabel.Show();
-				foreach (string tag in post.Tags) {
-					hashtagsContentLabel.Text += $"#{tag} ";
-				}
-			}
-			likesLabel.Text = $"        Like ({post.Likes})";
-			commentsLabel.Text = $"        Comment ({post.getComments().Count})";
-			commentsLabel.Text = $"        Share ({post.Likes / 2})";
+			//else {
+			//	HashtagsLabel.Show();
+			//	foreach (string tag in post.Tags) {
+			//		hashtagsContentLabel.Text += $"#{tag} ";
+			//	}
+			//}
+			//likesLabel.Text = $"        Like ({post.Likes})";
+			//commentsLabel.Text = $"        Comment ({post.getComments().Count})";
+			//commentsLabel.Text = $"        Share ({post.Likes / 2})";
 			//postPfpUsername.Image=
 
 		}
