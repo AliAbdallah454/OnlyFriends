@@ -77,7 +77,6 @@ namespace OnlyFriends {
 		public static string translateUserIdToUserName(int userId) {
 			return translateUserIdToUserInfo(userId).getUserName();
 		}
-
 		public static bool isInFriendRequests(int friendId) {
 
 			DatabaseConnection connection = DatabaseConnection.Instance;
@@ -94,7 +93,6 @@ namespace OnlyFriends {
 			return false;
 
 		}
-
 		public static bool isInPendingRequests(int friendId) {
 			DatabaseConnection connection = DatabaseConnection.Instance;
 			User user = User.Instance;
@@ -109,6 +107,8 @@ namespace OnlyFriends {
 			reader.Close();
 			return false;
 		}
+
+
 
 		// Need to look at this
 		public static List<string> ConvertCommaSeparatedStringToList(string inputString) {

@@ -57,5 +57,12 @@ namespace OnlyFriends {
 			return readFriendsFromDb(sql);
 		}
 
+		public List<User> searcByUserName(string userName) {
+
+			string sql = $"SELECT * FROM users\n" +
+						 $"WHERE userName REGEXP '{userName}'";
+			return readFriendsFromDb(sql);
+		}
+
 	}
 }

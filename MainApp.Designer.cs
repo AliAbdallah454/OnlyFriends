@@ -23,6 +23,7 @@ namespace OnlyFriends {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+
             this.navPanel = new System.Windows.Forms.Panel();
             this.friendRequestsButton = new System.Windows.Forms.Button();
             this.myFriendsButton = new System.Windows.Forms.Button();
@@ -319,6 +320,7 @@ namespace OnlyFriends {
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+
 
         }
 
