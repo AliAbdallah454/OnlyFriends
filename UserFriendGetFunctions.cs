@@ -29,11 +29,9 @@ namespace OnlyFriends {
 		}
 
 		public List<User> getFriends() {
-
 			string sql = $"SELECT * FROM users\n" +
 				$"WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId})";
 			return readFriendsFromDb(sql);
-
 		}
 
 		public List<User> getFriendRequests() {
@@ -49,29 +47,14 @@ namespace OnlyFriends {
 		}
 
 		public List<User> getSuggestedFriends() {
-
-			//HashSet<int> friendIds = this.getFriends().Select(friend => friend.UserId).ToHashSet();
-			//HashSet<int> pendingRequestsIds = this.getPendingRequests().Select(friend => friend.UserId).ToHashSet();
-
-			//List<User> suggestedFriends = new List<User>();
-
-			//foreach (int friendId in friendIds) {
-			//	foreach (User friendFriend in friendId.getFriends()) {
-			//		int friendFriendId = friendFriend.UserId;
-			//		if (friendFriendId != this.UserId && !friendIds.Contains(friendFriendId) { }
-			//	}
-			//}
-
 			string sql = $@"
-SELECT * FROM users
-WHERE userId IN (SELECT DISTINCT friendId FROM friends WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId}))
-AND userId != {UserId}
-AND userId NOT IN (SELECT friendId FROM friends WHERE userId = {UserId})
-AND userId NOT IN (SELECT friendId FROM pendingRequests WHERE userId = {UserId})
+				SELECT * FROM users
+				WHERE userId IN (SELECT DISTINCT friendId FROM friends WHERE userId IN (SELECT friendId FROM friends WHERE userId = {UserId}))
+				AND userId != {UserId}
+				AND userId NOT IN (SELECT friendId FROM friends WHERE userId = {UserId})
+				AND userId NOT IN (SELECT friendId FROM pendingRequests WHERE userId = {UserId})
 			";
-
 			return readFriendsFromDb(sql);
-
 		}
 
 	}
