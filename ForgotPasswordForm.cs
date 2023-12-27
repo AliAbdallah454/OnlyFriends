@@ -15,6 +15,9 @@ namespace OnlyFriends {
 
             //DatabaseConnection connection = DatabaseConnection.Instance;
             //connection.InitializeConnection();
+
+            passwordBox.UseSystemPasswordChar = true;
+            confirmPasswordBox.UseSystemPasswordChar = true;
         }
 
         private void confirmButton_Click(object sender, EventArgs e) {
@@ -36,6 +39,9 @@ namespace OnlyFriends {
 
         private void emailBox_TextChanged(object sender, EventArgs e) {
 
+        }
+
+        private void passwordBox_TextChanged(object sender, EventArgs e) {
         }
     }
 }
