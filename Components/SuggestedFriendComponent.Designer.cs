@@ -25,9 +25,9 @@
         private void InitializeComponent() {
             this.emailLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.userPicture = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Button();
             this.requestedButton = new System.Windows.Forms.Button();
-            this.userPicture = new System.Windows.Forms.PictureBox();
             this.addButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPicture)).BeginInit();
@@ -60,6 +60,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 35);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
+            // userPicture
+            // 
+            this.userPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userPicture.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_35;
+            this.userPicture.Location = new System.Drawing.Point(3, 3);
+            this.userPicture.Name = "userPicture";
+            this.userPicture.Size = new System.Drawing.Size(29, 29);
+            this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userPicture.TabIndex = 0;
+            this.userPicture.TabStop = false;
+            // 
             // usernameLabel
             // 
             this.usernameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -85,7 +96,7 @@
             this.requestedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.requestedButton.Image = global::OnlyFriends.Properties.Resources.icons8_wait_251;
             this.requestedButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.requestedButton.Location = new System.Drawing.Point(482, 21);
+            this.requestedButton.Location = new System.Drawing.Point(482, 22);
             this.requestedButton.Name = "requestedButton";
             this.requestedButton.Size = new System.Drawing.Size(170, 45);
             this.requestedButton.TabIndex = 11;
@@ -93,17 +104,6 @@
             this.requestedButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.requestedButton.UseVisualStyleBackColor = false;
             this.requestedButton.Click += new System.EventHandler(this.requestedButton_Click);
-            // 
-            // userPicture
-            // 
-            this.userPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userPicture.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_35;
-            this.userPicture.Location = new System.Drawing.Point(3, 3);
-            this.userPicture.Name = "userPicture";
-            this.userPicture.Size = new System.Drawing.Size(29, 29);
-            this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userPicture.TabIndex = 0;
-            this.userPicture.TabStop = false;
             // 
             // addButton
             // 
