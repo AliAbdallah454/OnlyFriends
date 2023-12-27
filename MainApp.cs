@@ -156,7 +156,6 @@ namespace OnlyFriends {
 						break;
 					}
 					case "searchButton": {
-						MessageBox.Show("Here");
 						currentUserControl = UC.Seach;
 						userControlsDictionary[oldUserControl].Parent = null;
 						userControlsDictionary[currentUserControl] = new SearchResults(searchInput.Text);
@@ -183,22 +182,22 @@ namespace OnlyFriends {
 			//px.Dock = DockStyle.Fill;
 			//px.BringToFront();
 		}
-       
+
 
 		private void searchInput_Enter(object sender, EventArgs e) {
-			if(searchInput.Text == "Search") {
+			if (searchInput.Text == "Search") {
 				searchInput.Text = String.Empty;
 			}
 		}
 
 		private void searchInput_Leave(object sender, EventArgs e) {
-			if(searchInput.Text == string.Empty) {
+			if (searchInput.Text == string.Empty) {
 				searchInput.Text = "Search";
 			}
 		}
 
-	private void logOutButton_Click(object sender, EventArgs e) {	
-  try {
+		private void logOutButton_Click(object sender, EventArgs e) {
+			try {
 				AuthFunctions.logout();
 				Login login = new Login();
 				this.Hide();
