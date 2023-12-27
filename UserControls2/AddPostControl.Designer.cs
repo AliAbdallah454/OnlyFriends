@@ -24,11 +24,11 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.error = new System.Windows.Forms.Label();
             this.postButton = new System.Windows.Forms.Button();
             this.postTagsInput = new System.Windows.Forms.RichTextBox();
             this.postContentInput = new System.Windows.Forms.RichTextBox();
             this.postTitleInput = new System.Windows.Forms.RichTextBox();
-            this.error = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,9 +47,22 @@
             this.panel1.Size = new System.Drawing.Size(460, 330);
             this.panel1.TabIndex = 0;
             // 
+            // error
+            // 
+            this.error.AutoSize = true;
+            this.error.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.error.ForeColor = System.Drawing.Color.Red;
+            this.error.Location = new System.Drawing.Point(131, 222);
+            this.error.Name = "error";
+            this.error.Size = new System.Drawing.Size(133, 13);
+            this.error.TabIndex = 8;
+            this.error.Text = "*One or more missing fields";
+            this.error.Visible = false;
+            // 
             // postButton
             // 
             this.postButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.postButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postButton.Location = new System.Drawing.Point(134, 237);
             this.postButton.Name = "postButton";
             this.postButton.Size = new System.Drawing.Size(166, 65);
@@ -79,7 +92,7 @@
             this.postContentInput.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.postContentInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.postContentInput.Dock = System.Windows.Forms.DockStyle.Top;
-            this.postContentInput.Font = new System.Drawing.Font("Monospac821 BT", 9.75F);
+            this.postContentInput.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postContentInput.Location = new System.Drawing.Point(10, 49);
             this.postContentInput.Name = "postContentInput";
             this.postContentInput.Size = new System.Drawing.Size(440, 130);
@@ -93,7 +106,7 @@
             this.postTitleInput.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.postTitleInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.postTitleInput.Dock = System.Windows.Forms.DockStyle.Top;
-            this.postTitleInput.Font = new System.Drawing.Font("Monospac821 BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.postTitleInput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postTitleInput.Location = new System.Drawing.Point(10, 15);
             this.postTitleInput.MaxLength = 250;
             this.postTitleInput.Name = "postTitleInput";
@@ -101,18 +114,6 @@
             this.postTitleInput.TabIndex = 5;
             this.postTitleInput.Text = "Title";
             this.postTitleInput.Click += new System.EventHandler(this.clearer);
-            // 
-            // error
-            // 
-            this.error.AutoSize = true;
-            this.error.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.error.ForeColor = System.Drawing.Color.Red;
-            this.error.Location = new System.Drawing.Point(131, 222);
-            this.error.Name = "error";
-            this.error.Size = new System.Drawing.Size(133, 13);
-            this.error.TabIndex = 8;
-            this.error.Text = "*One or more missing fields";
-            this.error.Visible = false;
             // 
             // AddPostControl
             // 

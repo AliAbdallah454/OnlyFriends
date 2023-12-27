@@ -54,7 +54,7 @@
             this.textBox1.Location = new System.Drawing.Point(249, 261);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(302, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Email";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
@@ -65,7 +65,7 @@
             this.textBox2.Location = new System.Drawing.Point(249, 306);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(302, 20);
-            this.textBox2.TabIndex = 2;
+            this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Password";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
@@ -77,7 +77,7 @@
             this.loginBTN.Location = new System.Drawing.Point(352, 352);
             this.loginBTN.Name = "loginBTN";
             this.loginBTN.Size = new System.Drawing.Size(91, 51);
-            this.loginBTN.TabIndex = 0;
+            this.loginBTN.TabIndex = 1;
             this.loginBTN.Text = "Login";
             this.loginBTN.UseVisualStyleBackColor = true;
             this.loginBTN.Click += new System.EventHandler(this.loginButton_Click);
@@ -118,7 +118,7 @@
             this.createAccountLink.Location = new System.Drawing.Point(441, 329);
             this.createAccountLink.Name = "createAccountLink";
             this.createAccountLink.Size = new System.Drawing.Size(110, 14);
-            this.createAccountLink.TabIndex = 0;
+            this.createAccountLink.TabIndex = 1;
             this.createAccountLink.TabStop = true;
             this.createAccountLink.Text = "Create an Account?";
             this.createAccountLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createAccountLink_LinkClicked);

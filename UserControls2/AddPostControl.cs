@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Presentation;
 
 namespace OnlyFriends.UserControls2 {
     public partial class AddPostControl : UserControl {
@@ -48,7 +49,15 @@ namespace OnlyFriends.UserControls2 {
                     error.Visible = true;
                     return;
                 }
-                user.addPost(postTitleInput.Text, postContentInput.Text, postTagsInput.Text);
+                try {
+                    user.addPost(postTitleInput.Text, postContentInput.Text, postTagsInput.Text);
+                    postTitleInput.Text = "Title";
+                    postContentInput.Text = "What are you thinking about?";
+                    postTagsInput.Text = "Tags";
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
