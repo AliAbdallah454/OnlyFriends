@@ -3,6 +3,7 @@ using System.Windows.Forms;
 
 namespace OnlyFriends.Components {
 	public partial class CommentComp : UserControl {
+
 		public CommentComp(int userId, int commentId) {
 			InitializeComponent();
 
@@ -60,7 +61,7 @@ namespace OnlyFriends.Components {
 			try {
 				User user = User.Instance;
 				user.removeComment(CommentId);
-				this.Visible = false;
+				//this.Visible = false;
 			}
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);

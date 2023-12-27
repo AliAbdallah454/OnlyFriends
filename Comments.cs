@@ -46,7 +46,11 @@ namespace OnlyFriends {
 
 		private void populate() {
 
+			commentsFlowPanel.Controls.Clear();
+
 			List<Comment> comments = HelperFunctions.translatePostIdToPostInfo(PostId).getComments();
+
+
 
 			CommentComp[] commentComps = new CommentComp[comments.Count];
 			for (int i = 0; i < comments.Count; i++) {
@@ -60,6 +64,8 @@ namespace OnlyFriends {
 				commentsFlowPanel.Controls.Add(commentComps[i]);
 
 			}
+
+			commentNumberLabel.Text = $"({comments.Count})";
 
 		}
 
@@ -86,11 +92,24 @@ namespace OnlyFriends {
 			string comment = addCommentBox.Text;
 
 			if (textBoxEntered) {
+
 				try {
 					User user = User.Instance;
 					user.commentOnPost(PostId, comment);
 					addCommentBox.Text = "";
+					MessageBox.Show("Pressed");
 
+					//this.Visible = false;
+					//this. = new Comments(PostId, UserName);
+
+
+					populate();
+
+					//this.commentsFlowPanel.Visible = false;
+					//this.commentsFlowPanel.Visible = true;
+					//this.commentsFlowPanel.Refresh();
+					//this.Invalidate();
+					//this.Refresh();
 				}
 				catch (Exception ex) {
 					addCommentBox.Text = "";
@@ -101,5 +120,7 @@ namespace OnlyFriends {
 				MessageBox.Show("Write a Comment to Add");
 			}
 		}
+
+
 	}
 }
