@@ -197,15 +197,18 @@ namespace OnlyFriends {
 		}
 
 		private void logOutButton_Click(object sender, EventArgs e) {
-			try {
-				AuthFunctions.logout();
-				Login login = new Login();
-				this.Hide();
-				login.Show();
-			}
-			catch (Exception ex) {
-				MessageBox.Show(ex.Message);
-			}
+			DialogResult result = MessageBox.Show("Click yes to logout from this account\nClick no to stay in your account", "Do You Want to Logout?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+			if(result.Equals(DialogResult.Yes)) {
+                try {
+                    AuthFunctions.logout();
+                    Login login = new Login();
+                    this.Hide();
+                    login.Show();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+            }
 		}
 
 
