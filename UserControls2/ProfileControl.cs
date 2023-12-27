@@ -1,30 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OnlyFriends.UserControls2 {
-    public partial class ProfileControl : UserControl {
-        User user = User.Instance;
-        public ProfileControl() {
-            InitializeComponent();
+	public partial class ProfileControl : UserControl {
 
-            usernameLabel.Text = HelperFunctions.translateUserIdToUserName(user.UserId);
-            emailLabel.Text = user.Email;
-            genderLabel.Text = user.Gender;
+		public ProfileControl() {
+			InitializeComponent();
 
-            postNumber.Text = $"{user.getPosts().Count()}";
-            friendNumber.Text = $"{user.getFriends().Count()}";
+			try {
+				User user = User.Instance;
 
-        }
+				usernameLabel.Text = HelperFunctions.translateUserIdToUserName(user.UserId);
+				emailLabel.Text = user.Email;
+				genderLabel.Text = user.Gender;
 
-        private void friendNumber_Click(object sender, EventArgs e) {
+				postNumber.Text = $"{user.getPosts().Count()}";
+				friendNumber.Text = $"{user.getFriends().Count()}";
+			}
+			catch (Exception ex) {
+				MessageBox.Show(ex.Message);
+			}
 
-        }
-    }
+
+		}
+
+		private void friendNumber_Click(object sender, EventArgs e) {
+
+		}
+	}
 }

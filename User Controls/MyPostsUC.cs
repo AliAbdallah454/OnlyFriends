@@ -80,14 +80,14 @@ namespace OnlyFriends.User_Controls {
 		}
 
 		private void showPost(Post post) {
-			postUsername2.Text = postUsernameLabel.Text = HelperFunctions.translateUserIdToUserName(post.UserId);
-			postImage.Image = post.Pic;
-			postText.Text = post.Content;
-			postDate.Text = $"Posted at {post.TimeStamp.Hour}:{post.TimeStamp.Minute} , {post.TimeStamp.Day}/{post.TimeStamp.Month}/{post.TimeStamp.Year}";
-			hashtagsContentLabel.Text = String.Empty;
-			if (post.Tags.Count() == 0) {
-				HashtagsLabel.Hide();
-			}
+			//postUsername2.Text = postUsernameLabel.Text = HelperFunctions.translateUserIdToUserName(post.UserId);
+			//postImage.Image = post.Pic;
+			//postText.Text = post.Content;
+			//postDate.Text = $"Posted at {post.TimeStamp.Hour}:{post.TimeStamp.Minute} , {post.TimeStamp.Day}/{post.TimeStamp.Month}/{post.TimeStamp.Year}";
+			//hashtagsContentLabel.Text = String.Empty;
+			//if (post.Tags.Count() == 0) {
+			//	HashtagsLabel.Hide();
+			//}
 			//else {
 			//	HashtagsLabel.Show();
 			//	foreach (string tag in post.Tags) {
