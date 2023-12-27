@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+
             this.tweetPanel = new System.Windows.Forms.Panel();
             this.commentsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.exitButton = new System.Windows.Forms.Button();
