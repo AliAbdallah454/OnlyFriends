@@ -66,7 +66,7 @@
 			this.userPicture.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.userPicture.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_35;
 			this.userPicture.Location = new System.Drawing.Point(4, 4);
-			this.userPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.userPicture.Margin = new System.Windows.Forms.Padding(4);
 			this.userPicture.Name = "userPicture";
 			this.userPicture.Size = new System.Drawing.Size(39, 35);
 			this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -81,7 +81,7 @@
 			this.usernameLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.usernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
 			this.usernameLabel.Location = new System.Drawing.Point(51, 4);
-			this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.usernameLabel.Margin = new System.Windows.Forms.Padding(4);
 			this.usernameLabel.Name = "usernameLabel";
 			this.usernameLabel.Size = new System.Drawing.Size(212, 35);
 			this.usernameLabel.TabIndex = 1;
@@ -100,7 +100,7 @@
 			this.acceptButton.Image = global::OnlyFriends.Properties.Resources.icons8_accept_30;
 			this.acceptButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.acceptButton.Location = new System.Drawing.Point(503, 31);
-			this.acceptButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.acceptButton.Margin = new System.Windows.Forms.Padding(4);
 			this.acceptButton.Name = "acceptButton";
 			this.acceptButton.Size = new System.Drawing.Size(173, 55);
 			this.acceptButton.TabIndex = 6;
@@ -120,7 +120,7 @@
 			this.rejectButton.Image = global::OnlyFriends.Properties.Resources.icons8_remove_30;
 			this.rejectButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.rejectButton.Location = new System.Drawing.Point(703, 31);
-			this.rejectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.rejectButton.Margin = new System.Windows.Forms.Padding(4);
 			this.rejectButton.Name = "rejectButton";
 			this.rejectButton.Size = new System.Drawing.Size(173, 55);
 			this.rejectButton.TabIndex = 6;
@@ -138,7 +138,7 @@
 			this.Controls.Add(this.rejectButton);
 			this.Controls.Add(this.emailLabel);
 			this.Controls.Add(this.tableLayoutPanel1);
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MaximumSize = new System.Drawing.Size(920, 111);
 			this.MinimumSize = new System.Drawing.Size(920, 111);
 			this.Name = "FriendRequestComponent";
