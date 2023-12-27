@@ -25,7 +25,6 @@
         private void InitializeComponent() {
             this.contentFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonsTablePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.findFriendButton = new System.Windows.Forms.Button();
             this.suggestedFriendButton = new System.Windows.Forms.Button();
             this.buttonsTablePanel.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +43,6 @@
             this.buttonsTablePanel.ColumnCount = 2;
             this.buttonsTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.buttonsTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.buttonsTablePanel.Controls.Add(this.findFriendButton, 0, 0);
             this.buttonsTablePanel.Controls.Add(this.suggestedFriendButton, 1, 0);
             this.buttonsTablePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonsTablePanel.Location = new System.Drawing.Point(0, 0);
@@ -54,25 +52,6 @@
             this.buttonsTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.buttonsTablePanel.Size = new System.Drawing.Size(745, 50);
             this.buttonsTablePanel.TabIndex = 3;
-            // 
-            // findFriendButton
-            // 
-            this.findFriendButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.findFriendButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.findFriendButton.FlatAppearance.BorderSize = 0;
-            this.findFriendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.findFriendButton.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findFriendButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(246)))));
-            this.findFriendButton.Image = global::OnlyFriends.Properties.Resources.icons8_find_25;
-            this.findFriendButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.findFriendButton.Location = new System.Drawing.Point(3, 3);
-            this.findFriendButton.MaximumSize = new System.Drawing.Size(200, 45);
-            this.findFriendButton.Name = "findFriendButton";
-            this.findFriendButton.Size = new System.Drawing.Size(200, 44);
-            this.findFriendButton.TabIndex = 0;
-            this.findFriendButton.Text = "Find a Friend";
-            this.findFriendButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.findFriendButton.UseVisualStyleBackColor = false;
             // 
             // suggestedFriendButton
             // 
@@ -109,8 +88,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button findFriendButton;
         private System.Windows.Forms.Button suggestedFriendButton;
         private System.Windows.Forms.FlowLayoutPanel contentFlowLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel buttonsTablePanel;

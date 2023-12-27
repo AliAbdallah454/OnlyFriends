@@ -546,6 +546,8 @@
     <None Include="Resources\icons8-add-301.png" />
     <None Include="Resources\icons8-accept-301.png" />
     <None Include="Resources\icons8-wait-252.png" />
+    <None Include="Resources\icons8-sign-up-50.png" />
+    <None Include="Resources\icons8-sign-up-35.png" />
     <Content Include="Resources\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>
