@@ -18,14 +18,13 @@ namespace OnlyFriends.UserControls2 {
             emailLabel.Text = user.Email;
             genderLabel.Text = user.Gender;
 
-            postNumber.Text = $"({user.getPosts().Count()})";
-            friendNumber.Text = $"({user.getFriends().Count()})";
+            postNumber.Text = $"{user.getPosts().Count()}";
+            friendNumber.Text = $"{user.getFriends().Count()}";
 
         }
 
-        
+        private void friendNumber_Click(object sender, EventArgs e) {
 
-
-        
+        }
     }
 }

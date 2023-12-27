@@ -170,6 +170,7 @@
             this.friendNumber.Size = new System.Drawing.Size(30, 18);
             this.friendNumber.TabIndex = 8;
             this.friendNumber.Text = "(0)";
+            this.friendNumber.Click += new System.EventHandler(this.friendNumber_Click);
             // 
             // ProfileControl
             // 
