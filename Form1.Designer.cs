@@ -51,9 +51,10 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(249, 261);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(249, 251);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(302, 20);
+            this.textBox1.Size = new System.Drawing.Size(302, 22);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Email";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
@@ -62,9 +63,10 @@
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(249, 306);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(249, 299);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(302, 20);
+            this.textBox2.Size = new System.Drawing.Size(302, 22);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Password";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -74,9 +76,10 @@
             // 
             this.loginBTN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginBTN.Enabled = false;
-            this.loginBTN.Location = new System.Drawing.Point(352, 352);
+            this.loginBTN.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBTN.Location = new System.Drawing.Point(316, 351);
             this.loginBTN.Name = "loginBTN";
-            this.loginBTN.Size = new System.Drawing.Size(91, 51);
+            this.loginBTN.Size = new System.Drawing.Size(150, 50);
             this.loginBTN.TabIndex = 1;
             this.loginBTN.Text = "Login";
             this.loginBTN.UseVisualStyleBackColor = true;
@@ -87,10 +90,11 @@
             this.invalidEmaillbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.invalidEmaillbl.AutoSize = true;
             this.invalidEmaillbl.BackColor = System.Drawing.Color.Transparent;
+            this.invalidEmaillbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invalidEmaillbl.ForeColor = System.Drawing.Color.Red;
-            this.invalidEmaillbl.Location = new System.Drawing.Point(246, 245);
+            this.invalidEmaillbl.Location = new System.Drawing.Point(246, 233);
             this.invalidEmaillbl.Name = "invalidEmaillbl";
-            this.invalidEmaillbl.Size = new System.Drawing.Size(70, 13);
+            this.invalidEmaillbl.Size = new System.Drawing.Size(82, 15);
             this.invalidEmaillbl.TabIndex = 0;
             this.invalidEmaillbl.Text = "*Invalid Email";
             this.invalidEmaillbl.Visible = false;
@@ -100,10 +104,11 @@
             this.InvalidPasswordlbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InvalidPasswordlbl.AutoSize = true;
             this.InvalidPasswordlbl.BackColor = System.Drawing.Color.Transparent;
+            this.InvalidPasswordlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InvalidPasswordlbl.ForeColor = System.Drawing.Color.Red;
-            this.InvalidPasswordlbl.Location = new System.Drawing.Point(246, 290);
+            this.InvalidPasswordlbl.Location = new System.Drawing.Point(246, 281);
             this.InvalidPasswordlbl.Name = "InvalidPasswordlbl";
-            this.InvalidPasswordlbl.Size = new System.Drawing.Size(91, 13);
+            this.InvalidPasswordlbl.Size = new System.Drawing.Size(104, 15);
             this.InvalidPasswordlbl.TabIndex = 7;
             this.InvalidPasswordlbl.Text = "*Invalid Password";
             this.InvalidPasswordlbl.Visible = false;
@@ -115,7 +120,7 @@
             this.createAccountLink.BackColor = System.Drawing.Color.Transparent;
             this.createAccountLink.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createAccountLink.LinkColor = System.Drawing.Color.White;
-            this.createAccountLink.Location = new System.Drawing.Point(441, 329);
+            this.createAccountLink.Location = new System.Drawing.Point(441, 324);
             this.createAccountLink.Name = "createAccountLink";
             this.createAccountLink.Size = new System.Drawing.Size(110, 14);
             this.createAccountLink.TabIndex = 1;
@@ -130,7 +135,7 @@
             this.forgotPasswordLink.BackColor = System.Drawing.Color.Transparent;
             this.forgotPasswordLink.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgotPasswordLink.LinkColor = System.Drawing.Color.White;
-            this.forgotPasswordLink.Location = new System.Drawing.Point(246, 329);
+            this.forgotPasswordLink.Location = new System.Drawing.Point(246, 324);
             this.forgotPasswordLink.Name = "forgotPasswordLink";
             this.forgotPasswordLink.Size = new System.Drawing.Size(102, 14);
             this.forgotPasswordLink.TabIndex = 11;
