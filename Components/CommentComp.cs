@@ -4,10 +4,10 @@ using System.Windows.Forms;
 namespace OnlyFriends.Components {
 	public partial class CommentComp : UserControl {
 
-		public CommentComp(int userId, int commentId, Comments com) {
+		public CommentComp(int userId, int commentId, Comments parentComments) {
 			InitializeComponent();
 
-			Com = com;
+			ParentComments = parentComments;
 
 			CommentId = commentId;
 
@@ -28,14 +28,14 @@ namespace OnlyFriends.Components {
 
 		#region Properties
 
-		private Comments com;
+		private Comments parentComments;
 		private int userId;
 		private int commentId;
 		private string userName;
 		private string content;
 		private DateTime timeStamp;
 
-		public Comments Com { get; }
+		public Comments ParentComments { get; }
 		public int CommentId { get; set; }
 		public int UserId { get; set; }
 		public string UserName {
@@ -67,8 +67,8 @@ namespace OnlyFriends.Components {
 
 				user.removeComment(CommentId);
 
-				Comments newComments = new Comments(Com.PostId, Com.UserName);
-				Com.Visible = false;
+				Comments newComments = new Comments(ParentComments.PostId, ParentComments.UserName);
+				ParentComments.Visible = false;
 				newComments.Show();
 
 			}
