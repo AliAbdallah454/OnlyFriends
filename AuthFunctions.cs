@@ -26,8 +26,6 @@ namespace OnlyFriends {
 
 					passwordReader.Close();
 
-					MessageBox.Show("Password is correct");
-
 					string getInfoSql = $"SELECT * FROM users\n" +
 										$"WHERE email = \"{email}\"";
 
@@ -37,8 +35,6 @@ namespace OnlyFriends {
 
 					int userId = infoReader.GetInt32("userId");
 					string userName = infoReader.GetString("userName");
-					// email
-					// password
 					string phoneNumber = infoReader.GetString("phoneNumber");
 					string gender = infoReader.GetString("gender");
 					int age = infoReader.GetInt32("age");

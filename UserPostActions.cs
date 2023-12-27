@@ -44,7 +44,6 @@ namespace OnlyFriends {
 
 				MySqlDataReader reader = connection.query(sql);
 				reader.Close();
-				MessageBox.Show($"Post with id {postId} has been deleted");
 
 			}
 			else {
@@ -55,27 +54,23 @@ namespace OnlyFriends {
 		}
 
 		public void likePost(int postId) {
-			//check if post exist
 			string checkSql1 = $"SELECT * FROM posts\n" +
 							   $"WHERE postId = {postId};";
 			MySqlDataReader checkReader1 = connection.query(checkSql1);
 			if (checkReader1.HasRows) {
 				checkReader1.Close();
 
-				//check if already liked
 				string checkSql2 = $"SELECT * FROM likedPosts\n" +
 								   $"WHERE userId = {this.UserId} AND postId = {postId};";
 				MySqlDataReader checkReader2 = connection.query(checkSql2);
 				if (!checkReader2.HasRows) {
 					checkReader2.Close();
 
-					//add post to liked posts
 					string addLikedPost = $"INSERT INTO likedPosts\n" +
 										  $"VALUES ({this.UserId}, {postId});";
 					MySqlDataReader addPostToLikedPosts = connection.query(addLikedPost);
 					addPostToLikedPosts.Close();
 
-					//increment likes in posts
 					string incrementLikes = $"UPDATE posts\n" +
 											$"SET likes = likes + 1\n" +
 											$"WHERE postId = {postId};";
@@ -88,13 +83,11 @@ namespace OnlyFriends {
 					DialogResult result = MessageBox.Show("Do You Want to Remove the Like?", "Remove Like", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
 					if (result == DialogResult.Yes) {
-						// remove post from liked posts
 						string removeLikedPost = $"DELETE FROM likedPosts\n" +
 												 $"WHERE userId = {this.UserId} AND postId = {postId};";
 						MySqlDataReader removePostFromLikedPosts = connection.query(removeLikedPost);
 						removePostFromLikedPosts.Close();
 
-						//decrement likes in posts
 						string decrementLikes = $"UPDATE posts\n" +
 												$"SET likes = likes - 1\n" +
 												$"WHERE postId = {postId};";

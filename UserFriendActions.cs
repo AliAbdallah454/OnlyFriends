@@ -42,7 +42,6 @@ namespace OnlyFriends {
 							  $"WHERE userId = {this.UserId} AND friendId = {friendId}";
 			MySqlDataReader checkReader = connection.query(checkSql);
 			if (checkReader.HasRows) {
-				// Adding to friends table
 				checkReader.Close();
 				string addFriendToFriendsSql = $"INSERT INTO friends(userId, friendId)\n" +
 											   $"VALUES ({this.UserId}, {friendId})";
@@ -54,13 +53,11 @@ namespace OnlyFriends {
 				MySqlDataReader otherAddReader = connection.query(otherAddSql);
 				otherAddReader.Close();
 
-				// Removing from pending friends table
 				string removeFriendFromPendingRequestsSql = $"DELETE FROM pendingRequests\n" +
 															$"WHERE userId = {friendId} AND friendId = {this.UserId}";
 				MySqlDataReader removeFriendFromPendingRequestsReader = connection.query(removeFriendFromPendingRequestsSql);
 				removeFriendFromPendingRequestsReader.Close();
 
-				// Removing from friend requests table
 				string removeFriendFromFriendRequestsSql = $"DELETE FROM friendRequests\n" +
 														   $"WHERE userID = {this.UserId} AND friendId = {friendId}";
 				MySqlDataReader removeFriendFromFriendRequestsReader = connection.query(removeFriendFromFriendRequestsSql);
@@ -85,13 +82,11 @@ namespace OnlyFriends {
 
 				checkReader.Close();
 
-				// Removing from pending friends table
 				string removeFriendFromPendingRequestsSql = $"DELETE FROM pendingRequests\n" +
 															$"WHERE userId = {friendId} AND friendId = {this.UserId}";
 				MySqlDataReader removeFriendFromPendingRequestsReader = connection.query(removeFriendFromPendingRequestsSql);
 				removeFriendFromPendingRequestsReader.Close();
 
-				// Removing from friend requests table
 				string removeFriendFromFriendRequestsSql = $"DELETE FROM friendRequests\n" +
 														   $"WHERE userID = {this.UserId} AND friendId = {friendId}";
 				MySqlDataReader removeFriendFromFriendRequestsReader = connection.query(removeFriendFromFriendRequestsSql);

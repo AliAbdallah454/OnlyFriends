@@ -38,7 +38,7 @@
 			// 
 			this.tweetPanel.AutoSize = true;
 			this.tweetPanel.Location = new System.Drawing.Point(17, 69);
-			this.tweetPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.tweetPanel.Margin = new System.Windows.Forms.Padding(4);
 			this.tweetPanel.MaximumSize = new System.Drawing.Size(920, 265);
 			this.tweetPanel.MinimumSize = new System.Drawing.Size(920, 265);
 			this.tweetPanel.Name = "tweetPanel";
@@ -50,7 +50,7 @@
 			this.commentsFlowPanel.AutoScroll = true;
 			this.commentsFlowPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.commentsFlowPanel.Location = new System.Drawing.Point(0, 376);
-			this.commentsFlowPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.commentsFlowPanel.Margin = new System.Windows.Forms.Padding(4);
 			this.commentsFlowPanel.MinimumSize = new System.Drawing.Size(960, 406);
 			this.commentsFlowPanel.Name = "commentsFlowPanel";
 			this.commentsFlowPanel.Size = new System.Drawing.Size(960, 406);
@@ -66,7 +66,7 @@
 			this.exitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
 			this.exitButton.Image = global::OnlyFriends.Properties.Resources.icons8_exit_30;
 			this.exitButton.Location = new System.Drawing.Point(773, 0);
-			this.exitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.exitButton.Margin = new System.Windows.Forms.Padding(4);
 			this.exitButton.MaximumSize = new System.Drawing.Size(187, 62);
 			this.exitButton.Name = "exitButton";
 			this.exitButton.Size = new System.Drawing.Size(187, 62);
@@ -81,7 +81,7 @@
 			this.panel2.Controls.Add(this.addCommentBox);
 			this.panel2.Controls.Add(this.addCommentButton);
 			this.panel2.Location = new System.Drawing.Point(17, 0);
-			this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel2.Margin = new System.Windows.Forms.Padding(4);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(748, 62);
 			this.panel2.TabIndex = 4;
@@ -91,7 +91,7 @@
 			this.addCommentBox.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.addCommentBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.addCommentBox.Location = new System.Drawing.Point(159, 0);
-			this.addCommentBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.addCommentBox.Margin = new System.Windows.Forms.Padding(4);
 			this.addCommentBox.MinimumSize = new System.Drawing.Size(532, 61);
 			this.addCommentBox.Multiline = true;
 			this.addCommentBox.Name = "addCommentBox";
@@ -111,7 +111,7 @@
 			this.addCommentButton.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.addCommentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
 			this.addCommentButton.Location = new System.Drawing.Point(0, 0);
-			this.addCommentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.addCommentButton.Margin = new System.Windows.Forms.Padding(4);
 			this.addCommentButton.Name = "addCommentButton";
 			this.addCommentButton.Size = new System.Drawing.Size(159, 62);
 			this.addCommentButton.TabIndex = 0;
@@ -156,7 +156,7 @@
 			this.Controls.Add(this.exitButton);
 			this.Controls.Add(this.tweetPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MaximumSize = new System.Drawing.Size(960, 782);
 			this.MinimumSize = new System.Drawing.Size(960, 782);
 			this.Name = "Comments";

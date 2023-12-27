@@ -1,11 +1,9 @@
 ﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 
 namespace OnlyFriends {
 	internal class Post {
-		public Image Pic { get; set; }
 		public int PostId { get; set; }
 		public int UserId { get; set; }
 		public string Title { get; set; }
@@ -22,20 +20,6 @@ namespace OnlyFriends {
 			TimeStamp = timeStamp;
 			Likes = likes;
 			Tags = HelperFunctions.ConvertCommaSeparatedStringToList(tags);
-
-			//string resourceName = $"pic"; // Replace with the actual resource name
-
-			// Get the type of the generated Resources class
-			//Type resourcesType = typeof(Properties.Resources);
-
-			//// Use reflection to get the specified resource by name
-			//PropertyInfo propertyInfo = resourcesType.GetProperty(resourceName, BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
-			//Pic = (Image)propertyInfo.GetValue(null, null);
-
-			Pic = Properties.Resources.chat;
-
-			//string absolutePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "chat.png");
-
 		}
 
 		public List<Comment> getComments() {
