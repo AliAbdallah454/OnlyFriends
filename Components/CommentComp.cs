@@ -4,8 +4,10 @@ using System.Windows.Forms;
 namespace OnlyFriends.Components {
 	public partial class CommentComp : UserControl {
 
-		public CommentComp(int userId, int commentId) {
+		public CommentComp(int userId, int commentId, Comments com) {
 			InitializeComponent();
+
+			Com = com;
 
 			CommentId = commentId;
 
@@ -26,12 +28,14 @@ namespace OnlyFriends.Components {
 
 		#region Properties
 
+		private Comments com;
 		private int userId;
 		private int commentId;
 		private string userName;
 		private string content;
 		private DateTime timeStamp;
 
+		public Comments Com { get; }
 		public int CommentId { get; set; }
 		public int UserId { get; set; }
 		public string UserName {
@@ -60,8 +64,13 @@ namespace OnlyFriends.Components {
 
 			try {
 				User user = User.Instance;
+
 				user.removeComment(CommentId);
-				//this.Visible = false;
+
+				Comments newComments = new Comments(Com.PostId, Com.UserName);
+				Com.Visible = false;
+				newComments.Show();
+
 			}
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);
