@@ -17,8 +17,6 @@ namespace OnlyFriends {
 
 			reader.Read();
 
-			//string firstName = reader.GetString("firstName");
-			//string lastName = reader.GetString("lastName");
 			string userName = reader.GetString("userName");
 			int age = reader.GetInt32("age");
 			string gender = reader.GetString("gender");
@@ -110,21 +108,18 @@ namespace OnlyFriends {
 
 		// Need to look at this
 		public static string ConvertCommaSeparatedStringToList(string inputString) {
-			// Split the string by commas and remove any leading/trailing whitespaces
 			string[] stringArray = inputString.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
 											  .Select(s => s.Trim())
 											  .ToArray();
 
-			// Convert the array to a list
 			List<string> stringList = new List<string>(stringArray);
 
-			string ts = "";
+			string tagsString = "";
 			foreach (string str in stringList) {
-				ts += $"#{str}";
+				tagsString += $"#{str}";
 			}
 
-			return ts;
-			//return stringList;
+			return tagsString;
 		}
 
 	}
