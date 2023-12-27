@@ -60,6 +60,7 @@ namespace OnlyFriends.Components {
 			try {
 				User user = User.Instance;
 				user.removeComment(CommentId);
+				this.Visible = false;
 			}
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);
