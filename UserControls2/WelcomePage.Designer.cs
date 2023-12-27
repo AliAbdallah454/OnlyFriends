@@ -26,8 +26,8 @@
             this.logo = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -39,7 +39,7 @@
             this.logo.Image = global::OnlyFriends.Properties.Resources.onlyfans_logo_152222;
             this.logo.Location = new System.Drawing.Point(3, 3);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(894, 224);
+            this.logo.Size = new System.Drawing.Size(944, 224);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
@@ -52,7 +52,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Monospac821 BT", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(123, 552);
+            this.label3.Location = new System.Drawing.Point(148, 552);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(692, 18);
             this.label3.TabIndex = 4;
@@ -75,22 +75,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 570);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(950, 570);
             this.tableLayoutPanel1.TabIndex = 6;
             this.tableLayoutPanel1.Click += new System.EventHandler(this.WelcomePage_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 22.25F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(220)))));
-            this.label2.Location = new System.Drawing.Point(320, 394);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(259, 41);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Ali Abdallah Ismail";
             // 
             // label4
             // 
@@ -99,11 +86,24 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(220)))));
             this.label4.Font = new System.Drawing.Font("Segoe UI", 38.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(157, 310);
+            this.label4.Location = new System.Drawing.Point(182, 310);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(586, 68);
             this.label4.TabIndex = 8;
             this.label4.Text = "Welcome To OnlyFriends";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 22.25F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(220)))));
+            this.label2.Location = new System.Drawing.Point(345, 394);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(259, 41);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Ali Abdallah Ismail";
             // 
             // WelcomePage
             // 
@@ -113,10 +113,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MaximumSize = new System.Drawing.Size(900, 570);
-            this.MinimumSize = new System.Drawing.Size(900, 570);
+            this.MaximumSize = new System.Drawing.Size(950, 570);
+            this.MinimumSize = new System.Drawing.Size(950, 570);
             this.Name = "WelcomePage";
-            this.Size = new System.Drawing.Size(900, 570);
+            this.Size = new System.Drawing.Size(950, 570);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

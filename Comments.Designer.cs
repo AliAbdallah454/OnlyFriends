@@ -38,20 +38,20 @@
             // 
             this.tweetPanel.AutoSize = true;
             this.tweetPanel.Location = new System.Drawing.Point(13, 56);
-            this.tweetPanel.MaximumSize = new System.Drawing.Size(690, 140);
-            this.tweetPanel.MinimumSize = new System.Drawing.Size(690, 140);
+            this.tweetPanel.MaximumSize = new System.Drawing.Size(690, 215);
+            this.tweetPanel.MinimumSize = new System.Drawing.Size(690, 215);
             this.tweetPanel.Name = "tweetPanel";
-            this.tweetPanel.Size = new System.Drawing.Size(690, 140);
+            this.tweetPanel.Size = new System.Drawing.Size(690, 215);
             this.tweetPanel.TabIndex = 1;
             // 
             // commentsFlowPanel
             // 
             this.commentsFlowPanel.AutoScroll = true;
             this.commentsFlowPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.commentsFlowPanel.Location = new System.Drawing.Point(0, 230);
+            this.commentsFlowPanel.Location = new System.Drawing.Point(0, 305);
             this.commentsFlowPanel.MinimumSize = new System.Drawing.Size(720, 330);
             this.commentsFlowPanel.Name = "commentsFlowPanel";
-            this.commentsFlowPanel.Size = new System.Drawing.Size(720, 340);
+            this.commentsFlowPanel.Size = new System.Drawing.Size(720, 330);
             this.commentsFlowPanel.TabIndex = 3;
             // 
             // exitButton
@@ -118,7 +118,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label1.Location = new System.Drawing.Point(8, 202);
+            this.label1.Location = new System.Drawing.Point(8, 277);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.TabIndex = 5;
@@ -129,7 +129,7 @@
             this.commentNumberLabel.AutoSize = true;
             this.commentNumberLabel.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commentNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.commentNumberLabel.Location = new System.Drawing.Point(109, 202);
+            this.commentNumberLabel.Location = new System.Drawing.Point(109, 277);
             this.commentNumberLabel.Name = "commentNumberLabel";
             this.commentNumberLabel.Size = new System.Drawing.Size(23, 25);
             this.commentNumberLabel.TabIndex = 5;
@@ -140,7 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(720, 570);
+            this.ClientSize = new System.Drawing.Size(720, 635);
             this.Controls.Add(this.commentNumberLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -148,8 +148,8 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.tweetPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(720, 570);
-            this.MinimumSize = new System.Drawing.Size(720, 570);
+            this.MaximumSize = new System.Drawing.Size(720, 635);
+            this.MinimumSize = new System.Drawing.Size(720, 635);
             this.Name = "Comments";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
