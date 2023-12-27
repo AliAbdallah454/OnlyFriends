@@ -23,7 +23,6 @@ namespace OnlyFriends {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-
             this.navPanel = new System.Windows.Forms.Panel();
             this.friendRequestsButton = new System.Windows.Forms.Button();
             this.myFriendsButton = new System.Windows.Forms.Button();
@@ -236,10 +235,10 @@ namespace OnlyFriends {
             this.searchInput.Name = "searchInput";
             this.searchInput.Size = new System.Drawing.Size(136, 26);
             this.searchInput.TabIndex = 0;
+            this.searchInput.TabStop = false;
             this.searchInput.Text = "Search";
-            this.searchInput.Click += new System.EventHandler(this.searchInput_Click);
-            this.searchInput.MouseEnter += new System.EventHandler(this.searchInput_Click);
-            this.searchInput.MouseLeave += new System.EventHandler(this.searchInput_MouseLeave);
+            this.searchInput.Enter += new System.EventHandler(this.searchInput_Enter);
+            this.searchInput.Leave += new System.EventHandler(this.searchInput_Leave);
             // 
             // searchButton
             // 
@@ -320,7 +319,6 @@ namespace OnlyFriends {
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-
 
         }
 
