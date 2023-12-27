@@ -276,6 +276,12 @@
     <Compile Include="UserControls2\MyPostsControl.Designer.cs">
       <DependentUpon>MyPostsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls2\ProfileControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls2\ProfileControl.Designer.cs">
+      <DependentUpon>ProfileControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls2\SearchResults.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -382,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\MyPostsControl.resx">
       <DependentUpon>MyPostsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls2\ProfileControl.resx">
+      <DependentUpon>ProfileControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\SearchResults.resx">
       <DependentUpon>SearchResults.cs</DependentUpon>

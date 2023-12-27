@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 public enum UC {
 
+	Profile,
 	Home,
 	MyPosts,
 	LikedPosts,
@@ -55,6 +56,7 @@ namespace OnlyFriends {
 			displayWelcomePage();
 			userControlsDictionary = new Dictionary<UC, UserControl>{
 
+				{ UC.Profile, new ProfileControl()},
 				{ UC.Home, new HomeControl()},
 				{ UC.MyPosts, new MyPostsControl()},
 				{ UC.LikedPosts, new LikedPostsControl()},
@@ -62,14 +64,14 @@ namespace OnlyFriends {
 				{ UC.Suggestions, new SuggestionsUC() },
 				{ UC.MyFriends, new MyFriendsControl() },
 				{ UC.AddPost, new AddPostControl() },
-				{ UC.Seach, new SearchResults("Ali") }
+				{ UC.Seach, new SearchResults("username") }
 
 
 			};
 			mouseEnterBackColor = mainPanel.BackColor;
 			mouseLeaveBackColor = navPanel.BackColor;
-			currentUserControl = UC.Home;
-			changePanel(homeButton, EventArgs.Empty);
+			currentUserControl = UC.Profile;
+			changePanel(profileButton, EventArgs.Empty);
 
 		}
 		private void displayWelcomePage() {
@@ -99,6 +101,11 @@ namespace OnlyFriends {
 
 		public void changePanel(object sender, EventArgs e) {
 
+			if(sender is PictureBox pictureBox) {
+                 
+				
+            }
+
 			if (sender is Button button) {
 				if (button != currentButton) {
 					oldButton = currentButton;
@@ -113,7 +120,14 @@ namespace OnlyFriends {
 
 				switch (button.Name) {
 
-					case "homeButton": {
+					case "profileButton": {
+                        currentUserControl = UC.Profile;
+                        userControlsDictionary[oldUserControl].Parent = null;
+                        userControlsDictionary[currentUserControl] = new ProfileControl();
+                        userControlsDictionary[currentUserControl].Parent = mainPanel;
+                        break;
+                    }
+                    case "homeButton": {
 						currentUserControl = UC.Home;
 						userControlsDictionary[oldUserControl].Parent = null;
 						userControlsDictionary[currentUserControl] = new HomeControl();
