@@ -154,7 +154,7 @@
             this.postNumber.AutoSize = true;
             this.postNumber.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(246)))));
-            this.postNumber.Location = new System.Drawing.Point(189, 408);
+            this.postNumber.Location = new System.Drawing.Point(200, 408);
             this.postNumber.Name = "postNumber";
             this.postNumber.Size = new System.Drawing.Size(30, 18);
             this.postNumber.TabIndex = 8;
@@ -165,7 +165,7 @@
             this.friendNumber.AutoSize = true;
             this.friendNumber.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.friendNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(246)))));
-            this.friendNumber.Location = new System.Drawing.Point(454, 408);
+            this.friendNumber.Location = new System.Drawing.Point(468, 408);
             this.friendNumber.Name = "friendNumber";
             this.friendNumber.Size = new System.Drawing.Size(30, 18);
             this.friendNumber.TabIndex = 8;
