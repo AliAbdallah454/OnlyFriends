@@ -68,45 +68,78 @@ namespace OnlyFriends {
 			}
 		}
 
-		private void genderBox_Enter(object sender, EventArgs e) {
-			if (genderBox.Text == "Gender") {
-				genderBox.Text = string.Empty;
-				genderLabel.Visible = true;
-			}
-		}
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
 
-		private void signUpButton_Click(object sender, EventArgs e) {
-			string userName = userNameBox.Text;
-			string email = emailBox.Text;
-			string password = passwordBox.Text;
-			string confirmPassword = confirmPasswordBox.Text;
-			string phoneNumber = phoneNumberBox.Text;
-			string gender = genderBox.Text;
+        }
+
+		bool genderListIsOpen = false;
+		bool genderChosen = false;
+        private void genderListButton_Click(object sender, EventArgs e) {
+			if (genderListIsOpen) {
+				genderList.Height = 22;
+				if (!genderChosen) {
+                    genderLabel.Visible = false;
+                }
+            }
+            else {
+				genderList.Height = 66;
+                genderLabel.Visible = true;
+            }
+
+            genderListIsOpen = !genderListIsOpen;
+        }
+
+        private void maleButton_Click(object sender, EventArgs e) {
+			genderListButton.Text = maleButton.Text;
+			genderList.Height = 22;
+			genderListIsOpen = false;
+            genderLabel.Visible = true;
+			genderChosen = true;
+        }
+
+        private void femaleButton_Click(object sender, EventArgs e) {
+			genderListButton.Text = femaleButton.Text;
+            genderList.Height = 22;
+            genderListIsOpen = false;
+			genderLabel.Visible = true;
+			genderChosen = true;
+        }
+
+
+        private void signUpButton_Click(object sender, EventArgs e) {
+            string userName = userNameBox.Text;
+            string email = emailBox.Text;
+            string password = passwordBox.Text;
+            string confirmPassword = confirmPasswordBox.Text;
+            string phoneNumber = phoneNumberBox.Text;
+			string gender = genderListButton.Text;
 			int age;
-			if(ageBox.Text != "Age") {
+            if (ageBox.Text != "Age") {
                 age = int.Parse(ageBox.Text);
             }
-			else {
+            else {
                 age = 0;
             }
 
 
-			try {
-				AuthFunctions.signup(userName, email, password, confirmPassword, phoneNumber, gender, age);
-				this.Hide();
+            try {
+				if (!genderChosen) {
+					throw new Exception("Please choose a gender");
+				}
+                AuthFunctions.signup(userName, email, password, confirmPassword, phoneNumber, gender, age);
+                this.Hide();
                 MainApp mainApp = new MainApp();
                 mainApp.Show();
-			}
-			catch (Exception ex) {
-				MessageBox.Show(ex.Message);
-			}
-		}
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Login login = new Login();
-			this.Hide();
-			login.Show();
-
+            Login login = new Login();
+            this.Hide();
+            login.Show();
         }
     }
 }

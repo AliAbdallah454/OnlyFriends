@@ -24,11 +24,6 @@ namespace OnlyFriends {
         /// </summary>
         private void InitializeComponent() {
             this.navPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.searchInput = new System.Windows.Forms.TextBox();
-            this.emailLabel = new System.Windows.Forms.Label();
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.friendRequestsButton = new System.Windows.Forms.Button();
             this.myFriendsButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
@@ -36,8 +31,13 @@ namespace OnlyFriends {
             this.addPostButton = new System.Windows.Forms.Button();
             this.myPostsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.profileButton = new System.Windows.Forms.Button();
+            this.searchInput = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.navPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -58,65 +58,6 @@ namespace OnlyFriends {
             this.navPanel.Name = "navPanel";
             this.navPanel.Size = new System.Drawing.Size(185, 572);
             this.navPanel.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.profileButton);
-            this.panel2.Controls.Add(this.searchInput);
-            this.panel2.Controls.Add(this.searchButton);
-            this.panel2.Controls.Add(this.emailLabel);
-            this.panel2.Controls.Add(this.usernameLabel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(185, 219);
-            this.panel2.TabIndex = 0;
-            // 
-            // searchInput
-            // 
-            this.searchInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.searchInput.Location = new System.Drawing.Point(12, 188);
-            this.searchInput.Name = "searchInput";
-            this.searchInput.Size = new System.Drawing.Size(136, 26);
-            this.searchInput.TabIndex = 0;
-            this.searchInput.TabStop = false;
-            this.searchInput.Text = "Search";
-            this.searchInput.Enter += new System.EventHandler(this.searchInput_Enter);
-            this.searchInput.Leave += new System.EventHandler(this.searchInput_Leave);
-            // 
-            // emailLabel
-            // 
-            this.emailLabel.AutoSize = true;
-            this.emailLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.emailLabel.Location = new System.Drawing.Point(18, 139);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(147, 15);
-            this.emailLabel.TabIndex = 1;
-            this.emailLabel.Text = "emailexample@email.com";
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.usernameLabel.Location = new System.Drawing.Point(35, 118);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(87, 21);
-            this.usernameLabel.TabIndex = 1;
-            this.usernameLabel.Text = "Username";
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.mainPanel.Location = new System.Drawing.Point(190, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(10);
-            this.mainPanel.MaximumSize = new System.Drawing.Size(740, 570);
-            this.mainPanel.MinimumSize = new System.Drawing.Size(740, 570);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(740, 570);
-            this.mainPanel.TabIndex = 1;
             // 
             // friendRequestsButton
             // 
@@ -272,6 +213,44 @@ namespace OnlyFriends {
             this.homeButton.MouseEnter += new System.EventHandler(this.button_MouseEnter_Bold);
             this.homeButton.MouseLeave += new System.EventHandler(this.button_MouseLeave_Regular);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.profileButton);
+            this.panel2.Controls.Add(this.searchInput);
+            this.panel2.Controls.Add(this.searchButton);
+            this.panel2.Controls.Add(this.emailLabel);
+            this.panel2.Controls.Add(this.usernameLabel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(185, 219);
+            this.panel2.TabIndex = 0;
+            // 
+            // profileButton
+            // 
+            this.profileButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profileButton.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_100;
+            this.profileButton.Location = new System.Drawing.Point(39, 12);
+            this.profileButton.Name = "profileButton";
+            this.profileButton.Size = new System.Drawing.Size(101, 100);
+            this.profileButton.TabIndex = 3;
+            this.profileButton.UseVisualStyleBackColor = false;
+            this.profileButton.Click += new System.EventHandler(this.changePanel);
+            // 
+            // searchInput
+            // 
+            this.searchInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.searchInput.Location = new System.Drawing.Point(12, 188);
+            this.searchInput.Name = "searchInput";
+            this.searchInput.Size = new System.Drawing.Size(136, 26);
+            this.searchInput.TabIndex = 0;
+            this.searchInput.TabStop = false;
+            this.searchInput.Text = "Search";
+            this.searchInput.Enter += new System.EventHandler(this.searchInput_Enter);
+            this.searchInput.Leave += new System.EventHandler(this.searchInput_Leave);
+            // 
             // searchButton
             // 
             this.searchButton.BackColor = System.Drawing.Color.Transparent;
@@ -289,17 +268,38 @@ namespace OnlyFriends {
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.changePanel);
             // 
-            // profileButton
+            // emailLabel
             // 
-            this.profileButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.profileButton.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_100;
-            this.profileButton.Location = new System.Drawing.Point(39, 12);
-            this.profileButton.Name = "profileButton";
-            this.profileButton.Size = new System.Drawing.Size(101, 100);
-            this.profileButton.TabIndex = 3;
-            this.profileButton.UseVisualStyleBackColor = false;
-            this.profileButton.Click += new System.EventHandler(this.changePanel);
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.emailLabel.Location = new System.Drawing.Point(18, 139);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(147, 15);
+            this.emailLabel.TabIndex = 1;
+            this.emailLabel.Text = "emailexample@email.com";
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.usernameLabel.Location = new System.Drawing.Point(35, 118);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(87, 21);
+            this.usernameLabel.TabIndex = 1;
+            this.usernameLabel.Text = "Username";
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.mainPanel.Location = new System.Drawing.Point(190, 0);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.mainPanel.MaximumSize = new System.Drawing.Size(740, 570);
+            this.mainPanel.MinimumSize = new System.Drawing.Size(740, 570);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(740, 570);
+            this.mainPanel.TabIndex = 1;
             // 
             // MainApp
             // 
