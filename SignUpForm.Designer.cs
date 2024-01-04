@@ -255,24 +255,32 @@
             // 
             // femaleButton
             // 
+            this.femaleButton.BackColor = System.Drawing.SystemColors.Window;
             this.femaleButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.femaleButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.femaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.femaleButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.femaleButton.Location = new System.Drawing.Point(0, 44);
             this.femaleButton.Name = "femaleButton";
             this.femaleButton.Size = new System.Drawing.Size(117, 22);
             this.femaleButton.TabIndex = 3;
             this.femaleButton.Text = "Object";
-            this.femaleButton.UseVisualStyleBackColor = true;
+            this.femaleButton.UseVisualStyleBackColor = false;
             this.femaleButton.Click += new System.EventHandler(this.femaleButton_Click);
             // 
             // maleButton
             // 
+            this.maleButton.BackColor = System.Drawing.SystemColors.Window;
             this.maleButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.maleButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.maleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.maleButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maleButton.Location = new System.Drawing.Point(0, 22);
             this.maleButton.Name = "maleButton";
             this.maleButton.Size = new System.Drawing.Size(117, 22);
             this.maleButton.TabIndex = 2;
             this.maleButton.Text = "Male";
-            this.maleButton.UseVisualStyleBackColor = true;
+            this.maleButton.UseVisualStyleBackColor = false;
             this.maleButton.Click += new System.EventHandler(this.maleButton_Click);
             // 
             // genderListButton
@@ -283,6 +291,7 @@
             this.genderListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.genderListButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genderListButton.Location = new System.Drawing.Point(0, 0);
+            this.genderListButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.genderListButton.Name = "genderListButton";
             this.genderListButton.Size = new System.Drawing.Size(117, 22);
             this.genderListButton.TabIndex = 1;

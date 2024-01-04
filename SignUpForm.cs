@@ -126,6 +126,9 @@ namespace OnlyFriends {
 				if (!genderChosen) {
 					throw new Exception("Please choose a gender");
 				}
+				if(userNameBox.Text.ToLower() == "user name" || userNameBox.Text.ToLower() == "username") {
+					throw new Exception("Please enter a valid username");
+				}
                 AuthFunctions.signup(userName, email, password, confirmPassword, phoneNumber, gender, age);
                 this.Hide();
                 MainApp mainApp = new MainApp();
