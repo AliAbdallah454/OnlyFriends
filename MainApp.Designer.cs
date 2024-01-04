@@ -23,6 +23,7 @@ namespace OnlyFriends {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+
             this.navPanel = new System.Windows.Forms.Panel();
             this.friendRequestsButton = new System.Windows.Forms.Button();
             this.myFriendsButton = new System.Windows.Forms.Button();
@@ -325,8 +326,6 @@ namespace OnlyFriends {
         private System.Windows.Forms.Panel navPanel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button homeButton;
-        private System.Windows.Forms.Label emailLabel;
-        private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Button likedPostsButton;
         private System.Windows.Forms.Button addPostButton;
         private System.Windows.Forms.Button myPostsButton;
@@ -337,5 +336,7 @@ namespace OnlyFriends {
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchInput;
         private System.Windows.Forms.Button profileButton;
-    }
+		private System.Windows.Forms.Label emailLabel;
+		private System.Windows.Forms.Label usernameLabel;
+	}
 }
