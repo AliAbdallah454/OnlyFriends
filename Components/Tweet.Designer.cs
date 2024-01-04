@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.userPicture = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Button();
@@ -58,11 +57,11 @@
             this.tableLayoutPanel1.Controls.Add(this.usernameLabel, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(9);
-            this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(200, 35);
+            this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(220, 35);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 35);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(220, 35);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // userPicture
@@ -85,7 +84,7 @@
             this.usernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.usernameLabel.Location = new System.Drawing.Point(38, 3);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(159, 29);
+            this.usernameLabel.Size = new System.Drawing.Size(179, 29);
             this.usernameLabel.TabIndex = 1;
             this.usernameLabel.Text = "Username";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
