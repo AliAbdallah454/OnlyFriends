@@ -7,6 +7,7 @@ namespace OnlyFriends {
 	internal class AuthFunctions {
 		public static DatabaseConnection connection = DatabaseConnection.Instance;
 
+
 		//static string Encrypt(string plaintext, int shift) {
 		//	char[] encryptedChars = new char[plaintext.Length];
 
