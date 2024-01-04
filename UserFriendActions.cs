@@ -8,7 +8,7 @@ namespace OnlyFriends {
 		public void addFriend(int friendId) {
 
 			string checkSql = $"SELECT * FROM pendingRequests\n" +
-							  $"WHERE friendId = {friendId}";
+							  $"WHERE friendId = {friendId} AND userId = {this.UserId}";
 
 			MySqlDataReader checkReader = connection.query(checkSql);
 
