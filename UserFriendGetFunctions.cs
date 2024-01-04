@@ -22,10 +22,8 @@ namespace OnlyFriends {
 				friends.Add(new User(id, userName, age, gender, email, phoneNumber));
 
 			}
-
 			reader.Close();
 			return friends;
-
 		}
 
 		public List<User> getFriends() {
