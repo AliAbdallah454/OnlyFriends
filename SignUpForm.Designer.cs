@@ -28,7 +28,6 @@
             this.confirmPasswordBox = new System.Windows.Forms.TextBox();
             this.ageBox = new System.Windows.Forms.TextBox();
             this.phoneNumberBox = new System.Windows.Forms.TextBox();
-            this.genderBox = new System.Windows.Forms.TextBox();
             this.emailLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.confirmPasswordLabel = new System.Windows.Forms.Label();
@@ -39,6 +38,11 @@
             this.userNameLabel = new System.Windows.Forms.Label();
             this.signUpButton = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.genderList = new System.Windows.Forms.Panel();
+            this.femaleButton = new System.Windows.Forms.Button();
+            this.maleButton = new System.Windows.Forms.Button();
+            this.genderListButton = new System.Windows.Forms.Button();
+            this.genderList.SuspendLayout();
             this.SuspendLayout();
             // 
             // emailBox
@@ -78,7 +82,7 @@
             // 
             this.ageBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ageBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ageBox.Location = new System.Drawing.Point(132, 257);
+            this.ageBox.Location = new System.Drawing.Point(137, 257);
             this.ageBox.Name = "ageBox";
             this.ageBox.Size = new System.Drawing.Size(86, 22);
             this.ageBox.TabIndex = 5;
@@ -90,24 +94,13 @@
             // 
             this.phoneNumberBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.phoneNumberBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneNumberBox.Location = new System.Drawing.Point(272, 257);
+            this.phoneNumberBox.Location = new System.Drawing.Point(277, 257);
             this.phoneNumberBox.Name = "phoneNumberBox";
             this.phoneNumberBox.Size = new System.Drawing.Size(163, 22);
             this.phoneNumberBox.TabIndex = 6;
             this.phoneNumberBox.Text = "Phone Number";
             this.phoneNumberBox.Enter += new System.EventHandler(this.phoneNumberBox_Enter);
             this.phoneNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberBox_KeyPress);
-            // 
-            // genderBox
-            // 
-            this.genderBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.genderBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderBox.Location = new System.Drawing.Point(474, 257);
-            this.genderBox.Name = "genderBox";
-            this.genderBox.Size = new System.Drawing.Size(117, 22);
-            this.genderBox.TabIndex = 7;
-            this.genderBox.Text = "Gender";
-            this.genderBox.Enter += new System.EventHandler(this.genderBox_Enter);
             // 
             // emailLabel
             // 
@@ -158,7 +151,7 @@
             this.ageLabel.BackColor = System.Drawing.Color.Transparent;
             this.ageLabel.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ageLabel.ForeColor = System.Drawing.Color.Snow;
-            this.ageLabel.Location = new System.Drawing.Point(128, 234);
+            this.ageLabel.Location = new System.Drawing.Point(139, 234);
             this.ageLabel.Name = "ageLabel";
             this.ageLabel.Size = new System.Drawing.Size(36, 17);
             this.ageLabel.TabIndex = 3;
@@ -172,7 +165,7 @@
             this.phoneNumberLabel.BackColor = System.Drawing.Color.Transparent;
             this.phoneNumberLabel.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneNumberLabel.ForeColor = System.Drawing.Color.Snow;
-            this.phoneNumberLabel.Location = new System.Drawing.Point(301, 234);
+            this.phoneNumberLabel.Location = new System.Drawing.Point(306, 234);
             this.phoneNumberLabel.Name = "phoneNumberLabel";
             this.phoneNumberLabel.Size = new System.Drawing.Size(114, 17);
             this.phoneNumberLabel.TabIndex = 3;
@@ -186,7 +179,7 @@
             this.genderLabel.BackColor = System.Drawing.Color.Transparent;
             this.genderLabel.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genderLabel.ForeColor = System.Drawing.Color.Snow;
-            this.genderLabel.Location = new System.Drawing.Point(470, 234);
+            this.genderLabel.Location = new System.Drawing.Point(472, 234);
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(60, 17);
             this.genderLabel.TabIndex = 3;
@@ -250,12 +243,60 @@
             this.linkLabel1.Text = "Back to Login?";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // genderList
+            // 
+            this.genderList.Controls.Add(this.femaleButton);
+            this.genderList.Controls.Add(this.maleButton);
+            this.genderList.Controls.Add(this.genderListButton);
+            this.genderList.Location = new System.Drawing.Point(469, 257);
+            this.genderList.Name = "genderList";
+            this.genderList.Size = new System.Drawing.Size(117, 22);
+            this.genderList.TabIndex = 9;
+            // 
+            // femaleButton
+            // 
+            this.femaleButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.femaleButton.Location = new System.Drawing.Point(0, 44);
+            this.femaleButton.Name = "femaleButton";
+            this.femaleButton.Size = new System.Drawing.Size(117, 22);
+            this.femaleButton.TabIndex = 3;
+            this.femaleButton.Text = "Object";
+            this.femaleButton.UseVisualStyleBackColor = true;
+            this.femaleButton.Click += new System.EventHandler(this.femaleButton_Click);
+            // 
+            // maleButton
+            // 
+            this.maleButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.maleButton.Location = new System.Drawing.Point(0, 22);
+            this.maleButton.Name = "maleButton";
+            this.maleButton.Size = new System.Drawing.Size(117, 22);
+            this.maleButton.TabIndex = 2;
+            this.maleButton.Text = "Male";
+            this.maleButton.UseVisualStyleBackColor = true;
+            this.maleButton.Click += new System.EventHandler(this.maleButton_Click);
+            // 
+            // genderListButton
+            // 
+            this.genderListButton.BackColor = System.Drawing.SystemColors.Window;
+            this.genderListButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.genderListButton.FlatAppearance.BorderSize = 0;
+            this.genderListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.genderListButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderListButton.Location = new System.Drawing.Point(0, 0);
+            this.genderListButton.Name = "genderListButton";
+            this.genderListButton.Size = new System.Drawing.Size(117, 22);
+            this.genderListButton.TabIndex = 1;
+            this.genderListButton.Text = "Gender";
+            this.genderListButton.UseVisualStyleBackColor = false;
+            this.genderListButton.Click += new System.EventHandler(this.genderListButton_Click);
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(779, 445);
+            this.Controls.Add(this.genderList);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.emailLabel);
@@ -267,7 +308,6 @@
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.phoneNumberBox);
             this.Controls.Add(this.ageBox);
-            this.Controls.Add(this.genderBox);
             this.Controls.Add(this.emailBox);
             this.Controls.Add(this.confirmPasswordBox);
             this.Controls.Add(this.passwordBox);
@@ -277,6 +317,7 @@
             this.MinimumSize = new System.Drawing.Size(799, 488);
             this.Name = "SignUpForm";
             this.Text = "SignUpForm";
+            this.genderList.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,7 +329,6 @@
         private System.Windows.Forms.TextBox confirmPasswordBox;
         private System.Windows.Forms.TextBox ageBox;
         private System.Windows.Forms.TextBox phoneNumberBox;
-        private System.Windows.Forms.TextBox genderBox;
         private System.Windows.Forms.Button signUpButton;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label passwordLabel;
@@ -299,5 +339,9 @@
 		private System.Windows.Forms.TextBox userNameBox;
         private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Panel genderList;
+        private System.Windows.Forms.Button genderListButton;
+        private System.Windows.Forms.Button femaleButton;
+        private System.Windows.Forms.Button maleButton;
     }
 }

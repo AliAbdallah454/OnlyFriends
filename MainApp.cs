@@ -35,13 +35,13 @@ namespace OnlyFriends {
 		private Button oldButton = null, currentButton = null;
 		WelcomePage wlc;
 		User user;
-		private string SplitUsername(string s) {
-			int i = 0;
-			while (s[i] < 'A' || s[i] > 'Z') {
-				i++;
-			}
-			return s.Substring(0, i) + "  " + s.Substring(i, s.Length);
-		}
+		//private string SplitUsername(string s) {
+		//	int i = 0;
+		//	while (s[i] < 'A' || s[i] > 'Z') {
+		//		i++;
+		//	}
+		//	return s.Substring(0, i) + "  " + s.Substring(i, s.Length);
+		//}
 		public MainApp() {
 			InitializeComponent();
 
@@ -77,7 +77,8 @@ namespace OnlyFriends {
 
 
 		private void displayWelcomePage() {
-			wlc = new WelcomePage(SplitUsername(user.UserName));
+			//wlc = new WelcomePage(SplitUsername(user.UserName));
+			wlc = new WelcomePage(user.UserName);
 			wlc.Parent = this;
 			wlc.BringToFront();
 		}
