@@ -40,6 +40,7 @@ namespace OnlyFriends {
 				string cContent = reader.GetString("content");
 				DateTime cTimeStamp = reader.GetDateTime("timeStamp");
 
+
 				comments.Add(new Comment(commentId, pId, uId, cContent, cTimeStamp));
 
 			}
