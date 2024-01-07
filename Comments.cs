@@ -31,6 +31,7 @@ namespace OnlyFriends {
 			tweet.Content = post.Content;
 			tweet.TimeStamp = post.TimeStamp;
 			tweet.NumberOfLikes = post.Likes;
+			tweet.Tags = post.Tags;
 			tweet.NumberOfComments = HelperFunctions.translatePostIdToPostInfo(post.PostId).getComments().Count;
 			commentNumberLabel.Text = $"({tweet.NumberOfComments.ToString()})";
 
@@ -64,6 +65,7 @@ namespace OnlyFriends {
 				commentComps[i].UserName = HelperFunctions.translateUserIdToUserName(comments[i].UserId);
 				commentComps[i].Content = comments[i].Content;
 				commentComps[i].TimeStamp = comments[i].TimeStamp;
+				
 
 				commentsFlowPanel.Controls.Add(commentComps[i]);
 

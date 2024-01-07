@@ -44,9 +44,10 @@ namespace OnlyFriends {
 			string content = reader.GetString("content");
 			DateTime timeStamp = reader.GetDateTime("timeStamp");
 			int likes = reader.GetInt32("likes");
+			string tags = ConvertCommaSeparatedStringToList(reader.GetString("tags"));
 
 			reader.Close();
-			string tags = "summer,winter";
+
 
 			return new Post(postId, userId, title, content, timeStamp, likes, tags);
 
