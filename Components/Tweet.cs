@@ -105,7 +105,8 @@ namespace OnlyFriends.Components {
 			commentButton.Visible = false;
 			likeNumberLabel.Visible = false;
 			commentNumberLabel.Visible = false;
-		}
+			deletePostButton.Visible = false;		
+        }
 
 		private void deletePostButton_Click(object sender, EventArgs e) {
 			User user = User.Instance;
