@@ -112,7 +112,6 @@ namespace OnlyFriends {
 										 $"WHERE (userId = {this.UserId} AND friendId = {friendId}) OR (userId = {friendId} AND friendId = {this.UserId})";
 				MySqlDataReader removeFriendReader = connection.query(removeFrinedSql);
 				removeFriendReader.Close();
-				MessageBox.Show($"Removed Frindshit");
 			}
 			else {
 				checkReader.Close();

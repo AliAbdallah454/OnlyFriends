@@ -55,7 +55,7 @@ namespace OnlyFriends {
 			this.navPanel.Controls.Add(this.panel2);
 			this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
 			this.navPanel.Location = new System.Drawing.Point(0, 0);
-			this.navPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.navPanel.Margin = new System.Windows.Forms.Padding(4);
 			this.navPanel.Name = "navPanel";
 			this.navPanel.Size = new System.Drawing.Size(247, 704);
 			this.navPanel.TabIndex = 0;
@@ -72,7 +72,7 @@ namespace OnlyFriends {
 			this.friendRequestsButton.Image = global::OnlyFriends.Properties.Resources.icons8_github_25;
 			this.friendRequestsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.friendRequestsButton.Location = new System.Drawing.Point(0, 520);
-			this.friendRequestsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.friendRequestsButton.Margin = new System.Windows.Forms.Padding(4);
 			this.friendRequestsButton.Name = "friendRequestsButton";
 			this.friendRequestsButton.Size = new System.Drawing.Size(247, 50);
 			this.friendRequestsButton.TabIndex = 7;
@@ -95,7 +95,7 @@ namespace OnlyFriends {
 			this.myFriendsButton.Image = global::OnlyFriends.Properties.Resources.icons8_friends_25;
 			this.myFriendsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.myFriendsButton.Location = new System.Drawing.Point(0, 470);
-			this.myFriendsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.myFriendsButton.Margin = new System.Windows.Forms.Padding(4);
 			this.myFriendsButton.Name = "myFriendsButton";
 			this.myFriendsButton.Size = new System.Drawing.Size(247, 50);
 			this.myFriendsButton.TabIndex = 6;
@@ -118,7 +118,7 @@ namespace OnlyFriends {
 			this.logoutButton.Image = global::OnlyFriends.Properties.Resources.icons8_logout_25__1_;
 			this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.logoutButton.Location = new System.Drawing.Point(0, 649);
-			this.logoutButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.logoutButton.Margin = new System.Windows.Forms.Padding(4);
 			this.logoutButton.Name = "logoutButton";
 			this.logoutButton.Size = new System.Drawing.Size(247, 55);
 			this.logoutButton.TabIndex = 5;
@@ -141,7 +141,7 @@ namespace OnlyFriends {
 			this.likedPostsButton.Image = global::OnlyFriends.Properties.Resources.icons8_starred_webpage_25;
 			this.likedPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.likedPostsButton.Location = new System.Drawing.Point(0, 420);
-			this.likedPostsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.likedPostsButton.Margin = new System.Windows.Forms.Padding(4);
 			this.likedPostsButton.Name = "likedPostsButton";
 			this.likedPostsButton.Size = new System.Drawing.Size(247, 50);
 			this.likedPostsButton.TabIndex = 4;
@@ -164,7 +164,7 @@ namespace OnlyFriends {
 			this.addPostButton.Image = global::OnlyFriends.Properties.Resources.icons8_add_25;
 			this.addPostButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.addPostButton.Location = new System.Drawing.Point(0, 370);
-			this.addPostButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.addPostButton.Margin = new System.Windows.Forms.Padding(4);
 			this.addPostButton.Name = "addPostButton";
 			this.addPostButton.Size = new System.Drawing.Size(247, 50);
 			this.addPostButton.TabIndex = 3;
@@ -187,7 +187,7 @@ namespace OnlyFriends {
 			this.myPostsButton.Image = global::OnlyFriends.Properties.Resources.icons8_gallery_25;
 			this.myPostsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.myPostsButton.Location = new System.Drawing.Point(0, 320);
-			this.myPostsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.myPostsButton.Margin = new System.Windows.Forms.Padding(4);
 			this.myPostsButton.Name = "myPostsButton";
 			this.myPostsButton.Size = new System.Drawing.Size(247, 50);
 			this.myPostsButton.TabIndex = 2;
@@ -210,7 +210,7 @@ namespace OnlyFriends {
 			this.homeButton.Image = global::OnlyFriends.Properties.Resources.icons8_home_25;
 			this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.homeButton.Location = new System.Drawing.Point(0, 270);
-			this.homeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.homeButton.Margin = new System.Windows.Forms.Padding(4);
 			this.homeButton.Name = "homeButton";
 			this.homeButton.Size = new System.Drawing.Size(247, 50);
 			this.homeButton.TabIndex = 1;
@@ -231,7 +231,7 @@ namespace OnlyFriends {
 			this.panel2.Controls.Add(this.usernameLabel);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
-			this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel2.Margin = new System.Windows.Forms.Padding(4);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(247, 270);
 			this.panel2.TabIndex = 0;
@@ -242,7 +242,7 @@ namespace OnlyFriends {
 			this.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.profileButton.Image = global::OnlyFriends.Properties.Resources.icons8_male_user_100;
 			this.profileButton.Location = new System.Drawing.Point(52, 15);
-			this.profileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.profileButton.Margin = new System.Windows.Forms.Padding(4);
 			this.profileButton.Name = "profileButton";
 			this.profileButton.Size = new System.Drawing.Size(135, 123);
 			this.profileButton.TabIndex = 3;
@@ -253,7 +253,7 @@ namespace OnlyFriends {
 			// 
 			this.searchInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
 			this.searchInput.Location = new System.Drawing.Point(16, 231);
-			this.searchInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.searchInput.Margin = new System.Windows.Forms.Padding(4);
 			this.searchInput.Name = "searchInput";
 			this.searchInput.Size = new System.Drawing.Size(180, 30);
 			this.searchInput.TabIndex = 0;
@@ -323,7 +323,7 @@ namespace OnlyFriends {
 			this.Controls.Add(this.mainPanel);
 			this.Controls.Add(this.navPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "MainApp";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "MainApp";
