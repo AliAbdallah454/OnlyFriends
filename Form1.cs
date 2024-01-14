@@ -50,7 +50,7 @@ namespace OnlyFriends {
 		}
 
 
-		//NOT DONE YET ADD THIS.HIDE MAIN-UI.SHOW TO LOGINBUTTON
+		
 		private void loginButton_Click(object sender, EventArgs e) {
 			string email = textBox1.Text;
 			string password = textBox2.Text;
@@ -89,11 +89,6 @@ namespace OnlyFriends {
 		private void UpdateButtonState() {
 			loginBTN.Enabled = !string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text);
 		}
-
-
-
-
-
 
 	}
 
