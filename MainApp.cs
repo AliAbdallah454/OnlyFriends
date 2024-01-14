@@ -1,5 +1,4 @@
-﻿using OnlyFriends.User_Controls;
-using OnlyFriends.UserControls2;
+﻿using OnlyFriends.UserControls2;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -61,7 +60,7 @@ namespace OnlyFriends {
 				{ UC.MyPosts, new MyPostsControl()},
 				{ UC.LikedPosts, new LikedPostsControl()},
 				{ UC.FriendRequests, new FriendRequestsControl()},
-				{ UC.Suggestions, new SuggestionsUC() },
+				{ UC.Suggestions, new SuggestedFriends() },
 				{ UC.MyFriends, new MyFriendsControl() },
 				{ UC.AddPost, new AddPostControl() },
 				{ UC.Search, new SearchResults("userName") }
