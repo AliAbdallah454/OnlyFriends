@@ -192,36 +192,6 @@
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\FriendRequestsUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\FriendRequestsUC.Designer.cs">
-      <DependentUpon>FriendRequestsUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Controls\HomeUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\HomeUC.Designer.cs">
-      <DependentUpon>HomeUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Controls\MyPostsUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\MyPostsUC.Designer.cs">
-      <DependentUpon>MyPostsUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Controls\LikedPostsUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\LikedPostsUC.Designer.cs">
-      <DependentUpon>LikedPostsUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Controls\SuggestionsUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\SuggestionsUC.Designer.cs">
-      <DependentUpon>SuggestionsUC.cs</DependentUpon>
-    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserControls2\AddPostControl.cs">
       <SubType>UserControl</SubType>
@@ -335,21 +305,6 @@
     </Compile>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\FriendRequestsUC.resx">
-      <DependentUpon>FriendRequestsUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\HomeUC.resx">
-      <DependentUpon>HomeUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\MyPostsUC.resx">
-      <DependentUpon>MyPostsUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\LikedPostsUC.resx">
-      <DependentUpon>LikedPostsUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\SuggestionsUC.resx">
-      <DependentUpon>SuggestionsUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls2\AddPostControl.resx">
       <DependentUpon>AddPostControl.cs</DependentUpon>
