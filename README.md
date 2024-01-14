@@ -1,5 +1,6 @@
 # OnlyFriends
 1- Use the database file found in the repo in mysql workbench
+
 2- Go to the ShareData.cs file and write the following:
       using System;
       using System.Collections.Generic;
